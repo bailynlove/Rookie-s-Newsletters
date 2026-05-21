@@ -12,13 +12,17 @@ cd "$REPO_DIR"
 DATE_STR=$(date +%Y-%m-%d)
 TIME_STR=$(date +%H:%M)
 
-# 防止并发冲突：简单的文件锁（与 Heimdall 共享锁文件避免交叉冲突）
+# 防止并发冲突：macOS 兼容的 PID 文件锁
 LOCK_FILE="/tmp/friday-cron.lock"
-exec 200>"$LOCK_FILE"
-if ! flock -n 200; then
-  echo "[$(date)] Friday cron already running, skipping."
-  exit 0
+if [ -f "$LOCK_FILE" ]; then
+  LOCK_PID=$(cat "$LOCK_FILE" 2>/dev/null)
+  if [ -n "$LOCK_PID" ] && kill -0 "$LOCK_PID" 2>/dev/null; then
+    echo "[$(date)] Friday cron already running (PID $LOCK_PID), skipping."
+    exit 0
+  fi
+  echo "Stale lock file (PID $LOCK_PID), removing."
 fi
+echo $$ > "$LOCK_FILE"
 
 echo "[$(date)] Starting Friday $PERIOD report..."
 
