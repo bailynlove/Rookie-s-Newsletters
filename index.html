@@ -193,7 +193,7 @@
         const total = values.reduce((a, b) => a + b, 0);
         return `
           <div class="sparkline-row">
-            <span class="sparkline-label has-tooltip-left" data-tooltip="${item.topic}">${item.topic}</span>
+            <span class="sparkline-label has-tooltip-left" data-tooltip="${item.topic}" tabindex="0">${item.topic}</span>
             <svg class="sparkline-mini" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">
               <polyline points="${points}" fill="none" stroke="var(--accent-academic)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -368,10 +368,10 @@
             const pct = (t.count / max * 100).toFixed(0);
             const labelText = t.topic || t.subscription || t.category;
           return `
-              <div class="bar-item has-tooltip" data-tooltip="${labelText}: ${t.count}">
-                <span class="bar-label has-tooltip-left" data-tooltip="${labelText}">${labelText}</span>
+              <div class="bar-item has-tooltip" data-tooltip="${labelText}: ${t.count}" tabindex="0">
+                <span class="bar-label has-tooltip-left" data-tooltip="${labelText}" tabindex="0">${labelText}</span>
                 <div class="bar-track">
-                  <div class="bar-fill academic has-tooltip" data-tooltip="${t.count}" style="width: ${pct}%"></div>
+                  <div class="bar-fill academic has-tooltip" data-tooltip="${t.count}" style="width: ${pct}%" tabindex="0"></div>
                 </div>
                 <span class="bar-value">${t.count}</span>
               </div>
@@ -542,10 +542,10 @@
         const bars = trends.top_trend_signals.slice(0, 6).map(t => {
           const pct = (t.count / maxCount * 100).toFixed(0);
           return `
-            <div class="bar-item has-tooltip" data-tooltip="${t.topic}: ${t.count}">
-              <span class="bar-label has-tooltip-left" data-tooltip="${t.topic}">${t.topic}</span>
+            <div class="bar-item has-tooltip" data-tooltip="${t.topic}: ${t.count}" tabindex="0">
+              <span class="bar-label has-tooltip-left" data-tooltip="${t.topic}" tabindex="0">${t.topic}</span>
               <div class="bar-track">
-                <div class="bar-fill finance has-tooltip" data-tooltip="${t.count}" style="width: ${pct}%"></div>
+                <div class="bar-fill finance has-tooltip" data-tooltip="${t.count}" style="width: ${pct}%" tabindex="0"></div>
               </div>
               <span class="bar-value">${t.count}</span>
             </div>
@@ -631,6 +631,14 @@
     }
 
     loadDataWithStore();
+
+    // Mobile: tap outside tooltip to dismiss
+    document.addEventListener('touchstart', (e) => {
+      const tooltipEl = e.target.closest('.has-tooltip, .has-tooltip-left');
+      if (!tooltipEl) {
+        document.querySelectorAll('.has-tooltip:focus, .has-tooltip-left:focus').forEach(el => el.blur());
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
