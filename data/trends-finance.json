@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-05-21T22:07:31.606868",
+  "daily_series": [
+    {
+      "date": "2026-05-14",
+      "sentiment": 58,
+      "confidence": 0.7,
+      "indices": {
+        "上证综指": {
+          "value": 4177.92,
+          "change": -1.52
+        },
+        "创业板指": {
+          "value": 3951.14,
+          "change": -2.16
+        },
+        "科创50": {
+          "value": 1012.27,
+          "change": 1.23
+        },
+        "恒生指数": {
+          "value": 26389.04,
+          "change": 0.0
+        }
+      }
+    }
+  ],
+  "calendar_data": [
+    {
+      "date": "2026-05-14",
+      "intensity": 58,
+      "level": 4
+    }
+  ],
+  "risk_grid": [
+    {
+      "category": "市场",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "medium"
+        }
+      ]
+    }
+  ],
+  "risk_distribution": [
+    {
+      "level": "medium",
+      "count": 1
+    }
+  ],
+  "top_trend_signals": [
+    {
+      "topic": "美联储政策",
+      "count": 5
+    },
+    {
+      "topic": "科技股韧性",
+      "count": 4
+    },
+    {
+      "topic": "中美关系",
+      "count": 3
+    }
+  ]
+}

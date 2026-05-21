@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术日报 — 2026-05-21 morning</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 晨间简报",
+    "datePublished": "2026-05-21T08:30:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "morning",
+    "p0_count": 2,
+    "p1_count": 5,
+    "p2_count": 8,
+    "subscription_hits": [],
+    "github_trending_topics": ["agent-skills", "mcp", "code-knowledge-graph"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL", "cs.LG"],
+    "trend_signals": [
+      {"topic": "Agent Skills 生态爆发", "strength": 5, "direction": "rising"},
+      {"topic": "MCP 工具链扩展", "strength": 4, "direction": "stable"},
+      {"topic": "LLM 编码方法论", "strength": 4, "direction": "rising"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 晨间简报</h1>
+      <time datetime="2026-05-21T08:30+08:00">2026年05月21日 08:30 CST</time>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <section class="priority-p0">
+      <h2>🔴 P0 级发现 — 需立即关注</h2>
+      
+      <article class="discovery">
+        <h3>OpenAI 模型推翻离散几何核心猜想</h3>
+        <p><strong>来源:</strong> <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">OpenAI 官方博客</a> | HackerNews 1241 pts</p>
+        <p><strong>重要性:</strong> AI 首次在数学证明领域取得突破性进展，证明模型具备高阶推理能力。</p>
+        <p><strong>评分:</strong> ★★★★★ (9.2/10)</p>
+        <p><strong>建议路由:</strong> → Banner（宏观评估）→ Pepper（学术表达素材）</p>
+        <details>
+          <summary>详情</summary>
+          OpenAI 模型成功证伪离散几何领域长期存在的猜想，标志着 AI 从"生成工具"向"科研伙伴"的范式跃迁。该发现对 STARK_TOWER 的 Agent-Native 研究路径具有战略意义。
+        </details>
+      </article>
+      
+      <article class="discovery">
+        <h3>GitHub 确认恶意 VSCode 扩展导致 3800 repo 泄露</h3>
+        <p><strong>来源:</strong> <a href="https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/">BleepingComputer</a> | HackerNews 915 pts</p>
+        <p><strong>重要性:</strong> 开发工具供应链安全事件，直接影响 Agent 工具链安全策略。</p>
+        <p><strong>评分:</strong> ★★★★★ (8.8/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（安全评估）→ 立即审查 MCP 扩展来源</p>
+        <details>
+          <summary>详情</summary>
+          恶意 VSCode 扩展通过 OAuth 权限窃取仓库访问权，波及 3800 个项目。Agent 工具链依赖外部扩展，需建立沙箱隔离与权限审查机制。
+        </details>
+      </article>
+    </section>
+    
+    <section class="priority-p1">
+      <h2>🟠 P1 级发现 — 建议深度跟进</h2>
+      
+      <article class="discovery">
+        <h3>andrej-karpathy-skills：Karpathy LLM 编码方法论提炼</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/multica-ai/andrej-karpathy-skills">GitHub Trending</a> | 2679 stars/day</p>
+        <p><strong>重要性:</strong> 将 Karpathy 的编码观察转化为可复用的 CLAUDE.md 抢技能，直接改进 Agent 行为。</p>
+        <p><strong>评分:</strong> ★★★★ (7.5/10) | Agent 关键词 +0.8</p>
+        <p><strong>建议路由:</strong> → 立即集成到 Hermes skill 库</p>
+        <details>
+          <summary>详情</summary>
+          单文件 CLAUDE.md 提炼 Karpathy 对 LLM 编码陷阱的观察，包括：过度依赖现有代码、缺乏系统性规划、工具调用冗余等。已被 142K+ 用户采纳。
+        </details>
+      </article>
+      
+      <article class="discovery">
+        <h3>codegraph：为 AI 编码工具预索引代码知识图谱</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph">GitHub Trending</a> | 2123 stars/day</p>
+        <p><strong>重要性:</strong> 减少 token 消耗与工具调用次数，100% 本地运行，解决 Agent 编码核心痛点。</p>
+        <p><strong>评分:</strong> ★★★★ (7.2/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术评估）→ 试点集成</p>
+        <details>
+          <summary>详情</summary>
+          为 Claude Code、Codex、Cursor、OpenCode 提供预索引知识图谱，支持本地查询。减少 LLM 上下文负担，降低 API 成本。
+        </details>
+      </article>
+      
+      <article class="discovery">
+        <h3>CLI-Anything：让所有软件成为 Agent-Native</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/HKUDS/CLI-Anything">GitHub Trending</a> | 890 stars/day</p>
+        <p><strong>重要性:</strong> HKUDS 提出 Agent-Native 软件栈新范式，与 STARK_TOWER 战略方向高度一致。</p>
+        <p><strong>评分:</strong> ★★★★ (7.0/10)</p>
+        <p><strong>建议路由:</strong> → Banner（宏观框架对接）</p>
+        <details>
+          <summary>详情</summary>
+          CLI-Hub 项目提出将所有软件通过 CLI 封装为 Agent 可调用接口，推动软件生态向 Agent-Native 转型。
+        </details>
+      </article>
+      
+      <article class="discovery">
+        <h3>chrome-devtools-mcp：Chrome DevTools MCP 工具链</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">GitHub Trending</a> | 132 stars/day</p>
+        <p><strong>重要性:</strong> MCP 生态扩展，为 Agent 提供浏览器调试能力。</p>
+        <p><strong>评分:</strong> ★★★★ (6.8/10) | MCP 关键词 +1.2</p>
+        <p><strong>建议路由:</strong> → 技术雷达跟踪</p>
+        <details>
+          <summary>详情</summary>
+          官方 Chrome DevTools MCP 实现，让编码 Agent 能直接调试浏览器行为。40K+ stars 说明 MCP 工具链需求旺盛。
+        </details>
+      </article>
+      
+      <article class="discovery">
+        <h3>superpowers：Agentic Skills 框架方法论</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/obra/superpowers">GitHub Trending</a> | 1743 stars/day</p>
+        <p><strong>重要性:</strong> obra 提出完整的 Agent 技能框架与开发方法论，与 Hermes skill 系统理念契合。</p>
+        <p><strong>评分:</strong> ★★★★ (6.5/10)</p>
+        <p><strong>建议路由:</strong> → 对比 Hermes skill 架构，汲取最佳实践</p>
+        <details>
+          <summary>详情</summary>
+          200K+ stars 的 Agent 技能框架，强调"可工作的软件开发方法论"。值得关注其 skill 定义范式与模块化结构。
+        </details>
+      </article>
+    </section>
+    
+    <section class="priority-p2">
+      <h2>🟡 P2 级发现 — 值得了解</h2>
+      
+      <article class="discovery">
+        <h3>Flipper One 硬件发布：多协议渗透测试设备</h3>
+        <p><strong>来源:</strong> <a href="https://docs.flipper.net/one/general/tech-specs">Flipper 官方</a> | HackerNews 430 pts</p>
+        <p><strong>重要性:</strong> 硬件层安全工具，与软件安全事件形成对照。</p>
+        <p><strong>评分:</strong> ★★★ (5.2/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>Google AI Mode 搜索结果将植入广告</h3>
+        <p><strong>来源:</strong> <a href="https://blog.google/products/ads-commerce/google-marketing-live-search-ads/">Google 官方博客</a> | HackerNews 194 pts</p>
+        <p><strong>重要性:</strong> AI 搜索商业化路径信号，影响用户对 AI 搜索信任度。</p>
+        <p><strong>评分:</strong> ★★★ (5.0/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>claude-plugins-official：Anthropic 官方 Claude Code 插件目录</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-plugins-official">GitHub Trending</a> | 674 stars/day</p>
+        <p><strong>重要性:</strong> Anthropic 管理的高质量插件库，为 Agent 工具链提供背书来源。</p>
+        <p><strong>评分:</strong> ★★★ (4.8/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>OpenWA：开源 WhatsApp API Gateway</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/rmyndharis/OpenWA">GitHub Trending</a> | 741 stars/day</p>
+        <p><strong>重要性:</strong> Agent 通信渠道扩展选项。</p>
+        <p><strong>评分:</strong> ★★★ (4.5/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>Python 3.15 新特性解读</h3>
+        <p><strong>来源:</strong> <a href="https://blog.changs.co.uk/python-315-features-that-didnt-make-the-headlines.html">技术博客</a> | HackerNews 58 pts</p>
+        <p><strong>重要性:</strong> 语言演进信号，影响 Agent 编码环境。</p>
+        <p><strong>评分:</strong> ★★★ (4.2/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>dotnet/skills：.NET/C# AI 编码技能库</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/dotnet/skills">GitHub Trending</a> | 96 stars/day</p>
+        <p><strong>重要性:</strong> Microsoft 官方 Agent 技能尝试，跨平台技能范式参考。</p>
+        <p><strong>评分:</strong> ★★★ (4.0/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>rmux：可编程终端复用器（Playwright 风格 SDK）</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/helvesec/rmux">GitHub Show HN</a> | HackerNews 88 pts</p>
+        <p><strong>重要性:</strong> 终端层 Agent 交互工具，与 CLI-Anything 范式呼应。</p>
+        <p><strong>评分:</strong> ★★★ (3.8/10)</p>
+      </article>
+      
+      <article class="discovery">
+        <h3>phosphene：逆向 Apple 视频壁纸</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/kageroumado/phosphene">GitHub Show HN</a> | HackerNews 328 pts</p>
+        <p><strong>重要性:</strong> 技术好奇心案例，逆向工程方法论参考。</p>
+        <p><strong>评分:</strong> ★★★ (3.5/10)</p>
+      </article>
+    </section>
+    
+    <section class="arxiv-papers">
+      <h2>📄 arXiv 论文摘要（cs.AI / cs.SE / cs.CL / cs.LG）</h2>
+      <p><em>最近 24h 提交，筛选高相关度论文</em></p>
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>分类</th>
+            <th>作者</th>
+            <th>链接</th>
+            <th>相关度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling</td>
+            <td>cs.AI</td>
+            <td>Caleb Winston et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21470v1">arXiv:2605.21470</a></td>
+            <td>★★★★ Agent 性能优化</td>
+          </tr>
+          <tr>
+            <td>Agentic Model Checking</td>
+            <td>cs.SE</td>
+            <td>Youcheng Sun et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21434v1">arXiv:2605.21434</a></td>
+            <td>★★★★ Agent 形式化验证</td>
+          </tr>
+          <tr>
+            <td>Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning</td>
+            <td>cs.LG</td>
+            <td>Benhao Huang et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21488v1">arXiv:2605.21488</a></td>
+            <td>★★★★ LLM 推理架构</td>
+          </tr>
+          <tr>
+            <td>torchtune: PyTorch native post-training library</td>
+            <td>cs.AI</td>
+            <td>Mark Obozov et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21442v1">arXiv:2605.21442</a></td>
+            <td>★★★ 训练工具链</td>
+          </tr>
+          <tr>
+            <td>SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents</td>
+            <td>cs.CL</td>
+            <td>Bingchen Zhao et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21384v1">arXiv:2605.21384</a></td>
+            <td>★★★★ Agent 安全评估</td>
+          </tr>
+          <tr>
+            <td>LASH: Adaptive Semantic Hybridization for Black-Box Jailbreaking</td>
+            <td>cs.CL</td>
+            <td>Abdullah Al Nomaan Nafi et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21362v1">arXiv:2605.21362</a></td>
+            <td>★★★ LLM 安全研究</td>
+          </tr>
+          <tr>
+            <td>Mem-π: Adaptive Memory through Learning When and What to Generate</td>
+            <td>cs.AI</td>
+            <td>Xiaoqiang Wang et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21463v1">arXiv:2605.21463</a></td>
+            <td>★★★ Agent 内存管理</td>
+          </tr>
+          <tr>
+            <td>Quality and Security Signals in AI-Generated Python Refactoring PRs</td>
+            <td>cs.AI/cs.SE</td>
+            <td>Mohamed Almukhtar et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21453v1">arXiv:2605.21453</a></td>
+            <td>★★★★ AI 编码安全</td>
+          </tr>
+          <tr>
+            <td>AiraXiv: An AI-Driven Open-Access Platform for Human and AI Scientists</td>
+            <td>cs.AI/cs.CL</td>
+            <td>Junshu Pan et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21481v1">arXiv:2605.21481</a></td>
+            <td>★★★ AI 科研平台</td>
+          </tr>
+          <tr>
+            <td>Leveraging LLMs for Grammar Adaptation: Metamodel-Grammar Co-Evolution</td>
+            <td>cs.SE/cs.CL</td>
+            <td>Weixing Zhang et al.</td>
+            <td><a href="http://arxiv.org/abs/2605.21465v1">arXiv:2605.21465</a></td>
+            <td>★★★ LLM 工具链演进</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section class="trend-analysis">
+      <h2>📊 趋势分析</h2>
+      
+      <h3>Agent Skills 生态爆发（强度: ★★★★★ ↑）</h3>
+      <p>GitHub Trending 前 10 中 5 个项目直接关联 Agent Skills：andrej-karpathy-skills、superpowers、claude-plugins-official、dotnet/skills、codegraph（间接）。社区正在标准化"如何让 Agent 编码更好"，从方法论（Karpathy）到框架（superpowers）到工具链（MCP/plugins）形成完整生态。</p>
+      
+      <h3>MCP 工具链扩展（强度: ★★★★ →）</h3>
+      <p>chrome-devtools-mcp 保持高热度（40K+ stars），MCP 作为 Agent 工具协议的共识正在巩固。GitHub 恶意扩展事件提醒需要建立 MCP 扩展的安全审查机制。</p>
+      
+      <h3>LLM 数学推理突破（强度: ★★★★★ ↑）</h3>
+      <p>OpenAI 模型证伪离散几何猜想是里程碑事件。从"生成文本"到"数学证明"意味着 LLM 正在跨越"创造性推理"边界。这对 Agent-Native 系统的推理架构设计有深远影响。</p>
+      
+      <h3>CLI-Anything 与 Agent-Native 软件栈（强度: ★★★★ ↑）</h3>
+      <p>HKUDS 提出 CLI 封装所有软件为 Agent 接口的理念，与 STARK_TOWER 的 Agent-Native 方向高度契合。值得持续跟踪其 CLI-Hub 实现进展。</p>
+    </section>
+    
+    <section class="action-items">
+      <h2>⚡ 待处理事项</h2>
+      <ul>
+        <li><input type="checkbox" disabled> 集成 andrej-karpathy-skills 到 Hermes skill 库</li>
+        <li><input type="checkbox" disabled> 评估 codegraph 在 Hermes 编码流程中的可行性</li>
+        <li><input type="checkbox" disabled> 审查 MCP 扩展来源与权限隔离机制</li>
+        <li><input type="checkbox" disabled> Banner 对接 CLI-Anything 框架研究</li>
+        <li><input type="checkbox" disabled> Pepper 提取 OpenAI 数学证明事件的学术表达素材</li>
+        <li><input type="checkbox" disabled> 阅读 SpecBench 论文，评估 Agent reward hacking 风险</li>
+        <li><input type="checkbox" disabled> 更新 tech-radar.json：Agent Skills 生态、LLM 数学推理</li>
+      </ul>
+    </section>
+    
+    <section class="subscription-hits">
+      <h2>📌 订阅命中</h2>
+      <p><em>当前无自定义订阅主题配置。建议通过 heimdall 或 Jarvis 添加订阅关键词。</em></p>
+    </section>
+    
+    <section class="errors" style="display: none;">
+      <h2>⚠️ 搜索困难与报错</h2>
+      <details open>
+        <summary>本次检索链路状态</summary>
+        <ul>
+          <li>✓ HackerNews API 正常响应（15 条 frontpage）</li>
+          <li>✓ GitHub Trending 页面正常加载（浏览器抓取）</li>
+          <li>✓ arXiv API 正常响应（cs.AI 15 条、cs.SE 15 条、cs.CL 15 条、cs.LG 15 条）</li>
+          <li>⚠️ GitHub Trending 完整列表需多次滚动，本报告仅截取前 10 高热度项目</li>
+          <li>✓ 无明显报错，本次检索链路正常</li>
+        </ul>
+      </details>
+    </section>
+    
+    <section class="summary">
+      <h2>📈 晨间简报摘要</h2>
+      <table class="data-table">
+        <tbody>
+          <tr><td>数据源</td><td>GitHub Trending + HackerNews Frontpage + arXiv (cs.AI/SE/CL/LG)</td></tr>
+          <tr><td>P0 发现</td><td>2 条（OpenAI 数学证明、GitHub 安全事件）</td></tr>
+          <tr><td>P1 发现</td><td>5 条（Agent Skills 生态核心项目）</td></tr>
+          <tr><td>P2 发现</td><td>8 条（周边信号）</td></tr>
+          <tr><td>arXiv 论文</td><td>40+ 篇，筛选 10 篇高相关度</td></tr>
+          <tr><td>趋势信号</td><td>Agent Skills 爆发 ★★★★★、MCP 扩展 ★★★★、LLM 数学推理 ★★★★★</td></tr>
+          <tr><td>建议优先级</td><td>P0 立即路由 Banner/Jarvis → P1 技术评估 → P2 持续跟踪</td></tr>
+        </tbody>
+      </table>
+    </section>
+    
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+</body>
+</html>

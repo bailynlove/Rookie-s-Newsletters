@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-05-21T22:07:31.605239",
+  "academic": [
+    {
+      "path": "academic/2026-05-21/morning.html",
+      "date": "2026-05-21",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Agent Skills 生态爆发",
+        "MCP 工具链扩展",
+        "LLM 编码方法论"
+      ]
+    },
+    {
+      "path": "academic/2026-05-17/morning.html",
+      "date": "2026-05-17",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Agent-Native 软件栈",
+        "MCP 生态",
+        "Self-Improving Agent"
+      ]
+    }
+  ],
+  "macro_finance": [
+    {
+      "path": "macro-finance/2026-05-14/a-close.html",
+      "date": "2026-05-14",
+      "period": "a-close",
+      "section": "macro-finance",
+      "keywords": [
+        "美联储政策",
+        "中美关系",
+        "科技股韧性"
+      ]
+    }
+  ]
+}

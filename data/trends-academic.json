@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-05-21T22:07:31.606750",
+  "daily_series": [
+    {
+      "date": "2026-05-17",
+      "p0": 4,
+      "p1": 8,
+      "p2": 5,
+      "total": 17
+    },
+    {
+      "date": "2026-05-21",
+      "p0": 2,
+      "p1": 5,
+      "p2": 8,
+      "total": 15
+    }
+  ],
+  "calendar_data": [
+    {
+      "date": "2026-05-17",
+      "intensity": 17,
+      "level": 4
+    },
+    {
+      "date": "2026-05-21",
+      "intensity": 15,
+      "level": 3
+    }
+  ],
+  "sparkline_data": [
+    {
+      "topic": "Agent Skills 生态爆发",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "topic": "Agent-Native 软件栈",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 5
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "topic": "Self-Improving Agent",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 5
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "topic": "MCP 工具链扩展",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "topic": "LLM 编码方法论",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "topic": "MCP 生态",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 4
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "topic": "Agent Memory",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 4
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "top_topics": [
+    {
+      "topic": "Agent Skills 生态爆发",
+      "count": 5
+    },
+    {
+      "topic": "Agent-Native 软件栈",
+      "count": 5
+    },
+    {
+      "topic": "Self-Improving Agent",
+      "count": 5
+    },
+    {
+      "topic": "MCP 工具链扩展",
+      "count": 4
+    },
+    {
+      "topic": "LLM 编码方法论",
+      "count": 4
+    },
+    {
+      "topic": "MCP 生态",
+      "count": 4
+    },
+    {
+      "topic": "Agent Memory",
+      "count": 4
+    }
+  ],
+  "top_categories": [
+    {
+      "category": "cs.AI",
+      "count": 2
+    },
+    {
+      "category": "cs.SE",
+      "count": 2
+    },
+    {
+      "category": "cs.CL",
+      "count": 2
+    },
+    {
+      "category": "cs.LG",
+      "count": 2
+    }
+  ],
+  "top_subscriptions": [
+    {
+      "subscription": "self-improving-agent",
+      "count": 1
+    },
+    {
+      "subscription": "llm-fault-localization",
+      "count": 1
+    },
+    {
+      "subscription": "mcp-tools",
+      "count": 1
+    },
+    {
+      "subscription": "vision-to-code",
+      "count": 1
+    }
+  ],
+  "top_github_topics": [
+    {
+      "topic": "mcp",
+      "count": 2
+    },
+    {
+      "topic": "agent-skills",
+      "count": 1
+    },
+    {
+      "topic": "code-knowledge-graph",
+      "count": 1
+    },
+    {
+      "topic": "agent-framework",
+      "count": 1
+    },
+    {
+      "topic": "rust",
+      "count": 1
+    },
+    {
+      "topic": "personal-ai",
+      "count": 1
+    }
+  ],
+  "upset_data": [
+    {
+      "combination": [
+        "llm-fault-localization",
+        "mcp-tools"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "llm-fault-localization",
+        "self-improving-agent"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "llm-fault-localization",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "mcp-tools",
+        "self-improving-agent"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "mcp-tools",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "self-improving-agent",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 2
+    },
+    {
+      "combination": [
+        "llm-fault-localization",
+        "mcp-tools",
+        "self-improving-agent"
+      ],
+      "count": 1,
+      "size": 3
+    },
+    {
+      "combination": [
+        "llm-fault-localization",
+        "mcp-tools",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 3
+    },
+    {
+      "combination": [
+        "llm-fault-localization",
+        "self-improving-agent",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 3
+    },
+    {
+      "combination": [
+        "mcp-tools",
+        "self-improving-agent",
+        "vision-to-code"
+      ],
+      "count": 1,
+      "size": 3
+    }
+  ]
+}
