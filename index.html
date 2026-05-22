@@ -78,7 +78,14 @@
       return `${d.getMonth()+1}月${d.getDate()}日`;
     };
 
-    const periodLabel = (p) => {
+    const periodLabel = (p, section) => {
+      if (section === 'macro-finance') {
+        const map = {
+          morning: 'A股晨报', noon: '午间更新', evening: '财经晚报',
+          'a-close': 'A股收盘', 'us-premarket': '美股盘前'
+        };
+        return map[p] || p;
+      }
       const map = {
         morning: '晨间简报', noon: '午间论文', evening: '晚间趋势',
         'a-close': '收盘分析', 'us-premarket': '美股盘前'
@@ -298,7 +305,7 @@
       const items = reports.slice(0, maxItems);
       return items.map(r => `
         <div class="update-item ${section}">
-          <a href="${r.path}">${periodLabel(r.period)}</a>
+          <a href="${r.path}">${periodLabel(r.period, r.section)}</a>
           <span class="update-date">${r.date}</span>
         </div>
       `).join('');
@@ -424,7 +431,7 @@
           <div class="latest-title">Heimdall 学术情报流</div>
           <div class="latest-date">今日已生成 ${todayReports.length} 份报告</div>
           <div class="section-nav">
-            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period)}</a>`).join('')}
+            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period, r.section)}</a>`).join('')}
           </div>
           <a href="academic/" class="latest-link">浏览全部学术日报 →</a>
         </div>
@@ -565,7 +572,7 @@
           <div class="latest-title">Friday 宏观金融情报</div>
           <div class="latest-date">今日已生成 ${todayReports.length} 份报告</div>
           <div class="section-nav">
-            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period)}</a>`).join('')}
+            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period, r.section)}</a>`).join('')}
           </div>
           <a href="macro-finance/" class="latest-link">浏览全部金融日报 →</a>
         </div>
