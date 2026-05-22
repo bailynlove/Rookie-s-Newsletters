@@ -12,9 +12,9 @@
 每日生成 3 份 HTML 报告，命名规范：
 
 ```
-academic/YYYY-MM-DD/morning.html   # 08:00-09:00 晨间简报
-academic/YYYY-MM-DD/noon.html      # 12:00-18:00 午间论文
-academic/YYYY-MM-DD/evening.html   # 20:00-21:00 晚间趋势
+academic/YYYY-MM-DD/morning.html   # 08:00 晨间简报
+academic/YYYY-MM-DD/noon.html      # 12:00 午间论文
+academic/YYYY-MM-DD/evening.html   # 17:00 晚间趋势
 ```
 
 若目录不存在，自动创建。
@@ -23,11 +23,11 @@ academic/YYYY-MM-DD/evening.html   # 20:00-21:00 晚间趋势
 
 将原来的 7 份报告精简为 3 份：
 
-| 新文件 | 合并来源 |
-|--------|----------|
-| morning.html | 早盘预取(0750) + 晨间简报(0830) |
-| noon.html | 论文专题扫描(1130) + 午间解读(1200) + 傍晚雷达(1730) |
-| evening.html | 晚间趋势(2000) + 夜间维护(2015) |
+| 新文件 | 合并来源 | 时间窗口 |
+|--------|----------|----------|
+| morning.html | 早盘预取(0750) + 晨间简报(0830) | 最近 24 小时 |
+| noon.html | 论文专题扫描(1130) + 午间解读(1200) + 傍晚雷达(1730) | 最近 2 天 + 订阅命中 |
+| evening.html | 晚间趋势(2000) + 夜间维护(2015) | 趋势分析 + radar 更新 |
 
 ### 3. HTML 模板规范
 
@@ -39,7 +39,7 @@ academic/YYYY-MM-DD/evening.html   # 20:00-21:00 晚间趋势
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heimdall 学术日报 — YYYY-MM-DD [morning|noon|evening]</title>
+  <title>Heimdall 学术情报日报 — YYYY-MM-DD [morning|noon|evening]</title>
   <link rel="stylesheet" href="../../assets/css/main.css">
 </head>
 <body>
@@ -74,7 +74,7 @@ academic/YYYY-MM-DD/evening.html   # 20:00-21:00 晚间趋势
   <h3>发现标题</h3>
   <p><strong>来源:</strong> <a href="...">链接</a></p>
   <p><strong>重要性:</strong> 说明为什么值得关注</p>
-  <p><strong>评分:</strong> ★★★★★ (9.2/10)</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.2/10)</p>
   <p><strong>建议路由:</strong> → Jarvis（某评估）</p>
 </div>
 ```
@@ -99,7 +99,7 @@ academic/YYYY-MM-DD/evening.html   # 20:00-21:00 晚间趋势
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "Heimdall 晨间简报",
-  "datePublished": "2026-05-17T08:30:00+08:00",
+  "datePublished": "2026-05-17T08:00:00+08:00",
   "agent": "heimdall",
   "section": "academic",
   "period": "morning",

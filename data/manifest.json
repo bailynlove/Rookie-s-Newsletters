@@ -26,6 +26,18 @@
   ],
   "macro_finance": [
     {
+      "path": "macro-finance/2026-05-22/morning.html",
+      "date": "2026-05-22",
+      "period": "morning",
+      "section": "macro-finance",
+      "keywords": [
+        "美伊局势",
+        "原油暴涨",
+        "A股大跌",
+        "科技股回调"
+      ]
+    },
+    {
       "path": "macro-finance/2026-05-14/a-close.html",
       "date": "2026-05-14",
       "period": "a-close",

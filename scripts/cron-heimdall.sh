@@ -1,5 +1,5 @@
 #!/bin/bash
-# Heimdall 学术日报定时推送脚本
+# Heimdall 学术情报日报定时推送脚本
 # 用法: ./scripts/cron-heimdall.sh <morning|noon|evening>
 
 set -euo pipefail
@@ -14,11 +14,15 @@ TIME_STR=$(date +%H:%M)
 
 # 防止并发冲突：简单的文件锁
 LOCK_FILE="/tmp/heimdall-cron.lock"
-exec 200>"$LOCK_FILE"
-if ! flock -n 200; then
-  echo "[$(date)] Heimdall cron already running, skipping."
-  exit 0
+if [ -f "$LOCK_FILE" ]; then
+  LOCK_PID=$(cat "$LOCK_FILE" 2>/dev/null)
+  if [ -n "$LOCK_PID" ] && kill -0 "$LOCK_PID" 2>/dev/null; then
+    echo "[$(date)] Heimdall cron already running (PID $LOCK_PID), skipping."
+    exit 0
+  fi
+  echo "Stale lock file (PID $LOCK_PID), removing."
 fi
+echo $$ > "$LOCK_FILE"
 
 echo "[$(date)] Starting Heimdall $PERIOD report..."
 
@@ -33,7 +37,7 @@ mkdir -p "academic/$DATE_STR"
 
 # 3. 生成报告
 heimdall chat -Q --max-turns 80 \
-  -q "请阅读 configs/heimdall/html-output-instructions.md，按照规范生成今天的学术日报 HTML 报告。
+  -q "请阅读 configs/heimdall/html-output-instructions.md，按照规范生成今天的学术情报 HTML 报告。
 时段: $PERIOD
 保存路径: academic/$DATE_STR/$PERIOD.html
 内容基于今天的真实数据（GitHub Trending、arXiv、HackerNews），使用 P0/P1/P2 分级，中文撰写。"
