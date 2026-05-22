@@ -26,6 +26,17 @@
   ],
   "macro_finance": [
     {
+      "path": "macro-finance/2026-05-22/15-05-a-close-创业板领涨科技强势.html",
+      "date": "2026-05-22",
+      "period": "a-close",
+      "section": "macro-finance",
+      "keywords": [
+        "创业板领涨+2.84%",
+        "科技板块强势",
+        "港股通净流出-10.57亿"
+      ]
+    },
+    {
       "path": "macro-finance/2026-05-22/noon.html",
       "date": "2026-05-22",
       "period": "noon",
@@ -47,6 +58,18 @@
         "原油暴涨",
         "A股大跌",
         "科技股回调"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-22/a-close.html",
+      "date": "2026-05-22",
+      "period": "a-close",
+      "section": "macro-finance",
+      "keywords": [
+        "创业板大涨2.84%",
+        "PCB CPO科技股领涨",
+        "港股通净流出10.95亿",
+        "美伊局势缓和"
       ]
     },
     {
