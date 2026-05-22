@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T12:31:00.000000",
+  "generated_at": "2026-05-22T18:05:00.000000",
   "academic": [
     {
       "path": "academic/2026-05-21/morning.html",
@@ -25,6 +25,20 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-05-22/2026-05-22-18-05-港股科技股大涨A股强劲原油走高.html",
+      "date": "2026-05-22",
+      "period": "evening",
+      "section": "macro-finance",
+      "keywords": [
+        "港股科技股大涨",
+        "恒生科技+2.11%",
+        "A股创业板+2.84%",
+        "原油走高+2.73%",
+        "伊朗局势缓和",
+        "英伟达财报超预期"
+      ]
+    },
     {
       "path": "macro-finance/2026-05-22/15-05-a-close-创业板领涨科技强势.html",
       "date": "2026-05-22",
