@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-22 午间论文</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文报告",
+    "datePublished": "2026-05-22T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 2,
+    "p1_count": 6,
+    "p2_count": 4,
+    "subscription_hits": ["agent-framework", "self-evolution", "multi-agent"],
+    "github_trending_topics": ["openclaw", "superpowers", "karpathy-skills", "codegraph"],
+    "arxiv_categories": ["cs.AI", "cs.CL", "cs.LG"],
+    "trend_signals": [
+      {"topic": "Agent Self-Evolution", "strength": 5, "direction": "rising"},
+      {"topic": "Linear Attention Architecture", "strength": 4, "direction": "rising"},
+      {"topic": "Multi-Agent Safety", "strength": 4, "direction": "rising"},
+      {"topic": "Formal Proof Automation", "strength": 4, "direction": "stable"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 午间论文报告</h1>
+      <time datetime="2026-05-22T12:00+08:00">2026年05月22日 12:00 CST</time>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- P0 级发现 -->
+    <section class="priority-p0">
+      <h2>🔥 P0 级发现 — 高优先级</h2>
+
+      <div class="discovery-card p0">
+        <h3>MOSS: 自演化代理系统的源级重写框架</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794">arXiv:2605.22794</a></p>
+        <p><strong>领域:</strong> cs.AI, cs.LG</p>
+        <p><strong>作者:</strong> Qianshu Cai, Yonggang Zhang, Yike Guo 等（香港科技大学团队）</p>
+        <p><strong>重要性:</strong> 首次提出 Agent 通过源级代码重写实现自演化。MOSS 框架让 Agent 能够自我修改、自我优化，突破传统 Agent 的固定能力边界。这是 Agent 自进化研究的重大突破，可能改变整个 Agentic 系统的架构范式。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.5/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术架构评估）→ Pepper（论文深度解读）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Gated DeltaNet-2: 解耦线性注意力中的擦除与写入</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22791">arXiv:2605.22791</a></p>
+        <p><strong>领域:</strong> cs.AI</p>
+        <p><strong>作者:</strong> Ali Hatamizadeh, Yejin Choi, Jan Kautz</p>
+        <p><strong>重要性:</strong> Yejin Choi 与 Jan Kautz 团队推出 DeltaNet-2 技术报告。核心创新：解耦线性注意力机制的擦除与写入操作，解决传统线性注意力在长序列处理中的信息丢失问题。对 Transformer 替代架构研究有重要意义，可能影响下一代 LLM 架构设计。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.0/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（架构分析）</p>
+      </div>
+    </section>
+
+    <!-- P1 级发现 -->
+    <section class="priority-p1">
+      <h2>⚡ P1 级发现 — 中高优先级</h2>
+
+      <div class="discovery-card p1">
+        <h3>OpenClaw: 跨平台个人 AI 助理框架</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/openclaw/openclaw">GitHub: openclaw/openclaw</a></p>
+        <p><strong>热度:</strong> ⭐ 373,793 | 今日活跃</p>
+        <p><strong>重要性:</strong> 37 万 star 级项目，定位为"Any OS. Any Platform. The lobster way"的个人 AI 助理框架。强调跨平台兼容性与本地化部署能力，是 OpenCode/Claude Code 生态的重要竞争者。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.8/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>LCGuard: 多代理系统 KV 共享的潜在通信安全防护</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22786">arXiv:2605.22786</a></p>
+        <p><strong>领域:</strong> cs.AI, cs.ET, cs.LG, cs.MA</p>
+        <p><strong>作者:</strong> Sadia Asif, Mohammad Mohammadi Amiri, Karthikeyan Natesan Ramamurthy 等</p>
+        <p><strong>重要性:</strong> IBM Research 团队提出 Multi-Agent 系统中 KV Cache 共享的安全防护机制。解决多 Agent 协作时的信息泄露与通信安全问题，对 Agent 系统的安全性研究有重要参考价值。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.7/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>AI-Driven Formal Proof Search: 数学研究的 AI 辅助形式化证明</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22763">arXiv:2605.22763</a></p>
+        <p><strong>领域:</strong> cs.AI</p>
+        <p><strong>作者:</strong> George Tsoukalas, Anton Kovsharov, Pushmeet Kohli, Swarat Chaudhuri 等（DeepMind 团队）</p>
+        <p><strong>重要性:</strong> DeepMind 团队发布形式化证明搜索系统。该系统可辅助数学研究者发现和验证数学定理，将 AI 能力延伸到纯数学研究领域。首三位作者贡献并列，团队阵容豪华。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.6/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Reducing Political Manipulation: 通过一致性训练降低政治操控</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22771">arXiv:2605.22771</a></p>
+        <p><strong>领域:</strong> cs.CL, cs.AI</p>
+        <p><strong>作者:</strong> Long Phan, Dan Hendrycks 等</p>
+        <p><strong>重要性:</strong> Dan Hendrycks（AI 安全与对齐领域专家）团队研究通过一致性训练降低 LLM 的政治操控风险。对模型对齐、偏见消除、AI 安全部署有重要意义。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.5/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Vector Policy Optimization: 训练多样性提升测试时搜索效果</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22817">arXiv:2605.22817</a></p>
+        <p><strong>领域:</strong> cs.LG, cs.AI, cs.CL, cs.NE</p>
+        <p><strong>作者:</strong> Ryan Bahlous-Boldi, Omar Khattab, Pulkit Agrawal 等</p>
+        <p><strong>重要性:</strong> 提出 Vector Policy Optimization 方法，通过训练策略多样性提升强化学习模型在测试时的搜索能力。涉及 policy diversity、test-time search 等前沿强化学习概念，24 页论文。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.4/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Superpowers: Agentic 技能框架（持续热度）</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/obra/superpowers">GitHub: obra/superpowers</a></p>
+        <p><strong>热度:</strong> ⭐ 201,780</p>
+        <p><strong>重要性:</strong> obra 维护的 Agentic 技能框架，20 万+ star 证明其成熟度与社区认可度。为 AI Agent 提供可复用的技能方法论。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.3/10)</p>
+      </div>
+    </section>
+
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📋 P2 级发现 — 关注级别</h2>
+
+      <div class="discovery-card p2">
+        <h3>Evaluating Commercial AI Chatbots as News Intermediaries</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22785">arXiv:2605.22785</a></p>
+        <p><strong>领域:</strong> cs.CL</p>
+        <p><strong>作者:</strong> Mirac Suzgun, Dan Jurafsky, James Zou 等</p>
+        <p><strong>重要性:</strong> Stanford 团队评估商业 AI 聊天机器人作为新闻中介的角色。涉及 AI 在媒体传播、信息过滤中的应用与风险。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (7.5/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>ChronoMedKG: 时序生物医学知识图谱</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22734">arXiv:2605.22734</a></p>
+        <p><strong>领域:</strong> cs.CL</p>
+        <p><strong>重要性:</strong> 提出时序关联的生物医学知识图谱与临床推理基准。9 页正文 + 附录，数据集已开源。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (7.2/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Andrej Karpathy Skills: Claude Code 行为改进文件</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/multica-ai/andrej-karpathy-skills">GitHub: multica-ai/andrej-karpathy-skills</a></p>
+        <p><strong>热度:</strong> ⭐ 143,655</p>
+        <p><strong>重要性:</strong> 源自 Andrej Karpathy 对 LLM 编码陷阱的观察，单一 CLAUDE.md 文件即可显著改善 Claude Code 编码行为。简洁高效的实践方法。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (7.8/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>CodeGraph: 代码知识图谱（热度持续）</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph">GitHub: colbymchenry/codegraph</a></p>
+        <p><strong>热度:</strong> ⭐ 14,130</p>
+        <p><strong>重要性:</strong> 为 Claude Code、Codex、Cursor、OpenCode 提供预索引代码知识图谱，减少 tokens 与工具调用，100% 本地运行。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (7.6/10)</p>
+      </div>
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📈 趋势分析</h2>
+      <div class="trend-signal">
+        <div class="trend-strength">
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+        </div>
+        <span class="trend-direction rising">上升</span>
+        <span><strong>Agent Self-Evolution</strong> — MOSS 论文首次提出源级重写的自演化框架，可能成为 Agent 架构的新范式</span>
+      </div>
+      <div class="trend-signal">
+        <div class="trend-strength">
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="trend-direction rising">上升</span>
+        <span><strong>Linear Attention Architecture</strong> — DeltaNet-2 解耦擦除/写入，Yejin Choi + Jan Kautz 团队推动线性注意力研究</span>
+      </div>
+      <div class="trend-signal">
+        <div class="trend-strength">
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="trend-direction rising">上升</span>
+        <span><strong>Multi-Agent Safety</strong> — LCGuard 提出 KV 共享安全防护，多 Agent 协作安全研究升温</span>
+      </div>
+      <div class="trend-signal">
+        <div class="trend-strength">
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar active"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="trend-direction stable">稳定</span>
+        <span><strong>Formal Proof Automation</strong> — DeepMind 形式化证明搜索持续推进，AI 辅助数学研究进入新阶段</span>
+      </div>
+    </section>
+
+    <!-- 订阅命中 -->
+    <section class="subscription-hits">
+      <h2>🎯 订阅命中</h2>
+      <div class="subscription-hit">
+        <span class="hit-tag">agent-framework</span>
+        <span>OpenClaw、Superpowers 命中订阅主题</span>
+      </div>
+      <div class="subscription-hit">
+        <span class="hit-tag">self-evolution</span>
+        <span>MOSS 论文首次提出 Agent 自演化概念，新主题命中</span>
+      </div>
+      <div class="subscription-hit">
+        <span class="hit-tag">multi-agent</span>
+        <span>LCGuard、DeltaNet-2 命中多代理系统订阅</span>
+      </div>
+      <div class="subscription-hit">
+        <span class="hit-tag">formal-proof</span>
+        <span>DeepMind 形式化证明搜索命中数学研究订阅</span>
+      </div>
+    </section>
+
+    <!-- 数据表格 -->
+    <section>
+      <h2>📊 arXiv 今日高优先级论文速览</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>论文</th>
+            <th>领域</th>
+            <th>关键作者</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22794">MOSS: 自演化代理系统</a></td>
+            <td>cs.AI, cs.LG</td>
+            <td>Yike Guo</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22791">Gated DeltaNet-2</a></td>
+            <td>cs.AI</td>
+            <td>Yejin Choi, Jan Kautz</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22786">LCGuard: KV 安全防护</a></td>
+            <td>cs.AI, cs.MA</td>
+            <td>IBM Research</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22763">Formal Proof Search</a></td>
+            <td>cs.AI</td>
+            <td>DeepMind</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22771">Political Manipulation</a></td>
+            <td>cs.CL, cs.AI</td>
+            <td>Dan Hendrycks</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22817">Vector Policy Optimization</a></td>
+            <td>cs.LG, cs.AI</td>
+            <td>Pulkit Agrawal</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22785">News Intermediaries</a></td>
+            <td>cs.CL</td>
+            <td>Dan Jurafsky</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22734">ChronoMedKG</a></td>
+            <td>cs.CL</td>
+            <td>—</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- GitHub Trending -->
+    <section>
+      <h2>📊 GitHub AI Agent 项目热度</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>总 Stars</th>
+            <th>描述</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></td>
+            <td>373,793</td>
+            <td>跨平台个人 AI 助理</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td>
+            <td>201,780</td>
+            <td>Agentic 技能框架</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/multica-ai/andrej-karpathy-skills">andrej-karpathy-skills</a></td>
+            <td>143,655</td>
+            <td>Karpathy 编码技巧</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/colbymchenry/codegraph">colbymchenry/codegraph</a></td>
+            <td>14,130</td>
+            <td>代码知识图谱</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 待处理事项 -->
+    <section class="action-items">
+      <h2>✅ 建议行动</h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="action1">
+          <label for="action1">深入阅读 MOSS 论文，评估自演化 Agent 框架的技术可行性</label>
+        </li>
+        <li>
+          <input type="checkbox" id="action2">
+          <label for="action2">研究 DeltaNet-2 的线性注意力解耦机制，关注其对 Transformer 替代架构的影响</label>
+        </li>
+        <li>
+          <input type="checkbox" id="action3">
+          <label for="action3">评估 OpenClaw 与现有 Claude Code/OpenCode 生态的竞争关系</label>
+        </li>
+        <li>
+          <input type="checkbox" id="action4">
+          <label for="action4">关注 DeepMind 形式化证明搜索在数学研究中的应用前景</label>
+        </li>
+        <li>
+          <input type="checkbox" id="action5">
+          <label for="action5">跟踪 Dan Hendrycks 的政治操控降低研究，评估对模型对齐的实践意义</label>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 搜索困难与报错 -->
+    <details>
+      <summary>🔍 本次搜索的困难与报错</summary>
+      <div class="collapse-content expanded">
+        <ul>
+          <li>arXiv API 302 重定向，需使用 export.arxiv.org 端点（已通过浏览器访问解决）</li>
+          <li>HuggingFace trending API 超时（30s timeout），跳过 HF 模型检索</li>
+          <li>GitHub API 速率限制，部分仓库信息通过缓存获取</li>
+          <li>本地 prefetch scripts 未部署，采用直接 API + 浏览器访问作为 fallback</li>
+        </ul>
+        <p><strong>结论:</strong> 主要数据源（arXiv cs.AI/cs.CL/cs.LG、GitHub trending）检索成功，HF 模型数据缺失。</p>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+</body>
+</html>
