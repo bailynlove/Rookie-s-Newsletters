@@ -66,6 +66,31 @@ macro-finance/YYYY-MM-DD/us-premarket.html # 美股盘前宏观凝视
 </div>
 ```
 
+### 样式规则（重要）
+
+**全局 CSS 禁止修改** — `assets/css/main.css` 是 dashboard 首页和所有报告共享的样式文件。
+- ❌ **绝对不要**读取、修改或重写 `assets/css/main.css`
+- ✅ 你的 HTML 中只需要 `<link rel="stylesheet" href="../../assets/css/main.css">` 引用它
+- ✅ 如果需要当前报告独有的视觉效果（如突发利空的高亮边框、特殊数据展示），在 `<head>` 中内联 `<style>` 标签实现
+
+**内联样式示例**（仅影响当前报告）：
+```html
+<head>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    /* 当前报告独有的样式，如突发利空警示效果 */
+    .breaking-alert {
+      border: 2px solid var(--accent-danger);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(207, 34, 46, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(207, 34, 46, 0); }
+    }
+  </style>
+</head>
+```
+
 语义化标签规范：
 - `<section class="macro-factors">` — L1-L4 宏观因子（每个因子用 discovery-card）
 - `<table class="data-table">` — 指数数据、板块涨跌、资金流向表格

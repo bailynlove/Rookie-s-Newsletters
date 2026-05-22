@@ -31,6 +31,18 @@
 - Dashboard homepage is `index.html`
 - Styles are in `assets/css/main.css`
 
+## CSS Architecture
+
+**统一框架 + 单页内联样式**（Unified Framework + Per-Page Inline Styles）：
+
+- `assets/css/main.css` 是全局共享样式，供 dashboard 首页和所有报告使用
+- **Agent 禁止读取、修改或重写 `assets/css/main.css`**
+- Agent 生成的 HTML 通过 `<link rel="stylesheet" href="../../assets/css/main.css">` 引用全局样式
+- Agent 可以在单个 HTML 文件的 `<head>` 中内联 `<style>` 标签，实现当前报告独有的视觉效果（如突发新闻闪烁边框、特殊数据展示）
+- 内联样式只影响当前报告，不影响 dashboard 首页和其他报告
+
+这条规则的存在是因为：agent 一旦被允许读取全局 CSS，会将其"优化"为仅满足当前需求的样式，从而破坏 dashboard 的所有可视化组件（日历热力图、Sparkline、风险矩阵、主题切换等）。历史教训见 Issue #3。
+
 ## Privacy Rules
 
 Friday's HTML outputs **must not** contain:
