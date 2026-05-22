@@ -7,15 +7,31 @@
 
 ## 输出规则
 
-### 1. 文件路径
+### 1. 文件路径与命名
 
 每日生成 3 份 HTML 报告，命名规范：
 
 ```
-academic/YYYY-MM-DD/morning.html   # 08:00 晨间简报
-academic/YYYY-MM-DD/noon.html      # 12:00 午间论文
-academic/YYYY-MM-DD/evening.html   # 17:00 晚间趋势
+academic/YYYY-MM-DD-HH-mm-keywords.html
 ```
+
+**命名规则：**
+- `YYYY-MM-DD`：日期
+- `HH-mm`：生成时间（08-00 / 12-00 / 17-00）
+- `keywords`：3-5 个关键词，用连字符连接，一眼能看出文件核心内容
+
+**示例：**
+```
+academic/2026-05-22-12-00-agent-mcp-arxiv-rust.html    # 午间：Agent框架、MCP生态、arXiv论文、Rust趋势
+academic/2026-05-22-08-00-github-model-release.html    # 晨间：GitHub热门、模型发布
+academic/2026-05-22-17-00-trend-radar-review.html      # 晚间：趋势分析、雷达更新、P0回顾
+```
+
+**关键词选择原则：**
+- 从本报告 P0/P1 发现中提取最高频/最重要的主题词
+- 优先选择技术领域词（agent、mcp、rust）而非泛词（news、update）
+- 3-5 个词，按重要性排序
+- 全小写，连字符分隔
 
 若目录不存在，自动创建。
 
