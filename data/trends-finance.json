@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T16:54:00.259313",
+  "generated_at": "2026-05-23T18:10:28.298257",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -289,7 +289,7 @@
   "risk_distribution": [
     {
       "level": "unknown",
-      "count": 6
+      "count": 7
     },
     {
       "level": "medium",
