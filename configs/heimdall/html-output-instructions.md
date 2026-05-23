@@ -58,6 +58,7 @@ academic/2026-05-22/17-00-trend-radar-review.html      # 晚间：趋势分析�
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Heimdall 学术情报日报 — YYYY-MM-DD [morning|noon|evening]</title>
   <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
 </head>
 <body>
   <header class="report-header">

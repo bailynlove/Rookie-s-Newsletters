@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/main.css?v=2">
 </head>
 <body>
+  <div class="auth-bar" id="auth-bar"></div>
   <button class="theme-toggle" id="themeToggle" title="切换主题">🌙</button>
 
   <header class="site-header">
@@ -24,6 +25,7 @@
     <div class="tab-nav">
       <button class="tab-btn active" data-tab="academic">📚 学术情报</button>
       <button class="tab-btn finance-tab" data-tab="finance">💹 宏观金融</button>
+      <button class="tab-btn" data-tab="bookmarks">⭐ 收藏</button>
     </div>
 
     <!-- Academic Panel -->
@@ -36,6 +38,13 @@
     <!-- Finance Panel -->
     <div class="tab-panel" id="finance-panel">
       <div id="finance-content">
+        <div class="loading">加载中...</div>
+      </div>
+    </div>
+
+    <!-- Bookmarks Panel -->
+    <div class="tab-panel" id="bookmarks-panel">
+      <div id="bookmarks-content">
         <div class="loading">加载中...</div>
       </div>
     </div>
@@ -646,6 +655,37 @@
         document.querySelectorAll('.has-tooltip:focus, .has-tooltip-left:focus').forEach(el => el.blur());
       }
     }, { passive: true });
+  </script>
+
+  <!-- Auth Modal -->
+  <div class="auth-modal" id="auth-modal" onclick="if(event.target===this)window.__authCloseModal()">
+    <div class="auth-modal-content" style="position:relative;">
+      <button class="auth-close" onclick="window.__authCloseModal()">×</button>
+      <h3>登录</h3>
+      <form onsubmit="window.__authSubmit(event)">
+        <input type="email" id="auth-email" placeholder="邮箱" required>
+        <input type="password" id="auth-password" placeholder="密码" required>
+        <div class="auth-error" id="auth-error"></div>
+        <button type="submit" class="auth-submit">登录</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Supabase modules -->
+  <script type="module">
+    import { initAuth } from './assets/js/auth.js';
+    import { renderBookmarksPage } from './assets/js/bookmarks.js';
+
+    // Init auth on load
+    await initAuth();
+
+    // Wire bookmarks tab
+    const bookmarksTab = document.querySelector('[data-tab="bookmarks"]');
+    if (bookmarksTab) {
+      bookmarksTab.addEventListener('click', () => {
+        renderBookmarksPage('bookmarks-content');
+      });
+    }
   </script>
 </body>
 </html>

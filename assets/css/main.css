@@ -1140,3 +1140,233 @@ a:hover { opacity: 0.8; }
 .has-tooltip-left:focus::before {
   opacity: 1;
 }
+
+/* === Bookmark Button on Discovery Cards === */
+.bookmark-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s, transform 0.15s;
+  z-index: 10;
+  padding: 4px;
+  line-height: 1;
+}
+.bookmark-btn:hover {
+  transform: scale(1.2);
+  color: var(--accent-warning);
+}
+.bookmark-btn.active {
+  color: var(--accent-warning);
+}
+
+/* === Auth Bar === */
+.auth-bar {
+  position: fixed;
+  top: 12px;
+  right: 60px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.auth-btn {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.auth-btn:hover {
+  border-color: var(--accent-academic);
+  color: var(--accent-academic);
+}
+.auth-user {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === Auth Modal === */
+.auth-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+.auth-modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: var(--shadow-hover);
+}
+.auth-modal-content h3 {
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+}
+.auth-modal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+}
+.auth-modal-content input:focus {
+  outline: none;
+  border-color: var(--accent-academic);
+}
+.auth-modal-content .auth-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent-academic);
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.auth-modal-content .auth-submit:hover {
+  opacity: 0.9;
+}
+.auth-modal-content .auth-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.auth-error {
+  color: var(--accent-danger);
+  font-size: 0.8125rem;
+  margin-bottom: 8px;
+  min-height: 1.2em;
+}
+
+/* === Bookmarks Page === */
+.bookmarks-page {
+  padding: 8px 0;
+}
+.bookmark-tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+.bookmark-tag-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bookmark-tag-btn:hover {
+  border-color: var(--accent-academic);
+  color: var(--accent-academic);
+}
+.bookmark-tag-btn.active {
+  background: var(--accent-academic);
+  color: #fff;
+  border-color: var(--accent-academic);
+}
+
+/* === Bookmark Item === */
+.bookmark-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bookmark-item {
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+.bookmark-item:hover {
+  border-color: var(--accent-academic);
+}
+.bookmark-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.bookmark-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1.4;
+}
+.bookmark-title:hover {
+  color: var(--accent-academic);
+  text-decoration: underline;
+}
+.bookmark-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+.bookmark-delete:hover {
+  color: var(--accent-danger);
+}
+.bookmark-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.bookmark-source {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+.bookmark-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bookmark-tag {
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: rgba(9, 105, 218, 0.08);
+  color: var(--accent-academic);
+  font-size: 0.75rem;
+  font-weight: 500;
+}

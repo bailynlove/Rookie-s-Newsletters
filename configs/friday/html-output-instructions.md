@@ -30,6 +30,7 @@ macro-finance/YYYY-MM-DD/us-premarket.html # 美股盘前宏观凝视
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friday 宏观金融日报 — YYYY-MM-DD [morning|a-close|evening|us-premarket]</title>
   <link rel="stylesheet" href="../../assets/css/main.css">
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
 </head>
 <body>
   <header class="report-header">
