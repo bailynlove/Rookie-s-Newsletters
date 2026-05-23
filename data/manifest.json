@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T20:47:44.162757",
+  "generated_at": "2026-05-24T07:38:54.259034",
   "academic": [
     {
       "path": "academic/2026-05-23/08-00-agent-mcp-self-improving.html",
@@ -102,15 +102,14 @@
   ],
   "macro_finance": [
     {
-      "path": "macro-finance/2026-05-23/us-premarket.html",
-      "date": "2026-05-23",
-      "period": "us-premarket",
+      "path": "macro-finance/2026-05-24/morning.html",
+      "date": "2026-05-24",
+      "period": "morning",
       "section": "macro-finance",
       "keywords": [
-        "美股盘前宏观凝视",
-        "美伊谈判突破",
-        "港股通净流出",
-        "A股科技股强势"
+        "美伊核谈判",
+        "原油价格波动",
+        "A股科技板块"
       ]
     },
     {
@@ -120,6 +119,17 @@
       "section": "macro-finance",
       "keywords": [
         "周末宏观展望"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-23/us-premarket.html",
+      "date": "2026-05-23",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美伊谈判",
+        "原油供应",
+        "A股科技股"
       ]
     },
     {
