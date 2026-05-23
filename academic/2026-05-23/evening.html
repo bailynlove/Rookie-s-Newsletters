@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术情报晚报 - 2026-05-23 Evening</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechReport",
+        "name": "学术情报晚报 - 2026-05-23",
+        "datePublished": "2026-05-23T20:00:00+08:00",
+        "author": {"@type": "Organization", "name": "STARK_TOWER Heimdall"},
+        "keywords": ["self-evolution-agent", "claude-code", "mcp", "codegraph", "karpathy-skills"],
+        "reportType": "evening",
+        "priorityDistribution": {"P0": 6, "P1": 6, "P2": 2},
+        "dataSource": ["GitHub Trending", "arXiv cs.AI", "HackerNews"]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f5f5f7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header .meta { opacity: 0.9; font-size: 1.1rem; }
+        .header .emoji { font-size: 3rem; margin-bottom: 15px; }
+        .header .note { background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 8px; margin-top: 15px; font-size: 0.95rem; }
+        
+        .content { padding: 40px; }
+        
+        .section { margin-bottom: 40px; }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e0e0e0;
+        }
+        .section-title.p0 { color: #dc3545; border-color: #dc3545; }
+        .section-title.p1 { color: #fd7e14; border-color: #fd7e14; }
+        .section-title.p2 { color: #20c997; border-color: #20c997; }
+        
+        .discovery-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-left: 5px solid;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .discovery-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .discovery-card.p0 { border-color: #dc3545; }
+        .discovery-card.p1 { border-color: #fd7e14; }
+        .discovery-card.p2 { border-color: #20c997; }
+        
+        .discovery-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        .discovery-card .meta-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .discovery-card .tag {
+            background: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #555;
+        }
+        .discovery-card .tag.source { background: #e3f2fd; color: #1565c0; }
+        .discovery-card .tag.route { background: #f3e5f5; color: #7b1fa2; }
+        .discovery-card .rating {
+            font-size: 1.1rem;
+            color: #ff9800;
+            margin-bottom: 8px;
+        }
+        .discovery-card p { margin-bottom: 8px; color: #444; }
+        .discovery-card a { color: #1976d2; text-decoration: none; }
+        .discovery-card a:hover { text-decoration: underline; }
+        
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        tr:hover { background: #f8f9fa; }
+        td.rating { color: #ff9800; font-weight: 600; }
+        td.route { color: #7b1fa2; }
+        
+        .trend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .trend-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .trend-card .trend-topic { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .trend-card .trend-meta { display: flex; justify-content: space-between; opacity: 0.9; font-size: 0.9rem; }
+        .trend-card .trend-evidence { margin-top: 10px; font-size: 0.85rem; opacity: 0.85; }
+        
+        .radar-section {
+            background: #f8f9fa;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .radar-section h3 { color: #333; margin-bottom: 16px; }
+        .radar-list { list-style: none; }
+        .radar-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .radar-list li:last-child { border-bottom: none; }
+        .radar-list .radar-name { font-weight: 500; }
+        .radar-list .radar-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .badge-p0 { background: #dc3545; color: white; }
+        .badge-p1 { background: #fd7e14; color: white; }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 24px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .footer a { color: #1976d2; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .header { padding: 30px 20px; }
+            .header h1 { font-size: 1.8rem; }
+            .content { padding: 20px; }
+            .trend-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="emoji">🌙</div>
+            <h1>Heimdall 学术情报晚报</h1>
+            <div class="meta">2026年5月23日 20:00 · CST · 晚间趋势分析</div>
+            <div class="note">
+                📊 数据来源: GitHub Trending · arXiv cs.AI · HackerNews<br>
+                🔍 扫描窗口: 最近 24 小时 | 14 项发现
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- P0 Section -->
+            <div class="section">
+                <h2 class="section-title p0">🔥 P0 级发现（6项）— 重大突破 / 突发热点</h2>
+                
+                <div class="discovery-card p0">
+                    <h3>MOSS: Self-Evolution Agent 源级重写系统</h3>
+                    <div class="meta-line">
+                        <span class="tag source">📚 arXiv:2605.22794</span>
+                        <span class="tag route">→ Jarvis</span>
+                        <span class="tag">⭐ 9.5/10</span>
+                    </div>
+                    <div class="rating">★★★★★ (9.5/10)</div>
+                    <p><strong>重要性:</strong> 首个在生产级 Agent 基础设施上实现源级自重写的系统。OpenClaw 四任务基准单周期实现 0.25→0.61 分数跃升，具备非发散证明。</p>
+                    <p><strong>路由建议:</strong> → Jarvis（评估 OpenClaw 基准纳入测试集）</p>
+                </div>
+                
+                <div class="discovery-card p0">
+                    <h3>Microsoft 取消 Claude Code 企业许可证</h3>
+                    <div class="meta-line">
+                        <span class="tag source">💬 HackerNews #42991814</span>
+                        <span class="tag route">→ Banner</span>
+                        <span class="tag">⭐ 9.2/10</span>
+                    </div>
+                    <div class="rating">★★★★★ (9.2/10)</div>
+                    <p><strong>重要性:</strong> Microsoft 开始取消 Claude Code 企业许可证（HN 323 pts, 268 comments）。重大政策变化影响企业 AI 工具链部署策略。</p>
+                    <p><strong>路由建议:</strong> → Banner（评估企业部署策略影响）</p>
+                </div>
+                
+                <div class="discovery-card p0">
+                    <h3>andrej-karpathy-skills</h3>
+                    <div class="meta-line">
+                        <span class="tag source">🐙 GitHub</span>
+                        <span class="tag route">→ Jarvis</span>
+                        <span class="tag">⭐ 148,427 ⭐ (+3,152)</span>
+                    </div>
+                    <div class="rating">★★★★★ (9.0/10)</div>
+                    <p><strong>重要性:</strong> 基于 Andrej Karpathy LLM 编码陷阱观察的 Claude Code 行为改进技能文件。今日最高涨幅。</p>
+                    <p><strong>路由建议:</strong> → Jarvis（技能文件评估与集成）</p>
+                </div>
+                
+                <div class="discovery-card p0">
+                    <h3>Understand-Anything: 交互式知识图谱</h3>
+                    <div class="meta-line">
+                        <span class="tag source">🐙 GitHub</span>
+                        <span class="tag route">→ Jarvis</span>
+                        <span class="tag">⭐ 19,780 (+2,331)</span>
+                    </div>
+                    <div class="rating">★★★★★ (8.9/10)</div>
+                    <p><strong>重要性:</strong> 将任意代码转换为交互式知识图谱，支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI。</p>
+                    <p><strong>路由建议:</strong> → Jarvis（知识图谱工具对比分析）</p>
+                </div>
+                
+                <div class="discovery-card p0">
+                    <h3>claude-plugins-official: Anthropic 官方插件目录</h3>
+                    <div class="meta-line">
+                        <span class="tag source">🐙 GitHub (Anthropic)</span>
+                        <span class="tag route">→ Banner</span>
+                        <span class="tag">⭐ 25,886 (+2,172)</span>
+                    </div>
+                    <div class="rating">★★★★★ (8.8/10)</div>
+                    <p><strong>重要性:</strong> Anthropic 官方管理的高质量 Claude Code 插件目录，定义 MCP 生态标准。</p>
+                    <p><strong>路由建议:</strong> → Banner（插件生态策略跟踪）</p>
+                </div>
+                
+                <div class="discovery-card p0">
+                    <h3>codegraph: Hermes Agent 代码知识图谱</h3>
+                    <div class="meta-line">
+                        <span class="tag source">🐙 GitHub</span>
+                        <span class="tag route">→ Jarvis</span>
+                        <span class="tag">⭐ 18,014 (+2,434)</span>
+                    </div>
+                    <div class="rating">★★★★★ (8.7/10)</div>
+                    <p><strong>重要性:</strong> 为 Claude Code、Codex、Cursor、OpenCode、<strong>Hermes Agent</strong> 提供预索引代码知识图谱。100% 本地，减少 token 消耗。</p>
+                    <p><strong>路由建议:</strong> → Jarvis（立即测试集成可行性）</p>
+                </div>
+            </div>
+            
+            <!-- P1 Section -->
+            <div class="section">
+                <h2 class="section-title p1">⚡ P1 级发现（6项）— 值得关注</h2>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>发现</th>
+                                <th>来源</th>
+                                <th>评分</th>
+                                <th>路由</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gated DeltaNet-2</strong></td>
+                                <td>arXiv:2605.22791</td>
+                                <td class="rating">★★★★ (7.8)</td>
+                                <td class="route">→ Jarvis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ai-engineering-from-scratch</strong></td>
+                                <td>GitHub</td>
+                                <td class="rating">★★★★ (7.5)</td>
+                                <td class="route">→ Jarvis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Making Deep Learning Go Brrrr</strong></td>
+                                <td>HackerNews</td>
+                                <td class="rating">★★★★ (7.5)</td>
+                                <td class="route">→ Jarvis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LCGuard: Multi-Agent KV</strong></td>
+                                <td>arXiv:2605.22786</td>
+                                <td class="rating">★★★★ (7.2)</td>
+                                <td class="route">→ Jarvis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI-Driven Formal Proof</strong></td>
+                                <td>arXiv:2605.22763</td>
+                                <td class="rating">★★★★ (7.0)</td>
+                                <td class="route">→ Pepper</td>
+                            </tr>
+                            <tr>
+                                <td><strong>chrome-devtools-mcp</strong></td>
+                                <td>GitHub</td>
+                                <td class="rating">★★★★ (7.3)</td>
+                                <td class="route">→ Jarvis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- P2 Section -->
+            <div class="section">
+                <h2 class="section-title p2">📈 P2 级发现（2项）— 观察追踪</h2>
+                
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>发现</th>
+                                <th>来源</th>
+                                <th>评分</th>
+                                <th>路由</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>FinceptTerminal</strong></td>
+                                <td>GitHub</td>
+                                <td class="rating">★★★ (6.0)</td>
+                                <td class="route">→ Banner</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Uganda Refugee Laptop</strong></td>
+                                <td>HackerNews</td>
+                                <td class="rating">★★★ (6.0)</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Trend Signals -->
+            <div class="section">
+                <h2 class="section-title">📈 关键趋势信号</h2>
+                <div class="trend-grid">
+                    <div class="trend-card">
+                        <div class="trend-topic">Self-Evolution Agent</div>
+                        <div class="trend-meta">
+                            <span>强度: ★★★★★</span>
+                            <span>方向: 上升 ↑</span>
+                        </div>
+                        <div class="trend-evidence">证据: MOSS + Ratchet + FlyRoute + Search-E1 四篇论文</div>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-topic">Claude Code 生态</div>
+                        <div class="trend-meta">
+                            <span>强度: ★★★★★</span>
+                            <span>方向: 上升 ↑</span>
+                        </div>
+                        <div class="trend-evidence">证据: andrej-karpathy-skills + claude-plugins-official + codegraph</div>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-topic">MCP 工具链</div>
+                        <div class="trend-meta">
+                            <span>强度: ★★★★</span>
+                            <span>方向: 上升 ↑</span>
+                        </div>
+                        <div class="trend-evidence">证据: chrome-devtools-mcp + claude-plugins-official</div>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-topic">Linear Attention</div>
+                        <div class="trend-meta">
+                            <span>强度: ★★★</span>
+                            <span>方向: 上升 ↑</span>
+                        </div>
+                        <div class="trend-evidence">证据: Gated DeltaNet-2</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tech Radar Candidates -->
+            <div class="section radar-section">
+                <h3>🛠️ Tech Radar 候选写入</h3>
+                <ul class="radar-list">
+                    <li>
+                        <span class="radar-name">andrej-karpathy-skills → "Agent Skills - Karpathy LLM Pitfalls"</span>
+                        <span class="radar-badge badge-p0">P0</span>
+                    </li>
+                    <li>
+                        <span class="radar-name">claude-plugins-official → "MCP Ecosystem - Official Plugins"</span>
+                        <span class="radar-badge badge-p0">P0</span>
+                    </li>
+                    <li>
+                        <span class="radar-name">codegraph → "Agent Tooling - Code Knowledge Graph"</span>
+                        <span class="radar-badge badge-p0">P0</span>
+                    </li>
+                    <li>
+                        <span class="radar-name">MOSS self-evolution → "Agent Architecture - Source-Level Evolution"</span>
+                        <span class="radar-badge badge-p0">P0</span>
+                    </li>
+                    <li>
+                        <span class="radar-name">Microsoft Claude Code License → "Enterprise Policy - License Changes"</span>
+                        <span class="radar-badge badge-p0">P0</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🌙 STARK_TOWER Heimdall Sentinel Report · 2026-05-23 20:00</p>
+            <p><a href="../../index.html">← 返回看板</a></p>
+        </div>
+    </div>
+</body>
+</html>

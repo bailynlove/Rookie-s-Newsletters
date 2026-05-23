@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-23T18:10:28.296417",
+  "generated_at": "2026-05-23T20:47:44.162757",
   "academic": [
     {
       "path": "academic/2026-05-23/08-00-agent-mcp-self-improving.html",
@@ -22,6 +22,13 @@
         "MCP Tool Ecosystem",
         "Code Knowledge Graphs"
       ]
+    },
+    {
+      "path": "academic/2026-05-23/evening.html",
+      "date": "2026-05-23",
+      "period": "evening",
+      "section": "academic",
+      "keywords": []
     },
     {
       "path": "academic/2026-05-23/noon.html",
