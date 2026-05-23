@@ -1,360 +1,69 @@
 {
-  "generated_at": "2026-05-23T17:11:31.005995",
+  "generated_at": "2026-05-23T17:15:00.000000",
   "daily_series": [
-    {
-      "date": "2026-05-17",
-      "p0": 4,
-      "p1": 8,
-      "p2": 5,
-      "total": 17
-    },
-    {
-      "date": "2026-05-21",
-      "p0": 2,
-      "p1": 5,
-      "p2": 8,
-      "total": 15
-    },
-    {
-      "date": "2026-05-22",
-      "p0": 2,
-      "p1": 6,
-      "p2": 8,
-      "total": 16
-    },
-    {
-      "date": "2026-05-23",
-      "p0": 8,
-      "p1": 12,
-      "p2": 6,
-      "total": 26
-    }
+    {"date": "2026-05-17", "p0": 4, "p1": 8, "p2": 5, "total": 17},
+    {"date": "2026-05-21", "p0": 2, "p1": 5, "p2": 8, "total": 15},
+    {"date": "2026-05-22", "p0": 4, "p1": 15, "p2": 13, "total": 32},
+    {"date": "2026-05-23", "p0": 8, "p1": 12, "p2": 6, "total": 26}
   ],
   "calendar_data": [
-    {
-      "date": "2026-05-17",
-      "intensity": 17,
-      "level": 4
-    },
-    {
-      "date": "2026-05-21",
-      "intensity": 15,
-      "level": 3
-    },
-    {
-      "date": "2026-05-22",
-      "intensity": 16,
-      "level": 4
-    },
-    {
-      "date": "2026-05-23",
-      "intensity": 26,
-      "level": 5
-    }
+    {"date": "2026-05-17", "intensity": 17, "level": 2},
+    {"date": "2026-05-21", "intensity": 15, "level": 1},
+    {"date": "2026-05-22", "intensity": 32, "level": 4},
+    {"date": "2026-05-23", "intensity": 26, "level": 5}
   ],
   "sparkline_data": [
-    {
-      "topic": "Agent Skills 生态爆发",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 0
-        },
-        {
-          "date": "2026-05-21",
-          "value": 5
-        },
-        {
-          "date": "2026-05-22",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "topic": "Agent-Native 软件栈",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 5
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-22",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "topic": "Self-Improving Agent",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 5
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-23",
-          "value": 5
-        }
-      ]
-    },
-    {
-      "topic": "MCP 工具链扩展",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 0
-        },
-        {
-          "date": "2026-05-21",
-          "value": 4
-        },
-        {
-          "date": "2026-05-22",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "topic": "LLM 编码方法论",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 0
-        },
-        {
-          "date": "2026-05-21",
-          "value": 4
-        }
-      ]
-    },
-    {
-      "topic": "MCP 生态",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 4
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "topic": "Agent Memory",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 4
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "topic": "Transformer 架构优化",
-      "series": [
-        {
-          "date": "2026-05-22",
-          "value": 3
-        }
-      ]
-    },
-    {
-      "topic": "Code Knowledge Graphs",
-      "series": [
-        {
-          "date": "2026-05-23",
-          "value": 4
-        }
-      ]
-    }
+    {"topic": "Agent Skills 生态爆发", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 5}, {"date": "2026-05-22", "value": 5}, {"date": "2026-05-23", "value": 0}]},
+    {"topic": "Agent-Native 软件栈", "series": [{"date": "2026-05-17", "value": 5}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 4}, {"date": "2026-05-23", "value": 0}]},
+    {"topic": "MCP 工具链扩展", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 4}, {"date": "2026-05-22", "value": 4}, {"date": "2026-05-23", "value": 4}]},
+    {"topic": "Self-Evolving Agents", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 5}, {"date": "2026-05-23", "value": 5}]},
+    {"topic": "Agentic Skills 框架", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 5}, {"date": "2026-05-23", "value": 0}]},
+    {"topic": "Code Knowledge Graph", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 5}, {"date": "2026-05-23", "value": 4}]},
+    {"topic": "Agent Self-Evolution", "series": [{"date": "2026-05-17", "value": 0}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 5}, {"date": "2026-05-23", "value": 5}]},
+    {"topic": "Self-Improving Agent", "series": [{"date": "2026-05-17", "value": 5}, {"date": "2026-05-21", "value": 0}, {"date": "2026-05-22", "value": 0}, {"date": "2026-05-23", "value": 5}]},
+    {"topic": "Claude Code 生态", "series": [{"date": "2026-05-23", "value": 4}]},
+    {"topic": "MCP Tool Ecosystem", "series": [{"date": "2026-05-23", "value": 4}]}
   ],
   "top_topics": [
-    {
-      "topic": "Agent Skills 生态爆发",
-      "count": 5
-    },
-    {
-      "topic": "Agent-Native 软件栈",
-      "count": 5
-    },
-    {
-      "topic": "Self-Improving Agent",
-      "count": 5
-    },
-    {
-      "topic": "MCP 工具链扩展",
-      "count": 4
-    },
-    {
-      "topic": "LLM 编码方法论",
-      "count": 4
-    },
-    {
-      "topic": "MCP 生态",
-      "count": 4
-    },
-    {
-      "topic": "Agent Memory",
-      "count": 4
-    }
+    {"topic": "Agent Skills 生态爆发", "count": 10},
+    {"topic": "Agent-Native 软件栈", "count": 9},
+    {"topic": "MCP 工具链扩展", "count": 8},
+    {"topic": "Self-Evolving Agents", "count": 5},
+    {"topic": "Agentic Skills 框架", "count": 5},
+    {"topic": "Code Knowledge Graph", "count": 5},
+    {"topic": "Agent Self-Evolution", "count": 5},
+    {"topic": "Self-Improving Agent", "count": 5},
+    {"topic": "MCP Tool Ecosystem", "count": 4},
+    {"topic": "Code Knowledge Graphs", "count": 4},
+    {"topic": "Claude Code 生态", "count": 4},
+    {"topic": "Agent Reasoning", "count": 4}
   ],
   "top_categories": [
-    {
-      "category": "cs.AI",
-      "count": 2
-    },
-    {
-      "category": "cs.SE",
-      "count": 2
-    },
-    {
-      "category": "cs.CL",
-      "count": 2
-    },
-    {
-      "category": "cs.LG",
-      "count": 2
-    }
+    {"category": "cs.AI", "count": 6},
+    {"category": "cs.CL", "count": 6},
+    {"category": "cs.LG", "count": 6},
+    {"category": "cs.SE", "count": 3}
   ],
   "top_subscriptions": [
-    {
-      "subscription": "self-improving-agent",
-      "count": 1
-    },
-    {
-      "subscription": "llm-fault-localization",
-      "count": 1
-    },
-    {
-      "subscription": "mcp-tools",
-      "count": 1
-    },
-    {
-      "subscription": "vision-to-code",
-      "count": 1
-    }
+    {"subscription": "agent-framework", "count": 3},
+    {"subscription": "self-improving-agent", "count": 2},
+    {"subscription": "mcp-tools", "count": 2},
+    {"subscription": "codegraph", "count": 2},
+    {"subscription": "skills-system", "count": 1},
+    {"subscription": "self-evolution", "count": 1},
+    {"subscription": "multi-agent", "count": 1},
+    {"subscription": "mcp", "count": 1},
+    {"subscription": "llm-fault-localization", "count": 1},
+    {"subscription": "vision-to-code", "count": 1}
   ],
   "top_github_topics": [
-    {
-      "topic": "mcp",
-      "count": 2
-    },
-    {
-      "topic": "agent-skills",
-      "count": 1
-    },
-    {
-      "topic": "code-knowledge-graph",
-      "count": 1
-    },
-    {
-      "topic": "agent-framework",
-      "count": 1
-    },
-    {
-      "topic": "rust",
-      "count": 1
-    },
-    {
-      "topic": "personal-ai",
-      "count": 1
-    }
-  ],
-  "upset_data": [
-    {
-      "combination": [
-        "llm-fault-localization",
-        "mcp-tools"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "self-improving-agent"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "mcp-tools",
-        "self-improving-agent"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "mcp-tools",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "self-improving-agent",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "mcp-tools",
-        "self-improving-agent"
-      ],
-      "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "mcp-tools",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "self-improving-agent",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "mcp-tools",
-        "self-improving-agent",
-        "vision-to-code"
-      ],
-      "count": 1,
-      "size": 3
-    }
+    {"topic": "mcp", "count": 4},
+    {"topic": "codegraph", "count": 3},
+    {"topic": "superpowers", "count": 3},
+    {"topic": "agent-framework", "count": 2},
+    {"topic": "code-knowledge-graph", "count": 2},
+    {"topic": "cli-anything", "count": 2},
+    {"topic": "claude-code-skills", "count": 1},
+    {"topic": "openclaw", "count": 1}
   ]
 }

@@ -114,8 +114,10 @@ def generate_academic_trends(reports: list[dict]) -> dict:
         daily_counts[date_key]["p2"] += meta.get("p2_count", 0)
         daily_counts[date_key]["total"] += meta.get("p0_count", 0) + meta.get("p1_count", 0) + meta.get("p2_count", 0)
 
-        # Calendar intensity: total papers as intensity
-        calendar_data[date_key] = meta.get("p0_count", 0) + meta.get("p1_count", 0) + meta.get("p2_count", 0)
+        # Calendar intensity should reflect the total volume across all reports for the day.
+        calendar_data[date_key] = calendar_data.get(date_key, 0) + (
+            meta.get("p0_count", 0) + meta.get("p1_count", 0) + meta.get("p2_count", 0)
+        )
 
         for topic in meta.get("github_trending_topics", []):
             github_topics[topic] += 1

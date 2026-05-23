@@ -48,8 +48,11 @@ if [ ! -f "academic/$DATE_STR/$PERIOD.html" ]; then
   exit 1
 fi
 
-# 5. 提交并推送（带重试）
-git add academic/
+# 5. 重建 dashboard 汇总数据
+python3 scripts/build-dashboard.py
+
+# 6. 提交并推送（带重试）
+git add academic/ data/
 git commit -m "auto(heimdall): $PERIOD academic report for $DATE_STR" || true
 
 MAX_RETRIES=3

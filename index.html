@@ -56,6 +56,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/dashboard-visualizations.js"></script>
   <script>
     // === Theme Toggle ===
     const themeToggle = document.getElementById('themeToggle');
@@ -233,34 +234,7 @@
         container.innerHTML = '<p style="color:var(--text-muted);font-size:0.875rem;padding:16px;">数据积累中，跨订阅共振关系将在收集到更多报告后显示。</p>';
         return;
       }
-
-      // Get all unique sources
-      const allSources = [...new Set(data.flatMap(d => d.combination))];
-
-      // Bars (top)
-      const bars = data.map((d, i) => {
-        const h = (d.count / maxCount * 100).toFixed(0);
-        return `<div class="upset-bar" style="height:${h}%" title="${d.combination.join(' + ')}: ${d.count}"><span class="upset-bar-value">${d.count}</span></div>`;
-      }).join('');
-
-      // Dot matrix (bottom)
-      const matrixRows = allSources.map(src => {
-        const dots = data.map(d => {
-          const isActive = d.combination.includes(src);
-          return `<div class="upset-dot ${isActive ? 'active' : ''}"></div>`;
-        }).join('');
-        return `<div class="upset-matrix-row"><span class="upset-matrix-label">${src}</span><div class="upset-dots">${dots}</div></div>`;
-      }).join('');
-
-      container.innerHTML = `
-        <div class="upset-combinations">${bars}</div>
-        <div class="upset-matrix">${matrixRows}</div>
-        <div class="upset-legend">
-          <div class="upset-legend-item"><span class="upset-legend-dot active"></span> 包含该订阅</div>
-          <div class="upset-legend-item"><span class="upset-legend-dot"></span> 不包含</div>
-          <div class="upset-legend-item"><span class="upset-legend-bar"></span> 同时命中该组合的报告数</div>
-        </div>
-      `;
+      container.innerHTML = window.dashboardVisualizations.renderUpSetPlotMarkup(data);
     }
 
     // === Grid Heatmap (Risk Matrix) ===

@@ -49,8 +49,11 @@ if [ ! -f "macro-finance/$DATE_STR/$PERIOD.html" ]; then
   exit 1
 fi
 
-# 5. 提交并推送（带重试）
-git add macro-finance/
+# 5. 重建 dashboard 汇总数据
+python3 scripts/build-dashboard.py
+
+# 6. 提交并推送（带重试）
+git add macro-finance/ data/
 git commit -m "auto(friday): $PERIOD macro-finance report for $DATE_STR" || true
 
 MAX_RETRIES=3

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-21T22:07:31.606868",
+  "generated_at": "2026-05-23T16:54:00.259313",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -23,36 +23,319 @@
           "change": 0.0
         }
       }
+    },
+    {
+      "date": "2026-05-22",
+      "sentiment": 35,
+      "confidence": 0.65,
+      "indices": {
+        "上证综指": {
+          "value": 4112.9,
+          "change": 0.87,
+          "volume": "1.286万亿"
+        },
+        "深证成指": {
+          "value": 15597.3,
+          "change": 2.3,
+          "volume": "1.617万亿"
+        },
+        "创业板指": {
+          "value": 3938.5,
+          "change": 2.84
+        },
+        "科创50": {
+          "value": 1790.77,
+          "change": 1.51
+        },
+        "恒生指数": {
+          "value": 25606.03,
+          "change": 0.86
+        },
+        "道琼斯": {
+          "value": 50621.86,
+          "change": 0.67
+        },
+        "标普500": {
+          "value": 7478.02,
+          "change": 0.43
+        },
+        "纳斯达克": {
+          "value": 26367.95,
+          "change": 0.28
+        },
+        "科创综指": {
+          "value": 2101.72,
+          "change": -4.42
+        }
+      }
+    },
+    {
+      "date": "2026-05-23",
+      "sentiment": 65,
+      "confidence": 0.7,
+      "indices": {
+        "上证综指": {
+          "value": 4112.9,
+          "change": 0.87
+        },
+        "深证成指": {
+          "value": 15597.3,
+          "change": 2.3
+        },
+        "创业板指": {
+          "value": 3938.5,
+          "change": 2.84
+        },
+        "科创综指": {
+          "value": 2148.18,
+          "change": 2.21
+        },
+        "恒生指数": {
+          "value": 25606.03,
+          "change": 0.87
+        }
+      }
     }
   ],
   "calendar_data": [
     {
       "date": "2026-05-14",
       "intensity": 58,
+      "level": 3
+    },
+    {
+      "date": "2026-05-22",
+      "intensity": 72,
       "level": 4
+    },
+    {
+      "date": "2026-05-23",
+      "intensity": 65,
+      "level": 3
     }
   ],
   "risk_grid": [
+    {
+      "category": "A股整体",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "medium"
+        }
+      ]
+    },
+    {
+      "category": "中概股",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "high"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        }
+      ]
+    },
+    {
+      "category": "债市",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "medium-high"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "low"
+        }
+      ]
+    },
+    {
+      "category": "商品",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "medium"
+        }
+      ]
+    },
     {
       "category": "市场",
       "values": [
         {
           "date": "2026-05-14",
           "level": "medium"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "high"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        }
+      ]
+    },
+    {
+      "category": "港股",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "high"
+        }
+      ]
+    },
+    {
+      "category": "科技股",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "medium"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "low"
+        }
+      ]
+    },
+    {
+      "category": "美股",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "low"
+        }
+      ]
+    },
+    {
+      "category": "美股整体",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "medium"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        }
+      ]
+    },
+    {
+      "category": "能源板块",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "high"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
         }
       ]
     }
   ],
   "risk_distribution": [
     {
+      "level": "unknown",
+      "count": 6
+    },
+    {
       "level": "medium",
+      "count": 6
+    },
+    {
+      "level": "high",
+      "count": 4
+    },
+    {
+      "level": "low",
+      "count": 3
+    },
+    {
+      "level": "medium-high",
       "count": 1
     }
   ],
   "top_trend_signals": [
     {
+      "topic": "中东地缘",
+      "count": 5
+    },
+    {
+      "topic": "美伊局势",
+      "count": 5
+    },
+    {
+      "topic": "原油价格",
+      "count": 5
+    },
+    {
       "topic": "美联储政策",
       "count": 5
+    },
+    {
+      "topic": "跨境监管",
+      "count": 4
+    },
+    {
+      "topic": "A股成长股",
+      "count": 4
+    },
+    {
+      "topic": "A股回调",
+      "count": 4
     },
     {
       "topic": "科技股韧性",

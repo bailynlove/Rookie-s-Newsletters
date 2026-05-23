@@ -1,6 +1,64 @@
 {
-  "generated_at": "2026-05-23T17:11:31.007438",
+  "generated_at": "2026-05-23T16:54:00.256269",
   "academic": [
+    {
+      "path": "academic/2026-05-23/08-00-agent-mcp-self-improving.html",
+      "date": "2026-05-23",
+      "period": "08-00-agent-mcp-self-improving",
+      "section": "academic",
+      "keywords": [
+        "Self-Evolving Agents",
+        "MCP Tool Ecosystem",
+        "Code Knowledge Graphs"
+      ]
+    },
+    {
+      "path": "academic/2026-05-23/noon.html",
+      "date": "2026-05-23",
+      "period": "noon",
+      "section": "academic",
+      "keywords": []
+    },
+    {
+      "path": "academic/2026-05-22/12-00-agent-skills-codegraph-reasoning.html",
+      "date": "2026-05-22",
+      "period": "12-00-agent-skills-codegraph-reasoning",
+      "section": "academic",
+      "keywords": [
+        "Agentic Skills 框架",
+        "Code Knowledge Graph",
+        "Claude Code 生态"
+      ]
+    },
+    {
+      "path": "academic/2026-05-22/12-00-moss-selfevolution-deltanet-multiagent.html",
+      "date": "2026-05-22",
+      "period": "12-00-moss-selfevolution-deltanet-multiagent",
+      "section": "academic",
+      "keywords": [
+        "Agent Self-Evolution",
+        "Linear Attention Architecture",
+        "Multi-Agent Safety"
+      ]
+    },
+    {
+      "path": "academic/2026-05-22/17-00-trend-radar-review.html",
+      "date": "2026-05-22",
+      "period": "17-00-trend-radar-review",
+      "section": "academic",
+      "keywords": [
+        "Agent Skills 生态爆发",
+        "MCP 工具链扩展",
+        "Agent-Native 软件栈"
+      ]
+    },
+    {
+      "path": "academic/2026-05-22/evening.html",
+      "date": "2026-05-22",
+      "period": "evening",
+      "section": "academic",
+      "keywords": []
+    },
     {
       "path": "academic/2026-05-21/morning.html",
       "date": "2026-05-21",
@@ -39,43 +97,76 @@
   ],
   "macro_finance": [
     {
-      "path": "macro-finance/2026-05-22/us-premarket.html",
-      "date": "2026-05-22",
-      "period": "us-premarket",
+      "path": "macro-finance/2026-05-23/2026-05-23-10-33-美伊谈判美联储主席航天突破.html",
+      "date": "2026-05-23",
+      "period": "2026-05-23-10-33-美伊谈判美联储主席航天突破",
       "section": "macro-finance",
       "keywords": [
-        "美联储鹰派转向",
-        "沃勒加息表态",
-        "伊朗谈判僵局",
-        "霍尔木兹海峡风险",
-        "原油+1.76%",
-        "美债收益率上行"
+        "周末宏观展望"
       ]
     },
     {
-      "path": "macro-finance/2026-05-22/2026-05-22-18-05-港股科技股大涨A股强劲原油走高.html",
-      "date": "2026-05-22",
-      "period": "evening",
+      "path": "macro-finance/2026-05-23/a-close.html",
+      "date": "2026-05-23",
+      "period": "a-close",
       "section": "macro-finance",
       "keywords": [
-        "港股科技股大涨",
-        "恒生科技+2.11%",
-        "A股创业板+2.84%",
-        "原油走高+2.73%",
-        "伊朗局势缓和",
-        "英伟达财报超预期"
+        "中东地缘",
+        "跨境监管",
+        "A股成长股"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-23/morning.html",
+      "date": "2026-05-23",
+      "period": "morning",
+      "section": "macro-finance",
+      "keywords": [
+        "FRIDAY A股晨报 - 美伊军事威胁升级 沃什就任美联储主席 A股大涨"
       ]
     },
     {
       "path": "macro-finance/2026-05-22/15-05-a-close-创业板领涨科技强势.html",
       "date": "2026-05-22",
-      "period": "a-close",
+      "period": "15-05-a-close-创业板领涨科技强势",
       "section": "macro-finance",
       "keywords": [
-        "创业板领涨+2.84%",
-        "科技板块强势",
-        "港股通净流出-10.57亿"
+        "A股收盘分析"
       ]
+    },
+    {
+      "path": "macro-finance/2026-05-22/2026-05-22-18-05-港股科技股大涨A股强劲原油走高.html",
+      "date": "2026-05-22",
+      "period": "2026-05-22-18-05-港股科技股大涨A股强劲原油走高",
+      "section": "macro-finance",
+      "keywords": [
+        "财经晚报"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-22/2026-05-22-22-00-美股盘前宏观凝视.html",
+      "date": "2026-05-22",
+      "period": "2026-05-22-22-00-美股盘前宏观凝视",
+      "section": "macro-finance",
+      "keywords": [
+        "美股盘前宏观凝视"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-22/us-premarket.html",
+      "date": "2026-05-22",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美股盘前宏观凝视"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-22/a-close.html",
+      "date": "2026-05-22",
+      "period": "a-close",
+      "section": "macro-finance",
+      "keywords": []
     },
     {
       "path": "macro-finance/2026-05-22/noon.html",
@@ -83,10 +174,7 @@
       "period": "noon",
       "section": "macro-finance",
       "keywords": [
-        "A股创业板领涨",
-        "港股恒指走强",
-        "科技股强势",
-        "AI算力产业链"
+        "午间宏观更新"
       ]
     },
     {
@@ -96,21 +184,8 @@
       "section": "macro-finance",
       "keywords": [
         "美伊局势",
-        "原油暴涨",
-        "A股大跌",
-        "科技股回调"
-      ]
-    },
-    {
-      "path": "macro-finance/2026-05-22/a-close.html",
-      "date": "2026-05-22",
-      "period": "a-close",
-      "section": "macro-finance",
-      "keywords": [
-        "创业板大涨2.84%",
-        "PCB CPO科技股领涨",
-        "港股通净流出10.95亿",
-        "美伊局势缓和"
+        "原油价格",
+        "A股回调"
       ]
     },
     {
@@ -122,19 +197,6 @@
         "美联储政策",
         "中美关系",
         "科技股韧性"
-      ]
-    },
-    {
-      "path": "macro-finance/2026-05-23/2026-05-23-10-34-美伊谈判美联储主席航天突破.html",
-      "date": "2026-05-23",
-      "period": "weekend",
-      "section": "macro-finance",
-      "keywords": [
-        "美伊谈判",
-        "美联储主席",
-        "航天突破",
-        "地缘政治",
-        "原油风险"
       ]
     }
   ]
