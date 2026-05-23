@@ -661,6 +661,8 @@ a:hover { opacity: 0.8; }
 /* === UpSet Plot === */
 .upset-container {
   margin-top: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .upset-combinations {
@@ -738,6 +740,44 @@ a:hover { opacity: 0.8; }
 .upset-dot.active {
   background: var(--accent-academic);
   border-color: var(--accent-academic);
+}
+
+.upset-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+.upset-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.upset-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: transparent;
+}
+
+.upset-legend-dot.active {
+  background: var(--accent-academic);
+  border-color: var(--accent-academic);
+}
+
+.upset-legend-bar {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--accent-academic);
+  opacity: 0.8;
 }
 
 /* === Sparkline Array === */

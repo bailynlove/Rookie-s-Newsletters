@@ -255,6 +255,11 @@
       container.innerHTML = `
         <div class="upset-combinations">${bars}</div>
         <div class="upset-matrix">${matrixRows}</div>
+        <div class="upset-legend">
+          <div class="upset-legend-item"><span class="upset-legend-dot active"></span> 包含该订阅</div>
+          <div class="upset-legend-item"><span class="upset-legend-dot"></span> 不包含</div>
+          <div class="upset-legend-item"><span class="upset-legend-bar"></span> 同时命中该组合的报告数</div>
+        </div>
       `;
     }
 
@@ -367,7 +372,7 @@
 
       const latest = reports[0];
       const latestDate = latest.date;
-      const todayReports = reports.filter(r => r.date === latestDate);
+      const todayReports = reports.filter(r => r.date === latestDate).slice(0, 5);
 
       // Topic columns with word cloud toggle
       let topicColumns = '';
