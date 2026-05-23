@@ -102,6 +102,18 @@
   ],
   "macro_finance": [
     {
+      "path": "macro-finance/2026-05-23/us-premarket.html",
+      "date": "2026-05-23",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美股盘前宏观凝视",
+        "美伊谈判突破",
+        "港股通净流出",
+        "A股科技股强势"
+      ]
+    },
+    {
       "path": "macro-finance/2026-05-23/2026-05-23-10-33-美伊谈判美联储主席航天突破.html",
       "date": "2026-05-23",
       "period": "2026-05-23-10-33-美伊谈判美联储主席航天突破",
