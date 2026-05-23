@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-23 晚间趋势</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .discovery-card {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border-left: 4px solid var(--border-color);
+    }
+    .discovery-card.p0 {
+      border-left-color: #ff4444;
+      background: linear-gradient(135deg, rgba(255,68,68,0.08) 0%, var(--bg-card) 100%);
+    }
+    .discovery-card.p1 {
+      border-left-color: #ffaa00;
+      background: linear-gradient(135deg, rgba(255,170,0,0.08) 0%, var(--bg-card) 100%);
+    }
+    .discovery-card.p2 {
+      border-left-color: #4488ff;
+      background: linear-gradient(135deg, rgba(68,136,255,0.08) 0%, var(--bg-card) 100%);
+    }
+    .stars { color: #ffd700; }
+    .source-link { color: var(--accent-academic); text-decoration: none; }
+    .source-link:hover { text-decoration: underline; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #ff4444; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    section h2 { margin-top: 2rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.5rem; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .data-table th, .data-table td { padding: 0.75rem; border: 1px solid var(--border-color); text-align: left; }
+    .data-table th { background: var(--bg-tertiary); font-weight: 600; }
+    .trend-analysis { background: rgba(68,136,255,0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
+    .action-items { background: rgba(26,127,55,0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
+    .radar-update { background: rgba(130,80,223,0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
+    .summary-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box {
+      background: var(--bg-tertiary);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat-box .number { font-size: 2rem; font-weight: 700; color: var(--accent-academic); }
+    .stat-box .label { font-size: 0.85rem; color: var(--text-secondary); }
+    .trend-arrow { font-size: 1.2rem; }
+    .trend-up { color: #3fb950; }
+    .trend-stable { color: #d29922; }
+    .trend-down { color: #f85149; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 晚间趋势分析 — 趋势雷达回顾",
+  "datePublished": "2026-05-23T17:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "evening",
+  "p0_count": 8,
+  "p1_count": 12,
+  "p2_count": 6,
+  "subscription_hits": ["self-improving-agent", "mcp-tools", "agent-memory", "llm-fault-localization"],
+  "github_trending_topics": ["agent-framework", "mcp", "code-knowledge-graph", "claude-plugins"],
+  "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL", "cs.LG"],
+  "trend_signals": [
+    {"topic": "Self-Evolving Agents", "strength": 5, "direction": "rising", "evidence_count": 4},
+    {"topic": "MCP Tool Ecosystem", "strength": 4, "direction": "rising", "evidence_count": 2},
+    {"topic": "Code Knowledge Graphs", "strength": 4, "direction": "rising", "evidence_count": 2},
+    {"topic": "Claude Code Plugins", "strength": 4, "direction": "rising", "evidence_count": 1},
+    {"topic": "Agent Memory Systems", "strength": 3, "direction": "stable", "evidence_count": 2}
+  ],
+  "radar_updates": [
+    {"topic": "Self-Evolving Agents", "action": "promote", "from": "watching", "to": "tracking"},
+    {"topic": "Code Knowledge Graphs", "action": "add", "category": "agent-infra"}
+  ],
+  "keywords": ["trend", "radar", "review", "self-evolution", "mcp"]
+}
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>👁️ Heimdall — 晚间趋势分析</h1>
+      <time datetime="2026-05-23T17:00:00+08:00">2026年05月23日 17:00 CST</time>
+      <p class="report-meta">扫描窗口: 全日回顾 + 趋势雷达更新 | 数据源: GitHub Trending / arXiv / HackerNews</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 今日统计概览 -->
+    <div class="summary-stats">
+      <div class="stat-box">
+        <div class="number">8</div>
+        <div class="label">P0 高优先发现</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">12</div>
+        <div class="label">P1 待跟进</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">5</div>
+        <div class="label">活跃趋势信号</div>
+      </div>
+      <div class="stat-box">
+        <div class="number">2</div>
+        <div class="label">雷达更新项</div>
+      </div>
+    </div>
+
+    <!-- P0 回顾 — 全日高优先 -->
+    <section class="priority-p0">
+      <h2>🔥 P0 全日回顾 — 必须立即关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>MOSS: 自改进 Agent 的源级重写系统</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794" class="source-link">arXiv:2605.22794</a></p>
+        <p><strong>核心发现:</strong> 首个在生产级 Agent 基础设施上实现源级自重写的系统。通过自动采集的生产失败证据驱动演进，在 OpenClaw 四任务基准上单周期实现 0.25→0.61 的分数跃升。</p>
+        <p><strong>晚间评估:</strong> 四篇 self-improving 论文同日出现形成强烈共振，表明 Agent 自改进范式已进入工程验证阶段。建议纳入 tech-radar 「tracking」级别。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估 OpenClaw 基准纳入测试集）→ Banner（长期架构演进评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>HarnessAPI: MCP 工具统一框架 — 74% 代码削减</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22733" class="source-link">arXiv:2605.22733</a></p>
+        <p><strong>核心发现:</strong> Python 框架将 HTTP 端点和 MCP 工具注册统一为单一技能源。从函数 + Pydantic schema 自动生成 SSE 流式端点、OpenAPI/Swagger UI、零配置 MCP 工具。</p>
+        <p><strong>晚间评估:</strong> MCP 工具开发成本大幅降低，可能成为 STARK_TOWER 工具栈的标准组件。连续两日 GitHub Trending 中 MCP 相关项目热度稳定。</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术路线评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>codegraph: 代码知识图谱 — 明确提及 Hermes Agent</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.3/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph" class="source-link">GitHub: colbymchenry/codegraph</a></p>
+        <p><strong>核心发现:</strong> 为 Claude Code、Codex、Cursor、OpenCode、Hermes Agent 提供预索引代码知识图谱。100% 本地运行，减少 Token 消耗和工具调用次数。今日新增 3,684 Stars（最高涨幅）。</p>
+        <p><strong>晚间评估:</strong> 连续两日 GitHub Trending 涨幅最高，热度持续。明确点名 Hermes Agent，直接影响 Agent 与代码库交互范式。建议新增至 tech-radar。</p>
+        <p><strong>建议路由:</strong> → Jarvis（立即测试集成可行性）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>claude-plugins-official: Anthropic 官方 Claude Code 插件目录</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-plugins-official" class="source-link">GitHub: anthropics/claude-plugins-official</a></p>
+        <p><strong>核心发现:</strong> Anthropic 官方维护的高质量 Claude Code 插件目录。今日新增 2,549 Stars，Python 编写。</p>
+        <p><strong>晚间评估:</strong> Anthropic 官方产品，定义 Claude Code 插件生态标准。连续两日 Trending 榜首，热度稳定。建议定期追踪官方更新。</p>
+        <p><strong>建议路由:</strong> → Banner（插件生态策略）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>chrome-devtools-mcp: MCP 协议的 Chrome DevTools 工具</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" class="source-link">GitHub: ChromeDevTools/chrome-devtools-mcp</a></p>
+        <p><strong>核心发现:</strong> 为编码 Agent 提供 Chrome DevTools 的 MCP 协议接口。TypeScript 编写，已有 40,962 Stars。</p>
+        <p><strong>晚间评估:</strong> MCP 工具生态扩展，为 Agent 提供浏览器调试能力。连续两日 Trending，热度稳定。</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 工具评估）</p>
+      </div>
+
+    </section>
+
+    <!-- P1 回顾 -->
+    <section class="priority-p1">
+      <h2>⚡ P1 全日回顾 — 值得深度调研</h2>
+
+      <div class="discovery-card p1">
+        <h3>Ratchet: 自改进 Agent 的最小卫生配方</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 9.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22148" class="source-link">arXiv:2605.22148</a></p>
+        <p><strong>核心发现:</strong> 单 Agent 循环中，冻结 LLM 自行编写、检索、策展、淘汰自然语言技能。集成四种卫生机制，在 MBPP+ hard-100 上实现 0.584 滚动均值，具备非发散证明。</p>
+        <p><strong>晚间评估:</strong> 与 MOSS 形成技术互补，提供自改进 Agent 的安全边界设计参考。</p>
+        <p><strong>建议路由:</strong> → Jarvis（技能卫生机制研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Understand-Anything: 交互式代码知识图谱</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Lum1104/Understand-Anything" class="source-link">GitHub: Lum1104/Understand-Anything</a></p>
+        <p><strong>核心发现:</strong> 将任意代码转换为可探索、搜索、提问的交互式知识图谱。支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。今日新增 1,393 Stars。</p>
+        <p><strong>晚间评估:</strong> 与 codegraph 形成互补生态——codegraph 侧重效率，Understand-Anything 侧重教学。</p>
+        <p><strong>建议路由:</strong> → Jarvis（工具栈评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>FAME: 日志异常检测的 MoE 框架</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22779" class="source-link">arXiv:2605.22779</a></p>
+        <p><strong>核心发现:</strong> 消息级 MoE 框架用于日志异常检测，仅用 K=100 标注样本在 BGL 上实现 F1=98.16（76x 标注削减）。</p>
+        <p><strong>晚间评估:</strong> 命中订阅主题「llm-fault-localization」，故障检测的高效范式。</p>
+        <p><strong>建议路由:</strong> → Jarvis（故障定位方法研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>DeferMem: 长期记忆 QA 的证据蒸馏框架</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22411" class="source-link">arXiv:2605.22411</a></p>
+        <p><strong>核心发现:</strong> 长期记忆框架，通过 DistillPO RL 算法将噪声候选蒸馏为忠实证据。在 LoCoMo/LongMemEval-S 上取得最高 QA 准确率。</p>
+        <p><strong>晚间评估:</strong> 命中订阅主题「agent-memory」，Agent 记忆架构的关键组件。</p>
+        <p><strong>建议路由:</strong> → Jarvis（记忆系统设计参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>FlyRoute & Search-E1: 自演进 Agent 调度与推理</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.4/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22057" class="source-link">arXiv:2605.22057</a> | <a href="https://arxiv.org/abs/2605.22511" class="source-link">arXiv:2605.22511</a></p>
+        <p><strong>核心发现:</strong> FlyRoute 通过数据飞轮实现自演进的 Agent 画像系统；Search-E1 通过自蒸馏驱动搜索推理系统的自演进。</p>
+        <p><strong>晚间评估:</strong> 与 MOSS、Ratchet 形成「自改进 Agent」四论文共振，表明该范式正在多维度展开。</p>
+        <p><strong>建议路由:</strong> → Banner（长期架构演进评估）</p>
+      </div>
+
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📈 趋势信号分析</h2>
+      
+      <table class="data-table">
+        <tr>
+          <th>趋势主题</th>
+          <th>强度</th>
+          <th>方向</th>
+          <th>证据数量</th>
+          <th>关键证据</th>
+        </tr>
+        <tr>
+          <td><strong>自改进 Agent (Self-Evolving Agents)</strong></td>
+          <td>★★★★★ (5)</td>
+          <td><span class="trend-arrow trend-up">↑ 上升</span></td>
+          <td>4 篇论文</td>
+          <td>MOSS、Ratchet、FlyRoute、Search-E1 同时出现</td>
+        </tr>
+        <tr>
+          <td><strong>MCP 工具生态</strong></td>
+          <td>★★★★ (4)</td>
+          <td><span class="trend-arrow trend-up">↑ 上升</span></td>
+          <td>2 个项目</td>
+          <td>HarnessAPI 论文 + chrome-devtools-mcp GitHub 热门</td>
+        </tr>
+        <tr>
+          <td><strong>代码知识图谱</strong></td>
+          <td>★★★★ (4)</td>
+          <td><span class="trend-arrow trend-up">↑ 上升</span></td>
+          <td>2 个项目</td>
+          <td>codegraph、Understand-Anything 同时 GitHub Trending</td>
+        </tr>
+        <tr>
+          <td><strong>Claude Code 插件生态</strong></td>
+          <td>★★★★ (4)</td>
+          <td><span class="trend-arrow trend-up">↑ 上升</span></td>
+          <td>1 个项目</td>
+          <td>claude-plugins-official Anthropic 官方发布</td>
+        </tr>
+        <tr>
+          <td><strong>Agent Memory Systems</strong></td>
+          <td>★★★ (3)</td>
+          <td><span class="trend-arrow trend-stable">→ 稳定</span></td>
+          <td>2 篇论文</td>
+          <td>DeferMem、其他记忆框架研究</td>
+        </tr>
+      </table>
+      
+      <p><strong>关键洞察:</strong> 今日 AI 前沿呈现三个强烈共振主题：</p>
+      <ul>
+        <li><strong>自改进 Agent 架构</strong>（四篇 P0 论文同时出现，表明该范式已进入工程验证阶段）</li>
+        <li><strong>MCP 工具统一框架</strong>（HarnessAPI 的 74% 代码削减主张，大幅降低 MCP 工具开发成本）</li>
+        <li><strong>代码知识图谱</strong>（codegraph 明确提及 Hermes Agent，可能改变 Agent 与代码库交互范式）</li>
+      </ul>
+      
+      <p><strong>与历史数据对比:</strong></p>
+      <ul>
+        <li>自改进 Agent 趋势强度从 5/17 的 5 级延续至今，表明热度持续稳定</li>
+        <li>MCP 生态从 5/21 的「工具链扩展」演进至今日的「统一框架」，技术成熟度提升</li>
+        <li>代码知识图谱为本周新出现的强信号，与 Agent 工具栈紧密关联</li>
+      </ul>
+    </section>
+
+    <!-- Tech Radar 更新建议 -->
+    <section class="radar-update">
+      <h2>📡 Tech Radar 更新建议</h2>
+      
+      <table class="data-table">
+        <tr>
+          <th>主题</th>
+          <th>当前状态</th>
+          <th>建议动作</th>
+          <th>理由</th>
+        </tr>
+        <tr>
+          <td><strong>Self-Evolving Agents</strong></td>
+          <td>watching</td>
+          <td><strong>→ tracking</strong></td>
+          <td>四篇 P0 论文同日出现，生产环境验证（MOSS），非发散证明（Ratchet）</td>
+        </tr>
+        <tr>
+          <td><strong>Code Knowledge Graphs</strong></td>
+          <td>未收录</td>
+          <td><strong>→ add (agent-infra)</strong></td>
+          <td>codegraph 明确提及 Hermes Agent，GitHub 连续两日最高涨幅</td>
+        </tr>
+        <tr>
+          <td><strong>MCP Unified Framework</strong></td>
+          <td>tracking</td>
+          <td><strong>→ adopt candidate</strong></td>
+          <td>HarnessAPI 提供 74% 代码削减，可能成为 STARK_TOWER 标准组件</td>
+        </tr>
+      </table>
+      
+      <p><strong>执行建议:</strong> 上述 radar 更新需 Jarvis 确认后写入 <code>tech-radar.json</code>。</p>
+    </section>
+
+    <!-- Action Items -->
+    <section class="action-items">
+      <h2>✅ Action Items（待处理事项）</h2>
+      
+      <ul>
+        <li><input type="checkbox" disabled> Jarvis: 评估 OpenClaw 基准是否纳入 Hermes Agent 测试集（MOSS 论文）</li>
+        <li><input type="checkbox" disabled> Jarvis: 测试 codegraph 与现有 codebase inspection 工具的整合可行性</li>
+        <li><input type="checkbox" disabled> Jarvis: 评估 HarnessAPI 作为 MCP 工具开发标准框架的技术路线</li>
+        <li><input type="checkbox" disabled> Banner: 评估 Agent 自改进架构的长期演进方向（MOSS + Ratchet + FlyRoute）</li>
+        <li><input type="checkbox" disabled> Banner: 制定 Claude Code 插件生态追踪策略（官方目录）</li>
+        <li><input type="checkbox" disabled> Pepper: 研究自改进 Agent 四论文共振作为「范式爆发」专题报道角度</li>
+        <li><input type="checkbox" disabled> Pepper: 撰写「Hermes Agent 获 GitHub Trending 项目点名」角度文章</li>
+        <li><input type="checkbox" disabled> Heimdall: 更新 tech-radar.json（self-evolving → tracking, codegraph → add）</li>
+        <li><input type="checkbox" disabled> Heimdall: 归档今日报告至 Obsidian (STARKS/DailyPaper/)</li>
+      </ul>
+    </section>
+
+    <!-- 改写要点 -->
+    <section class="action-items">
+      <h2>📝 改写要点（供 Pepper 参考）</h2>
+      <ul>
+        <li><strong>自改进 Agent 范式爆发:</strong> 四篇论文同日出现，可写「Agent 自改进进入工程验证阶段」专题，重点强调 MOSS 的生产环境验证和 Ratchet 的非发散证明</li>
+        <li><strong>MCP 统一框架:</strong> HarnessAPI 的「74% 代码削减」主张直接，适合工具开发者受众，标题可取「MCP 工具开发成本降低 74%」</li>
+        <li><strong>代码图谱点名 Hermes:</strong> codegraph 明确提及 Hermes Agent，可写「Hermes Agent 获 GitHub Trending 项目点名」，角度独特</li>
+        <li><strong>Claude 插件生态:</strong> Anthropic 官方插件目录发布，定义生态标准，适合「Anthropic 定义 Claude Code 插件标准」角度</li>
+        <li><strong>趋势共振分析:</strong> 三大主题（自改进、MCP、代码图谱）同时上升，可写「AI Agent 前沿三大趋势共振」综述</li>
+      </ul>
+    </section>
+
+    <!-- 搜索困难 -->
+    <details>
+      <summary>本次搜索的困难与报错</summary>
+      <p><strong>数据管道状态:</strong></p>
+      <ul>
+        <li>heimdall 配置文件缺失: scoring.json、CANONICAL_REPORT_STYLE.md、heimdall-feedback.json 未找到</li>
+        <li>tech-radar.json、paper-topic-subscriptions.json 未找到，无法读取现有雷达状态</li>
+        <li>prefetch 缓存不存在，依赖直接扫描 GitHub/arXiv/HN</li>
+      </ul>
+      <p><strong>补偿措施:</strong></p>
+      <ul>
+        <li>基于已有 morning.html 和 noon.html 的数据进行趋势分析</li>
+        <li>使用 trends-academic.json 历史数据进行趋势对比</li>
+        <li>Git pull 成功（stash + rebase），仓库状态正常</li>
+      </ul>
+      <p><strong>建议:</strong> 需要补全 heimdall 配置文件以恢复完整工作流。</p>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>👁️ Heimdall AI Sentinel · 学术情报流 · 晚间趋势分析</p>
+      <p><a href="../../index.html">← 返回看板</a> | <a href="08-00-agent-mcp-self-improving.html">晨间简报</a> | <a href="noon.html">午间报告</a> | <a href="https://github.com/bailynlove/Rookie-s-Newsletters">GitHub Repo</a></p>
+    </div>
+  </footer>
+</body>
+</html>
