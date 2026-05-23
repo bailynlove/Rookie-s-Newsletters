@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-23 晨间简报</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .breaking-news {
+      border: 2px solid var(--accent-danger);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(207, 34, 46, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(207, 34, 46, 0); }
+    }
+    .discovery-card {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border-left: 4px solid var(--border-color);
+    }
+    .discovery-card.p0 {
+      border-left-color: #ff4444;
+      background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p1 {
+      border-left-color: #ffaa00;
+      background: linear-gradient(135deg, rgba(255,170,0,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p2 {
+      border-left-color: #4488ff;
+      background: linear-gradient(135deg, rgba(68,136,255,0.1) 0%, var(--card-bg) 100%);
+    }
+    .stars { color: #ffd700; }
+    .source-link { color: var(--accent-primary); text-decoration: none; }
+    .source-link:hover { text-decoration: underline; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #ff4444; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    section h2 { margin-top: 2rem; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .data-table th, .data-table td { padding: 0.75rem; border: 1px solid var(--border-color); }
+    .data-table th { background: var(--header-bg); }
+    .trend-analysis { background: rgba(68,136,255,0.05); padding: 1rem; border-radius: 8px; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 晨间简报 — Agent/MCP/自改进范式",
+  "datePublished": "2026-05-23T08:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "morning",
+  "p0_count": 8,
+  "p1_count": 12,
+  "p2_count": 6,
+  "subscription_hits": ["self-improving-agent", "mcp-tools"],
+  "github_trending_topics": ["agent-framework", "mcp", "code-knowledge-graph"],
+  "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL", "cs.LG"],
+  "trend_signals": [
+    {"topic": "Self-Evolving Agents", "strength": 5, "direction": "rising"},
+    {"topic": "MCP Tool Ecosystem", "strength": 4, "direction": "rising"},
+    {"topic": "Code Knowledge Graphs", "strength": 4, "direction": "rising"},
+    {"topic": "Agent Benchmarks", "strength": 3, "direction": "stable"}
+  ],
+  "keywords": ["agent", "mcp", "self-improving", "codegraph", "claude-plugins"]
+}
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>👁️ Heimdall — 晨间简报</h1>
+      <time datetime="2026-05-23T08:00:00+08:00">2026年05月23日 08:00 CST</time>
+      <p class="report-meta">扫描窗口: 最近 24 小时 | 数据源: GitHub Trending / arXiv / HackerNews</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- P0 级发现 -->
+    <section class="priority-p0">
+      <h2>🔥 P0 级发现 — 必须立即关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>MOSS: 自改进 Agent 的源级重写系统</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794" class="source-link">arXiv:2605.22794</a></p>
+        <p><strong>摘要:</strong> 首个在生产级 Agent 基础设施上实现源级自重写的系统。通过自动采集的生产失败证据驱动演进，在 OpenClaw 四任务基准上单周期实现 0.25→0.61 的分数跃升。</p>
+        <p><strong>为什么重要:</strong> 直接命中订阅主题「self-improving-agent」，展示了 Agent 自改进的可行工程路径，具备生产环境验证。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估 OpenClaw 基准纳入测试集）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>HarnessAPI: MCP 工具统一框架 — 74% 代码削减</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22733" class="source-link">arXiv:2605.22733</a></p>
+        <p><strong>摘要:</strong> Python 框架将 HTTP 端点和 MCP 工具注册统一为单一技能源。从函数 + Pydantic schema 自动生成 SSE 流式端点、OpenAPI/Swagger UI、零配置 MCP 工具。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「mcp-tools」(P0)，大幅降低 MCP 工具开发成本，可能成为 STARK_TOWER 工具栈的标准组件。</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术路线评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Ratchet: 自改进 Agent 的最小卫生配方</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22148" class="source-link">arXiv:2605.22148</a></p>
+        <p><strong>摘要:</strong> 单 Agent 循环中，冻结 LLM 自行编写、检索、策展、淘汰自然语言技能。集成四种卫生机制，在 MBPP+ hard-100 上实现 0.584 滚动均值，具备非发散证明。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「self-improving-agent」，提供了自改进 Agent 的安全边界设计参考。</p>
+        <p><strong>建议路由:</strong> → Jarvis（技能卫生机制研究）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>codegraph: 代码知识图谱 — 明确提及 Hermes Agent</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.3/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph" class="source-link">GitHub: colbymchenry/codegraph</a></p>
+        <p><strong>摘要:</strong> 为 Claude Code、Codex、Cursor、OpenCode、Hermes Agent 提供预索引代码知识图谱。100% 本地运行，减少 Token 消耗和工具调用次数。今日新增 3,684 Stars。</p>
+        <p><strong>为什么重要:</strong> 直接提及 Hermes Agent，代码知识图谱是 Agent 架构的核心基础设施，可能改变 Agent 与代码库的交互范式。</p>
+        <p><strong>建议路由:</strong> → Jarvis（立即测试集成可行性）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>claude-plugins-official: Anthropic 官方 Claude Code 插件目录</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-plugins-official" class="source-link">GitHub: anthropics/claude-plugins-official</a></p>
+        <p><strong>摘要:</strong> Anthropic 官方维护的高质量 Claude Code 插件目录。今日新增 2,549 Stars，Python 编写。</p>
+        <p><strong>为什么重要:</strong> Anthropic 官方产品，定义 Claude Code 插件生态标准，可能影响 Hermes Agent 插件架构设计。</p>
+        <p><strong>建议路由:</strong> → Banner（插件生态策略）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>chrome-devtools-mcp: MCP 协议的 Chrome DevTools 工具</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" class="source-link">GitHub: ChromeDevTools/chrome-devtools-mcp</a></p>
+        <p><strong>摘要:</strong> 为编码 Agent 提供 Chrome DevTools 的 MCP 协议接口。TypeScript 编写，已有 40,962 Stars。</p>
+        <p><strong>为什么重要:</strong> MCP 工具生态扩展，为 Agent 提供浏览器调试能力，命中「mcp」关键词 (+1.2)。</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 工具评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Anthropic Glasswing 项目更新</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://www.anthropic.com/research/glasswing-initial-update" class="source-link">Anthropic Research</a></p>
+        <p><strong>摘要:</strong> Anthropic AI 可解释性/透明度研究项目的初始更新。HN 267 pts，179 comments。</p>
+        <p><strong>为什么重要:</strong> Anthropic 官方研究，直接影响 AI 安全和可信 Agent 架构的设计考量。</p>
+        <p><strong>建议路由:</strong> → Banner（长期战略跟踪）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>oh-my-pi: 终端 AI 编码 Agent</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.7/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/can1357/oh-my-pi" class="source-link">GitHub: can1357/oh-my-pi</a></p>
+        <p><strong>摘要:</strong> 终端 AI 编码 Agent，支持 hash-anchor 编辑、优化工具 harness、LSP、Python、浏览器、子 Agent 等。今日新增 457 Stars。</p>
+        <p><strong>为什么重要:</strong> 命中「agent」关键词 (+0.8)，子 Agent 架构参考。</p>
+        <p><strong>建议路由:</strong> → Jarvis（架构对比分析）</p>
+      </div>
+
+    </section>
+
+    <!-- P1 级发现 -->
+    <section class="priority-p1">
+      <h2>⚡ P1 级发现 — 值得深度调研</h2>
+
+      <div class="discovery-card p1">
+        <h3>FAME: 日志异常检测的 MoE 框架</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22779" class="source-link">arXiv:2605.22779</a></p>
+        <p><strong>摘要:</strong> 消息级 MoE 框架用于日志异常检测，仅用 K=100 标注样本在 BGL 上实现 F1=98.16（76x 标注削减）。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「llm-fault-localization」(P1)，故障检测的高效范式。</p>
+        <p><strong>建议路由:</strong> → Jarvis（故障定位方法研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>DeferMem: 长期记忆 QA 的证据蒸馏框架</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22411" class="source-link">arXiv:2605.22411</a></p>
+        <p><strong>摘要:</strong> 长期记忆框架，通过 DistillPO RL 算法将噪声候选蒸馏为忠实证据。在 LoCoMo/LongMemEval-S 上取得最高 QA 准确率。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「agent-memory」(P1)，Agent 记忆架构的关键组件。</p>
+        <p><strong>建议路由:</strong> → Jarvis（记忆系统设计参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Understand-Anything: 交互式代码知识图谱</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Lum1104/Understand-Anything" class="source-link">GitHub: Lum1104/Understand-Anything</a></p>
+        <p><strong>摘要:</strong> 将任意代码转换为可探索、搜索、提问的交互式知识图谱。支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。今日新增 1,393 Stars。</p>
+        <p><strong>为什么重要:</strong> 代码理解 Agent 工具，与 codegraph 形成技术趋势共振。</p>
+        <p><strong>建议路由:</strong> → Jarvis（工具栈评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>FlyRoute: 数据飞轮驱动的自演进 Agent 调度</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.4/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22057" class="source-link">arXiv:2605.22057</a></p>
+        <p><strong>摘要:</strong> 通过数据飞轮实现自演进的 Agent 画像系统，用于自适应任务路由。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「self-improving-agent」(P0)，Agent 调度演进方案。</p>
+        <p><strong>建议路由:</strong> → Jarvis（任务路由架构研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Search-E1: 自蒸馏驱动的搜索推理自演进</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.3/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22511" class="source-link">arXiv:2605.22511</a></p>
+        <p><strong>摘要:</strong> 自蒸馏方法驱动搜索增强推理系统的自演进。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「self-improving-agent」(P0)，推理能力演进范式。</p>
+        <p><strong>建议路由:</strong> → Jarvis（推理链优化研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>TerminalWorld: Agent 终端任务基准</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22535" class="source-link">arXiv:2605.22535</a></p>
+        <p><strong>摘要:</strong> 真实终端/shell 任务基准，测试 Agent 在命令行环境中的能力。</p>
+        <p><strong>为什么重要:</strong> Agent 基准扩展，Hermes Agent 需验证终端能力。</p>
+        <p><strong>建议路由:</strong> → Jarvis（基准纳入评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Claw AI Lab: 多 Agent 自治研究团队</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22662" class="source-link">arXiv:2605.22662</a></p>
+        <p><strong>摘要:</strong> 自治多 Agent 系统设计为研究团队架构，提供项目页面和代码。</p>
+        <p><strong>为什么重要:</strong> 多 Agent 协作架构参考，命中「agent」关键词 (+0.8)。</p>
+        <p><strong>建议路由:</strong> → Banner（多 Agent 系统设计）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Sibyl-AutoResearch: 自治研究系统的演进 Harness</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22343" class="source-link">arXiv:2605.22343</a></p>
+        <p><strong>摘要:</strong> 论证自治研究系统需要自演进的试错 Harness，而非仅仅是论文生成器。</p>
+        <p><strong>为什么重要:</strong> 命中订阅主题「self-improving-agent」(P0)，研究方向定义。</p>
+        <p><strong>建议路由:</strong> → Pepper（研究方向参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Superset IDE: Agent 时代的 IDE (YC P26)</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.7/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/superset-sh/superset" class="source-link">GitHub: superset-sh/superset</a> | <a href="https://news.ycombinator.com/" class="source-link">HN: Launch HN</a></p>
+        <p><strong>摘要:</strong> YC 创业公司发布的 Agent 专用 IDE。HN 73 pts，86 comments。</p>
+        <p><strong>为什么重要:</strong> Agent 开发工具演进，命中「agent」关键词 (+0.8)。</p>
+        <p><strong>建议路由:</strong> → Banner（工具生态跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Kanbots: 在每张卡片上并行运行 Agent 的 Kanban</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://www.kanbots.dev/" class="source-link">kanbots.dev</a></p>
+        <p><strong>摘要:</strong> 开源 Kanban 桌面应用，在每张卡片上并行运行 Agent。HN 147 pts，87 comments。</p>
+        <p><strong>为什么重要:</strong> Agent 工作流自动化创新应用，命中「agent」关键词 (+0.8)。</p>
+        <p><strong>建议路由:</strong> → Jarvis（工作流 Agent 研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>DeepSeek V4 Pro 价格永久折扣</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://api-docs.deepseek.com/quick_start/pricing" class="source-link">DeepSeek API Docs</a></p>
+        <p><strong>摘要:</strong> DeepSeek 将 V4 Pro 价格折扣永久化。HN 280 pts，165 comments。</p>
+        <p><strong>为什么重要:</strong> LLM 经济学变化，影响模型选型决策。</p>
+        <p><strong>建议路由:</strong> → Banner（成本策略）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>models.dev: AI 模型规格/定价/能力开源数据库</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/anomalyco/models.dev" class="source-link">GitHub: anomalyco/models.dev</a></p>
+        <p><strong>摘要:</strong> AI 模型规格、定价、能力的开源数据库。HN 84 pts。</p>
+        <p><strong>为什么重要:</strong> 模型选型工具，降低信息搜索成本。</p>
+        <p><strong>建议路由:</strong> → Jarvis（模型库维护参考）</p>
+      </div>
+
+    </section>
+
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📊 P2 级发现 — 值得了解</h2>
+
+      <div class="discovery-card p2">
+        <h3>ai-engineering-from-scratch: AI 工程学习资源</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/rohitg00/ai-engineering-from-scratch" class="source-link">GitHub: rohitg00/ai-engineering-from-scratch</a></p>
+        <p><strong>摘要:</strong> AI 工程从头学习资源，今日新增 988 Stars。</p>
+        <p><strong>为什么重要:</strong> AI 工程教育资源，适合新人培训。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>dotnet/skills: .NET Agent 技能仓库</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/dotnet/skills" class="source-link">GitHub: dotnet/skills</a></p>
+        <p><strong>摘要:</strong> 微软官方 .NET/C# Agent 技能仓库。今日新增 389 Stars。</p>
+        <p><strong>为什么重要:</strong> 技能仓库设计参考。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Deno 2.8 发布</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://deno.com/blog/v2.8" class="source-link">Deno Blog</a></p>
+        <p><strong>摘要:</strong> Deno 运行时 2.8 版本发布。HN 292 pts，130 comments。</p>
+        <p><strong>为什么重要:</strong> JavaScript 生态基础设施更新。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Bun 支持受限并弃用声明</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/yt-dlp/yt-dlp/issues/16766" class="source-link">GitHub Issue</a></p>
+        <p><strong>摘要:</strong> yt-dlp 项目宣布 Bun 支持受限并弃用。HN 331 pts，340 comments（最高评论量）。</p>
+        <p><strong>为什么重要:</strong> JavaScript 运行时生态动态，影响工具选型。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Domain-Camouflaged Injection: 多 Agent LLM 安全攻击</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22001" class="source-link">arXiv:2605.22001</a></p>
+        <p><strong>摘要:</strong> 多 Agent LLM 系统中的域伪装注入攻击研究。HN 29 pts。</p>
+        <p><strong>为什么重要:</strong> Agent 安全研究，命中「security」关键词 (+0.7)。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>nn-zero-to-hero: Karpathy 神经网络课程</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/karpathy/nn-zero-to-hero" class="source-link">GitHub: karpathy/nn-zero-to-hero</a></p>
+        <p><strong>摘要:</strong> Andrej Karpathy 的神经网络入门课程。今日新增 159 Stars。</p>
+        <p><strong>为什么重要:</strong> 基础 AI/ML 教育资源。</p>
+      </div>
+
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📈 趋势信号分析</h2>
+      
+      <table class="data-table">
+        <tr>
+          <th>趋势主题</th>
+          <th>强度</th>
+          <th>方向</th>
+          <th>证据来源</th>
+        </tr>
+        <tr>
+          <td><strong>自改进 Agent (Self-Evolving Agents)</strong></td>
+          <td>★★★★★ (5)</td>
+          <td>上升 ↑</td>
+          <td>MOSS、Ratchet、FlyRoute、Search-E1 四篇 P0 论文同时出现</td>
+        </tr>
+        <tr>
+          <td><strong>MCP 工具生态</strong></td>
+          <td>★★★★ (4)</td>
+          <td>上升 ↑</td>
+          <td>HarnessAPI 论文 + chrome-devtools-mcp GitHub 热门</td>
+        </tr>
+        <tr>
+          <td><strong>代码知识图谱</strong></td>
+          <td>★★★★ (4)</td>
+          <td>上升 ↑</td>
+          <td>codegraph、Understand-Anything 同时 GitHub Trending</td>
+        </tr>
+        <tr>
+          <td><strong>Claude Code 插件生态</strong></td>
+          <td>★★★★ (4)</td>
+          <td>上升 ↑</td>
+          <td>claude-plugins-official Anthropic 官方发布</td>
+        </tr>
+        <tr>
+          <td><strong>Agent 基准扩展</strong></td>
+          <td>★★★ (3)</td>
+          <td>稳定 →</td>
+          <td>TerminalWorld、Agentic CLEAR 等基准论文</td>
+        </tr>
+      </table>
+      
+      <p><strong>关键洞察:</strong> 今日 AI 前沿呈现三个共振主题：<strong>自改进 Agent 架构</strong>（四篇 P0 论文）、<strong>MCP 工具统一框架</strong>（HarnessAPI）、<strong>代码知识图谱</strong>（codegraph 明确提及 Hermes Agent）。这些趋势直接关联 STARK_TOWER 技术栈演进方向。</p>
+    </section>
+
+    <!-- 搜索困难 -->
+    <details>
+      <summary>本次搜索的困难与报错</summary>
+      <p>无明显报错，本次检索链路正常。</p>
+      <ul>
+        <li>GitHub Trending: 成功获取 14 个项目</li>
+        <li>HackerNews: 成功获取 30 个故事</li>
+        <li>arXiv: 成功扫描 cs.AI/cs.CL/cs.SE/cs.LG 最近论文</li>
+        <li>数据质量: 所有发现均包含原始来源链接</li>
+      </ul>
+    </details>
+
+    <!-- 改写要点 -->
+    <section class="action-items">
+      <h2>📝 改写要点（供 Pepper 参考）</h2>
+      <ul>
+        <li><strong>自改进 Agent:</strong> 「生产验证 + 非发散证明」成为新范式，MOSS 的 OpenClaw 分数跃升值得单独报道</li>
+        <li><strong>MCP 统一:</strong> HarnessAPI 的「74% 代码削减」主张直接，适合工具开发者受众</li>
+        <li><strong>代码图谱:</strong> codegraph 明确提及 Hermes Agent，可写「Hermes Agent 获 GitHub Trending 项目点名」角度</li>
+        <li><strong>Claude 插件:</strong> Anthropic 官方插件目录发布，定义生态标准，适合生态观察类文章</li>
+        <li><strong>趋势共振:</strong> 四篇 self-improving 论文同日出现，可作为「Agent 自改进范式爆发」专题</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>👁️ Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a> | <a href="https://github.com/bailynlove/Rookie-s-Newsletters">GitHub Repo</a></p>
+    </div>
+  </footer>
+</body>
+</html>
