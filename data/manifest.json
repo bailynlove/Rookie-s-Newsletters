@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T20:47:01.886467",
+  "generated_at": "2026-05-24T22:05:16.480893",
   "academic": [
     {
       "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
@@ -137,6 +137,15 @@
       "section": "macro-finance",
       "keywords": [
         "周度宏观复盘"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-24/us-premarket.html",
+      "date": "2026-05-24",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美股盘前宏观凝视"
       ]
     },
     {
