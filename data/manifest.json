@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-05-24T07:38:54.259034",
+  "generated_at": "2026-05-24T12:47:19.870390",
   "academic": [
+    {
+      "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
+      "date": "2026-05-24",
+      "period": "08-00-karpathy-skills-codegraph-claude-plugins",
+      "section": "academic",
+      "keywords": [
+        "Claude Code Skills 生态",
+        "Code Knowledge Graph",
+        "Self-Evolving Agents"
+      ]
+    },
+    {
+      "path": "academic/2026-05-24/12-00-moss-deltanet-huggingface-medkg.html",
+      "date": "2026-05-24",
+      "period": "12-00-moss-deltanet-huggingface-medkg",
+      "section": "academic",
+      "keywords": [
+        "Self-Evolving Agents",
+        "Linear Attention Architecture",
+        "Multi-Agent Safety"
+      ]
+    },
     {
       "path": "academic/2026-05-23/08-00-agent-mcp-self-improving.html",
       "date": "2026-05-23",
