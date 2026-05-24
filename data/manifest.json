@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T18:30:00.000000",
+  "generated_at": "2026-05-24T20:47:01.886467",
   "academic": [
     {
       "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
@@ -22,6 +22,13 @@
         "Linear Attention Architecture",
         "Multi-Agent Safety"
       ]
+    },
+    {
+      "path": "academic/2026-05-24/evening.html",
+      "date": "2026-05-24",
+      "period": "evening",
+      "section": "academic",
+      "keywords": []
     },
     {
       "path": "academic/2026-05-23/08-00-agent-mcp-self-improving.html",
@@ -123,6 +130,15 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-05-24/18-30-weekly-review.html",
+      "date": "2026-05-24",
+      "period": "18-30-weekly-review",
+      "section": "macro-finance",
+      "keywords": [
+        "周度宏观复盘"
+      ]
+    },
     {
       "path": "macro-finance/2026-05-24/a-close.html",
       "date": "2026-05-24",
@@ -275,18 +291,6 @@
         "美联储政策",
         "中美关系",
         "科技股韧性"
-      ]
-    },
-    {
-      "path": "macro-finance/2026-05-24/18-30-weekly-review.html",
-      "date": "2026-05-24",
-      "period": "18-30-weekly-review",
-      "section": "macro-finance",
-      "keywords": [
-        "美伊谈判转机",
-        "原油暴跌",
-        "科技股领涨",
-        "周度宏观复盘W21"
       ]
     }
   ]

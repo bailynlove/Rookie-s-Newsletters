@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术情报晚间报告 | 2026-05-24</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+            --p0-color: #ff6b6b;
+            --p0-bg: rgba(255, 107, 107, 0.15);
+            --p1-color: #ffa94d;
+            --p1-bg: rgba(255, 169, 77, 0.15);
+            --p2-color: #69db7c;
+            --p2-bg: rgba(105, 219, 124, 0.15);
+            --link-color: #58a6ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header .meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .card.p0 {
+            border-left: 4px solid var(--p0-color);
+            background: linear-gradient(135deg, var(--bg-card), var(--p0-bg));
+        }
+        
+        .card.p1 {
+            border-left: 4px solid var(--p1-color);
+            background: linear-gradient(135deg, var(--bg-card), var(--p1-bg));
+        }
+        
+        .card.p2 {
+            border-left: 4px solid var(--p2-color);
+            background: linear-gradient(135deg, var(--bg-card), var(--p2-bg));
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .priority-badge.p0 {
+            background: var(--p0-color);
+            color: #fff;
+        }
+        
+        .priority-badge.p1 {
+            background: var(--p1-color);
+            color: #fff;
+        }
+        
+        .priority-badge.p2 {
+            background: var(--p2-color);
+            color: #fff;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .card-title a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        .card-title a:hover {
+            text-decoration: underline;
+        }
+        
+        .card-source {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        
+        .card-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .card-relevance {
+            background: var(--bg-secondary);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .card-relevance strong {
+            color: var(--text-primary);
+        }
+        
+        .stats-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .summary-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .summary-box h3 {
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .summary-box ul {
+            list-style: none;
+            color: var(--text-secondary);
+        }
+        
+        .summary-box li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .summary-box li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--link-color);
+        }
+        
+        .keywords {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .keyword-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--link-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--link-color);
+        }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Report",
+        "name": "学术情报晚间报告",
+        "datePublished": "2026-05-24T20:00:00+08:00",
+        "reportType": "evening-trend-analysis",
+        "keywords": ["agent-self-evolution", "linear-attention", "code-knowledge-graph", "claude-plugins", "medical-speech"],
+        "dataSource": ["github-trending", "arxiv", "hackernews"],
+        "findings": [
+            {
+                "id": "gh-1",
+                "source": "github",
+                "title": "MOSS: Self-Evolution through Source-Level Rewriting",
+                "priority": "P0",
+                "score": 9.2,
+                "url": "https://arxiv.org/abs/2605.22794"
+            },
+            {
+                "id": "gh-2",
+                "source": "github",
+                "title": "Understand-Anything / Claude Plugins",
+                "priority": "P1",
+                "score": 7.8,
+                "url": "https://github.com/Lum1104/Understand-Anything"
+            },
+            {
+                "id": "arxiv-1",
+                "source": "arxiv",
+                "title": "Gated DeltaNet-2",
+                "priority": "P1",
+                "score": 7.5,
+                "url": "https://arxiv.org/abs/2605.22791"
+            },
+            {
+                "id": "hn-1",
+                "source": "hackernews",
+                "title": "Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI",
+                "priority": "P2",
+                "score": 5.2,
+                "url": "https://fs.blog/knowledge-project-podcast/greg-brockman/"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <h1>学术情报晚间报告</h1>
+        <div class="meta">
+            <span>2026-05-24 | 晚间趋势分析</span> | 
+            <span>时段: evening</span> |
+            <span>数据源: GitHub Trending + arXiv + HackerNews</span>
+        </div>
+        <div class="keywords">
+            <span class="keyword-tag">agent-self-evolution</span>
+            <span class="keyword-tag">linear-attention</span>
+            <span class="keyword-tag">code-knowledge-graph</span>
+            <span class="keyword-tag">claude-plugins</span>
+            <span class="keyword-tag">medical-speech</span>
+        </div>
+    </header>
+    
+    <div class="summary-box">
+        <h3>摘要</h3>
+        <ul>
+            <li><strong>P0 (需立即关注):</strong> MOSS 自进化 Agent 系统实现源码级重写，突破文本层局限</li>
+            <li><strong>P1 (值得深入追踪):</strong> Claude 插件生态爆发，Gated DeltaNet-2 线性注意力架构改进</li>
+            <li><strong>P2 (值得关注):</strong> OpenAI 内部危机回顾、医疗语音识别突破、代码知识图谱工具链</li>
+            <li><strong>趋势信号:</strong> Agent 自进化能力、Claude 生态工具化、线性注意力架构竞争加剧</li>
+        </ul>
+    </div>
+    
+    <!-- P0 Section -->
+    <section class="section">
+        <h2 class="section-title">
+            <span style="color: var(--p0-color);">P0</span> 需立即关注
+        </h2>
+        <div class="cards-grid">
+            <div class="card p0">
+                <span class="priority-badge p0">P0 ★★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.22794" target="_blank">MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.AI) | 发布: 2026-05-21 | 作者: Qianshu Cai et al.
+                </div>
+                <div class="card-description">
+                    提出源码级自进化Agent系统。突破现有文本层限制（skill files, prompts），实现Turing-complete的确定性演进。通过生产失败证据驱动，经coding-agent CLI重写、临时worker验证、健康探针回滚的完整流水线。在OpenClaw上单周期将4任务平均评分从0.25提升至0.61。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 直接影响Agent系统架构设计思路。源码层进化是文本层的严格超集，能触及routing、hook ordering、state invariants等结构性失败。建议 <strong>Jarvis</strong> 评估是否引入类似机制。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">arXiv ID: 2605.22794</span>
+                    <span class="stat-item">Code: github.com/dav-joy-thon/MOSS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- P1 Section -->
+    <section class="section">
+        <h2 class="section-title">
+            <span style="color: var(--p1-color);">P1</span> 值得深入追踪
+        </h2>
+        <div class="cards-grid">
+            <div class="card p1">
+                <span class="priority-badge p1">P1 ★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://github.com/Lum1104/Understand-Anything" target="_blank">Understand-Anything - 将代码转化为可交互知识图谱</a>
+                </h3>
+                <div class="card-source">
+                    来源: GitHub Trending | 作者: Lum1104 | 语言: TypeScript
+                </div>
+                <div class="card-description">
+                    "Graphs that teach > graphs that impress." 将任意代码转化为可探索、可搜索、可问答的交互式知识图谱。支持 Claude Code, Codex, Cursor, Copilot, Gemini CLI 等多Agent工具链。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 与 colbymchenry/codegraph (2,993 stars today) 形成工具链互补。知识图谱作为Agent上下文注入层，可减少token消耗和tool调用次数。建议评估与现有 codebase-inspection skill 的整合可能性。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">今日新增: 3,987 stars</span>
+                    <span class="stat-item">总star: 23,724</span>
+                    <span class="stat-item">fork: 2,096</span>
+                </div>
+            </div>
+            
+            <div class="card p1">
+                <span class="priority-badge p1">P1 ★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://github.com/anthropics/claude-plugins-official" target="_blank">claude-plugins-official - Anthropic官方插件目录</a>
+                </h3>
+                <div class="card-source">
+                    来源: GitHub Trending | 作者: anthropics | 语言: Python
+                </div>
+                <div class="card-description">
+                    Anthropic官方管理的高质量Claude Code插件目录。与 knowledge-work-plugins (486 stars today) 形成生态矩阵，面向知识工作者和开发者场景。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> Claude生态工具化趋势确认。官方插件目录意味着插件生态进入标准化阶段，值得追踪插件开发规范和最佳实践。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">今日新增: 1,179 stars</span>
+                    <span class="stat-item">总star: 27,016</span>
+                    <span class="stat-item">fork: 2,889</span>
+                </div>
+            </div>
+            
+            <div class="card p1">
+                <span class="priority-badge p1">P1 ★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.22791" target="_blank">Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.AI) | 发布: 2026-05-21 | 作者: Ali Hatamizadeh, Yejin Choi, Jan Kautz (NVIDIA Labs)
+                </div>
+                <div class="card-description">
+                    解耦线性注意力中的erase和write操作。引入channel-wise erase gate (b_t) 和 write gate (w_t)，突破单一scalar gate的限制。1.3B参数在100B FineWeb-Edu tokens上训练，在语言建模、常识推理、检索任务中超越Mamba-2、Gated DeltaNet、KDA、Mamba-3。长上下文RULER needle-in-a-haystack测试表现尤其突出。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 线性注意力架构竞争加剧。NVIDIA Labs出品，技术路线与Mamba-2/KDA形成对比。建议关注是否影响后续模型选型和推理部署策略。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">arXiv ID: 2605.22791</span>
+                    <span class="stat-item">Code: github.com/NVlabs/GatedDeltaNet-2</span>
+                </div>
+            </div>
+            
+            <div class="card p1">
+                <span class="priority-badge p1">P1 ★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.22781" target="_blank">DeltaBox: Millisecond-Level Sandbox Checkpoint/Rollback for AI Agents</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.OS) | 发布: 2026-05-21 | 作者: Yunpeng Dong et al.
+                </div>
+                <div class="card-description">
+                    为LLM Agent提供毫秒级沙箱checkpoint/rollback。通过DeltaState抽象、DeltaFS（change-based filesystem C/R）、DeltaCR（change-based process state C/R）实现增量复制而非全量复制。checkpoint约14ms，rollback约5ms，使Agent能在固定时间预算下探索更多节点。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 直接支持test-time tree search和RL训练中的高频状态探索。与MOSS自进化形成互补——一个解决状态管理效率，一个解决演进机制。建议 <strong>Jarvis</strong> 评估SWE-bench场景下的应用价值。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">arXiv ID: 2605.22781</span>
+                    <span class="stat-item">测试: SWE-bench, RL micro-benchmarks</span>
+                </div>
+            </div>
+            
+            <div class="card p1">
+                <span class="priority-badge p1">P1 ★★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.22817" target="_blank">Vector Policy Optimization: Training for Diversity Improves Test-Time Search</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.LG/AI) | 发布: 2026-05-21 | 作者: Ryan Bahlous-Boldi et al.
+                </div>
+                <div class="card-description">
+                    VPO算法：显式训练policy以预期多样化下游reward function。突破标准scalar reward训练导致的低熵响应分布问题。在pass@k和best@k测试中匹配或超越scalar RL基线，搜索预算越大差距越明显。对于evolutionary search，VPO模型能解锁GRPO模型无法解决的问题。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 随着test-time search标准化，优化多样性可能成为默认post-training目标。与 grpo-rl-training skill 形成技术路线对比。建议追踪在代码生成场景的具体表现。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">arXiv ID: 2605.22817</span>
+                    <span class="stat-item">任务数: 4</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- P2 Section -->
+    <section class="section">
+        <h2 class="section-title">
+            <span style="color: var(--p2-color);">P2</span> 值得关注
+        </h2>
+        <div class="cards-grid">
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://fs.blog/knowledge-project-podcast/greg-brockman/" target="_blank">Greg Brockman: Inside the 72 Hours That Almost Killed OpenAI</a>
+                </h3>
+                <div class="card-source">
+                    来源: HackerNews | pts: 67 | 作者: Farnam Street (fs.blog)
+                </div>
+                <div class="card-description">
+                    Greg Brockman首次公开讲述2023年11月OpenAI危机的72小时内部细节。关于 governance、trust、company-building 的深度对话。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> AI行业治理和危机管理的第一手资料。对理解顶级AI公司的组织结构和决策机制有参考价值。
+                </div>
+            </div>
+            
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.16545" target="_blank">Symphony for Speech-to-Text: Medical-Grade Real-Time Speech Recognition</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.LG/AI/CL) | 发布: 2026-05-15 (updated 2026-05-21) | 作者: Arne Nix et al.
+                </div>
+                <div class="card-description">
+                    医疗级语音识别系统，支持实时流式和批量文件处理。分解为recognition、formatting、contextual correction三阶段。在医疗语音数据集上显著超越SOTA，同时匹配或超越通用场景表现。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 医疗场景的语音识别是一个高价值细分领域。系统已通过production-grade API发布，可作为特定场景ASR选型的候选。
+                </div>
+            </div>
+            
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arxiv.org/abs/2605.22786" target="_blank">LCGuard: Safe KV Sharing in Multi-Agent Systems</a>
+                </h3>
+                <div class="card-source">
+                    来源: arXiv (cs.AI) | 发布: 2026-05-21 | 作者: Sadia Asif et al.
+                </div>
+                <div class="card-description">
+                    多Agent系统中KV缓存共享的安全框架。通过representation-level transformations减少敏感信息泄露。基于对抗性重建定义unsafe cache artifact：若敌意解码器能从中重建敏感输入则不安全。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 多Agent系统中的隐私安全问题开始被系统化研究。对涉及敏感数据的多Agent场景有参考价值。
+                </div>
+            </div>
+            
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://github.com/colbymchenry/codegraph" target="_blank">codegraph - 预索引代码知识图谱</a>
+                </h3>
+                <div class="card-source">
+                    来源: GitHub Trending | 作者: colbymchenry
+                </div>
+                <div class="card-description">
+                    为Claude Code, Codex, Cursor, OpenCode, Hermes Agent提供预索引代码知识图谱。强调 fewer tokens, fewer tool calls, 100% local。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 与 Understand-Anything 形成互补——后者动态生成图谱，前者预索引静态图谱。本地化是关键差异点。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">今日新增: 2,993 stars</span>
+                    <span class="stat-item">总star: 20,953</span>
+                    <span class="stat-item">fork: 1,165</span>
+                </div>
+            </div>
+            
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">andrej-karpathy-skills - Karpathy风格LLM编码技能</a>
+                </h3>
+                <div class="card-source">
+                    来源: GitHub Trending | 作者: multica-ai
+                </div>
+                <div class="card-description">
+                    单一CLAUDE.md文件，基于Andrej Karpathy对LLM编码陷阱的观察，改进Claude Code行为。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 高star项目（150,888），反映社区对LLM编码最佳实践的关注。可作为 skill 开发参考。
+                </div>
+                <div class="stats-row">
+                    <span class="stat-item">今日新增: 2,555 stars</span>
+                    <span class="stat-item">总star: 150,888</span>
+                    <span class="stat-item">fork: 15,481</span>
+                </div>
+            </div>
+            
+            <div class="card p2">
+                <span class="priority-badge p2">P2 ★★★</span>
+                <h3 class="card-title">
+                    <a href="https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/" target="_blank">Microsoft开源最早DOS源码</a>
+                </h3>
+                <div class="card-source">
+                    来源: HackerNews | pts: 308 | 发布: 2026-04-28
+                </div>
+                <div class="card-description">
+                    Microsoft开源迄今发现的最早DOS源码。历史级软件考古发现。
+                </div>
+                <div class="card-relevance">
+                    <strong>为何重要:</strong> 软件历史研究的重要材料。对理解早期操作系统设计有参考价值。
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 改写要点 -->
+    <div class="summary-box">
+        <h3>改写要点（供 Content 参考）</h3>
+        <ul>
+            <li>MOSS源码级自进化：强调"文本层是源码层的子集"，结构性失败无法通过prompt修复</li>
+            <li>Claude插件生态：官方目录 + knowledge-work-plugins 形成标准化趋势</li>
+            <li>Gated DeltaNet-2：NVIDIA Labs出品，线性注意力架构竞争进入新阶段</li>
+            <li>DeltaBox毫秒级C/R：14ms/5ms的数据冲击力强，与MOSS形成Agent基础设施双轴</li>
+            <li>VPO多样性训练：test-time search普及后，多样性可能成为默认目标</li>
+        </ul>
+    </div>
+    
+    <!-- 检索困难 -->
+    <div class="summary-box">
+        <h3>本次搜索的困难与报错</h3>
+        <ul>
+            <li>GitHub API `api.github.com/repos?since=daily` 返回404，改用浏览器直接访问trending页面</li>
+            <li>arXiv HTTP API被安全扫描拦截，改用HTTPS endpoint `export.arxiv.org/api/query`</li>
+            <li>HackerNews API正常，获取topstories列表和具体story详情成功</li>
+            <li>配置文件 `configs/heimdall/html-output-instructions.md` 不存在，基于 skill 中的 HTML Output 规范生成</li>
+            <li>pipeline/CANONICAL_REPORT_STYLE.md、scoring.json 等配置文件不存在于当前工作目录</li>
+        </ul>
+    </div>
+    
+    <footer class="footer">
+        <p>Heimdall 学术情报晚间报告 | 生成时间: 2026-05-24 20:37</p>
+        <p>数据源: GitHub Trending, arXiv (cs.AI/cs.LG/cs.CL), HackerNews Top Stories</p>
+        <p>分级标准: P0 (≥8.5分) / P1 (6.5-8.4分) / P2 (4.5-6.4分)</p>
+    </footer>
+</body>
+</html>
