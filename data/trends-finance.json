@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T15:14:33.190734",
+  "generated_at": "2026-05-24T18:10:08.561173",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -465,7 +465,7 @@
     },
     {
       "level": "unknown",
-      "count": 7
+      "count": 8
     },
     {
       "level": "high",

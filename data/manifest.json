@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T15:14:33.188282",
+  "generated_at": "2026-05-24T18:10:08.558722",
   "academic": [
     {
       "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
@@ -132,6 +132,15 @@
         "A股科技股行情",
         "南向资金流出",
         "美伊谈判"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-24/evening.html",
+      "date": "2026-05-24",
+      "period": "evening",
+      "section": "macro-finance",
+      "keywords": [
+        "财经晚报"
       ]
     },
     {
