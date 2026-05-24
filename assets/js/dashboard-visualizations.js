@@ -119,8 +119,8 @@
       `;
     }).join('');
 
-    const comboList = data.map((item, index) => `
-      <li><span class="upset-combo-index">${index + 1}.</span> ${escapeHtml(item.combination.join(' + '))} <span class="upset-combo-count">(${item.count})</span></li>
+    const comboList = data.map((item) => `
+      <li>${escapeHtml(item.combination.join(' + '))} <span class="upset-combo-count">(${item.count})</span></li>
     `).join('');
 
     return `

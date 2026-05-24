@@ -47,6 +47,14 @@ test('renderLatestReportLinks shows date, time, and topic for each recent report
   assert.match(html, /academic\/2026-05-24\/08-00-karpathy-skills.html/);
 });
 
+test('mobile latest reports render as a readable vertical list', () => {
+  const css = fs.readFileSync(path.join(__dirname, '../assets/css/main.css'), 'utf8');
+
+  assert.match(css, /\.latest-card\s+\.section-nav\s*\.latest-report-list\s*\{[\s\S]*flex-basis:\s*100%;/);
+  assert.match(css, /\.latest-card\s+\.section-nav\s*\.latest-report-link\s*\{[\s\S]*width:\s*100%;/);
+  assert.match(css, /\.latest-report-topic\s*\{[\s\S]*overflow-wrap:\s*anywhere;/);
+});
+
 test('homepage provides a visualization fallback when helper script is unavailable', () => {
   const html = fs.readFileSync(path.join(__dirname, '../index.html'), 'utf8');
 
@@ -64,6 +72,24 @@ test('renderUpSetPlotMarkup wraps the chart and explains how to read each combin
   assert.match(html, /class="upset-container"/);
   assert.match(html, /每一列代表一个订阅组合/);
   assert.match(html, /上方柱形表示该组合出现次数/);
+});
+
+test('renderUpSetPlotMarkup relies on the ordered list marker instead of duplicating numbers', () => {
+  const html = renderUpSetPlotMarkup([
+    { combination: ['agent-framework', 'codegraph'], count: 3 },
+    { combination: ['agent-framework', 'mcp-tools'], count: 2 },
+  ]);
+
+  assert.doesNotMatch(html, /upset-combo-index/);
+  assert.doesNotMatch(html, />\s*1\.\s*<\/span>/);
+});
+
+test('mobile stylesheet keeps upset bars visible inside fixed-height columns', () => {
+  const css = fs.readFileSync(path.join(__dirname, '../assets/css/main.css'), 'utf8');
+
+  assert.match(css, /\.upset-column\s*\{[\s\S]*height:\s*100%;/);
+  assert.match(css, /\.upset-column\s*\{[\s\S]*justify-content:\s*flex-end;/);
+  assert.match(css, /\.upset-bar\s*\{[\s\S]*min-height:\s*6px;/);
 });
 
 test('mobile stylesheet keeps the upset plot contained inside its own scroller', () => {
