@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T12:47:19.872658",
+  "generated_at": "2026-05-24T15:14:33.190734",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -134,8 +134,8 @@
           "change": 1.3
         },
         "恒生指数": {
-          "value": null,
-          "change": null
+          "value": 25606.03,
+          "change": 0.86
         }
       }
     }
@@ -158,8 +158,8 @@
     },
     {
       "date": "2026-05-24",
-      "intensity": 55,
-      "level": 3
+      "intensity": 72,
+      "level": 4
     }
   ],
   "risk_grid": [
@@ -264,7 +264,7 @@
         },
         {
           "date": "2026-05-24",
-          "level": "unknown"
+          "level": "medium"
         }
       ]
     },
@@ -461,7 +461,7 @@
   "risk_distribution": [
     {
       "level": "medium",
-      "count": 9
+      "count": 12
     },
     {
       "level": "unknown",
@@ -473,7 +473,7 @@
     },
     {
       "level": "low",
-      "count": 4
+      "count": 5
     },
     {
       "level": "medium-high",
@@ -482,6 +482,10 @@
     {
       "level": "low-mid",
       "count": 2
+    },
+    {
+      "level": "medium-low",
+      "count": 1
     },
     {
       "level": "mid",
@@ -494,15 +498,19 @@
   ],
   "top_trend_signals": [
     {
+      "topic": "美伊谈判",
+      "count": 9
+    },
+    {
+      "topic": "A股科技股行情",
+      "count": 5
+    },
+    {
       "topic": "美伊核谈判",
       "count": 5
     },
     {
       "topic": "原油价格波动",
-      "count": 5
-    },
-    {
-      "topic": "美伊谈判",
       "count": 5
     },
     {
@@ -527,10 +535,6 @@
     },
     {
       "topic": "原油供应",
-      "count": 4
-    },
-    {
-      "topic": "A股科技股",
       "count": 4
     }
   ]
