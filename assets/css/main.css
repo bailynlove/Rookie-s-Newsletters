@@ -322,6 +322,38 @@ a:hover { opacity: 0.8; }
   flex-wrap: wrap;
 }
 
+.latest-report-list {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.latest-report-link {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+}
+
+.latest-report-link:hover {
+  border-color: var(--border-color);
+  opacity: 1;
+}
+
+.latest-report-meta {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.latest-report-topic {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
 .latest-card .section-nav a {
   padding: 8px 16px;
   border-radius: var(--radius-sm);

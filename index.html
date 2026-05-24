@@ -58,6 +58,28 @@
 
   <script src="assets/js/dashboard-visualizations.js"></script>
   <script>
+    window.dashboardVisualizations = window.dashboardVisualizations || {
+      getLatestReports: (reports, limit = 5) => [...reports].slice(0, limit),
+      renderLatestReportLinks: (reports) => `
+        <div class="latest-report-list">
+          ${reports.map((report) => `
+            <a class="latest-report-link" href="${report.path}">
+              <span class="latest-report-meta">${report.date} · ${report.period || '日报'}</span>
+              <span class="latest-report-topic">${(report.keywords || []).slice(0, 2).join(' · ') || report.period || '未命名主题'}</span>
+            </a>
+          `).join('')}
+        </div>
+      `,
+      renderUpSetPlotMarkup: (data) => `
+        <div class="upset-container">
+          <p class="upset-description">跨订阅共振数据已加载。每一项代表一组共同出现的订阅组合。</p>
+          <ol class="upset-combo-list">
+            ${data.map((item) => `<li>${item.combination.join(' + ')} <span class="upset-combo-count">(${item.count})</span></li>`).join('')}
+          </ol>
+        </div>
+      `,
+    };
+
     // === Theme Toggle ===
     const themeToggle = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -344,9 +366,8 @@
         return;
       }
 
-      const latest = reports[0];
-      const latestDate = latest.date;
-      const todayReports = reports.filter(r => r.date === latestDate).slice(0, 5);
+      const latestReports = window.dashboardVisualizations.getLatestReports(reports, 5);
+      const latestDate = latestReports[0]?.date || reports[0].date;
 
       // Topic columns with word cloud toggle
       let topicColumns = '';
@@ -417,9 +438,9 @@
         <div class="latest-card academic">
           <div class="latest-label">最新日报 · ${latestDate}</div>
           <div class="latest-title">Heimdall 学术情报流</div>
-          <div class="latest-date">今日已生成 ${todayReports.length} 份报告</div>
+          <div class="latest-date">最近 ${latestReports.length} 份报告</div>
           <div class="section-nav">
-            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period, r.section)}</a>`).join('')}
+            ${window.dashboardVisualizations.renderLatestReportLinks(latestReports)}
           </div>
           <a href="academic/" class="latest-link">浏览全部学术日报 →</a>
         </div>
@@ -464,9 +485,8 @@
         return;
       }
 
-      const latest = reports[0];
-      const latestDate = latest.date;
-      const todayReports = reports.filter(r => r.date === latestDate);
+      const latestReports = window.dashboardVisualizations.getLatestReports(reports, 5);
+      const latestDate = latestReports[0]?.date || reports[0].date;
 
       // Index cards
       let indexCards = '';
@@ -558,9 +578,9 @@
         <div class="latest-card finance">
           <div class="latest-label">最新日报 · ${latestDate}</div>
           <div class="latest-title">Friday 宏观金融情报</div>
-          <div class="latest-date">今日已生成 ${todayReports.length} 份报告</div>
+          <div class="latest-date">最近 ${latestReports.length} 份报告</div>
           <div class="section-nav">
-            ${todayReports.map(r => `<a href="${r.path}">${periodLabel(r.period, r.section)}</a>`).join('')}
+            ${window.dashboardVisualizations.renderLatestReportLinks(latestReports)}
           </div>
           <a href="macro-finance/" class="latest-link">浏览全部金融日报 →</a>
         </div>
