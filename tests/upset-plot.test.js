@@ -74,7 +74,7 @@ test('renderUpSetPlotMarkup wraps the chart and explains how to read each combin
   assert.match(html, /上方柱形表示该组合出现次数/);
 });
 
-test('renderUpSetPlotMarkup relies on the ordered list marker instead of duplicating numbers', () => {
+test('renderUpSetPlotMarkup does not duplicate combo numbers in markup', () => {
   const html = renderUpSetPlotMarkup([
     { combination: ['agent-framework', 'codegraph'], count: 3 },
     { combination: ['agent-framework', 'mcp-tools'], count: 2 },
@@ -82,6 +82,14 @@ test('renderUpSetPlotMarkup relies on the ordered list marker instead of duplica
 
   assert.doesNotMatch(html, /upset-combo-index/);
   assert.doesNotMatch(html, />\s*1\.\s*<\/span>/);
+});
+
+test('mobile stylesheet preserves double-digit upset combo numbers', () => {
+  const css = fs.readFileSync(path.join(__dirname, '../assets/css/main.css'), 'utf8');
+
+  assert.match(css, /\.upset-combo-list\s*\{[\s\S]*counter-reset:\s*upset-combo;/);
+  assert.match(css, /\.upset-combo-list\s+li\s*\{[\s\S]*grid-template-columns:\s*2\.5em\s+minmax\(0,\s*1fr\);/);
+  assert.match(css, /\.upset-combo-list\s+li::before\s*\{[\s\S]*content:\s*counter\(upset-combo\)\s+"\.";/);
 });
 
 test('mobile stylesheet keeps upset bars visible inside fixed-height columns', () => {
