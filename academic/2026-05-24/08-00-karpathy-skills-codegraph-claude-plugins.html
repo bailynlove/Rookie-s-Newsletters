@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-24 晨间简报</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .breaking-news {
+      border: 2px solid var(--accent-danger);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(207, 34, 46, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(207, 34, 46, 0); }
+    }
+    .discovery-card {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border-left: 4px solid var(--border-color);
+    }
+    .discovery-card.p0 {
+      border-left-color: #ff4444;
+      background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p1 {
+      border-left-color: #ffaa00;
+      background: linear-gradient(135deg, rgba(255,170,0,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p2 {
+      border-left-color: #4488ff;
+      background: linear-gradient(135deg, rgba(68,136,255,0.1) 0%, var(--card-bg) 100%);
+    }
+    .stars { color: #ffd700; }
+    .source-link { color: var(--accent-primary); text-decoration: none; }
+    .source-link:hover { text-decoration: underline; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #ff4444; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    section h2 { margin-top: 2rem; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .data-table th, .data-table td { padding: 0.75rem; border: 1px solid var(--border-color); }
+    .data-table th { background: var(--header-bg); }
+    .trend-analysis { background: rgba(68,136,255,0.05); padding: 1rem; border-radius: 8px; }
+    .stars-gained { color: #3fb950; font-weight: 600; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 晨间简报 — Karpathy-Skills/Codegraph/Claude-Plugins生态",
+  "datePublished": "2026-05-24T08:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "morning",
+  "p0_count": 5,
+  "p1_count": 6,
+  "p2_count": 3,
+  "subscription_hits": ["self-improving-agent", "mcp-tools", "codegraph"],
+  "github_trending_topics": ["karpathy-skills", "codegraph", "claude-plugins", "mcp"],
+  "arxiv_categories": ["cs.AI", "cs.LG", "cs.MA"],
+  "trend_signals": [
+    {"topic": "Claude Code Skills 生态", "strength": 5, "direction": "rising"},
+    {"topic": "Code Knowledge Graph", "strength": 5, "direction": "rising"},
+    {"topic": "Self-Evolving Agents", "strength": 4, "direction": "stable"},
+    {"topic": "MCP Tool Ecosystem", "strength": 4, "direction": "stable"}
+  ],
+  "keywords": ["karpathy-skills", "codegraph", "claude-plugins", "self-evolution", "mcp"]
+}
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>👁️ Heimdall — 晨间简报</h1>
+      <time datetime="2026-05-24T08:00:00+08:00">2026年05月24日 08:00 CST</time>
+      <p class="report-meta">扫描窗口: 最近 24 小时 | 数据源: GitHub Trending / arXiv / HackerNews</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- P0 级发现 -->
+    <section class="priority-p0">
+      <h2>🔥 P0 级发现 — 必须立即关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>andrej-karpathy-skills: Karpathy LLM 编码洞察的 Claude Code 技能</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/multica-ai/andrej-karpathy-skills" class="source-link">GitHub: multica-ai/andrej-karpathy-skills</a></p>
+        <p><strong>摘要:</strong> 单一 CLAUDE.md 文件，将 Andrej Karpathy 对 LLM 编码陷阱的观察转化为 Claude Code 改进技能。今日新增 <span class="stars-gained">+3,507 Stars</span>，总计 149,581 Stars。</p>
+        <p><strong>为什么重要:</strong> 直接命中「superpowers」「karpathy-skills」关键词，Karpathy 的编码洞察是 LLM Agent 工程的黄金参考，可能成为 STARK_TOWER Skills 系统的核心组件。</p>
+        <p><strong>建议路由:</strong> → Jarvis（立即集成到 Hermes Skills 库）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>codegraph: 代码知识图谱 — 明确支持 Hermes Agent</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.3/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph" class="source-link">GitHub: colbymchenry/codegraph</a></p>
+        <p><strong>摘要:</strong> 为 Claude Code、Codex、Cursor、OpenCode、Hermes Agent 提供预索引代码知识图谱。100% 本地运行，减少 Token 消耗和工具调用次数。今日新增 <span class="stars-gained">+2,456 Stars</span>，总计 19,395 Stars。</p>
+        <p><strong>为什么重要:</strong> 直接提及 Hermes Agent，代码知识图谱是 Agent 架构的核心基础设施，可能改变 Agent 与代码库的交互范式。</p>
+        <p><strong>建议路由:</strong> → Jarvis（立即测试 Hermes Agent 集成可行性）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>claude-plugins-official: Anthropic 官方 Claude Code 插件目录</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-plugins-official" class="source-link">GitHub: anthropics/claude-plugins-official</a></p>
+        <p><strong>摘要:</strong> Anthropic 官方维护的高质量 Claude Code 插件目录。今日新增 <span class="stars-gained">+2,193 Stars</span>，总计 26,412 Stars。</p>
+        <p><strong>为什么重要:</strong> Anthropic 官方产品，定义 Claude Code 插件生态标准，直接影响 Hermes Agent 插件架构设计。命中「claude-plugins」关键词。</p>
+        <p><strong>建议路由:</strong> → Banner（插件生态策略）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Understand-Anything: 交互式代码知识图谱生成器</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Lum1104/Understand-Anything" class="source-link">GitHub: Lum1104/Understand-Anything</a></p>
+        <p><strong>摘要:</strong> 将任意代码转换为可探索、搜索、提问的交互式知识图谱。支持 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等。今日新增 <span class="stars-gained">+2,299 Stars</span>，总计 21,455 Stars。</p>
+        <p><strong>为什么重要:</strong> 与 codegraph 形成技术趋势共振，代码理解 Agent 工具栈正在快速成熟。</p>
+        <p><strong>建议路由:</strong> → Jarvis（工具栈评估，对比 codegraph）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>MOSS: 自改进 Agent 的源级重写系统</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 9.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794" class="source-link">arXiv:2605.22794</a></p>
+        <p><strong>摘要:</strong> 首个在生产级 Agent 基础设施上实现源级自重写的系统。通过自动采集的生产失败证据驱动演进，在 OpenClaw 四任务基准上单周期实现 0.25→0.61 的分数跃升。</p>
+        <p><strong>为什么重要:</strong> 直接命中订阅主题「self-improving-agent」，展示了 Agent 自改进的可行工程路径，具备生产环境验证。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估 OpenClaw 基准纳入测试集）</p>
+      </div>
+
+    </section>
+
+    <!-- P1 级发现 -->
+    <section class="priority-p1">
+      <h2>⚡ P1 级发现 — 值得深度调研</h2>
+
+      <div class="discovery-card p1">
+        <h3>LCGuard: 多 Agent 系统的 KV 共享安全防护</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22786" class="source-link">arXiv:2605.22786</a></p>
+        <p><strong>摘要:</strong> 为多 Agent 系统中的 KV Cache 共享提供潜在通信防护机制，确保安全性和一致性。</p>
+        <p><strong>为什么重要:</strong> 命中「multi-agent」关键词 (+0.8)，多 Agent 协作安全是 STARK_TOWER 多 Agent 架构的关键考量。</p>
+        <p><strong>建议路由:</strong> → Jarvis（多 Agent 安全架构研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Gated DeltaNet-2: 线性注意力的擦写分离架构</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22791" class="source-link">arXiv:2605.22791</a></p>
+        <p><strong>摘要:</strong> 在线性注意力架构中分离擦除和写入操作，提升模型的长序列处理能力。作者包括 Yejin Choi、Jan Kautz。</p>
+        <p><strong>为什么重要:</strong> 线性注意力架构演进，可能影响 Agent 长对话记忆设计。</p>
+        <p><strong>建议路由:</strong> → Banner（架构趋势跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>chrome-devtools-mcp: MCP 协议的 Chrome DevTools 工具</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" class="source-link">GitHub: ChromeDevTools/chrome-devtools-mcp</a></p>
+        <p><strong>摘要:</strong> 为编码 Agent 提供 Chrome DevTools 的 MCP 协议接口。TypeScript 编写，已有 41,322 Stars。</p>
+        <p><strong>为什么重要:</strong> MCP 工具生态扩展，为 Agent 提供浏览器调试能力，命中「mcp」关键词 (+1.2)。</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 工具评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>dotnet/skills: 微软官方 .NET Agent 技能仓库</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/dotnet/skills" class="source-link">GitHub: dotnet/skills</a></p>
+        <p><strong>摘要:</strong> 微软官方维护的 .NET/C# Agent 技能仓库。今日新增 <span class="stars-gained">+266 Stars</span>，总计 2,738 Stars。</p>
+        <p><strong>为什么重要:</strong> 技能系统生态扩展，微软官方投入预示 Agent 技能标准化趋势。</p>
+        <p><strong>建议路由:</strong> → Banner（技能生态跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>.NET C# 终获 Union Types — HN 122 pts</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://andrewlock.net" class="source-link">andrewlock.net</a> | <a href="https://news.ycombinator.com/item?id=44362730" class="source-link">HN Discussion</a></p>
+        <p><strong>摘要:</strong> .NET/C# 终于引入 Union Types，这是类型系统的重大更新。HN 122 pts，98 comments。</p>
+        <p><strong>为什么重要:</strong> 与 dotnet/skills 形成关联，C# 语言演进可能影响 .NET Agent 技能开发体验。</p>
+        <p><strong>建议路由:</strong> → Jarvis（语言特性跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>AI-Driven Formal Proof Search: DeepMind 数学证明系统</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22763" class="source-link">arXiv:2605.22763</a></p>
+        <p><strong>摘要:</strong> DeepMind 发布 AI 驱动的数学形式化证明搜索系统，作者包括 Aja Huang、Pushmeet Kohli 等。</p>
+        <p><strong>为什么重要:</strong> DeepMind 数学证明能力，可能影响 Agent 推理和形式化验证工具设计。</p>
+        <p><strong>建议路由:</strong> → Pepper（研究方向参考）</p>
+      </div>
+
+    </section>
+
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📊 P2 级发现 — 值得了解</h2>
+
+      <div class="discovery-card p2">
+        <h3>ai-engineering-from-scratch: AI 工程学习资源</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/rohitg00/ai-engineering-from-scratch" class="source-link">GitHub: rohitg00/ai-engineering-from-scratch</a></p>
+        <p><strong>摘要:</strong> AI 工程从头学习资源，今日新增 <span class="stars-gained">+1,521 Stars</span>，总计 13,721 Stars。</p>
+        <p><strong>为什么重要:</strong> AI 工程教育资源，适合新人培训和团队技能提升。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>FinceptTerminal: 现代金融分析终端</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Fincept-Corporation/FinceptTerminal" class="source-link">GitHub: Fincept-Corporation/FinceptTerminal</a></p>
+        <p><strong>摘要:</strong> 现代金融应用，提供市场分析、投资研究、经济数据工具。今日新增 <span class="stars-gained">+545 Stars</span>，总计 23,106 Stars。</p>
+        <p><strong>为什么重要:</strong> 金融数据分析工具，可能与 STARK_TOWER 金融 Agent 功能形成互补。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Bun.Image: Bun 运行时图像处理 API</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://bun.com" class="source-link">bun.com</a> | <a href="https://news.ycombinator.com/item?id=44362740" class="source-link">HN Discussion</a></p>
+        <p><strong>摘要:</strong> Bun 运行时新增图像处理 API。HN 22 pts，8 comments。</p>
+        <p><strong>为什么重要:</strong> JavaScript 运行时能力扩展，可能影响 Agent 工具栈选择。</p>
+      </div>
+
+    </section>
+
+    <!-- GitHub Trending 数据汇总 -->
+    <section class="data-summary">
+      <h2>📈 GitHub Trending 汇总 (AI/ML)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>仓库</th>
+            <th>总 Stars</th>
+            <th>今日新增</th>
+            <th>关键词命中</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/multica-ai/andrej-karpathy-skills">andrej-karpathy-skills</a></td>
+            <td>149,581</td>
+            <td class="stars-gained">+3,507</td>
+            <td>superpowers, karpathy-skills</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/colbymchenry/codegraph">codegraph</a></td>
+            <td>19,395</td>
+            <td class="stars-gained">+2,456</td>
+            <td>codegraph, hermes-agent</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Lum1104/Understand-Anything">Understand-Anything</a></td>
+            <td>21,455</td>
+            <td class="stars-gained">+2,299</td>
+            <td>code-knowledge-graph</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/anthropics/claude-plugins-official">claude-plugins-official</a></td>
+            <td>26,412</td>
+            <td class="stars-gained">+2,193</td>
+            <td>claude-plugins</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/rohitg00/ai-engineering-from-scratch">ai-engineering-from-scratch</a></td>
+            <td>13,721</td>
+            <td class="stars-gained">+1,521</td>
+            <td>ai-engineering</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">chrome-devtools-mcp</a></td>
+            <td>41,322</td>
+            <td>-</td>
+            <td>mcp</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/dotnet/skills">dotnet/skills</a></td>
+            <td>2,738</td>
+            <td class="stars-gained">+266</td>
+            <td>skills-system</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Fincept-Corporation/FinceptTerminal">FinceptTerminal</a></td>
+            <td>23,106</td>
+            <td class="stars-gained">+545</td>
+            <td>finance</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📊 趋势信号分析</h2>
+      <ul>
+        <li><strong>Claude Code Skills 生态爆发</strong> — andrej-karpathy-skills (+3,507) 和 claude-plugins-official (+2,193) 共同驱动，技能系统正成为 Agent 架构核心组件。</li>
+        <li><strong>Code Knowledge Graph 双引擎</strong> — codegraph 和 Understand-Anything 形成技术共振，代码理解工具栈快速成熟。</li>
+        <li><strong>Self-Evolving Agents 持续演进</strong> — MOSS 论文展示生产级自改进路径，与订阅主题高度契合。</li>
+        <li><strong>MCP 工具生态稳定扩展</strong> — chrome-devtools-mcp 保持高热度，为 Agent 提供浏览器能力。</li>
+        <li><strong>.NET Skills 官方投入</strong> — 微软 dotnet/skills 仓库预示 Agent 技能标准化趋势。</li>
+      </ul>
+    </section>
+
+    <!-- 改写要点 -->
+    <section class="rewrite-points">
+      <h2>✍️ 改写要点（供 Content 参考）</h2>
+      <ul>
+        <li>Karpathy 技能文件：单一 CLAUDE.md 将 LLM 编码洞察转化为可复用技能，强调「黄金参考」定位。</li>
+        <li>Code Knowledge Graph 双引擎：codegraph 明确支持 Hermes Agent，Understand-Anything 强调交互式探索。</li>
+        <li>MOSS 自改进：源级重写 + 生产失败证据驱动 = 可工程化的自演进路径。</li>
+        <li>Claude Plugins 官方目录：Anthropic 定义生态标准，插件架构直接影响 Hermes Agent。</li>
+        <li>趋势共振：Skills + CodeGraph + Self-Evolution 形成三条并行上升曲线。</li>
+      </ul>
+    </section>
+
+    <!-- 搜索困难与报错 -->
+    <details>
+      <summary>🔍 本次搜索的困难与报错</summary>
+      <ul>
+        <li><strong>HackerNews AI 内容稀缺</strong> — 今日 HN 首页缺乏 AI 相关高热度故事，仅 .NET union types 与 Agent 技能形成弱关联。</li>
+        <li><strong>无 MCP 健康检查脚本</strong> — pipeline/check_mcp_health.py 不存在，无法验证 MCP 端点可用性。</li>
+        <li><strong>无订阅配置文件</strong> — paper-topic-subscriptions.json 未在预期路径找到，本次使用 skill 内置订阅主题。</li>
+        <li><strong>浏览器数据提取</strong> — 使用 browser_snapshot 手动提取 GitHub/arXiv 数据，替代缺失的 prefetch 脚本。</li>
+      </ul>
+      <p><em>总体：无明显阻塞报错，数据采集链路通过浏览器手动完成。</em></p>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>Heimdall AI Sentinel · 学术情报流 · 2026-05-24 08:00 CST</p>
+      <p><a href="../../index.html">← 返回看板</a> | <a href="../2026-05-23/index.html">昨日报告</a></p>
+    </div>
+  </footer>
+</body>
+</html>
