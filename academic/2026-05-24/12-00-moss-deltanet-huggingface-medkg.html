@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-24 午间论文</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .breaking-news {
+      border: 2px solid var(--accent-danger);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(207, 34, 46, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(207, 34, 46, 0); }
+    }
+    .discovery-card {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--card-bg);
+      border-left: 4px solid var(--border-color);
+    }
+    .discovery-card.p0 {
+      border-left-color: #ff4444;
+      background: linear-gradient(135deg, rgba(255,68,68,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p1 {
+      border-left-color: #ffaa00;
+      background: linear-gradient(135deg, rgba(255,170,0,0.1) 0%, var(--card-bg) 100%);
+    }
+    .discovery-card.p2 {
+      border-left-color: #4488ff;
+      background: linear-gradient(135deg, rgba(68,136,255,0.1) 0%, var(--card-bg) 100%);
+    }
+    .stars { color: #ffd700; }
+    .source-link { color: var(--accent-primary); text-decoration: none; }
+    .source-link:hover { text-decoration: underline; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #ff4444; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    section h2 { margin-top: 2rem; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .data-table th, .data-table td { padding: 0.75rem; border: 1px solid var(--border-color); }
+    .data-table th { background: var(--header-bg); }
+    .trend-analysis { background: rgba(68,136,255,0.05); padding: 1rem; border-radius: 8px; }
+    .subscription-hits { background: rgba(255,170,0,0.05); padding: 1rem; border-radius: 8px; border-left: 3px solid #ffaa00; }
+    .paper-interpretation { background: rgba(68,136,255,0.08); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
+    .subscription-tag { display: inline-block; padding: 0.2rem 0.5rem; background: #ffaa00; color: white; border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 午间论文解读 — MOSS自改进/DeltaNet架构/HuggingFace趋势/MedKG",
+  "datePublished": "2026-05-24T12:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "noon",
+  "p0_count": 3,
+  "p1_count": 4,
+  "p2_count": 3,
+  "subscription_hits": ["self-improving-agent", "mcp-tools", "agent-framework", "codegraph", "agent-memory"],
+  "github_trending_topics": ["mcp", "agent-framework", "codegraph", "skills-system"],
+  "arxiv_categories": ["cs.AI", "cs.CL", "cs.LG", "cs.MA"],
+  "trend_signals": [
+    {"topic": "Self-Evolving Agents", "strength": 5, "direction": "rising"},
+    {"topic": "Linear Attention Architecture", "strength": 4, "direction": "rising"},
+    {"topic": "Multi-Agent Safety", "strength": 4, "direction": "stable"},
+    {"topic": "Clinical Reasoning KG", "strength": 3, "direction": "rising"},
+    {"topic": "MCP Tool Ecosystem", "strength": 4, "direction": "stable"}
+  ],
+  "keywords": ["moss", "deltanet", "huggingface", "medkg", "self-evolution"],
+  "time_window": "last 2 days"
+}
+  </script>
+</head>
+<body>
+  <header class="report-header">
+    <div class="container">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>👁️ Heimdall — 午间论文解读</h1>
+      <time datetime="2026-05-24T12:00:00+08:00">2026年05月24日 12:00 CST</time>
+      <p class="report-meta">扫描窗口: 最近 2 天 | 数据源: arXiv / HuggingFace / GitHub / 订阅命中</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 论文深度解读 -->
+    <section class="paper-interpretation">
+      <h2>📚 论文深度解读（晨间 P0 补充分析）</h2>
+      
+      <div class="discovery-card p0">
+        <h3>MOSS: 自改进 Agent 的源级重写系统 — 技术细节展开</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">self-improving-agent</span> <span class="stars">★★★★★</span></p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794" class="source-link">arXiv:2605.22794</a> | <a href="https://github.com/OpenClaw/MOSS" class="source-link">GitHub: OpenClaw/MOSS</a></p>
+        <p><strong>核心机制:</strong></p>
+        <ul>
+          <li><strong>源级重写:</strong> MOSS 不依赖外部训练，而是在生产环境中直接修改 Agent 源代码</li>
+          <li><strong>失败证据驱动:</strong> 通过自动采集的生产失败案例，识别薄弱环节并针对性演进</li>
+          <li><strong>OpenClaw 基准:</strong> 四任务基准测试，单周期实现 0.25→0.61 分数跃升（+144%）</li>
+          <li><strong>可工程化路径:</strong> 非概念验证，而是已在真实 Agent 基础设施上验证的工程方法</li>
+        </ul>
+        <p><strong>对 STARK_TOWER 的启示:</strong></p>
+        <ul>
+          <li>可考虑将 Hermes Agent 的工具调用失败纳入自改进证据库</li>
+          <li>源级重写 vs 行为级学习：MOSS 选择了前者，值得对比评估</li>
+          <li>OpenClaw 基准可作为 STARK_TOWER Agent 评估补充</li>
+        </ul>
+        <p><strong>建议路由:</strong> → Jarvis（评估 OpenClaw 基准纳入 + 自改进架构可行性）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Gated DeltaNet-2: 线性注意力的擦写分离 — 架构演进分析</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span></p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22791" class="source-link">arXiv:2605.22791</a> | <a href="https://github.com/NVIDIA/DeltaNet" class="source-link">GitHub: NVIDIA/DeltaNet</a></p>
+        <p><strong>核心创新:</strong></p>
+        <ul>
+          <li><strong>擦写分离:</strong> 将线性注意力中的「擦除」和「写入」操作解耦，而非统一处理</li>
+          <li><strong>作者团队:</strong> Ali Hatamizadeh, Yejin Choi, Jan Kautz — NVIDIA + Allen AI 联合</li>
+          <li><strong>长序列优化:</strong> 针对 Agent 长对话记忆场景，可能显著减少 KV Cache 占用</li>
+        </ul>
+        <p><strong>对 Agent 架构的意义:</strong></p>
+        <ul>
+          <li>线性注意力架构正在快速演进，DeltaNet-2 代表最新一代</li>
+          <li>擦写分离机制可能更适合 Agent 的「记忆更新」场景</li>
+          <li>与 LCGuard 形成技术关联：KV Cache 共享安全 + 线性注意力优化</li>
+        </ul>
+        <p><strong>建议路由:</strong> → Banner（架构趋势跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>LCGuard: 多 Agent 系统的 KV 共享安全防护 — 安全架构分析</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="subscription-tag">multi-agent</span> <span class="stars">★★★★</span></p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22786" class="source-link">arXiv:2605.22786</a></p>
+        <p><strong>核心问题:</strong> 多 Agent 协作中，KV Cache 共享可能导致潜在通信泄漏</p>
+        <p><strong>解决方案:</strong></p>
+        <ul>
+          <li><strong>Latent Communication Guard:</strong> 在 KV 共享层增加防护机制</li>
+          <li><strong>安全一致性:</strong> 确保 Agent 间协作时的信息隔离边界</li>
+          <li><strong>应用场景:</strong> 多 Agent 系统中的敏感数据处理、隔离协作</li>
+        </ul>
+        <p><strong>对 STARK_TOWER 多 Agent 架构的意义:</strong></p>
+        <ul>
+          <li>Jarvis + Banner + Pepper 协作可能涉及敏感上下文共享</li>
+          <li>LCGuard 提供了一种「共享但隔离」的架构范式</li>
+          <li>建议在多 Agent 协作设计时纳入安全边界考量</li>
+        </ul>
+        <p><strong>建议路由:</strong> → Jarvis（多 Agent 安全架构研究）</p>
+      </div>
+
+    </section>
+
+    <!-- 新增论文发现 -->
+    <section class="priority-p1">
+      <h2>⚡ 新增论文发现（晨间未覆盖）</h2>
+
+      <div class="discovery-card p1">
+        <h3>ChronoMedKG: 时序化生物医学知识图谱 — 临床推理基准</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22734" class="source-link">arXiv:2605.22734</a></p>
+        <p><strong>摘要:</strong> 时序化生物医学知识图谱，为临床推理提供时间维度支持。包含 ChronoTQA 基准数据集。</p>
+        <p><strong>为什么重要:</strong> 知识图谱 + 时序维度，可能影响 Agent 的「动态知识」设计，特别是在金融/医疗领域。</p>
+        <p><strong>建议路由:</strong> → Pepper（研究方向参考：时序知识图谱）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>AI-Driven Formal Proof Search: DeepMind 数学证明系统</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22763" class="source-link">arXiv:2605.22763</a></p>
+        <p><strong>摘要:</strong> DeepMind 发布 AI 驱动的数学形式化证明搜索系统，作者包括 Aja Huang、Pushmeet Kohli 等。</p>
+        <p><strong>为什么重要:</strong> DeepMind 数学证明能力，可能影响 Agent 推理和形式化验证工具设计。</p>
+        <p><strong>建议路由:</strong> → Pepper（研究方向参考：形式化推理）</p>
+      </div>
+
+    </section>
+
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📊 P2 级发现 — 值得了解</h2>
+
+      <div class="discovery-card p2">
+        <h3>Evaluating Commercial AI Chatbots as News Intermediaries</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22785" class="source-link">arXiv:2605.22785</a></p>
+        <p><strong>摘要:</strong> 评估商业 AI 聊天机器人作为新闻中介的角色。作者包括 Dan Jurafsky、James Zou 等。</p>
+        <p><strong>为什么重要:</strong> AI 信息可信度评估，与 Agent 作为「信息检索中介」的角色相关。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Reducing Political Manipulation with Consistency Training</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22771" class="source-link">arXiv:2605.22771</a></p>
+        <p><strong>摘要:</strong> 通过一致性训练减少 LLM 的政治操纵倾向。作者包括 Dan Hendrycks。</p>
+        <p><strong>为什么重要:</strong> LLM 安全与一致性研究，Agent 对齐训练参考。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Understanding Data Temporality Impact on LLM Pre-training</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22769" class="source-link">arXiv:2605.22769</a></p>
+        <p><strong>摘要:</strong> 研究数据时效性对 LLM 预训练的影响。</p>
+        <p><strong>为什么重要:</strong> 数据时效性研究，影响 Agent 知识更新策略。</p>
+      </div>
+
+    </section>
+
+    <!-- 订阅命中区块 -->
+    <section class="subscription-hits">
+      <h2>🎯 订阅命中汇总（最近 2 天）</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>订阅主题</th>
+            <th>命中来源</th>
+            <th>优先级</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="subscription-tag">self-improving-agent</span></td>
+            <td><a href="https://arxiv.org/abs/2605.22794">MOSS 论文</a></td>
+            <td>P0</td>
+            <td>晨间已覆盖，午间深度解读</td>
+          </tr>
+          <tr>
+            <td><span class="subscription-tag">mcp-tools</span></td>
+            <td><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">chrome-devtools-mcp</a></td>
+            <td>P1</td>
+            <td>晨间已覆盖</td>
+          </tr>
+          <tr>
+            <td><span class="subscription-tag">codegraph</span></td>
+            <td><a href="https://github.com/colbymchenry/codegraph">codegraph</a> + <a href="https://github.com/Lum1104/Understand-Anything">Understand-Anything</a></td>
+            <td>P0</td>
+            <td>晨间已覆盖</td>
+          </tr>
+          <tr>
+            <td><span class="subscription-tag">agent-framework</span></td>
+            <td><a href="https://arxiv.org/abs/2605.22786">LCGuard</a> (多 Agent)</td>
+            <td>P1</td>
+            <td>晨间已覆盖，午间深度解读</td>
+          </tr>
+          <tr>
+            <td><span class="subscription-tag">agent-memory</span></td>
+            <td><a href="https://arxiv.org/abs/2605.22791">DeltaNet-2</a> (线性注意力)</td>
+            <td>P1</td>
+            <td>晨间已覆盖，午间深度解读</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>注：本次订阅命中与晨间报告高度重叠，午间重点在于深度解读而非新发现。</em></p>
+    </section>
+
+    <!-- HuggingFace 模型趋势 -->
+    <section class="data-summary">
+      <h2>🤗 HuggingFace Trending Models (最近 2 天)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>模型</th>
+            <th>任务类型</th>
+            <th>参数规模</th>
+            <th>热度</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://huggingface.co/bytedance-research/Lance">bytedance-research/Lance</a></td>
+            <td>Any-to-Any</td>
+            <td>未知</td>
+            <td>1.23k downloads</td>
+            <td>字节跳动多模态模型，21小时前更新</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/tencent/Hy-MT2-1.8B">tencent/Hy-MT2-1.8B</td>
+            <td>Translation</td>
+            <td>2B</td>
+            <td>2.56k downloads</td>
+            <td>腾讯翻译模型，2天前更新</td>
+          </tr>
+          <tr>
+            <td><a href="https://huggingface.co/Supertone/supertonic-3">Supertone/supertonic-3</a></td>
+            <td>Text-to-Speech</td>
+            <td>未知</td>
+            <td>40.4k downloads</td>
+            <td>语音合成模型，6天前更新</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><em>注：HuggingFace 趋势模型以多模态和语音为主，Agent 相关模型热度较低。</em></p>
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📊 趋势信号分析</h2>
+      <ul>
+        <li><strong>Self-Evolving Agents 持续上升</strong> — MOSS 论文提供了首个生产级自改进工程路径，与订阅主题高度契合，建议纳入 radar。</li>
+        <li><strong>线性注意力架构演进</strong> — DeltaNet-2 擦写分离机制可能成为 Agent 长对话记忆的新范式。</li>
+        <li><strong>多 Agent 安全架构</strong> — LCGuard + DeltaNet-2 形成 KV Cache 共享 + 优化的技术闭环。</li>
+        <li><strong>时序知识图谱</strong> — ChronoMedKG 为临床推理引入时间维度，可能影响 Agent 动态知识设计。</li>
+        <li><strong>HuggingFace 多模态趋势</strong> — Lance (字节) + Hy-MT2-1.8B (腾讯) 反映国内厂商在多模态和翻译领域的投入。</li>
+      </ul>
+    </section>
+
+    <!-- 雷达更新建议 -->
+    <section class="radar-update">
+      <h2>📡 Radar 更新建议</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>主题</th>
+            <th>当前状态</th>
+            <th>建议更新</th>
+            <th>依据</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Self-Evolving Agents</td>
+            <td>rising (strength: 5)</td>
+            <td>保持 rising，新增 MOSS 论文作为关键证据</td>
+            <td>MOSS 展示了生产级自改进路径</td>
+          </tr>
+          <tr>
+            <td>Linear Attention Architecture</td>
+            <td>stable</td>
+            <td>升级为 rising (strength: 4)</td>
+            <td>DeltaNet-2 擦写分离创新</td>
+          </tr>
+          <tr>
+            <td>Multi-Agent Safety</td>
+            <td>stable</td>
+            <td>保持 stable，新增 LCGuard 作为参考</td>
+            <td>KV Cache 共享安全防护机制</td>
+          </tr>
+          <tr>
+            <td>Clinical Reasoning KG</td>
+            <td>新建议</td>
+            <td>新增，strength: 3, rising</td>
+            <td>ChronoMedKG 时序化医学知识图谱</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 改写要点 -->
+    <section class="rewrite-points">
+      <h2>✍️ 改写要点（供 Content 参考）</h2>
+      <ul>
+        <li>MOSS 深度解读：源级重写 + 失败证据驱动 = 可工程化的自演进路径，强调「生产级验证」而非概念验证。</li>
+        <li>DeltaNet-2 架构：擦写分离机制更适合 Agent 的「记忆更新」场景，与 LCGuard 形成 KV 安全 + 优化闭环。</li>
+        <li>订阅命中重叠：本次午间与晨间报告高度重叠，体现订阅配置的有效性，重点在于「深度解读」而非新发现。</li>
+        <li>HuggingFace 趋势：国内厂商（字节、腾讯）在多模态和翻译领域持续投入，Agent 相关模型热度较低。</li>
+        <li>Radar 更新：建议将 Linear Attention Architecture 升级为 rising，新增 Clinical Reasoning KG 主题。</li>
+      </ul>
+    </section>
+
+    <!-- 搜索困难与报错 -->
+    <details>
+      <summary>🔍 本次搜索的困难与报错</summary>
+      <ul>
+        <li><strong>订阅命中重叠</strong> — 本次午间订阅命中与晨间报告高度重叠（MOSS、LCGuard、DeltaNet-2、chrome-devtools-mcp、codegraph），新发现较少。</li>
+        <li><strong>GitHub Trending 无新变化</strong> — 与晨间报告相比，GitHub Trending 前 10 名无明显变化，仅 Stars 数微增。</li>
+        <li><strong>HuggingFace Agent 模型稀缺</strong> — HuggingFace 趋势模型以多模态和语音为主，Agent 相关模型（如 reasoning、tool-use）热度较低。</li>
+        <li><strong>cs.CL 新论文相关性低</strong> — Tokenisation via Convex Relaxations、Tokenization with Split Trees 等论文偏向 NLP 基础研究，与 Agent 主题关联较弱。</li>
+        <li><strong>无 MCP 健康检查脚本</strong> — pipeline/check_mcp_health.py 不存在，无法验证 MCP 端点可用性。</li>
+      </ul>
+      <p><em>总体：无阻塞报错，但新发现较少，午间报告侧重深度解读而非新发现。</em></p>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container">
+      <p>Heimdall AI Sentinel · 学术情报流 · 2026-05-24 12:00 CST</p>
+      <p><a href="../../index.html">← 返回看板</a> | <a href="./08-00-karpathy-skills-codegraph-claude-plugins.html">晨间报告</a></p>
+    </div>
+  </footer>
+</body>
+</html>
