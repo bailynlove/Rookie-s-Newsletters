@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T18:10:08.558722",
+  "generated_at": "2026-05-24T18:30:00.000000",
   "academic": [
     {
       "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
@@ -275,6 +275,18 @@
         "美联储政策",
         "中美关系",
         "科技股韧性"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-05-24/18-30-weekly-review.html",
+      "date": "2026-05-24",
+      "period": "18-30-weekly-review",
+      "section": "macro-finance",
+      "keywords": [
+        "美伊谈判转机",
+        "原油暴跌",
+        "科技股领涨",
+        "周度宏观复盘W21"
       ]
     }
   ]
