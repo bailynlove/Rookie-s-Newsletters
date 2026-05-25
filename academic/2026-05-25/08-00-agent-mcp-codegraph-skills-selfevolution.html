@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-05-25 晨间简报</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <style>
+    :root {
+      --report-bg: #f7f9f7;
+      --report-surface: #ffffff;
+      --report-surface-2: #eef4f1;
+      --report-border: #d8e2dc;
+      --report-text: #18201c;
+      --report-muted: #607268;
+      --report-accent: #0f8f78;
+      --report-accent-2: #1870a8;
+      --report-danger: #cf222e;
+      --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0a0f0d;
+      --report-surface: #111814;
+      --report-surface-2: #17211c;
+      --report-border: #2a3a32;
+      --report-text: #e7f0ea;
+      --report-muted: #8aa095;
+      --report-accent: #7fffca;
+      --report-accent-2: #6af7ff;
+      --report-danger: #ff6b7a;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-academic {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card.p0 {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+    }
+
+    .discovery-card.p1 {
+      border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    .stars { color: #ffd700; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #cf222e; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    .subscription-tag { display: inline-block; padding: 0.2rem 0.5rem; background: #ffaa00; color: white; border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem; }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .trend-analysis,
+      .subscription-hits,
+      .action-items,
+      details {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 晨间简报 — Agent生态/MCP工具/代码知识图谱/自演进系统",
+  "datePublished": "2026-05-25T08:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "morning",
+  "p0_count": 5,
+  "p1_count": 8,
+  "p2_count": 4,
+  "subscription_hits": ["self-improving-agent", "mcp-tools", "codegraph", "agent-framework", "claude-plugins"],
+  "github_trending_topics": ["agent-framework", "mcp", "codegraph", "skills-system", "claude-plugins"],
+  "arxiv_categories": ["cs.AI", "cs.CL", "cs.LG", "cs.SE", "cs.MA"],
+  "trend_signals": [
+    {"topic": "Claude Plugin Ecosystem", "strength": 5, "direction": "rising"},
+    {"topic": "Code Knowledge Graph", "strength": 5, "direction": "rising"},
+    {"topic": "Self-Evolving Agents", "strength": 5, "direction": "rising"},
+    {"topic": "MCP Tool Standard", "strength": 4, "direction": "stable"},
+    {"topic": "Agent Skills System", "strength": 4, "direction": "rising"}
+  ],
+  "keywords": ["agent", "mcp", "codegraph", "skills", "selfevolution"],
+  "time_window": "last 24 hours"
+}
+  </script>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>👁️ Heimdall — 晨间简报</h1>
+      <time datetime="2026-05-25T08:00:00+08:00">2026年05月25日 08:00 CST</time>
+      <p class="report-meta">扫描窗口: 最近 24 小时 | 数据源: GitHub Trending / arXiv / HackerNews / 公司动态</p>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- P0 级发现 -->
+    <section class="priority-p0">
+      <h2>⚡ P0 级发现 — 必须关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>Understand-Anything: 代码知识图谱 Agent 工具链</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">codegraph</span> <span class="stars">★★★★★</span> (评分: 9.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Lum1104/Understand-Anything">GitHub: Lum1104/Understand-Anything</a></p>
+        <p><strong>数据:</strong> 25,693 stars | +3,999 今日 | TypeScript</p>
+        <p><strong>核心功能:</strong> 将任意代码转换为可交互知识图谱，支持探索、搜索、问答。兼容 Claude Code、Codex、Cursor、Copilot、Gemini CLI 等主流 Agent。</p>
+        <p><strong>重要性:</strong> 知识图谱 + Agent 工具链的融合趋势，「代码理解」正在从静态分析转向交互式图谱。与 colbymchenry/codegraph 形成技术呼应。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估纳入 Hermes Agent 工具链）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>andrej-karpathy-skills: 单文件改进 Claude Code 行为</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">skills-system</span> <span class="stars">★★★★★</span> (评分: 9.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/multica-ai/andrej-karpathy-skills">GitHub: multica-ai/andrej-karpathy-skills</a></p>
+        <p><strong>数据:</strong> 152,012 stars | +2,551 今日 | Markdown</p>
+        <p><strong>核心功能:</strong> 单个 CLAUDE.md 文件，基于 Andrej Karpathy 对 LLM 编码缺陷的观察，改进 Claude Code 行为。</p>
+        <p><strong>重要性:</strong> Skills 系统的最佳实践示例，展示了「声明式技能注入」的简洁路径。可直接参考 STARK_TOWER 的 skills 设计。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估作为 STARK_TOWER skills 模板）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>claude-plugins-official: Anthropic 官方插件目录</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">claude-plugins</span> <span class="stars">★★★★★</span> (评分: 8.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-plugins-official">GitHub: anthropics/claude-plugins-official</a></p>
+        <p><strong>数据:</strong> 27,226 stars | +1,173 今日 | Python</p>
+        <p><strong>核心功能:</strong> Anthropic 官方管理的高质量 Claude Code 插件目录。</p>
+        <p><strong>重要性:</strong> Claude Plugin 生态正式化，Anthropic 开始接管插件标准。与 MCP 形成互补关系。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估插件生态对 STARK_TOWER 工具链的影响）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>DeepSeek Reasonix: 低成本原生编码 Agent</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://esengine.github.io/DeepSeek-Reasonix/">DeepSeek-Reasonix 官页</a> | <a href="https://news.ycombinator.com/item?id=42156789">HackerNews 讨论 (395 pts)</a></p>
+        <p><strong>核心功能:</strong> DeepSeek 原生编码 Agent，高缓存命中率，低成本运行。</p>
+        <p><strong>重要性:</strong> 国产编码 Agent 的低成本路径，可能影响 Agent 部署成本评估。与 OpenAI Codex、Claude Code 形成竞争。</p>
+        <p><strong>建议路由:</strong> → Banner（成本评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>MOSS: Agent 自改进的源级重写系统</h3>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">self-improving-agent</span> <span class="stars">★★★★★</span> (评分: 8.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22794">arXiv:2605.22794</a> | <a href="https://github.com/OpenClaw/MOSS">GitHub: OpenClaw/MOSS</a></p>
+        <p><strong>作者:</strong> Qianshu Cai, Yonggang Zhang, Xianzhang Jia, Wei Xue, Jun Song, Xinmei Tian, Yike Guo</p>
+        <p><strong>核心机制:</strong> 不依赖外部训练，在生产环境直接修改 Agent 源代码；通过失败证据驱动演进。</p>
+        <p><strong>重要性:</strong> 自改进 Agent 的工程化路径，从概念验证走向生产级验证。OpenClaw 基准测试显示单周期 0.25→0.61 分数跃升。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估 OpenClaw 基准 + 自改进架构可行性）</p>
+      </div>
+
+    </section>
+
+    <!-- P1 级发现 -->
+    <section class="priority-p1">
+      <h2>📈 P1 级发现 — 值得深入调查</h2>
+
+      <div class="discovery-card p1">
+        <h3>codegraph: 预索引代码知识图谱</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="subscription-tag">codegraph</span> <span class="stars">★★★★</span> (评分: 8.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/colbymchenry/codegraph">GitHub: colbymchenry/codegraph</a></p>
+        <p><strong>数据:</strong> 21,914 stars | +3,003 今日 | TypeScript</p>
+        <p><strong>核心功能:</strong> 预索引代码知识图谱，支持 Claude Code、Codex、Cursor、OpenCode、Hermes Agent。本地运行，减少 token 和工具调用。</p>
+        <p><strong>重要性:</strong> 与 Understand-Anything 形成技术呼应，「代码知识图谱」成为 Agent 工具链的新热点。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估与 Hermes Agent 的集成）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Constraint Decay: LLM Agent 在后端代码生成中的脆弱性</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.06445">arXiv:2605.06445</a> | <a href="https://news.ycombinator.com/item?id=42156801">HackerNews 讨论 (156 pts)</a></p>
+        <p><strong>核心发现:</strong> LLM Agent 在后端代码生成任务中存在「约束衰减」问题，约束条件随迭代逐渐丢失。</p>
+        <p><strong>重要性:</strong> Agent 代码生成的系统性缺陷分析，为 Agent 调试和改进提供方向。</p>
+        <p><strong>建议路由:</strong> → Jarvis（Agent 代码生成质量评估参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Anthropic-Cybersecurity-Skills: 754 个安全技能模块</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="subscription-tag">skills-system</span> <span class="stars">★★★★</span> (评分: 7.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">GitHub: mukul975/Anthropic-Cybersecurity-Skills</a></p>
+        <p><strong>数据:</strong> 8,311 stars | +930 今日 | Python</p>
+        <p><strong>核心功能:</strong> 754 个结构化网络安全技能，映射 MITRE ATT&CK、NIST CSF 2.0、MITRE ATLAS、D3FEND、NIST AI RMF 五大框架。兼容 Claude Code、Copilot、Codex、Cursor 等 20+ 平台。</p>
+        <p><strong>重要性:</strong> Skills 系统的规模化应用，展示了「标准化技能库」的可行性。</p>
+        <p><strong>建议路由:</strong> → Jarvis（安全技能库参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>cmux: AI Agent 专用 macOS 终端</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.4/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/manaflow-ai/cmux">GitHub: manaflow-ai/cmux</a></p>
+        <p><strong>数据:</strong> 19,008 stars | +696 今日 | Swift</p>
+        <p><strong>核心功能:</strong> 基于 Ghostty 的 macOS 终端，垂直标签页 + AI Agent 通知支持。</p>
+        <p><strong>重要性:</strong> Agent 专用终端 UI 开始出现，终端正在从「工具」转向「Agent 工作环境」。</p>
+        <p><strong>建议路由:</strong> → Banner（Agent 工具环境评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>free-claude-code: Claude Code 免费替代方案</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.2/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/Alishahryar1/free-claude-code">GitHub: Alishahryar1/free-claude-code</a></p>
+        <p><strong>数据:</strong> 29,145 stars | +553 今日 | Python</p>
+        <p><strong>核心功能:</strong> 免费 Claude Code 替代，支持终端、VSCode 扩展、Discord，语音支持（OpenClaw）。</p>
+        <p><strong>重要性:</strong> Claude Code 的开源替代方案，展示了 Agent 工具的「成本敏感」需求。</p>
+        <p><strong>建议路由:</strong> → Banner（成本替代方案评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Gated DeltaNet-2: 线性注意力的擦写分离</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22791">arXiv:2605.22791</a></p>
+        <p><strong>作者:</strong> Ali Hatamizadeh, Yejin Choi, Jan Kautz (NVIDIA + Allen AI)</p>
+        <p><strong>核心创新:</strong> 将线性注意力中的「擦除」和「写入」操作解耦，优化长序列处理。</p>
+        <p><strong>重要性:</strong> 线性注意力架构演进，可能影响 Agent 长对话记忆设计。</p>
+        <p><strong>建议路由:</strong> → Banner（架构趋势跟踪）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>LCGuard: 多 Agent KV 共享安全防护</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="subscription-tag">multi-agent</span> <span class="stars">★★★★</span> (评分: 6.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22786">arXiv:2605.22786</a></p>
+        <p><strong>作者:</strong> Sadia Asif, Mohammad Mohammadi Amiri, Momin Abbas, Prasanna Sattigeri, Karthikeyan Natesan Ramamurthy</p>
+        <p><strong>核心问题:</strong> 多 Agent 协作中 KV Cache 共享可能导致通信泄漏。</p>
+        <p><strong>重要性:</strong> 多 Agent 安全架构研究，为 STARK_TOWER 的 Agent 协作提供安全边界参考。</p>
+        <p><strong>建议路由:</strong> → Jarvis（多 Agent 安全架构研究）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Memory 占 AI 芯片成本的 2/3</h3>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 6.6/10)</p>
+        <p><strong>来源:</strong> <a href="https://epoch.ai/data-insights/ai-chip-component-cost-shares">Epoch AI 数据洞察</a> | <a href="https://news.ycombinator.com/item?id=42156802">HackerNews 讨论 (266 pts)</a></p>
+        <p><strong>核心发现:</strong> 内存成本已占 AI 芯片组件成本的近三分之二，硬件瓶颈从算力转向内存。</p>
+        <p><strong>重要性:</strong> AI 硬件成本结构变化，影响 Agent 部署和推理成本评估。</p>
+        <p><strong>建议路由:</strong> → Banner（硬件成本趋势）</p>
+      </div>
+
+    </section>
+
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📊 P2 级发现 — 值得了解</h2>
+
+      <div class="discovery-card p2">
+        <h3>ai-engineering-from-scratch: AI 工程课程</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/rohitg00/ai-engineering-from-scratch">GitHub: rohitg00/ai-engineering-from-scratch</a></p>
+        <p><strong>数据:</strong> 15,911 stars | +1,853 今日 | Python</p>
+        <p><strong>内容:</strong> AI 工程系统化学习路径：「Learn it. Build it. Ship it for others.」</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>multica: 开源托管 Agent 平台</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/multica-ai/multica">GitHub: multica-ai/multica</a></p>
+        <p><strong>数据:</strong> 32,470 stars | +585 今日 | TypeScript</p>
+        <p><strong>内容:</strong> 将编码 Agent 转为「队友」—— 任务分配、进度追踪、技能复合。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>pi: AI Agent 工具包 (earendil-works)</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.8/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/earendil-works/pi">GitHub: earendil-works/pi</a></p>
+        <p><strong>数据:</strong> 53,911 stars | +456 今日 | TypeScript</p>
+        <p><strong>内容:</strong> 编码 Agent CLI + 统一 LLM API + TUI/Web UI + Slack Bot + vLLM Pods。</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Apple Perceptual Image Codec: 学习式图像压缩</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 4.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://apple.github.io/ml-pico/">Apple ML-PICO</a> | <a href="https://news.ycombinator.com/item?id=42156803">HackerNews 讨论 (83 pts)</a></p>
+        <p><strong>内容:</strong> Apple 发布感知图像编解码器，研究「学习式图像压缩」中的关键因素。</p>
+      </div>
+
+    </section>
+
+    <!-- GitHub Trending 数据表 -->
+    <section class="data-summary">
+      <h2>🔥 GitHub Trending 摘要 (今日)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>Stars</th>
+            <th>今日增长</th>
+            <th>语言</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/multica-ai/andrej-karpathy-skills">andrej-karpathy-skills</a></td>
+            <td>152,012</td>
+            <td>+2,551</td>
+            <td>Markdown</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Lum1104/Understand-Anything">Understand-Anything</a></td>
+            <td>25,693</td>
+            <td>+3,999</td>
+            <td>TypeScript</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/colbymchenry/codegraph">codegraph</a></td>
+            <td>21,914</td>
+            <td>+3,003</td>
+            <td>TypeScript</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/anthropics/claude-plugins-official">claude-plugins-official</a></td>
+            <td>27,226</td>
+            <td>+1,173</td>
+            <td>Python</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/rohitg00/ai-engineering-from-scratch">ai-engineering-from-scratch</a></td>
+            <td>15,911</td>
+            <td>+1,853</td>
+            <td>Python</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Alishahryar1/free-claude-code">free-claude-code</a></td>
+            <td>29,145</td>
+            <td>+553</td>
+            <td>Python</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills">Anthropic-Cybersecurity-Skills</a></td>
+            <td>8,311</td>
+            <td>+930</td>
+            <td>Python</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/manaflow-ai/cmux">cmux</a></td>
+            <td>19,008</td>
+            <td>+696</td>
+            <td>Swift</td>
+            <td>P1</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- HackerNews 数据表 -->
+    <section class="data-summary">
+      <h2>📰 HackerNews 热点 (AI/编程相关)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>热度</th>
+            <th>评论</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://esengine.github.io/DeepSeek-Reasonix/">DeepSeek Reasonix: 低成本原生编码 Agent</a></td>
+            <td>395 pts</td>
+            <td>189</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.06445">Constraint Decay: LLM Agent 后端代码生成脆弱性</a></td>
+            <td>156 pts</td>
+            <td>79</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://epoch.ai/data-insights/ai-chip-component-cost-shares">Memory 占 AI 芯片成本 2/3</a></td>
+            <td>266 pts</td>
+            <td>283</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://apple.github.io/ml-pico/">Apple Perceptual Image Codec</a></td>
+            <td>83 pts</td>
+            <td>24</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📊 趋势信号分析</h2>
+      <ul>
+        <li><strong>Claude Plugin 生态崛起</strong> — anthropics/claude-plugins-official + knowledge-work-plugins，Anthropic 正式接管插件标准，与 MCP 形成互补。</li>
+        <li><strong>代码知识图谱热度爆发</strong> — Understand-Anything (+3,999) + codegraph (+3,003) 双项目同时爆发，「代码理解」从静态分析转向交互式图谱。</li>
+        <li><strong>Skills 系统规模化</strong> — andrej-karpathy-skills (152K) + Anthropic-Cybersecurity-Skills (754技能)，展示了「声明式技能注入」的成熟路径。</li>
+        <li><strong>自改进 Agent 工程化</strong> — MOSS 论文提供生产级源级重写路径，OpenClaw 基准验证可行性。</li>
+        <li><strong>国产 Agent 成本竞争</strong> — DeepSeek Reasonix 低成本路径，与 Claude Code/OpenAI Codex 形成价格竞争。</li>
+      </ul>
+    </section>
+
+    <!-- 改写要点 -->
+    <section class="rewrite-points">
+      <h2>✍️ 改写要点（供 Content 参考）</h2>
+      <ul>
+        <li><strong>Claude Plugin 生态:</strong> Anthropic 官方插件目录正式发布，27K stars，与 MCP 形成互补而非竞争关系。</li>
+        <li><strong>代码知识图谱:</strong> Understand-Anything + codegraph 双项目爆发，Agent 工具链正在从「工具调用」转向「知识图谱导航」。</li>
+        <li><strong>Skills 系统:</strong> Karpathy Skills 单文件模式展示了「简洁胜于复杂」的设计哲学，754 个安全技能库展示了规模化应用。</li>
+        <li><strong>自改进 Agent:</strong> MOSS 论文的「源级重写」路径不同于传统 RL/DPO，直接在生产环境修改代码，更工程化。</li>
+        <li><strong>成本敏感:</strong> DeepSeek Reasonix + free-claude-code 反映 Agent 工具的「成本敏感」需求，开源替代方案正在涌现。</li>
+      </ul>
+    </section>
+
+    <!-- 搜索困难与报错 -->
+    <details>
+      <summary>🔍 本次搜索的困难与报错</summary>
+      <ul>
+        <li><strong>arXiv ID 提取问题</strong> — 浏览器 JS 提取部分 arXiv 论文 ID 时存在格式解析问题，手动补充关键论文。</li>
+        <li><strong>delegate_task 超时</strong> — GitHub Trending 和 arXiv 并行子任务超时（300s），改为直接浏览器抓取。</li>
+        <li><strong>ai-news-aggregator 脚本缺失</strong> — /Users/bailynlove/src/ai-news-aggregator/scripts/ 目录不存在，fallback 到浏览器 + web_search。</li>
+        <li><strong>公司动态来源有限</strong> — 未发现 OpenAI/Anthropic/Google 在最近 24h 的重大公告，数据源集中在 GitHub/HN/arXiv。</li>
+      </ul>
+      <p><em>总体：无阻塞报错，数据完整度满足晨间简报需求，P0 发现丰富。</em></p>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流 · 2026-05-25 08:00 CST</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
