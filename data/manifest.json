@@ -1,6 +1,19 @@
 {
-  "generated_at": "2026-05-24T22:05:16.480893",
+  "generated_at": "2026-05-25T08:00:00.000000",
   "academic": [
+    {
+      "path": "academic/2026-05-25/08-00-agent-mcp-codegraph-skills-selfevolution.html",
+      "date": "2026-05-25",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Claude Plugin 生态",
+        "代码知识图谱",
+        "Skills 系统规模化",
+        "自改进 Agent",
+        "成本敏感"
+      ]
+    },
     {
       "path": "academic/2026-05-24/08-00-karpathy-skills-codegraph-claude-plugins.html",
       "date": "2026-05-24",
