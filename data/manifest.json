@@ -1,17 +1,15 @@
 {
-  "generated_at": "2026-05-25T08:00:00.000000",
+  "generated_at": "2026-05-25T22:19:31.624677",
   "academic": [
     {
       "path": "academic/2026-05-25/08-00-agent-mcp-codegraph-skills-selfevolution.html",
       "date": "2026-05-25",
-      "period": "morning",
+      "period": "08-00-agent-mcp-codegraph-skills-selfevolution",
       "section": "academic",
       "keywords": [
-        "Claude Plugin 生态",
-        "代码知识图谱",
-        "Skills 系统规模化",
-        "自改进 Agent",
-        "成本敏感"
+        "Claude Plugin Ecosystem",
+        "Code Knowledge Graph",
+        "Self-Evolving Agents"
       ]
     },
     {
@@ -143,6 +141,15 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-05-25/us-premarket.html",
+      "date": "2026-05-25",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美股盘前宏观凝视"
+      ]
+    },
     {
       "path": "macro-finance/2026-05-24/18-30-weekly-review.html",
       "date": "2026-05-24",

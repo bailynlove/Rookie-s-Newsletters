@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T22:05:16.482472",
+  "generated_at": "2026-05-25T22:19:31.626010",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -35,6 +35,13 @@
       "p1": 10,
       "p2": 6,
       "total": 24
+    },
+    {
+      "date": "2026-05-25",
+      "p0": 5,
+      "p1": 8,
+      "p2": 4,
+      "total": 17
     }
   ],
   "calendar_data": [
@@ -62,6 +69,11 @@
       "date": "2026-05-24",
       "intensity": 24,
       "level": 1
+    },
+    {
+      "date": "2026-05-25",
+      "intensity": 17,
+      "level": 1
     }
   ],
   "sparkline_data": [
@@ -87,6 +99,10 @@
         {
           "date": "2026-05-24",
           "value": 9
+        },
+        {
+          "date": "2026-05-25",
+          "value": 5
         }
       ]
     },
@@ -112,6 +128,10 @@
         {
           "date": "2026-05-24",
           "value": 8
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
         }
       ]
     },
@@ -136,6 +156,10 @@
         },
         {
           "date": "2026-05-24",
+          "value": 5
+        },
+        {
+          "date": "2026-05-25",
           "value": 5
         }
       ]
@@ -162,6 +186,10 @@
         {
           "date": "2026-05-24",
           "value": 0
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
         }
       ]
     },
@@ -186,6 +214,10 @@
         },
         {
           "date": "2026-05-24",
+          "value": 0
+        },
+        {
+          "date": "2026-05-25",
           "value": 0
         }
       ]
@@ -212,6 +244,10 @@
         {
           "date": "2026-05-24",
           "value": 4
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
         }
       ]
     },
@@ -237,6 +273,10 @@
         {
           "date": "2026-05-24",
           "value": 4
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
         }
       ]
     },
@@ -262,6 +302,10 @@
         {
           "date": "2026-05-24",
           "value": 0
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
         }
       ]
     }
@@ -269,7 +313,7 @@
   "top_topics": [
     {
       "topic": "Self-Evolving Agents",
-      "count": 19
+      "count": 24
     },
     {
       "topic": "MCP Tool Ecosystem",
@@ -277,7 +321,7 @@
     },
     {
       "topic": "Code Knowledge Graph",
-      "count": 10
+      "count": 15
     },
     {
       "topic": "Agent Skills 生态爆发",
@@ -304,6 +348,10 @@
       "count": 8
     },
     {
+      "topic": "Claude Plugin Ecosystem",
+      "count": 5
+    },
+    {
       "topic": "Claude Code Skills 生态",
       "count": 5
     },
@@ -320,52 +368,48 @@
       "count": 5
     },
     {
-      "topic": "Claude Code Plugins",
-      "count": 4
-    },
-    {
-      "topic": "Claude Code 生态",
+      "topic": "MCP Tool Standard",
       "count": 4
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 9
+      "count": 10
     },
     {
       "category": "cs.LG",
-      "count": 9
+      "count": 10
     },
     {
       "category": "cs.CL",
-      "count": 8
+      "count": 9
     },
     {
       "category": "cs.SE",
-      "count": 4
+      "count": 5
     },
     {
       "category": "cs.MA",
-      "count": 2
+      "count": 3
     }
   ],
   "top_subscriptions": [
     {
       "subscription": "self-improving-agent",
-      "count": 5
+      "count": 6
     },
     {
       "subscription": "mcp-tools",
-      "count": 5
+      "count": 6
     },
     {
       "subscription": "codegraph",
-      "count": 4
+      "count": 5
     },
     {
       "subscription": "agent-framework",
-      "count": 4
+      "count": 5
     },
     {
       "subscription": "agent-memory",
@@ -374,6 +418,10 @@
     {
       "subscription": "llm-fault-localization",
       "count": 2
+    },
+    {
+      "subscription": "claude-plugins",
+      "count": 1
     },
     {
       "subscription": "skills-system",
@@ -386,28 +434,24 @@
     {
       "subscription": "multi-agent",
       "count": 1
-    },
-    {
-      "subscription": "mcp",
-      "count": 1
     }
   ],
   "top_github_topics": [
     {
       "topic": "mcp",
-      "count": 7
+      "count": 8
     },
     {
       "topic": "codegraph",
-      "count": 5
+      "count": 6
     },
     {
       "topic": "agent-framework",
-      "count": 4
+      "count": 5
     },
     {
       "topic": "claude-plugins",
-      "count": 3
+      "count": 4
     },
     {
       "topic": "code-knowledge-graph",
@@ -418,16 +462,16 @@
       "count": 3
     },
     {
+      "topic": "skills-system",
+      "count": 2
+    },
+    {
       "topic": "karpathy-skills",
       "count": 2
     },
     {
       "topic": "cli-anything",
       "count": 2
-    },
-    {
-      "topic": "skills-system",
-      "count": 1
     },
     {
       "topic": "claude-code-skills",
@@ -440,13 +484,21 @@
         "mcp-tools",
         "self-improving-agent"
       ],
-      "count": 5,
+      "count": 6,
       "size": 2
     },
     {
       "combination": [
         "agent-framework",
         "codegraph"
+      ],
+      "count": 4,
+      "size": 2
+    },
+    {
+      "combination": [
+        "codegraph",
+        "mcp-tools"
       ],
       "count": 3,
       "size": 2
@@ -454,17 +506,9 @@
     {
       "combination": [
         "codegraph",
-        "mcp-tools"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "codegraph",
         "self-improving-agent"
       ],
-      "count": 2,
+      "count": 3,
       "size": 2
     },
     {
@@ -473,6 +517,49 @@
         "mcp-tools",
         "self-improving-agent"
       ],
+      "count": 3,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "mcp-tools"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "self-improving-agent"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "codegraph",
+        "mcp-tools"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "codegraph",
+        "self-improving-agent"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "mcp-tools",
+        "self-improving-agent"
+      ],
       "count": 2,
       "size": 3
     },
@@ -529,30 +616,14 @@
     {
       "combination": [
         "agent-framework",
-        "agent-memory"
+        "claude-plugins"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "agent-framework",
-        "mcp-tools"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "self-improving-agent"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
+        "claude-plugins",
         "codegraph"
       ],
       "count": 1,
@@ -560,48 +631,19 @@
     },
     {
       "combination": [
-        "agent-framework",
-        "agent-memory",
-        "codegraph"
-      ],
-      "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "agent-memory",
+        "claude-plugins",
         "mcp-tools"
       ],
       "count": 1,
-      "size": 3
+      "size": 2
     },
     {
       "combination": [
-        "agent-framework",
-        "agent-memory",
+        "claude-plugins",
         "self-improving-agent"
       ],
       "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph",
-        "mcp-tools"
-      ],
-      "count": 1,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph",
-        "self-improving-agent"
-      ],
-      "count": 1,
-      "size": 3
+      "size": 2
     }
   ]
 }

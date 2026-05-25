@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T22:05:16.483814",
+  "generated_at": "2026-05-25T22:19:31.627347",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -138,6 +138,12 @@
           "change": 0.86
         }
       }
+    },
+    {
+      "date": "2026-05-25",
+      "sentiment": null,
+      "confidence": null,
+      "indices": {}
     }
   ],
   "calendar_data": [
@@ -160,6 +166,11 @@
       "date": "2026-05-24",
       "intensity": 72,
       "level": 4
+    },
+    {
+      "date": "2026-05-25",
+      "intensity": 0,
+      "level": 0
     }
   ],
   "risk_grid": [
@@ -181,6 +192,10 @@
         {
           "date": "2026-05-24",
           "level": "medium"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -201,6 +216,10 @@
         },
         {
           "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
           "level": "unknown"
         }
       ]
@@ -223,6 +242,10 @@
         {
           "date": "2026-05-24",
           "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -244,6 +267,10 @@
         {
           "date": "2026-05-24",
           "level": "high"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -265,6 +292,10 @@
         {
           "date": "2026-05-24",
           "level": "medium"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -285,6 +316,10 @@
         },
         {
           "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
           "level": "unknown"
         }
       ]
@@ -307,6 +342,10 @@
         {
           "date": "2026-05-24",
           "level": "low-mid"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -328,6 +367,10 @@
         {
           "date": "2026-05-24",
           "level": "medium-high"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -349,6 +392,10 @@
         {
           "date": "2026-05-24",
           "level": "mid"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -369,6 +416,10 @@
         },
         {
           "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
           "level": "unknown"
         }
       ]
@@ -391,6 +442,10 @@
         {
           "date": "2026-05-24",
           "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -411,6 +466,10 @@
         },
         {
           "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
           "level": "unknown"
         }
       ]
@@ -433,6 +492,10 @@
         {
           "date": "2026-05-24",
           "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     },
@@ -454,6 +517,10 @@
         {
           "date": "2026-05-24",
           "level": "low"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
         }
       ]
     }
@@ -465,7 +532,7 @@
     },
     {
       "level": "unknown",
-      "count": 10
+      "count": 11
     },
     {
       "level": "high",
