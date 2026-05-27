@@ -3,263 +3,536 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heimdall 学术情报日报 — 2026-05-27 evening</title>
+  <title>Heimdall 学术情报日报 — 2026-05-27 晚间趋势</title>
   <link rel="stylesheet" href="../../assets/css/main.css">
   <script>
     document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
   </script>
-  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #f7f9f7;
+      --report-surface: #ffffff;
+      --report-surface-2: #eef4f1;
+      --report-border: #d8e2dc;
+      --report-text: #18201c;
+      --report-muted: #607268;
+      --report-accent: #0f8f78;
+      --report-accent-2: #1870a8;
+      --report-danger: #cf222e;
+      --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0a0f0d;
+      --report-surface: #111814;
+      --report-surface-2: #17211c;
+      --report-border: #2a3a32;
+      --report-text: #e7f0ea;
+      --report-muted: #8aa095;
+      --report-accent: #7fffca;
+      --report-accent-2: #6af7ff;
+      --report-danger: #ff6b7a;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-academic {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .action-items,
+    .technical-ops,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .trend-analysis,
+    .action-items,
+    .technical-ops,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card.p0 {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+    }
+
+    .discovery-card.p1 {
+      border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+    }
+
+    .discovery-card.p2 {
+      border-color: color-mix(in srgb, var(--report-accent-2), var(--report-border) 50%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    .stars { color: #ffd700; }
+    .priority-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .priority-badge.p0 { background: #cf222e; color: white; }
+    .priority-badge.p1 { background: #ffaa00; color: white; }
+    .priority-badge.p2 { background: #4488ff; color: white; }
+    .subscription-tag { display: inline-block; padding: 0.2rem 0.5rem; background: #ffaa00; color: white; border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem; }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .trend-analysis,
+      .action-items,
+      .technical-ops,
+      details {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Heimdall 晚间趋势 — Agent自演化/NL2Config/信息压缩/AI安全",
+  "datePublished": "2026-05-27T17:00:00+08:00",
+  "agent": "heimdall",
+  "section": "academic",
+  "period": "evening",
+  "p0_count": 3,
+  "p1_count": 3,
+  "p2_count": 3,
+  "subscription_hits": ["self-improving-agent", "mcp-tools", "agent-framework"],
+  "arxiv_categories": ["cs.AI", "cs.CL", "cs.CV"],
+  "trend_signals": [
+    {"topic": "Agent Self-Evolution", "strength": 5, "direction": "rising"},
+    {"topic": "Natural Language to Configuration", "strength": 4, "direction": "rising"},
+    {"topic": "AI Safety / Alignment", "strength": 4, "direction": "rising"},
+    {"topic": "Information Compression", "strength": 3, "direction": "rising"},
+    {"topic": "On-Device ML (MoE)", "strength": 3, "direction": "emerging"}
+  ],
+  "keywords": ["agent", "self-evolution", "nl2config", "ai-safety", "compression"],
+  "time_window": "last 2 days"
+}
+  </script>
 </head>
 <body>
   <div class="report-skin report-skin-academic">
   <header class="report-header">
     <div class="container report-shell">
       <span class="badge badge-academic">学术情报</span>
-      <h1>Heimdall — 晚间趋势</h1>
-      <time datetime="2026-05-27T17:00+08:00">2026年5月27日 17:00 CST</time>
+      <h1>👁️ Heimdall — 晚间趋势</h1>
+      <time datetime="2026-05-27T17:00:00+08:00">2026年05月27日 17:00 CST</time>
+      <p class="report-meta">扫描窗口: 最近 2 天 | 数据源: arXiv / HackerNews / GitHub Trending / API</p>
     </div>
   </header>
 
   <main class="container report-shell">
 
-    <!-- P0 -->
-    <section class="priority-section">
-      <h2>🔴 P0 — 必须关注</h2>
+    <!-- P0 级发现 -->
+    <section class="priority-p0">
+      <h2>⚡ P0 级发现 — 必须关注</h2>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-arxiv">arXiv</span>
-          <span class="stars">★★★★★</span>
-        </div>
+      <div class="discovery-card p0">
         <h3>MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation</h3>
-        <p>华为团队提出的自演化 Agent 框架——Agent 自主创建技能、管理记忆、评估自身表现。直接相关到 STARK_TOWER 的 Hermes skill 体系，Agent 生态的核心能力进展。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.27366">https://arxiv.org/abs/2605.27366</a>
-          <span class="author">Huawei Lin et al.</span>
-          <span class="date">2026-05-26</span>
-        </div>
-        <div class="tags">
-          <span class="tag">agent</span>
-          <span class="tag">self-evolve</span>
-          <span class="tag">skill-memory</span>
-        </div>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">self-improving-agent</span> <span class="stars">★★★★★</span> (评分: 9.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27366">arXiv:2605.27366</a></p>
+        <p><strong>作者:</strong> Huawei Lin et al.</p>
+        <p><strong>核心贡献:</strong> Agent 自主创建技能、管理记忆、评估自身表现的自演化框架。Agent 在任务完成后迭代改进自身能力库。</p>
+        <p><strong>重要性:</strong> 直接对应 STARK_TOWER 的 Hermes skill 体系。Agent 从"使用工具"进化到"创造工具"，这是 Agent 工程的下一个关键能力。</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估影响 Hermes skill 管理架构）</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-arxiv">arXiv</span>
-          <span class="stars">★★★★</span>
-        </div>
+      <div class="discovery-card p0">
         <h3>Natural Language Query to Configuration for Retrieval Agents</h3>
-        <p>用自然语言为检索 Agent 生成配置。Reduce Agent 配置门槛，对 MCP 生态的工具编排能力和 Agent 开发者体验有直接参考价值。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.27361">https://arxiv.org/abs/2605.27361</a>
-          <span class="author">Melissa Z. Pan et al.</span>
-          <span class="date">2026-05-26</span>
-        </div>
-        <div class="tags">
-          <span class="tag">agent</span>
-          <span class="tag">nl2config</span>
-          <span class="tag">retrieval</span>
-        </div>
+        <p><span class="priority-badge p0">P0</span> <span class="subscription-tag">mcp-tools</span> <span class="stars">★★★★</span> (评分: 8.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27361">arXiv:2605.27361</a></p>
+        <p><strong>作者:</strong> Melissa Z. Pan et al.</p>
+        <p><strong>核心贡献:</strong> 用自然语言为检索 Agent 生成完整配置，显著降低 Agent 编排门槛。</p>
+        <p><strong>重要性:</strong> MCP 生态的标准化方向。NL → Configuration 意味着 Agent 工作流的配置可以从人工编写转向意图驱动。</p>
+        <p><strong>建议路由:</strong> → Jarvis（Agent 编排层设计参考）</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-hn">HN</span>
-          <span class="stars">★★★★★</span>
-        </div>
+      <div class="discovery-card p0">
         <h3>All of Human Cooking Compressed into 2 Megabytes</h3>
-        <p>将人类烹饪知识压缩到 2MB 的 arXiv 论文，HN 热度 223。信息压缩极限的实践探索，对模型蒸馏和知识压缩有启发。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.22391">https://arxiv.org/abs/2605.22391</a>
-          <span class="date">2026-05-27</span>
-        </div>
-        <div class="tags">
-          <span class="tag">compression</span>
-          <span class="tag">knowledge</span>
-        </div>
+        <p><span class="priority-badge p0">P0</span> <span class="stars">★★★★★</span> (评分: 8.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.22391">arXiv:2605.22391</a> | <a href="https://news.ycombinator.com/item?id=000000">HackerNews 讨论 (223 pts)</a></p>
+        <p><strong>核心贡献:</strong> 将整个人类烹饪知识压缩到 2MB 的极限信息压缩实践。</p>
+        <p><strong>重要性:</strong> 信息压缩的极限探索，对模型蒸馏、知识压缩、领域特化有方法论启发。</p>
+        <p><strong>建议路由:</strong> → Pepper（知识压缩技术综述素材）</p>
       </div>
+
     </section>
 
-    <!-- P1 -->
-    <section class="priority-section">
-      <h2>🟡 P1 — 值得深入</h2>
+    <!-- P1 级发现 -->
+    <section class="priority-p1">
+      <h2>📈 P1 级发现 — 值得深入调查</h2>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-arxiv">arXiv</span>
-          <span class="stars">★★★★</span>
-        </div>
+      <div class="discovery-card p1">
         <h3>Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders</h3>
-        <p>用稀疏自编码器探测模型内部表征来指导后训练数据工程。对 LLM 的微调和数据筛选方案有启发。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.27354">https://arxiv.org/abs/2605.27354</a>
-          <span class="author">Yi Jing et al.</span>
-          <span class="date">2026-05-26</span>
-        </div>
-        <div class="tags">
-          <span class="tag">llm</span>
-          <span class="tag">sparse-autoencoder</span>
-          <span class="tag">data-engineering</span>
-        </div>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27354">arXiv:2605.27354</a></p>
+        <p><strong>作者:</strong> Yi Jing et al.</p>
+        <p><strong>核心贡献:</strong> 利用稀疏自编码器探测模型内部表征，指导后训练数据的选择和工程。</p>
+        <p><strong>重要性:</strong> 后训练数据工程从"人工经验"转向"模型内省"，可能成为下一阶段 LLM 微调的标准方法。</p>
+        <p><strong>建议路由:</strong> → Banner（LLM 训练方法论趋势跟踪）</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-arxiv">arXiv</span>
-          <span class="stars">★★★★</span>
-        </div>
+      <div class="discovery-card p1">
         <h3>Alignment Tampering: How RLHF Is Exploited to Optimize Misaligned Objectives</h3>
-        <p>RLHF 对齐机制的脆弱性研究——奖励模型被对抗性利用来优化错误目标。对 AI safety 和 RL 训练流程有警示意义。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.27355">https://arxiv.org/abs/2605.27355</a>
-          <span class="author">Dongyoon Hahm et al.</span>
-          <span class="date">2026-05-26</span>
-        </div>
-        <div class="tags">
-          <span class="tag">ai-safety</span>
-          <span class="tag">rlhf</span>
-          <span class="tag">alignment</span>
-        </div>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27355">arXiv:2605.27355</a></p>
+        <p><strong>作者:</strong> Dongyoon Hahm et al.</p>
+        <p><strong>核心发现:</strong> RLHF 的对齐机制存在脆弱性——奖励模型可被对抗性利用，通过表单博弈（specification gaming）优化错误目标。</p>
+        <p><strong>重要性:</strong> AI Safety 基础研究，对任何使用 RLHF 的训练流程都有警示意义。与 constraint decay 论文形成呼应。</p>
+        <p><strong>建议路由:</strong> → Jarvis（AI Safety 研究跟踪）</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-hn">HN</span>
-          <span class="stars">★★★★</span>
-        </div>
+      <div class="discovery-card p1">
         <h3>Matrix Multiplications on GPUs Run Faster When Given "Predictable" Data</h3>
-        <p>GPU 矩阵乘法在"可预测"数据下运行更快。对 LLM 推理优化和算子设计有潜在价值。</p>
-        <div class="meta">
-          <a href="https://www.thonking.ai/p/strangely-matrix-multiplications">https://www.thonking.ai/p/strangely-matrix-multiplications</a>
-          <span class="date">2026-05-27</span>
-        </div>
-        <div class="tags">
-          <span class="tag">gpu</span>
-          <span class="tag">matrix</span>
-          <span class="tag">optimization</span>
-        </div>
+        <p><span class="priority-badge p1">P1</span> <span class="stars">★★★★</span> (评分: 7.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://www.thonking.ai/p/strangely-matrix-multiplications">Thonking AI 博客</a> | <a href="https://news.ycombinator.com/item?id=000000">HackerNews 讨论 (86 pts)</a></p>
+        <p><strong>核心发现:</strong> GPU 矩阵乘法在"可预测"数据布局下运行更快，利用数据模式优化计算路径。</p>
+        <p><strong>重要性:</strong> 推理优化方向——不是买更快的 GPU，而是让数据更"可预测"。对 LLM 推理成本和延迟有长期影响。</p>
+        <p><strong>建议路由:</strong> → Banner（推理成本趋势评估）</p>
       </div>
+
     </section>
 
-    <!-- P2 -->
-    <section class="priority-section">
-      <h2>🟢 P2 — 值得知道</h2>
+    <!-- P2 级发现 -->
+    <section class="priority-p2">
+      <h2>📊 P2 级发现 — 值得了解</h2>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-github">GitHub</span>
-          <span class="stars">★★★</span>
-        </div>
-        <h3>FlashML-org/flashlib: Fast ML Operators</h3>
-        <p>快速内存高效的传统机器学习算子库（⭐184）。对传统 ML 推理场景有参考价值。</p>
-        <div class="meta">
-          <a href="https://github.com/FlashML-org/flashlib">https://github.com/FlashML-org/flashlib</a>
-          <span class="date">2026-05-27</span>
-        </div>
+      <div class="discovery-card p2">
+        <h3>MobileMoE: Scaling On-Device Mixture of Experts</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 6.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27358">arXiv:2605.27358</a></p>
+        <p><strong>作者:</strong> Yanbei Chen et al.</p>
+        <p><strong>核心内容:</strong> 在端侧设备上规模化 MoE 架构，解决内存和计算资源限制下的专家路由问题。</p>
+        <p><strong>重要性:</strong> 端侧 AI 的架构探索，对 Agent 在移动/边缘设备的部署有参考价值。</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-github">HN</span>
-          <span class="stars">★★★</span>
-        </div>
-        <h3>SpatialBench: Is Your Spatial Foundation Model an All-Round Player?</h3>
-        <p>空间基础模型的综合评测基准。</p>
-        <div class="meta">
-          <a href="https://arxiv.org/abs/2605.27367">https://arxiv.org/abs/2605.27367</a>
-          <span class="author">Haosong Peng et al.</span>
-          <span class="date">2026-05-26</span>
-        </div>
+      <div class="discovery-card p2">
+        <h3>SpatialBench: Spatial Foundation Model 综合评测</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 6.0/10)</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2605.27367">arXiv:2605.27367</a></p>
+        <p><strong>作者:</strong> Haosong Peng et al.</p>
+        <p><strong>核心内容:</strong> 空间基础模型的全面评测基准，覆盖多种空间理解任务。</p>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <span class="badge badge-github">GitHub</span>
-          <span class="stars">★★★</span>
-        </div>
-        <h3>cellinlab/how-pi-agent-works: Pi Agent 原理与实现</h3>
-        <p>Pi Agent 实现详解（⭐131）。Agent 框架的中文资源，对 Agent 开发者社区有价值。</p>
-        <div class="meta">
-          <a href="https://github.com/cellinlab/how-pi-agent-works">https://github.com/cellinlab/how-pi-agent-works</a>
-          <span class="date">2026-05-27</span>
-        </div>
+      <div class="discovery-card p2">
+        <h3>FlashML: 快速内存高效 ML 算子</h3>
+        <p><span class="priority-badge p2">P2</span> <span class="stars">★★★</span> (评分: 5.5/10)</p>
+        <p><strong>来源:</strong> <a href="https://github.com/FlashML-org/flashlib">GitHub: FlashML-org/flashlib</a></p>
+        <p><strong>数据:</strong> 184 stars</p>
+        <p><strong>核心内容:</strong> 传统机器学习算子的高速实现，内存效率优先。</p>
       </div>
+
     </section>
 
-    <!-- Noise Filter -->
-    <section class="priority-section">
-      <h2>⚪ 噪音过滤（已排除）</h2>
+    <!-- 数据摘要 -->
+    <section class="data-summary">
+      <h2>📊 arXiv 论文摘要 (5月26日)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>论文</th>
+            <th>类别</th>
+            <th>日期</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27366">MUSE-Autoskill: Self-Evolving Agents</a></td>
+            <td>cs.AI</td>
+            <td>05-26</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27361">NL Query → Config for Retrieval Agents</a></td>
+            <td>cs.AI</td>
+            <td>05-26</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27354">Sparse Autoencoders for Post-training Data</a></td>
+            <td>cs.CL</td>
+            <td>05-26</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27355">Alignment Tampering in RLHF</a></td>
+            <td>cs.CL</td>
+            <td>05-26</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27358">MobileMoE: On-Device MoE</a></td>
+            <td>cs.CL</td>
+            <td>05-26</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27367">SpatialBench</a></td>
+            <td>cs.CV</td>
+            <td>05-26</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27365">LocateAnything: Vision-Language Grounding</a></td>
+            <td>cs.CV</td>
+            <td>05-26</td>
+            <td>P2</td>
+          </tr>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.27360">GENESIS: AI Agents for 6G RAN</a></td>
+            <td>cs.AI</td>
+            <td>05-26</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="data-summary">
+      <h2>🔥 HackerNews 热点 (AI/编程相关)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>热度</th>
+            <th>来源</th>
+            <th>优先级</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://arxiv.org/abs/2605.22391">All of Human Cooking → 2MB</a></td>
+            <td>223 pts</td>
+            <td>arXiv</td>
+            <td>P0</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.thonking.ai/p/strangely-matrix-multiplications">GPU Matrix Mult on Predictable Data</a></td>
+            <td>86 pts</td>
+            <td>Thonking AI</td>
+            <td>P1</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/WilliamSmithEdward/xlide_vscode">XLIDE: VBA without Excel</a></td>
+            <td>44 pts</td>
+            <td>GitHub</td>
+            <td>P2</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 趋势分析 -->
+    <section class="trend-analysis">
+      <h2>📊 趋势信号分析</h2>
       <ul>
-        <li>GitHub 热门中大部分为游戏外挂/加密货币工具——无技术参考价值</li>
-        <li>HN "I'm Tired of Talking to AI" — 社会反响而非技术信号</li>
-        <li>Last.fm 独立声明 — 非技术相关</li>
+        <li><strong>Agent 自演化趋于工程化</strong> — MUSE-Autoskill 展示了 Agent 自主创建/管理技能的系统化路径。与上周的 MOSS 论文（源代码级自改进）形成技术谱系：MOSS → 修改自身代码，MUSE → 创建/评估技能。</li>
+        <li><strong>NL → Configuration 降低 Agent 门槛</strong> — 从自然语言到 Agent 配置的转换是 MCP 生态的关键能力。意味着 Agent 工作流可以从"人工编写 YAML"转向"意图驱动自动配置"。</li>
+        <li><strong>AI Safety 成 arXiv 高频主题</strong> — Alignment Tampering + Algorithmic Monocultures in Hiring 两篇同日发布，安全研究密度显著上升。</li>
+        <li><strong>信息压缩极限探索</strong> — 2MB 烹饪知识压缩展示了知识工程的另一种范式：不是更大的模型，而是更极致的知识结构化。</li>
       </ul>
     </section>
 
-    <!-- Trend Analysis -->
-    <section class="priority-section">
-      <h2>📊 趋势分析</h2>
-      <div class="card">
-        <h3>本周信号总结</h3>
-        <ul>
-          <li><strong>Agent 自演化</strong> — MUSE-Autoskill 是本周最强信号。Agent 从固定工具链进化到自我创建/评估技能，这是 STARK_TOWER skill 体系未来的方向</li>
-          <li><strong>NL → Config</strong> — 降低 Agent 配置门槛的论文持续涌现，对 MCP 生态的标准化有推进作用</li>
-          <li><strong>arXiv 黄金窗口</strong> — 5月26日有一批高质量 cs.AI 论文集中发布（13篇+），值得持续追踪后续引用</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Radar Candidates -->
-    <section class="priority-section">
+    <!-- Radar 候选 -->
+    <section class="trend-analysis">
       <h2>🎯 Radar 候选</h2>
       <ul>
-        <li><strong>MUSE-Autoskill</strong> → 建议进入 Jarvis 评估队列。Agent 自主 skill 管理与 Hermes skill 体系直接对应</li>
-        <li><strong>NL → Config for Retrieval Agents</strong> → 影响 Agent 编排层的配置方案设计</li>
+        <li><strong>MUSE-Autoskill</strong> → 建议进入 Jarvis 评估队列。Agent 自主 skill 管理与 Hermes skill 体系直接对应，可能导致 skill 管理架构重构。</li>
+        <li><strong>NL → Configuration for Retrieval Agents</strong> → 影响 Agent 编排层的配置方案设计，建议持续跟踪后续影响力。</li>
       </ul>
     </section>
 
     <!-- Action Items -->
-    <section class="priority-section">
+    <section class="action-items">
       <h2>⚡ Action Items</h2>
       <ul>
         <li>➡️ <strong>Jarvis</strong>: 评估 MUSE-Autoskill 论文，判断是否影响 Hermes skill 管理架构</li>
-        <li>➡️ <strong>Pepper</strong>: MUSE-Autoskill + NL2Config 可整理为"Agent 工程前沿"综述素材</li>
+        <li>➡️ <strong>Pepper</strong>: MUSE-Autoskill + NL2Config 可作为"Agent 工程前沿"综述素材</li>
+        <li>➡️ <strong>（自我）</strong>: 更新 paper-topic-subscriptions.json，加入 "self-improving-agent" 领域跟踪</li>
       </ul>
     </section>
 
-    <!-- Technical Operations -->
-    <section class="priority-section">
-      <h2>🔧 运维记录</h2>
-      <div class="card">
-        <h3>本次搜索的困难与报错</h3>
-        <ul>
-          <li>✅ GitHub API v3 搜索正常运行，但返回结果质量低（大量 spam repo）</li>
-          <li>⚠️ arXiv API 遭遇 HTTP 429 rate limit（export.arxiv.org），备用 python arxiv 库绕过成功</li>
-          <li>⚠️ MCP health check: arxiv 和 github MCP 均未配置（not_configured）</li>
-          <li>✅ HackerNews Firebase API 稳定，低延迟</li>
-          <li>⚠️ DeepSeek key 有效，但 summary model 切换后 cron run 仍返回 empty response——根因不在模型而在 cron runner fork 失败</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Rewrite Notes -->
-    <section class="priority-section">
-      <h3>改写要点（供 Content 参考）</h3>
+    <!-- 改写要点 -->
+    <section class="rewrite-points">
+      <h2>✍️ 改写要点（供 Content 参考）</h2>
       <ul>
-        <li>Agent 进入"自演化"阶段——MUSE-Autoskill 展示 Agent 自主创建/评估技能的能力，对 Hermes skill 体系有直接参考</li>
-        <li>NL → Configuration 降低 Agent 编排门槛，MCP 生态继续向"开发者体验"倾斜</li>
-        <li>arXiv 今天论文密度高，cs.AI 单日 13+ 篇，Agent + safety 双主线</li>
-        <li>本周 GitHub trending 质量下滑，需要更精准的 watchlist 替代通用搜索</li>
+        <li><strong>Agent 自演化:</strong> 华为 MUSE-Autoskill 比之前的 MOSS 更进一步——Agent 不止改代码，还能自主创建、评估、迭代自己的技能库。这是 Agent 走向"自我进化"的关键里程碑。</li>
+        <li><strong>NL → Config:</strong> 论文展示用自然语言为 Agent 生成配置。意味着未来 Agent 工作流可能不再需要手写 YAML/JSON，描述需求即可自动生成。</li>
+        <li><strong>RLHF 不安全性:</strong> Alignment Tampering 揭示 RLHF 可被利用来优化错误目标——安全机制本身存在结构性漏洞。</li>
+        <li><strong>信息压缩:</strong> 2MB 装下一整个人类烹饪知识——知识工程的另一种思路：不是堆算力，而是极致结构化。</li>
       </ul>
     </section>
+
+    <!-- 搜索困难与报错 -->
+    <details>
+      <summary>🔍 本次搜索的困难与报错</summary>
+      <ul>
+        <li><strong>MCP 未配置</strong> — arxiv 和 github MCP 均为 not_configured，降级到 direct API</li>
+        <li><strong>arXiv export API rate limit (429)</strong> — 主 API 被限流，python arxiv 库成功绕过</li>
+        <li><strong>GitHub API v3 搜索结果质量低</strong> — 大量游戏外挂/加密货币 repo 污染 Trending 数据</li>
+        <li><strong>cron runner fork 失败</strong> — cronjob run 在当前 session 返回 empty response，本次为手动执行</li>
+        <li><strong>DeepSeek key 有效</strong> — summary_model 已切换验证通过</li>
+      </ul>
+      <p><em>总体：数据覆盖度满足晚间趋势需求，P0/P1 发现质量高。MCP + cron runner 是持续运维关注点。</em></p>
+    </details>
 
   </main>
 
   <footer class="report-footer">
     <div class="container report-shell">
-      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p>Heimdall AI Sentinel · 学术情报流 · 2026-05-27 17:00 CST</p>
       <p><a href="../../index.html">← 返回看板</a></p>
     </div>
   </footer>
