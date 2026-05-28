@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Sentinel 晨间简报 · 2026-05-28</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+  .header {
+    text-align: center;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-size: 28px;
+    background: linear-gradient(135deg, #58a6ff, #bc8cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header .meta { color: #8b949e; font-size: 14px; margin-top: 8px; }
+  .header .meta span { margin: 0 12px; }
+  .section {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .section h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #21262d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section h2 .tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .tag-p0 { background: #da3633; color: #fff; }
+  .tag-p1 { background: #d29922; color: #fff; }
+  .tag-p2 { background: #1f6feb; color: #fff; }
+  .tag-p3 { background: #238636; color: #fff; }
+  .card {
+    background: #0d1117;
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: #58a6ff; }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  .card-title:hover { text-decoration: underline; }
+  .card-meta {
+    font-size: 12px;
+    color: #8b949e;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .card-meta .badge {
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge-hot { background: #da3633; color: #fff; }
+  .badge-warm { background: #d29922; color: #fff; }
+  .badge-info { background: #1f6feb; color: #fff; }
+  .badge-new { background: #238636; color: #fff; }
+  .card-body { font-size: 14px; color: #c9d1d9; }
+  .card-body p { margin-bottom: 6px; }
+  .card-body .url-link {
+    display: inline-block;
+    color: #8b949e;
+    font-size: 12px;
+    word-break: break-all;
+    margin-top: 4px;
+  }
+  .card-body .url-link:hover { color: #58a6ff; }
+  .stars { color: #d29922; font-size: 12px; }
+  .single-source {
+    display: inline-block;
+    background: #d2992222;
+    color: #d29922;
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+  .trending-list { list-style: none; }
+  .trending-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 14px;
+  }
+  .trending-list li:last-child { border-bottom: none; }
+  .trending-list li strong { color: #f0883e; }
+  .error-box {
+    background: #da363311;
+    border: 1px solid #da363333;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #f85149;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 640px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+  .action-item {
+    background: #0d1117;
+    border-left: 3px solid;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+  }
+  .action-p0 { border-color: #da3633; }
+  .action-p1 { border-color: #d29922; }
+  .action-p2 { border-color: #1f6feb; }
+  .action-item .action-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .action-p0 .action-label { color: #da3633; }
+  .action-p1 .action-label { color: #d29922; }
+  .action-p2 .action-label { color: #1f6feb; }
+  .footer {
+    text-align: center;
+    color: #484f58;
+    font-size: 12px;
+    padding: 20px 0;
+    border-top: 1px solid #21262d;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🌅 AI Sentinel 晨间简报</h1>
+  <div class="meta">2026-05-28 · 10:00 UTC+8 · <span>P0 趋势 · P1 雷达 · P2 参考</span></div>
+</div>
+
+<!-- 1. 趋势分析 -->
+<div class="section">
+  <h2>📈 趋势分析 <span class="tag tag-p0">P0</span></h2>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">🔥 Agent 生态加速分化：ECG 框架领跑</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="card-meta">
+      <span class="badge badge-hot">GitHub #1</span>
+      <span>affaan-m/ECC</span>
+    </div>
+    <div class="card-body">
+      <p>ECC（Agent 性能优化系统）以 <strong>196K stars</strong> 登顶 GitHub，涵盖 skills、instincts、memory、security 等模块，适配 Claude Code / Codex / Cursor 等主流 Agent。</p>
+      <p>趋势解读：Agent 从"能跑"到"跑好"阶段，ECG（Agent 编排与治理）成为新刚需。</p>
+      <a class="url-link" href="https://github.com/affaan-m/ECC" target="_blank">https://github.com/affaan-m/ECC</a>
+      <span class="single-source">单源，建议核实</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">🛡️ AI 去审查化工具井喷：heretic + Anthropic-Cybersecurity-Skills</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <div class="card-meta">
+      <span class="badge badge-hot">GitHub #7, #9</span>
+      <span>p-e-w/heretic · mukul975/Anthropic-Cybersecurity-Skills</span>
+    </div>
+    <div class="card-body">
+      <p><strong>heretic</strong>（22K stars）—— 全自动去除 LLM 审查机制；<strong>Anthropic-Cybersecurity-Skills</strong>（11K stars）—— 网络安全 Agent 技能集。</p>
+      <p>两者同时冲进 GitHub Trend 前 10，反映社区对"无审查 AI"和"AI 安全攻防"的双面需求。</p>
+      <a class="url-link" href="https://github.com/p-e-w/heretic" target="_blank">https://github.com/p-e-w/heretic</a>
+      <span class="single-source">单源，建议核实</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">🧠 LLM 内省能力受质疑 + 自蒸馏训练新范式</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="card-meta">
+      <span class="badge badge-new">arXiv cs.AI/cs.CL</span>
+      <span>arXiv:2605.26242 · arXiv:2605.26132</span>
+    </div>
+    <div class="card-body">
+      <p><strong>Can LLMs Introspect? A Reality Check</strong> —— 提出行为证据不足以证明 LLM 拥有真正内省能力，引发对"模型自我认知"的再思考。</p>
+      <p><strong>Self-Verified Distillation</strong> —— Tony Lee & Percy Liang 提出模型用自身合成数据进行自我蒸馏，无需外部教师，在 Math/Science/Coding 三个领域取得显著提升（Qwen3-4B 平均 +12 点）。</p>
+      <a class="url-link" href="https://arxiv.org/abs/2605.26242" target="_blank">https://arxiv.org/abs/2605.26242</a>
+      <a class="url-link" href="https://arxiv.org/abs/2605.26132" target="_blank">https://arxiv.org/abs/2605.26132</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">🌐 DuckDuckGo 访问量暴涨 28% —— 用户反噬 AI 模式</span>
+      <span class="stars">★★★★☆</span>
+    </div>
+    <div class="card-meta">
+      <span class="badge badge-hot">HN #11</span>
+      <span>675 points · 336 comments</span>
+    </div>
+    <div class="card-body">
+      <p>Google 强制 AI 摘要后用户用脚投票，DuckDuckGo 流量激增。HN 热议：用户对"AI 污染搜索结果"的厌倦正在形成潮汐。</p>
+      <a class="url-link" href="https://www.pcgamer.com/" target="_blank">https://www.pcgamer.com/</a>
+      <span class="single-source">单源，建议核实</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">📺 YouTube 将自动标注 AI 生成视频</span>
+      <span class="stars">★★★☆☆</span>
+    </div>
+    <div class="card-meta">
+      <span class="badge badge-hot">HN #2</span>
+      <span>544 points · 325 comments</span>
+    </div>
+    <div class="card-body">
+      <p>YouTube 宣布自动标记 AI 生成内容。监管版图的又一里程碑，对内容创作者生态影响深远。</p>
+      <a class="url-link" href="https://blog.youtube/" target="_blank">https://blog.youtube/</a>
+      <span class="single-source">单源，建议核实</span>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Radar 候补 -->
+<div class="section">
+  <h2>📡 Radar 候补 <span class="tag tag-p1">P1</span></h2>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🤖 Understand-Anything</span>
+        <span class="stars">★★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-info">GitHub #2</span> TypeScript</div>
+      <div class="card-body">
+        <p>交互式代码知识图谱，支持 Claude Code / Cursor / Copilot 等。40K stars，4,465 stars/day，增速最快。</p>
+        <a class="url-link" href="https://github.com/Lum1104/Understand-Anything" target="_blank">查看</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🎨 Taste-Skill</span>
+        <span class="stars">★★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-info">GitHub #6</span> Shell</div>
+      <div class="card-body">
+        <p>24K stars，让 AI 生成有"品味"的内容，anti-slop 运动代表项目。2,715 stars/day。</p>
+        <a class="url-link" href="https://github.com/Leonxlnx/taste-skill" target="_blank">查看</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">📝 Knowledge-Work-Plugins</span>
+        <span class="stars">★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-info">GitHub #5</span> Anthropic 官方</div>
+      <div class="card-body">
+        <p>Anthropic 出品的 Claude Cowork 知识工作者插件库。17K stars，企业级 Agent 编排方向。</p>
+        <a class="url-link" href="https://github.com/anthropics/knowledge-work-plugins" target="_blank">查看</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🏦 Kronos 金融基础模型</span>
+        <span class="stars">★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-info">GitHub #8</span></div>
+      <div class="card-body">
+        <p>Kronos —— 金融市场语言基础模型。26K stars，AI+金融方向有追踪价值。</p>
+        <a class="url-link" href="https://github.com/shiyu-coder/Kronos" target="_blank">查看</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🧪 Agent Memory 数据管理</span>
+        <span class="stars">★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-new">arXiv</span> cs.AI/cs.DB</div>
+      <div class="card-body">
+        <p>"Is Agent Memory a Database?" —— 提出 GEM（Governed Evolving Memory）框架，挑战传统数据库范式适用于 Agent 记忆的假设。</p>
+        <a class="url-link" href="https://arxiv.org/abs/2605.26252" target="_blank">查看</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">🚫 Stop-Slop</span>
+        <span class="stars">★★★</span>
+      </div>
+      <div class="card-meta"><span class="badge badge-info">GitHub #3</span></div>
+      <div class="card-body">
+        <p>从 prose 中去除 AI 痕迹的技能文件。5.7K stars，anti-slop 运动另一成员。</p>
+        <a class="url-link" href="https://github.com/hardikpandya/stop-slop" target="_blank">查看</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Action Items -->
+<div class="section">
+  <h2>⚡ Action Items <span class="tag tag-p0">P0</span></h2>
+
+  <div class="action-item action-p0">
+    <div class="action-label">P0 · 立即关注</div>
+    <strong>@heimdall</strong> — 将 ECC (affaan-m/ECC) 纳入长期追踪，评估其 Agent 治理能力是否能用于 Rookie's News 内部 Agent 编排。
+    <div class="card-meta" style="margin-top:4px">来源: GitHub Trending #1 · 196K stars</div>
+  </div>
+
+  <div class="action-item action-p0">
+    <div class="action-label">P0 · 内容选题</div>
+    <strong>@content</strong> — 本周重点选题：① "AI 去审查化"浪潮（heretic + Anthropic-Cybersecurity-Skills）；② Self-Verified Distillation 自蒸馏新范式（Percy Liang 组）。
+    <div class="card-meta" style="margin-top:4px">来源: GitHub Trending + arXiv</div>
+  </div>
+
+  <div class="action-item action-p1">
+    <div class="action-label">P1 · 深度阅读</div>
+    <strong>@friday</strong> — 深入阅读 Simon Willison 的 "Anthropic and OpenAI have found product-market fit"（HN #3, 656pts），评估其对 AI 行业竞争格局的判断。
+    <div class="card-meta" style="margin-top:4px">来源: HN #3 · simonwillison.net</div>
+  </div>
+
+  <div class="action-item action-p1">
+    <div class="action-label">P1 · 实验评估</div>
+    <strong>@heimdall</strong> — 评估 Understand-Anything 的知识图谱功能，看是否能用于 Rookie's News 内部知识管理。
+    <div class="card-meta" style="margin-top:4px">来源: GitHub Trending #2 · 40K stars</div>
+  </div>
+
+  <div class="action-item action-p2">
+    <div class="action-label">P2 · 持续追踪</div>
+    <strong>@edith</strong> — 关注 Kronos 金融模型的进展（AI+金融方向）以及 DuckDuckGo 流量数据变化。
+    <div class="card-meta" style="margin-top:4px">来源: GitHub Trending #8 + HN #11</div>
+  </div>
+</div>
+
+<!-- 4. 改写要点 -->
+<div class="section">
+  <h2>✍️ 改写要点 <span class="tag tag-p1">P1</span></h2>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:6px;">选题一：Agent 从"能用"到"好用"</div>
+    <div class="card-body">
+      <p>ECG 框架（ECC）以 196K stars 证明 Agent 治理成为刚需。可写"如何让你的 AI Agent 不掉链子"。</p>
+      <p>角度：工程化视角 vs 纯技术视角，适合开发者读者群。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:6px;">选题二：AI 生成内容监管加速</div>
+    <div class="card-body">
+      <p>YouTube 自动标注 AI 视频 + DuckDuckGo 流量暴涨，反映用户对 AI 泛滥的反噬。可设"AI 标签时代来了"。</p>
+      <p>角度：产业影响 + 用户心理 + 监管趋势。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:6px;">选题三：模型自我进化 —— 无需教师</div>
+    <div class="card-body">
+      <p>Self-Verified Distillation 展示了 "模型自训练" 的可能性。Percy Liang 组的这篇工作值得一篇深挖。</p>
+      <p>角度：技术原理 + 与 RLHF/SFT 的对比 + 开源实践可行性。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom:6px;">选题四：Anti-Slop 运动</div>
+    <div class="card-body">
+      <p>stop-slop + taste-skill + heretic 三个项目同天冲榜，"去 AI 味"成为社区共识。可写"AI 生成内容的反面审美运动"。</p>
+      <p>角度：社区文化观察 + 产品化机会。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 困难与报错 -->
+<div class="section">
+  <h2>⚠️ 本次搜索的困难与报错 <span class="tag tag-p3">P3</span></h2>
+
+  <div class="error-box">
+    <strong>[ERROR] Web Search 工具不可用</strong><br>
+    当前环境无 web_search 工具。原定用 web_search 快速检索 GitHub / HN / arXiv / HF，实需绕道 browser 逐页抓取，耗费约 3x 时间。
+  </div>
+
+  <div class="error-box" style="margin-top:8px;">
+    <strong>[WARN] arXiv 日期参数格式不支持</strong><br>
+    <code>arxiv.org/list/cs.AI/2026-05-28</code> 格式不被识别，改用 <code>/list/cs.AI/new</code> 获取最新提交。列表为 2026-05-27（周三）的新提交，共 461 篇（cs.AI）+ 253 篇（cs.CL）。
+  </div>
+
+  <div class="error-box" style="margin-top:8px;">
+    <strong>[WARN] HuggingFace Trending 列表被截断</strong><br>
+    HF 页面使用动态加载，browser snapshot 只能获取前 5 个可见条目。未能获取完整 Top 10 Trending Models。
+  </div>
+
+  <div class="error-box" style="margin-top:8px;">
+    <strong>[NOTE] GitHub 未登录导致缺少 Fork/Star 数据精确值</strong><br>
+    未登录 GitHub 状态下无法获取精确的 star/fork 数值（部分被"Sign in"按钮遮挡）。通过 HTML 反爬特点解析了可见数据。
+  </div>
+
+  <div class="error-box" style="margin-top:8px;">
+    <strong>[NOTE] Broswerbase 无 residential 代理</strong><br>
+    浏览器运行在"无 residential 代理"模式，部分站点（如 GitHub）可能触发更严格的 bot 检测。数据获取正常但存在风险。
+  </div>
+</div>
+
+<div class="footer">
+  AI Sentinel · 晨间简报 · 2026-05-28 · 自动生成<br>
+  Powered by Hermes Agent · Nous Research
+</div>
+
+</div>
+</body>
+</html>

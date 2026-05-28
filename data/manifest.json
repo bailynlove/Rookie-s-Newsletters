@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-05-25T22:19:31.624677",
+  "generated_at": "2026-05-28T09:38:09.027106",
   "academic": [
+    {
+      "path": "academic/2026-05-27/17-00-trend-radar-review.html",
+      "date": "2026-05-27",
+      "period": "17-00-trend-radar-review",
+      "section": "academic",
+      "keywords": [
+        "Agent Self-Evolution",
+        "Natural Language to Configuration",
+        "AI Safety / Alignment"
+      ]
+    },
     {
       "path": "academic/2026-05-25/08-00-agent-mcp-codegraph-skills-selfevolution.html",
       "date": "2026-05-25",
