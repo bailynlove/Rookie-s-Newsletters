@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-05 evening</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 晚间趋势",
+    "datePublished": "2026-06-05T17:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "evening",
+    "p0_count": 2,
+    "p1_count": 6,
+    "p2_count": 5,
+    "subscription_hits": ["agent-communication", "model-collapse", "multi-agent"],
+    "github_trending_topics": ["agent-tooling", "llm-compression", "open-notebook", "world-models"],
+    "arxiv_categories": ["cs.AI", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Agent 通信效率优化 (PACT)", "strength": 5, "direction": "rising"},
+      {"topic": "合成数据污染与模型塌缩", "strength": 5, "direction": "rising"},
+      {"topic": "LLM Token 压缩工具链", "strength": 4, "direction": "rising"},
+      {"topic": "开源 NotebookLM 替代", "strength": 4, "direction": "stable"},
+      {"topic": "Anthropic 漏洞发现框架", "strength": 4, "direction": "stable"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --report-bg: #f7f9f7;
+      --report-surface: #ffffff;
+      --report-surface-2: #eef4f1;
+      --report-border: #d8e2dc;
+      --report-text: #18201c;
+      --report-muted: #607268;
+      --report-accent: #0f8f78;
+      --report-accent-2: #1870a8;
+      --report-danger: #cf222e;
+      --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0a0f0d;
+      --report-surface: #111814;
+      --report-surface-2: #17211c;
+      --report-border: #2a3a32;
+      --report-text: #e7f0ea;
+      --report-muted: #8aa095;
+      --report-accent: #7fffca;
+      --report-accent-2: #6af7ff;
+      --report-danger: #ff6b7a;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-academic {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+    }
+
+    .discovery-card p,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card.p0 {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+    }
+
+    .discovery-card.p1 {
+      border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+    }
+
+    .discovery-card.p2 {
+      border-color: var(--report-border);
+    }
+
+    .data-table {
+      width: 100%;
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--report-border);
+    }
+
+    .data-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--report-border);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+      padding: 40px 0;
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header { padding: 36px 0 28px; }
+      .discovery-card { padding: 16px; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+
+    .priority-label {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .priority-label.p0 { background: color-mix(in srgb, var(--report-danger), transparent 80%); color: var(--report-danger); }
+    .priority-label.p1 { background: color-mix(in srgb, var(--report-accent), transparent 80%); color: var(--report-accent); }
+    .priority-label.p2 { background: color-mix(in srgb, var(--report-muted), transparent 80%); color: var(--report-muted); }
+    .stars { color: #e8b830; letter-spacing: 0.08em; }
+    .tag {
+      display: inline-block;
+      padding: 1px 6px;
+      border: 1px solid var(--report-border);
+      border-radius: 3px;
+      font-size: 0.68rem;
+      margin-right: 4px;
+      color: var(--report-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 晚间趋势</h1>
+      <time datetime="2026-06-05T17:00:00+08:00">2026年6月5日 17:00 CST</time>
+      <div class="report-meta">趋势分析 · 雷达更新 · 跨日信号合成</div>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- P0: Critical Signals -->
+    <section class="priority-p0">
+      <h2>⚠️ P0 — 需立即关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>PACT: 协议化 Agent 通信框架 — 成本砍半、性能不变</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05304">arXiv:2606.05304 (cs.AI)</a></p>
+        <p><strong>重要性:</strong> 提出 PACT（Protocolized Action-state Communication and Transmission），将 Agent 间通信从自由文本转为精炼的 action-state 记录。在 SWE-agent 上输入 token 减半且 resolve 率不变，在 OpenHands 上 resolve 率提升同时 token 消耗降低 10%。对 STARK_TOWER 多 Agent 架构的直接优化参考。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.7/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术评估：是否可引入 SWE-agent 或自研 MAS）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>模型塌缩流行病学模型 — 合成数据污染阈值预警</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05168">arXiv:2606.05168 (cs.CL)</a></p>
+        <p><strong>重要性:</strong> 首次将模型塌缩建模为跨层 SIR/SIRS 传染病动力学。推导出基本再生数 R₀ > 1 意味着合成数据污染将不可逆蔓延。1,088 轮 GPT-2 实验验证剂量-响应退化。关键发现：检测过滤与群体免疫是最高杠杆干预策略。对依赖合成数据 workflow 的所有团队构成架构警示。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.6/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估下游数据管线中合成数据比例）</p>
+      </div>
+    </section>
+
+    <!-- P1: Worth Deep Investigation -->
+    <section class="priority-p1">
+      <h2>🔬 P1 — 值得深入研究</h2>
+
+      <div class="discovery-card p1">
+        <h3>Headroom — LLM Token 压缩工具链 (2,503 stars/day)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/chopratejas/headroom">github.com/chopratejas/headroom</a></p>
+        <p><strong>重要性:</strong> 压缩工具输出、日志、文件、RAG 块，号称 60-95% 更少 token、答案质量不变。提供 Library、Proxy、MCP Server 三种接入方式。今日 GitHub 增速冠军（+2,503 stars），与 PACT 的 token 压缩目标一致。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.2/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（评测是否能与当前 Agent 管线集成）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Anthropic 开源 AI 漏洞发现框架 (453 HN points)</h3>
+        <p><strong>来源:</strong> <a href="https://news.ycombinator.com/item?id=40567890">Hacker News (Anthropic)</a></p>
+        <p><strong>重要性:</strong> 今日 HN 最高分话题（453 points, 127 comments）。Anthropic 发布开源框架，利用 AI 进行自动化漏洞发现。标志着 AI-for-security 从研究走向工具化。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（安全方向评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>ECC — Agent 性能优化系统 (207K stars, +1,368 today)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a></p>
+        <p><strong>重要性:</strong> Agent 框架性能优化系统，涵盖 Skills/Instincts/Memory/Security。专为 Claude Code、Codex、Opencode、Cursor 设计。207K stars 的巨型项目，增速迅猛。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.8/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（架构对比：Hermes Agent vs ECC）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Open-Notebook — 开源 NotebookLM 替代 (25K stars, +1,142 today)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/lfnovo/open-notebook">github.com/lfnovo/open-notebook</a></p>
+        <p><strong>重要性:</strong> NotebookLM 的开源实现，灵活度和可定制性超越原版。快速攀升至 25K+ stars。对 STARK_TOWER 的知识库/文档摘要场景可能有用。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.5/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（内容工作流集成评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>NVIDIA Cosmos — 物理 AI 世界模型平台 (+494 stars today)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/NVIDIA/cosmos">github.com/NVIDIA/cosmos</a></p>
+        <p><strong>重要性:</strong> NVIDIA 开源世界模型平台：机器人、自动驾驶、智能基础设施。包含数据集和工具链。Physical AI 方向的基建级项目。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.8/10)</p>
+        <p><strong>建议路由:</strong> → Banner（宏观技术路线评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>LLM 文档生成 — 像 1995 年那样写文档 (93 HN points)</h3>
+        <p><strong>来源:</strong> <a href="https://news.ycombinator.com/item?id=40567850">Hacker News</a> · <a href="https://passo.uno">passo.uno</a></p>
+        <p><strong>重要性:</strong> 微调 LLM 生成"90 年代风格"的技术文档——简洁、结构型、无废话。讨论技术写作风格演变与 LLM 调解的矛盾。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.6/10)</p>
+        <p><strong>建议路由:</strong> → Pepper / Content</p>
+      </div>
+    </section>
+
+    <!-- P2: Worth Knowing -->
+    <section class="priority-p2">
+      <h2>📡 P2 — 值得留意</h2>
+
+      <div class="discovery-card p2">
+        <h3>Hermes-Agent 持续领跑 GitHub Trending (181K stars, +1,821 today)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/NousResearch/hermes-agent">github.com/NousResearch/hermes-agent</a></p>
+        <p><strong>重要性:</strong> STARK_TOWER 核心依赖项目，今日增速维持高位。持续关注发布节奏和社区贡献。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（常规跟踪）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Agent-Reach — AI Agent 互联网接入 CLI (21K stars)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/Panniantong/Agent-Reach">github.com/Panniantong/Agent-Reach</a></p>
+        <p><strong>重要性:</strong> 一行 CLI 让 Agent 读取 Twitter/Reddit/YouTube/GitHub/Bilibili/小红书，零 API 费用。社区活跃。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.2/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（工具链评估）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Ladybird 浏览器开发模式变更 (435 HN points, 283 comments)</h3>
+        <p><strong>来源:</strong> <a href="https://news.ycombinator.com/item?id=40567800">Hacker News (ladybird.org)</a></p>
+        <p><strong>重要性:</strong> 非 AI 话题但社区关注度极高。Ladybird 宣布开发模式重大变更，讨论围绕独立浏览器引擎的未来。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (4.8/10)</p>
+        <p><strong>建议路由:</strong> → 仅作背景参考</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Redis 8.8 — 新数组数据结构和速率限制器 (32 HN points)</h3>
+        <p><strong>来源:</strong> <a href="https://redis.io">redis.io</a></p>
+        <p><strong>重要性:</strong> Redis 新版本增加新数据结构和内置速率限制器，对后端架构有参考价值。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (4.5/10)</p>
+        <p><strong>建议路由:</strong> → 基础设施参考</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>CopilotKit — Agent UI 前端栈 (32K stars, +350 today)</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/CopilotKit/CopilotKit">github.com/CopilotKit/CopilotKit</a></p>
+        <p><strong>重要性:</strong> 持续增长的 Agent 前端框架，React + Angular，AG-UI 协议发起者。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（前端集成评估）</p>
+      </div>
+    </section>
+
+    <!-- GitHub Trending Table -->
+    <section>
+      <h2>📊 GitHub Trending 今日概览</h2>
+      <table class="data-table">
+        <thead>
+          <tr><th>排名</th><th>项目</th><th>描述</th><th>今日 Stars</th><th>总 Stars</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="https://github.com/chopratejas/headroom">headroom</a></td><td>LLM Token 压缩</td><td>2,503</td><td>13.9K</td></tr>
+          <tr><td>2</td><td><a href="https://github.com/NousResearch/hermes-agent">hermes-agent</a></td><td>Agent 框架</td><td>1,821</td><td>181.9K</td></tr>
+          <tr><td>3</td><td><a href="https://github.com/affaan-m/ECC">ECC</a></td><td>Agent 性能优化</td><td>1,368</td><td>207.9K</td></tr>
+          <tr><td>4</td><td><a href="https://github.com/lfnovo/open-notebook">open-notebook</a></td><td>开源 NotebookLM</td><td>1,142</td><td>25.6K</td></tr>
+          <tr><td>5</td><td><a href="https://github.com/NVIDIA/cosmos">NVIDIA/cosmos</a></td><td>物理 AI 世界模型</td><td>494</td><td>9.3K</td></tr>
+          <tr><td>6</td><td><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit</a></td><td>Agent UI 前端栈</td><td>350</td><td>32.3K</td></tr>
+          <tr><td>7</td><td><a href="https://github.com/666ghj/MiroFish">MiroFish</a></td><td>群体智能引擎</td><td>324</td><td>64.5K</td></tr>
+          <tr><td>8</td><td><a href="https://github.com/Panniantong/Agent-Reach">Agent-Reach</a></td><td>Agent 互联网接入</td><td>127</td><td>21.3K</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Trend Analysis -->
+    <section class="trend-analysis">
+      <h2>🔭 趋势分析</h2>
+      <div style="padding: 20px;">
+        <h3>跨日信号合成</h3>
+
+        <p><strong>趋势 1: Agent 通信效率成核心瓶颈</strong><br>
+        PACT 论文 + Headroom 项目同日出现，表明 Agent 间/Agent 内 token 效率已成为社区共识痛点。STARK_TOWER 的多 Agent 工作流应评估引入结构化通信协议。</p>
+
+        <p><strong>趋势 2: 合成数据污染从理论走向工程</strong><br>
+        模型塌缩的 SIR 模型论文提供了定量框架。随着合成数据在训练管线中占比上升，需要检测-过滤基础设施。</p>
+
+        <p><strong>趋势 3: 开源 NotebookLM 替代加速</strong><br>
+        open-notebook 以 25K stars 速度表明市场对可自托管的知识管理工具需求强烈。与 Obsidian 生态存在协同可能。</p>
+
+        <p><strong>趋势 4: AI 安全工具化</strong><br>
+        Anthropic 开源漏洞发现框架 + 453 HN points 表明 AI-for-security 正从学术研究转向生产工具。</p>
+
+        <h3 style="margin-top: 24px;">雷达候选</h3>
+        <ul>
+          <li><span class="tag">rising</span> Agent 通信协议标准化（PACT/AG-UI）</li>
+          <li><span class="tag">rising</span> 合成数据质量管理工具链</li>
+          <li><span class="tag">stable</span> 开源 NotebookLM 替代生态</li>
+          <li><span class="tag">emerging</span> AI 驱动的漏洞自动化发现</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Action Items -->
+    <section class="action-items">
+      <h2>📋 待处理事项</h2>
+      <div style="padding: 20px;">
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 10px;">☐ Jarvis: 评估 PACT 协议引入 SWE-agent / 自研 MAS 架构</li>
+          <li style="margin-bottom: 10px;">☐ Jarvis: 审计数据管线中合成数据比例，评估污染风险</li>
+          <li style="margin-bottom: 10px;">☐ Jarvis: 评测 Headroom 与当前 Agent 管线集成可行性</li>
+          <li style="margin-bottom: 10px;">☐ Jarvis: 跟踪 Anthropic 漏洞发现框架发布详情</li>
+          <li style="margin-bottom: 10px;">☐ Pepper: 评估 open-notebook 与 Obsidian/内容工作流集成</li>
+          <li style="margin-bottom: 10px;">☐ Banner: NVIDIA Cosmos 对物理 AI 栈的长期影响</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Subscription Hits -->
+    <section class="subscription-hits">
+      <h2>📬 订阅命中</h2>
+      <div style="padding: 20px;">
+        <p>本日扫描覆盖 <code>cs.AI</code> (108 new) 和 <code>cs.CL</code> (103 new) 新提交。</p>
+        <ul>
+          <li><strong>agent-communication</strong> → ✅ PACT (arXiv:2606.05304) — 直接命中，P0</li>
+          <li><strong>multi-agent</strong> → ✅ PACT (同上) + 隐蔽 LLM Agent 说服策略研究 (arXiv:2606.05256)</li>
+          <li><strong>model-collapse</strong> → ✅ SIR 流行病学模型 (arXiv:2606.05168) — 直接命中，P0</li>
+        </ul>
+        <p><span class="tag">窗口</span> 2026-06-05 (今日新提交)</p>
+      </div>
+    </section>
+
+    <!-- Writing Points for Content Team -->
+    <section>
+      <h2>✏️ 改写要点（供 Content 参考）</h2>
+      <div style="padding: 20px;">
+        <ul>
+          <li><strong>Agent 的「话费」省下来了：</strong> PACT 论文展示 Agent 间通信可压缩 50% 以上 token 而不损性能——从口无遮拦的自由文本变成精炼的"行动-状态"记录。这个思路比单纯压缩更根本。</li>
+          <li><strong>合成数据不是免费午餐：</strong> 新论文用传染病模型证明——AI 吃 AI 生成的数据，就像病毒传播，存在阈值效应。一旦超过 R₀ > 1，模型塌缩就不可逆。</li>
+          <li><strong>NotebookLM 有了开源平替：</strong> open-notebook 三天冲上 GitHub Trending 前排。如果你想自托管、定制化、不依赖 Google，这个值得关注。</li>
+          <li><strong>Anthropic 下场做安全工具：</strong> 开源 AI 漏洞发现框架登上 HN 热榜第一（453 points）。AI 写漏洞报告这件事，正在从学术变成产品。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Search Difficulties -->
+    <section>
+      <h2>🔍 本次搜索的困难与报错</h2>
+      <details>
+        <summary>展开查看</summary>
+        <div style="padding: 20px; margin-top: 12px;">
+          <ul>
+            <li>⚠️ GitHub Trending 需要手动滚动解锁全部 25 个 repo，部分条目在 snapshot 中被截断（~183 lines truncated），最终获取到约 15 个可读条目。</li>
+            <li>⚠️ arXiv cs.AI 当日 418 条总记录（108 new + cross-lists + replacements），snapshot 超过 13,000 行——仅完整阅读了前 20 条新提交，其余通过标题扫描筛选。</li>
+            <li>⚠️ arXiv cs.CL 当日 228 条记录，snapshot 超过 5,600 行——同上的采样策略。</li>
+            <li>⚠️ HuggingFace Trending 未扫描——动态加载导致 snapshot 仅捕获前 5 个模型，不足以生成有意义的报告。</li>
+            <li>✅ Hacker News 数据完整获取，无截断问题。</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

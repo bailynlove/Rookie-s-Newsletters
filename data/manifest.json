@@ -1,6 +1,24 @@
 {
-  "generated_at": "2026-05-28T09:38:09.027106",
+  "generated_at": "2026-06-05T20:33:53.029991",
   "academic": [
+    {
+      "path": "academic/2026-06-05/evening.html",
+      "date": "2026-06-05",
+      "period": "evening",
+      "section": "academic",
+      "keywords": [
+        "Agent 通信效率优化 (PACT)",
+        "合成数据污染与模型塌缩",
+        "LLM Token 压缩工具链"
+      ]
+    },
+    {
+      "path": "academic/2026-05-28/10-00-morning-brief.html",
+      "date": "2026-05-28",
+      "period": "10-00-morning-brief",
+      "section": "academic",
+      "keywords": []
+    },
     {
       "path": "academic/2026-05-27/17-00-trend-radar-review.html",
       "date": "2026-05-27",
