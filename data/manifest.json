@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-05T20:33:53.029991",
+  "generated_at": "2026-06-06T12:36:20.880999",
   "academic": [
+    {
+      "path": "academic/2026-06-06/noon.html",
+      "date": "2026-06-06",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "代码模型微调与适配 (LoRA/Adapter)",
+        "Microsoft 开源数据库基础设施",
+        "Agent 开发工具链与 Skill 生态"
+      ]
+    },
     {
       "path": "academic/2026-06-05/evening.html",
       "date": "2026-06-05",

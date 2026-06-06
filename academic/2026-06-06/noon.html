@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-06 noon</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文与趋势解读",
+    "datePublished": "2026-06-06T12:30:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 4,
+    "subscription_hits": ["code2lora", "gemma-qat", "pg-durable"],
+    "github_trending_topics": ["ai-coding-starter-kit", "deep-research", "pg-durable"],
+    "arxiv_categories": ["cs.AI", "cs.LG", "cs.CL"],
+    "trend_signals": [
+      {"topic": "代码模型微调与适配 (LoRA/Adapter)", "strength": 4, "direction": "rising"},
+      {"topic": "Microsoft 开源数据库基础设施", "strength": 4, "direction": "rising"},
+      {"topic": "Agent 开发工具链与 Skill 生态", "strength": 3, "direction": "stable"},
+      {"topic": "模型量化与端侧部署 (Gemma QAT)", "strength": 5, "direction": "rising"},
+      {"topic": "推理模型奖励机制优化", "strength": 3, "direction": "emerging"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --report-bg: #f7f9f7;
+      --report-surface: #ffffff;
+      --report-surface-2: #eef4f1;
+      --report-border: #d8e2dc;
+      --report-text: #18201c;
+      --report-muted: #607268;
+      --report-accent: #0f8f78;
+      --report-accent-2: #1870a8;
+      --report-danger: #cf222e;
+      --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0a0f0d;
+      --report-surface: #111814;
+      --report-surface-2: #17211c;
+      --report-border: #2a3a32;
+      --report-text: #e7f0ea;
+      --report-muted: #8aa095;
+      --report-accent: #7fffca;
+      --report-accent-2: #6af7ff;
+      --report-danger: #ff6b7a;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-academic {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card.p0 {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+    }
+
+    .discovery-card.p1 {
+      border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 0; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header { padding: 36px 0 28px; }
+      .discovery-card, .trend-analysis, .subscription-hits, .action-items, details { padding: 16px; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+
+    .priority-p0 .discovery-card { animation-delay: 0.1s; }
+    .priority-p1 .discovery-card { animation-delay: 0.2s; }
+    .priority-p2 .discovery-card { animation-delay: 0.3s; }
+
+    .source-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      padding: 1px 6px;
+      border-radius: 3px;
+      border: 1px solid var(--report-border);
+      color: var(--report-muted);
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+
+    .stars {
+      color: #e8b341;
+      letter-spacing: 0.1em;
+    }
+
+    .signal-up::before { content: "↑ "; color: var(--report-accent); }
+    .signal-stable::before { content: "→ "; color: var(--report-muted); }
+    .signal-emerging::before { content: "✦ "; color: var(--report-accent-2); }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 午间论文与趋势解读</h1>
+      <time datetime="2026-06-06T12:30:00+08:00">2026年6月6日 12:30 CST</time>
+      <div class="report-meta">本期覆盖 2026-06-04 → 2026-06-06 窗口 · 数据源: GitHub Trending, arXiv cs.AI/LG/CL, Hacker News</div>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ========== P0: 高优先级 ========== -->
+    <section class="priority-p0">
+      <h2>🔴 P0 关键发现</h2>
+
+      <div class="discovery-card p0">
+        <h3>Gemma 4 QAT: Google 发布量化感知训练模型，为端侧部署注入强心剂</h3>
+        <p><span class="source-tag">HN</span> <strong>来源:</strong> <a href="https://blog.google/innovation-and-ai/technology/developers/quantization-a">Google AI Blog — Gemma 4 QAT</a> · 303 pts</p>
+        <p><strong>重要性:</strong> Google 发布 Gemma 4 的量化感知训练 (QAT) 模型，针对移动端和笔记本端的推理效率进行专门优化。QAT 在训练过程中模拟量化误差，使模型在 int4/int8 精度下保持更高精度，是端侧大模型部署的重要进展。同时标志着 Gemma 系列正在按节奏推进版本迭代，开源小模型竞争加剧。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.3/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（端侧部署评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Microsoft pg_durable: 开源 PostgreSQL 数据库内持久化执行引擎</h3>
+        <p><span class="source-tag">HN</span> <span class="source-tag">GitHub</span> <strong>来源:</strong> <a href="https://github.com/microsoft/pg_durable">github.com/microsoft/pg_durable</a> · 358 pts</p>
+        <p><strong>重要性:</strong> Microsoft 开源 pg_durable，在 PostgreSQL 内部实现持久化执行（Durable Execution）能力。它使开发者可以将在数据库事务中运行的业务逻辑获得"恰好一次"语义保证，极大简化了分布式系统中常见的补偿/重试代码。这是数据库与应用程序逻辑融合趋势的最新信号。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.1/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（架构影响评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Code2LoRA: 超网络生成适配器解决代码模型版本演化问题</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06492">arxiv.org/abs/2606.06492</a></p>
+        <p><strong>重要性:</strong> 代码语言模型在应对仓库级导入、API 和项目约定时需要大量上下文。现有方法通过 RAG 或依赖分析注入长输入，但成本高昂。Code2LoRA 提出用超网络生成个性化 LoRA 适配器，每个仓库一份轻量微调参数。当 API 升级或仓库演化时无需重新训练，只需重新生成适配器。解决了代码模型维护中的核心痛点。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.4/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（方法复现评估）</p>
+      </div>
+    </section>
+
+    <!-- ========== P1: 中优先级 ========== -->
+    <section class="priority-p1">
+      <h2>🟠 P1 重要发现</h2>
+
+      <div class="discovery-card p1">
+        <h3>TailLoR: 参数高效持续学习中保护主成分</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06494">arxiv.org/abs/2606.06494</a></p>
+        <p><strong>重要性:</strong> 持续学习 (Continual Learning) 中 LoRA 适配器面临灾难性遗忘问题。TailLoR 通过奇异值分解识别和保留模型权重的主成分，在新任务微调时仅修改次要方向，显著缓解遗忘。为参数高效的持续预训练/微调提供了新思路。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.5/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>RREDCoT: 段级奖励重新分配优化推理模型</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06475">arxiv.org/abs/2606.06475</a></p>
+        <p><strong>重要性:</strong> 推理模型（如 o1 类）的训练中，奖励信号往往过于稀疏。RREDCoT 将 CoT 推理链切分为语义段，为每个段分配细粒度奖励，从而更精准地引导模型学习推理策略。与 GRPO/RL 训练技术直接相关。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.3/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Did Claude increase bugs in rsync? — AI 生成代码的质量审计引发讨论</h3>
+        <p><span class="source-tag">HN</span> <strong>来源:</strong> <a href="https://alexispurslane.github.io/rsync-analysis/">alexispurslane.github.io/rsync-analysis</a> · 348 pts</p>
+        <p><strong>重要性:</strong> 开发者对 rsync 代码库进行审计，发现 Claude 生成的代码可能引入了比人类更多的 bug。这引发了 Hacker News 上关于 AI 编码助手代码质量的激烈讨论。同期 Ask HN 帖子 "What was your 'oh shit' moment with GenAI?" (228 pts) 也为该话题添加了热度。需谨慎看待：单项目分析不足以推广结论，但说明 AI 代码生成的质量保障仍是开放问题。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (8.0/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>PC Layer: 多项式权重预处理改善 LLM 预训练</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06470">arxiv.org/abs/2606.06470</a></p>
+        <p><strong>重要性:</strong> 提出一种新的神经网络层结构 PC Layer，通过对权重矩阵应用多项式预处理来改善 LLM 预训练的收敛速度和最终性能。属于架构层面的基础创新，可能影响大规模训练实践。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (7.8/10)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Self-Augmenting Retrieval for Diffusion Language Models</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06474">arxiv.org/abs/2606.06474</a></p>
+        <p><strong>重要性:</strong> 扩散语言模型（Diffusion LM）面临生成质量不如自回归模型的问题。该研究提出自增强检索机制——模型在生成过程中迭代检索自身早期的中间输出作为条件，逐步精炼结果。为扩散 LM 的实用化开辟了新路径。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★☆</span> (7.6/10)</p>
+      </div>
+    </section>
+
+    <!-- ========== P2: 值得关注 ========== -->
+    <section class="priority-p2">
+      <h2>🟢 P2 值得关注</h2>
+
+      <div class="discovery-card p2">
+        <h3>You Only Index Once: 跨层稀疏注意力共享路由</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06467">arxiv.org/abs/2606.06467</a></p>
+        <p><strong>重要性:</strong> 在 Transformer 各层间共享稀疏注意力路由模式，大幅减少 KV 缓存和计算开销。适用于长上下文场景，与 MoE/稀疏注意力方向一致。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (7.2/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Latent Reasoning with Normalizing Flows</h3>
+        <p><span class="source-tag">arXiv</span> <strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06447">arxiv.org/abs/2606.06447</a></p>
+        <p><strong>重要性:</strong> 利用归一化流在潜在空间中进行推理，探索非自回归的推理路径生成方法。尚在早期阶段，但思路新颖。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (6.8/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Mouseless: 跨平台键盘驱动桌面控制工具</h3>
+        <p><span class="source-tag">HN</span> <strong>来源:</strong> <a href="https://mouseless.click">mouseless.click</a> · 488 pts</p>
+        <p><strong>重要性:</strong> Hacker News 当日最高分项目 (488 pts)，提供 macOS/Linux/Windows 全平台纯键盘桌面操控。虽非 AI 原生项目，但其高效的快捷键体系和自动化组合能力与 Agent 操作系统的 vision 有潜在交集。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (6.5/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>"My Agent Skill for Test-Driven Development"</h3>
+        <p><span class="source-tag">HN</span> <strong>来源:</strong> <a href="https://www.saturnci.com/my-agent-skill-for-test-driven-development.html">saturnci.com</a> · 152 pts</p>
+        <p><strong>重要性:</strong> 开发者分享如何构建 Agent Skill 实现测试驱动开发工作流。反映了 Agent Skill 生态正在从概念走向落地实践，与 AI Coding Starter Kit 等项目形成呼应。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★☆☆</span> (6.8/10)</p>
+      </div>
+    </section>
+
+    <!-- ========== 趋势分析 ========== -->
+    <section class="trend-analysis">
+      <h2>📊 技术趋势分析</h2>
+      <div style="padding: 24px;">
+
+        <p style="margin-bottom: 18px; color: var(--report-text); font-family: 'Trebuchet MS', 'Noto Sans SC', sans-serif; font-weight: 600;">本周窗口信号强度</p>
+
+        <table class="data-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="padding: 10px 14px;">主题</th>
+              <th style="padding: 10px 14px;">强度</th>
+              <th style="padding: 10px 14px;">方向</th>
+              <th style="padding: 10px 14px;">说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px 14px;">模型量化与端侧部署</td>
+              <td style="padding: 10px 14px; color: var(--report-danger);">5/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-up"></span> rising</td>
+              <td style="padding: 10px 14px;">Gemma 4 QAT 是本周最强信号，端侧 AI 推理正在加速</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px;">代码模型微调 (LoRA/Adapter)</td>
+              <td style="padding: 10px 14px; color: var(--report-accent);">4/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-up"></span> rising</td>
+              <td style="padding: 10px 14px;">Code2LoRA + TailLoR 双论文同日出现，方向明确</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px;">数据库与应用逻辑融合</td>
+              <td style="padding: 10px 14px; color: var(--report-accent);">4/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-up"></span> rising</td>
+              <td style="padding: 10px 14px;">pg_durable 开源是里程碑事件</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px;">推理模型训练技术</td>
+              <td style="padding: 10px 14px;">3/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-emerging"></span> emerging</td>
+              <td style="padding: 10px 14px;">RREDCoT 段级奖励分配，GRPO 相关方向持续发展</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px;">Agent Skill 生态</td>
+              <td style="padding: 10px 14px;">3/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-stable"></span> stable</td>
+              <td style="padding: 10px 14px;">AI Coding Starter Kit + TDD Agent Skill 等落地案例增多</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px;">Transformer 架构改进</td>
+              <td style="padding: 10px 14px;">3/5</td>
+              <td style="padding: 10px 14px;"><span class="signal-stable"></span> stable</td>
+              <td style="padding: 10px 14px;">PC Layer + YOIO 稀疏注意力持续迭代</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== 补充数据: GitHub 热榜 ========== -->
+    <section class="subscription-hits">
+      <h2>📦 GitHub 新星项目</h2>
+      <div style="padding: 24px;">
+        <table class="data-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="padding: 8px 12px;">项目</th>
+              <th style="padding: 8px 12px;">语言</th>
+              <th style="padding: 8px 12px;">⭐ Stars</th>
+              <th style="padding: 8px 12px;">简介</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://github.com/CWS6206/ai-coding-starter-kit">ai-coding-starter-kit</a></td>
+              <td style="padding: 8px 12px;">-</td>
+              <td style="padding: 8px 12px;">253★</td>
+              <td style="padding: 8px 12px;">Agent Skills、Checklist 和模板集合，面向开发团队</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://github.com/hoolulu/deep-research">deep-research</a></td>
+              <td style="padding: 8px 12px;">Shell</td>
+              <td style="padding: 8px 12px;">57★</td>
+              <td style="padding: 8px 12px;">OpenCode 深度调研报告生成 Skill</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://github.com/marcj/papernews">papernews</a></td>
+              <td style="padding: 8px 12px;">Python</td>
+              <td style="padding: 8px 12px;">96★</td>
+              <td style="padding: 8px 12px;">新闻与文章渲染为 PDF 阅读器友好格式</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://github.com/jeff141/meatshell">meatshell</a></td>
+              <td style="padding: 8px 12px;">Rust</td>
+              <td style="padding: 8px 12px;">269★</td>
+              <td style="padding: 8px 12px;">轻量 SSR/终端客户端，Rust 实现，低内存占用</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://github.com/zengxiao-he/tessera">tessera</a></td>
+              <td style="padding: 8px 12px;">Python</td>
+              <td style="padding: 8px 12px;">29★</td>
+              <td style="padding: 8px 12px;">从零构建 LLM 蒸馏和推理引擎 (Triton/CUDA)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== arXiv 论文一览 ========== -->
+    <section class="subscription-hits">
+      <h2>📄 arXiv 新论文摘要</h2>
+      <div style="padding: 24px;">
+        <table class="data-table" style="width: 100%;">
+          <thead>
+            <tr>
+              <th style="padding: 8px 12px;">论文</th>
+              <th style="padding: 8px 12px;">类别</th>
+              <th style="padding: 8px 12px;">特色</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06492">Code2LoRA</a></td>
+              <td style="padding: 8px 12px;">cs.CL/AI</td>
+              <td style="padding: 8px 12px;">超网络生成适配器解决代码模型版本演化</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06494">TailLoR</a></td>
+              <td style="padding: 8px 12px;">cs.LG</td>
+              <td style="padding: 8px 12px;">持续学习中保护主成分防止遗忘</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06475">RREDCoT</a></td>
+              <td style="padding: 8px 12px;">cs.LG</td>
+              <td style="padding: 8px 12px;">段级奖励重新分配优化推理模型</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06470">PC Layer</a></td>
+              <td style="padding: 8px 12px;">cs.LG</td>
+              <td style="padding: 8px 12px;">多项式权重预处理改善 LLM 预训练</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06474">Self-Augmenting Retrieval for Diff LM</a></td>
+              <td style="padding: 8px 12px;">cs.LG/CL</td>
+              <td style="padding: 8px 12px;">扩散语言模型自增强检索机制</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06467">You Only Index Once</a></td>
+              <td style="padding: 8px 12px;">cs.CL</td>
+              <td style="padding: 8px 12px;">跨层稀疏注意力共享路由</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06479">Pretraining RNNs w/o Recurrence</a></td>
+              <td style="padding: 8px 12px;">cs.LG</td>
+              <td style="padding: 8px 12px;">无需递归预训练循环网络</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 12px;"><a href="https://arxiv.org/abs/2606.06447">Latent Reasoning w/ Normalizing Flows</a></td>
+              <td style="padding: 8px 12px;">cs.CL</td>
+              <td style="padding: 8px 12px;">潜在空间归一化流推理</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== 行动项 ========== -->
+    <section class="action-items">
+      <h2>⚡ 待处理事项</h2>
+      <div style="padding: 24px;">
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 10px;">☐ <strong>评估 Code2LoRA:</strong> 关注超网络生成适配器是否能用于 Hermes 自身的代码库适应</li>
+          <li style="margin-bottom: 10px;">☐ <strong>跟踪 Gemma 4 QAT:</strong> 等待开放权重发布，与现有量化方案做对比测试</li>
+          <li style="margin-bottom: 10px;">☐ <strong>pg_durable 架构影响:</strong> 评估数据库持久化执行对 Agent 工作流状态管理的影响</li>
+          <li style="margin-bottom: 10px;">☐ <strong>AI 代码质量审计:</strong> 关注 "Claude increased bugs in rsync" 讨论的后续分析</li>
+          <li style="margin-bottom: 10px;">☐ <strong>推理模型奖励工程:</strong> RREDCoT 方法与 GRPO 训练的整合可能性分析</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 数据源说明 ========== -->
+    <details>
+      <summary style="padding: 16px; cursor: pointer; font-weight: 600; color: var(--report-text);">📁 扫描详情报错与搜索说明</summary>
+      <div style="padding: 0 16px 16px;">
+        <p><strong>GitHub Trending:</strong> 通过 GitHub Search API (created:>2026-06-04) 获取综合排序 + Python/TypeScript/Rust 分语言查询。</p>
+        <p><strong>arXiv:</strong> 通过 arXiv API 查询 cs.AI / cs.LG / cs.CL 分类最近提交论文 (最近2天)。</p>
+        <p><strong>Hacker News:</strong> 通过 Firebase API 获取 Top Stories 前 25 条，手工标注 AI/ML 相关。</p>
+        <p><strong>注意:</strong> 2026-06-06 当天为周末，GitHub 新仓库活跃度整体偏低，跨周末的 arXiv 投稿量也较小。部分数据源之间的交叉覆盖度一般。</p>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
