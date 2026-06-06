@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-06T12:36:20.880999",
+  "generated_at": "2026-06-06T20:34:40.166272",
   "academic": [
+    {
+      "path": "academic/2026-06-06/evening.html",
+      "date": "2026-06-06",
+      "period": "evening",
+      "section": "academic",
+      "keywords": [
+        "多智能体通信协议",
+        "Token 压缩与成本优化",
+        "Compound Engineering 工具链"
+      ]
+    },
     {
       "path": "academic/2026-06-06/noon.html",
       "date": "2026-06-06",

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-06 evening</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 晚间趋势",
+    "datePublished": "2026-06-06T20:30:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "evening",
+    "p0_count": 4,
+    "p1_count": 6,
+    "p2_count": 5,
+    "subscription_hits": ["multi-agent-communication", "llm-token-compression", "code-adapter-lora", "compound-engineering"],
+    "github_trending_topics": ["agent-harness", "token-compression", "compound-engineering", "memory-engine"],
+    "arxiv_categories": ["cs.AI", "cs.CL", "cs.SE"],
+    "trend_signals": [
+      {"topic": "多智能体通信协议", "strength": 5, "direction": "rising"},
+      {"topic": "Token 压缩与成本优化", "strength": 4, "direction": "rising"},
+      {"topic": "Compound Engineering 工具链", "strength": 4, "direction": "rising"},
+      {"topic": "Agent 记忆引擎", "strength": 3, "direction": "stable"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .discovery-card.p0 {
+    border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+  }
+
+  .discovery-card.p1 {
+    border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .data-table td,
+  .data-table th {
+    border-color: var(--report-border);
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+  }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header {
+      padding: 36px 0 28px;
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      padding: 16px;
+    }
+
+    .data-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 晚间趋势</h1>
+      <time datetime="2026-06-06T20:30:00+08:00">2026年6月6日 20:30 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ======================== P0 级发现 ======================== -->
+    <section class="priority-p0">
+      <h2>P0 紧急关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>PACT：标准化多智能体通信协议，Token 成本减半</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05304" target="_blank">arXiv:2606.05304</a> (滑铁卢大学)</p>
+        <p><strong>概要:</strong> 论文系统分析了五种多智能体通信策略，发现没有单一策略普适最优，但所有有效策略都保留了"行动中心信息"。提出的 PACT 协议将智能体间通信建模为公共状态更新问题，将原始输出压缩为紧凑的动作-状态记录。在 OpenHands 上 resolve rate 提升的同时 Token 减少 10%；在 SWE-agent 上输入 Token 降低 50%。</p>
+        <p><strong>重要性:</strong> 多智能体系统的 Token 成本是实际部署的核心瓶颈。PACT 给出了一个即插即用的通用解决方案，对 Agent 框架开发者有直接参考价值。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐⭐ (9.3/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（代码智能体评估基准验证）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>headroom：LLM Token 压缩工具，减少 60-95% Token</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/chopratejas/headroom" target="_blank">GitHub: chopratejas/headroom</a></p>
+        <p><strong>概要:</strong> 本周暴增 11,993 星的开源项目（总 15,201★）。针对工具输出、日志、文件和 RAG 分块进行无损压缩，在保持答案质量不变的前提下减少 60-95% Token。支持库/代理/MCP Server 三种使用模式。</p>
+        <p><strong>重要性:</strong> 与 PACT 论文从不同维度解决同一个痛点——Token 成本。headroom 更偏通用工具输出压缩，与 PACT 的智能体通信协议互补。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐⭐ (9.1/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（集成到 Hermes 工具链评估）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>Google 每月向 SpaceX 支付 $920M 用于太空计算</h3>
+        <p><strong>来源:</strong> <a href="https://news.ycombinator.com/item?id=43592890" target="_blank">Hacker News (TechCrunch)</a></p>
+        <p><strong>概要:</strong> Google 与 SpaceX 签署巨额计算协议，每月约 9.2 亿美元用于太空数据中心计算资源。这标志着 AI 基础设施竞争进入太空赛道，结合前日 S&P 500 拒绝 SpaceX 及 Anthropic/OpenAI 上市的新闻（653 票），AI 巨头的资本赛跑愈演愈烈。</p>
+        <p><strong>重要性:</strong> 重新定义 AI 基础设施格局——太空计算不再是科幻概念。这对 AI 推理成本、数据中心地理分布和 GPU 供应链都有深远影响。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐⭐ (9.0/10)</p>
+        <p><strong>建议路由:</strong> → Banner（基础设施趋势追踪）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>ECC (208K★)：Agent Harness 性能优化系统</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/affaan-m/ECC" target="_blank">GitHub: affaan-m/ECC</a></p>
+        <p><strong>概要:</strong> 本周再增 10,326 星的超级项目（总 208,758★）。包含 Skills、Instincts、Memory、Security 和 Research-first 开发模式，为 Claude Code、Codex、OpenCode、Cursor 等提供统一代理框架。</p>
+        <p><strong>重要性:</strong> Agent 工具链的统合趋势明显。ECC 正成为多 Agent 框架的事实标准之一，与 Compound Engineering 生态有协同关系。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.8/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术栈兼容性评估）</p>
+      </div>
+    </section>
+
+    <!-- ======================== P1 级发现 ======================== -->
+    <section class="priority-p1">
+      <h2>P1 重要关注</h2>
+
+      <div class="discovery-card p1">
+        <h3>Code2LoRA：Hypernetwork 为代码模型生成 LoRA 适配器</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05304" target="_blank">HF Daily Papers (Jun 5) — UWaterloo</a></p>
+        <p><strong>概要:</strong> 针对软件演化过程中代码模型需要频繁微调的问题，提出用 Hypernetwork 实时生成 LoRA 适配器，避免在每次代码库变更时重新训练。59 票跃居当日 HuggingFace 热门论文榜首。</p>
+        <p><strong>重要性:</strong> 代码模型的持续学习和适配是实际部署中的痛点。Code2LoRA 提供了一种低成本增量更新方案，对 Cursor、Copilot 等代码助手有工程价值。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.5/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（适配到代码智能体评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Compound Engineering 插件爆发：EveryInc 20K★</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/EveryInc/compound-engineering-plugin" target="_blank">GitHub: EveryInc/compound-engineering-plugin</a></p>
+        <p><strong>概要:</strong> 本周增长 1,933 星（总 20,015★）。官方 Compound Engineering 插件，支持 Claude Code、Codex、Cursor 等多种 AI 编码工具。将"复合工程"方法论工具化。</p>
+        <p><strong>重要性:</strong> Compound Engineering 正在从方法论变成标准工具链生态。与 ECC、harness 等项目共同构成 Agent 开发的新范式。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.3/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（Hermes 工具集成可行性评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Microsoft Markitdown：145.9K★ 文件转 Markdown 工具</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/microsoft/markitdown" target="_blank">GitHub: microsoft/markitdown</a></p>
+        <p><strong>概要:</strong> 本周新增 16,376 星（总 145,922★）。Python 工具，支持将 Office 文档、PDF、HTML 等各种格式转换为 Markdown。由微软官方维护。</p>
+        <p><strong>重要性:</strong> RAG 和知识库构建的基础设施组件。与 liteparse (Rust, 9.3K★) 形成互补，后者专注于文档解析的极致性能。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.0/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（RAG 管线集成评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>AdaPlanBench：LLM Agent 自适应规划能力评估</h3>
+        <p><strong>来源:</strong> <a href="https://huggingface.co/papers" target="_blank">HF Daily Papers (Jun 5) — UIUC</a></p>
+        <p><strong>概要:</strong> 新基准测试评估 LLM Agent 在动态世界约束和用户约束下的自适应规划能力。35 票高热度，反映社区对 Agent 从"执行指令"到"主动规划"的能力跃迁需求。</p>
+        <p><strong>重要性:</strong> Agent 评估基准正在从"是否能完成"转向"是否能在约束条件下自适应调整策略"。对 Hermes、Jarvis 等 Agent 的评估方法有指导意义。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.2/10)</p>
+        <p><strong>建议路由:</strong> → Jarvis（评估框架更新参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>Supermemory：25.8K★ AI 时代记忆引擎</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/supermemoryai/supermemory" target="_blank">GitHub: supermemoryai/supermemory</a></p>
+        <p><strong>概要:</strong> 本周增长 2,944 星（总 25,757★）。极致快速、可扩展的记忆引擎和 API，定位为"AI 时代的 Memory API"。</p>
+        <p><strong>重要性:</strong> Agent 持久记忆是长期推理和个性化服务的核心基础设施。与 ECC 的记忆系统、headroom 的 RAG 压缩形成三元组。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐⭐ (8.1/10)</p>
+        <p><strong>建议路由:</strong> → Pepper（记忆层架构参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>ArcANE：角色扮演 Agent 的性格一致性评估</h3>
+        <p><strong>来源:</strong> <a href="https://huggingface.co/papers" target="_blank">HF Daily Papers (Jun 5) — Seoul National University</a></p>
+        <p><strong>概要:</strong> 研究角色扮演语言 Agent 是否能在合适的时机持续保持角色。42 票热度，涉及 Agent 的角色一致性、边界感知和上下文切换能力。</p>
+        <p><strong>重要性:</strong> 角色扮演 Agent 的"出戏"问题直接影响用户体验。该研究对 Agent 行为一致性和多角色切换策略有参考价值。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.5/10)</p>
+        <p><strong>建议路由:</strong> → Banner（Agent 行为策略观察）</p>
+      </div>
+    </section>
+
+    <!-- ======================== P2 级发现 ======================== -->
+    <section class="priority-p2">
+      <h2>P2 值得关注</h2>
+
+      <div class="discovery-card p2">
+        <h3>Harness：元技能 Meta-skill 设计 Agent 团队</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/revfactory/harness" target="_blank">GitHub: revfactory/harness</a></p>
+        <p><strong>概要:</strong> 本周 2,030 星（总 6,200★）。一个元技能系统：定义领域特定的 Agent 团队，编排专门化的 Agent，并生成它们使用的技能。使用 HTML 构建。</p>
+        <p><strong>重要性:</strong> "用技能定义 Agent，用 Agent 组成团队"的元层级抽象，与 Heimdall 的 Hermes 技能体系概念上有契合点。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.4/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>MoneyPrinterTurbo：AI 一键短视频生成 80K★</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">GitHub: harry0703/MoneyPrinterTurbo</a></p>
+        <p><strong>概要:</strong> 本周增长 11,388 星（总 80,212★）。利用 AI 大模型一键生成高清短视频。</p>
+        <p><strong>重要性:</strong> AI+短视频的融合需求持续爆发。对内容生成管线有参考意义，但技术含量较低。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.2/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>Liteparse：Rust 高性能文档解析器</h3>
+        <p><strong>来源:</strong> <a href="https://github.com/run-llama/liteparse" target="_blank">GitHub: run-llama/liteparse</a></p>
+        <p><strong>概要:</strong> 本周 2,380 星（总 9,283★）。由 LlamaIndex 团队开发的快速、开源的文档解析器，使用 Rust 编写。</p>
+        <p><strong>重要性:</strong> 与 Markitdown 形成"Python 生态 vs Rust 性能"的对比。Rust 在 Agent 工具链中地位持续上升。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.6/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>RL 引发上下文学习：未见语种翻译</h3>
+        <p><strong>来源:</strong> <a href="https://huggingface.co/papers" target="_blank">HF Daily Papers (Jun 5) — University of Zurich</a></p>
+        <p><strong>概要:</strong> 强化学习能够激发 LLM 对未见语种的上下文翻译能力，23 票。说明 RL 训练可能产生了超预期的跨语言泛化能力。</p>
+        <p><strong>重要性:</strong> 对 RL 训练策略和跨语言泛化的理论研究有价值，但距离工程应用较远。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.0/10)</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>RobotValues：家庭机器人价值观冲突评估</h3>
+        <p><strong>来源:</strong> <a href="https://huggingface.co/papers" target="_blank">HF Daily Papers (Jun 5) — 23 票</a></p>
+        <p><strong>概要:</strong> 评估家庭机器人在人类价值观冲突时的决策能力。涉及价值对齐、优先级排序和伦理推理。</p>
+        <p><strong>重要性:</strong> 人机共存的伦理决策研究，对 Agent 的安全和合规设计有长期参考价值。</p>
+        <p><strong>评分:</strong> ⭐⭐⭐ (7.0/10)</p>
+      </div>
+    </section>
+
+    <!-- ======================== GitHub 热门项目总览 ======================== -->
+    <section class="trend-analysis">
+      <h2>GitHub 本周趋势总览</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>项目</th>
+            <th>本周增长</th>
+            <th>总星标</th>
+            <th>语言</th>
+            <th>方向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></td>
+            <td>16,376★</td>
+            <td>145,922</td>
+            <td>Python</td>
+            <td>文档 → Markdown</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/chopratejas/headroom" target="_blank">chopratejas/headroom</a></td>
+            <td>11,993★</td>
+            <td>15,201</td>
+            <td>Python</td>
+            <td>Token 压缩</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></td>
+            <td>11,388★</td>
+            <td>80,212</td>
+            <td>Python</td>
+            <td>AI 视频生成</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+            <td>10,326★</td>
+            <td>208,758</td>
+            <td>-</td>
+            <td>Agent Harness</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/supermemoryai/supermemory" target="_blank">supermemoryai/supermemory</a></td>
+            <td>2,944★</td>
+            <td>25,757</td>
+            <td>-</td>
+            <td>Agent 记忆引擎</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/run-llama/liteparse" target="_blank">run-llama/liteparse</a></td>
+            <td>2,380★</td>
+            <td>9,283</td>
+            <td>Rust</td>
+            <td>文档解析</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/revfactory/harness" target="_blank">revfactory/harness</a></td>
+            <td>2,030★</td>
+            <td>6,200</td>
+            <td>HTML</td>
+            <td>Meta-skill Agent</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/EveryInc/compound-engineering-plugin" target="_blank">EveryInc/compound-engineering-plugin</a></td>
+            <td>1,933★</td>
+            <td>20,015</td>
+            <td>TypeScript</td>
+            <td>Compound Engineering</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ======================== 趋势分析 ======================== -->
+    <section class="trend-analysis">
+      <h2>趋势信号分析</h2>
+      <div class="discovery-card">
+        <h3>📈 趋势一：Agent Token 优化成为核心赛道</h3>
+        <p>从 PACT 论文（多智能体通信协议）到 headroom（通用 Token 压缩），本周两个 P0 级发现都指向同一个方向——<strong>Agent Token 成本优化</strong>。这反映了业界共识：当前的 Token 消耗量是 Agent 大规模部署的核心障碍。两个项目从不同层次（通信层 vs 工具输出层）进攻同一问题，值得持续关注。</p>
+        <p><strong>综合强度:</strong> ⬆️ 上升 (5/5)</p>
+      </div>
+      <div class="discovery-card" style="margin-top: 12px;">
+        <h3>📈 趋势二：Compound Engineering 工具化加速</h3>
+        <p>ECC (208K★) 和 Compound Engineering Plugin (20K★) 的同时爆发，表明社区正在将"复合工程"从方法论转化为可复用的工具链。Harness (6.2K★) 的元技能设计进一步预示了 <strong>Agent 编排层标准化</strong>的趋势。</p>
+        <p><strong>综合强度:</strong> ⬆️ 上升 (4/5)</p>
+      </div>
+      <div class="discovery-card" style="margin-top: 12px;">
+        <h3>🔄 趋势三：AI 基础设施进入太空竞赛期</h3>
+        <p>Google-SpaceX 的 $920M/月计算协议 + S&P 500 拒绝 AI 巨头上市，两则新闻形成 AI 资本市场的两极化：一方面基础设施投资飙升（太空计算），另一方面公开市场对 AI 标的持审慎态度。长期来看，<strong>AI 算力的地理分布模型</strong>正在被重新定义。</p>
+        <p><strong>综合强度:</strong> ➡️ 稳定 (4/5)</p>
+      </div>
+      <div class="discovery-card" style="margin-top: 12px;">
+        <h3>📈 趋势四：文档/RAG 基础架构工具成熟</h3>
+        <p>Microsoft Markitdown (145.9K★)、Liteparse (9.3K★)、Supermemory (25.8K★) 三个项目覆盖了"文档→Markdown→解析→记忆"的完整 RAG 管线。工具链正在从碎片化走向体系化，<strong>知识工程的标准化基础设施</strong>正在形成。</p>
+        <p><strong>综合强度:</strong> ➡️ 稳定 (3/5)</p>
+      </div>
+    </section>
+
+    <!-- ======================== 行动项 ======================== -->
+    <section class="action-items">
+      <h2>待处理事项</h2>
+      <div class="discovery-card">
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 10px;">☐ <strong>PACT 论文精读</strong> — 评估 PACT 协议引入 Hermes 多 Agent 编排的可能性（→ Jarvis）</li>
+          <li style="margin-bottom: 10px;">☐ <strong>headroom 集成评估</strong> — 在 Pepper 环境中测试 Token 压缩效果和对 RAG 质量的影响（→ Pepper）</li>
+          <li style="margin-bottom: 10px;">☐ <strong>Code2LoRA 技术追踪</strong> — 关注 Hypernetwork + LoRA 在代码模型中的应用进展（→ Jarvis）</li>
+          <li style="margin-bottom: 10px;">☐ <strong>Compound Engineering 插件试用</strong> — 在 Claude Code 环境中安装测试（→ Pepper）</li>
+          <li style="margin-bottom: 10px;">☐ <strong>AdaPlanBench 评估框架参考</strong> — 更新 Hermes Agent 的规划能力评测方法（→ Jarvis）</li>
+          <li style="margin-bottom: 10px;">☐ <strong>太空计算趋势持续追踪</strong> — 关注 Google-SpaceX 协议的后续进展和对 AI 推理成本的影响（→ Banner）</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T12:36:20.882711",
+  "generated_at": "2026-06-06T20:34:40.167936",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -66,10 +66,10 @@
     },
     {
       "date": "2026-06-06",
-      "p0": 3,
-      "p1": 5,
-      "p2": 4,
-      "total": 12
+      "p0": 7,
+      "p1": 11,
+      "p2": 9,
+      "total": 27
     }
   ],
   "calendar_data": [
@@ -120,8 +120,8 @@
     },
     {
       "date": "2026-06-06",
-      "intensity": 12,
-      "level": 0
+      "intensity": 27,
+      "level": 2
     }
   ],
   "sparkline_data": [
@@ -528,6 +528,10 @@
       "count": 8
     },
     {
+      "topic": "多智能体通信协议",
+      "count": 5
+    },
+    {
       "topic": "模型量化与端侧部署 (Gemma QAT)",
       "count": 5
     },
@@ -542,20 +546,16 @@
     {
       "topic": "Claude Plugin Ecosystem",
       "count": 5
-    },
-    {
-      "topic": "Claude Code Skills 生态",
-      "count": 5
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 13
+      "count": 14
     },
     {
       "category": "cs.CL",
-      "count": 12
+      "count": 13
     },
     {
       "category": "cs.LG",
@@ -563,7 +563,7 @@
     },
     {
       "category": "cs.SE",
-      "count": 5
+      "count": 6
     },
     {
       "category": "cs.MA",
@@ -604,15 +604,15 @@
       "count": 2
     },
     {
-      "subscription": "code2lora",
+      "subscription": "multi-agent-communication",
       "count": 1
     },
     {
-      "subscription": "gemma-qat",
+      "subscription": "llm-token-compression",
       "count": 1
     },
     {
-      "subscription": "pg-durable",
+      "subscription": "code-adapter-lora",
       "count": 1
     }
   ],
@@ -654,7 +654,7 @@
       "count": 2
     },
     {
-      "topic": "ai-coding-starter-kit",
+      "topic": "agent-harness",
       "count": 1
     }
   ],
@@ -795,36 +795,35 @@
     },
     {
       "combination": [
-        "code2lora",
-        "gemma-qat"
+        "code-adapter-lora",
+        "compound-engineering"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "code2lora",
-        "pg-durable"
+        "code-adapter-lora",
+        "llm-token-compression"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "gemma-qat",
-        "pg-durable"
+        "code-adapter-lora",
+        "multi-agent-communication"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "code2lora",
-        "gemma-qat",
-        "pg-durable"
+        "compound-engineering",
+        "llm-token-compression"
       ],
       "count": 1,
-      "size": 3
+      "size": 2
     }
   ]
 }
