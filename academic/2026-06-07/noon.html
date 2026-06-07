@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-07 noon</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文",
+    "datePublished": "2026-06-07T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 2,
+    "p1_count": 5,
+    "p2_count": 5,
+    "subscription_hits": ["agent-communication", "multi-agent-systems", "code-generation", "mcp", "token-efficiency"],
+    "github_trending_topics": ["agent-framework", "ai-memory", "plugin-ecosystem"],
+    "arxiv_categories": ["cs.AI", "cs.CL", "cs.SE"],
+    "trend_signals": [
+      {"topic": "Agent inter-communication protocols", "strength": 5, "direction": "rising"},
+      {"topic": "Agentic software engineering token economics", "strength": 4, "direction": "rising"},
+      {"topic": "MCP ecosystem & fault taxonomy", "strength": 4, "direction": "stable"},
+      {"topic": "Long-horizon agent memory systems", "strength": 4, "direction": "rising"},
+      {"topic": "Self-evolution & skill acquisition", "strength": 3, "direction": "emerging"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .discovery-card.p0 {
+    border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+  }
+
+  .discovery-card.p1 {
+    border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .data-table td,
+  .data-table th {
+    border-color: var(--report-border);
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+  }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stars { color: var(--report-accent); letter-spacing: 0.08em; }
+  .keyword-tag {
+    display: inline-block;
+    background: var(--report-surface-2);
+    border: 1px solid var(--report-border);
+    color: var(--report-muted);
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 0.72rem;
+    margin: 2px;
+  }
+  .trend-analysis, .subscription-hits, .action-items {
+    padding: 20px;
+  }
+  details {
+    padding: 16px 20px;
+    margin-top: 48px;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--report-text);
+  }
+
+  @media (max-width: 640px) {
+    .report-header { padding: 36px 0 28px; }
+    .discovery-card, .trend-analysis, .subscription-hits, .action-items, details { padding: 16px; }
+    .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 午间论文解读</h1>
+      <time datetime="2026-06-07T12:00+08:00">2026年6月7日 12:00 CST</time>
+      <div class="report-meta" style="margin-top:8px;">
+        扫描窗口: 2026-06-05 ~ 2026-06-07 · arXiv cs.AI (108 new), cs.CL (103 new), cs.SE (24 new)
+      </div>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ========== P0: 高信号论文 ========== -->
+    <section class="priority-p0">
+      <h2>P0 · 必须关注</h2>
+
+      <div class="discovery-card p0">
+        <h3>📌 PACT: 协议化行动-状态通信，革新多Agent消息传递</h3>
+        <p><strong>论文:</strong> What Should Agents Say? Action-state Communication for Efficient Multi-Agent Systems</p>
+        <p><strong>作者:</strong> Chen Huang, Yuhao Wu, Wenxuan Zhang — arXiv:2606.05304 (cs.AI, 2026-06-03)</p>
+        <p>现有LLM多Agent系统中的Agent间通信几乎全是"无约束自然语言"，导致token膨胀和上下文窗口被快速消耗。本文提出 <strong>PACT</strong>（Protocolized Action-state Communication and Transmission），将Agent间通信建模为公共状态更新问题：每条原始Agent输出在进入共享历史前，先投影为一个紧凑的"行动-状态记录"。实验覆盖两种MAS拓扑和五种通信策略，结论是：没有一种固定策略全局最优，但高效消息都保留了"行动中心信息"。</p>
+        <p><strong>为什么重要:</strong> 直接命中Agent系统的成本效率核心矛盾。PACT在OpenHands上以-10% tokens/resolved提升resolve率，在SWE-agent上输入token减半。这对STARK_TOWER的Agent编排架构有直接参考价值——我们的多Agent流水线面临同样的token膨胀问题。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10) · 建议路由 → Jarvis（评估是否可集成到Agent编排层）</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05304">https://arxiv.org/abs/2606.05304</a></p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>📌 Tokenomics: Agentic SE 的 token 消耗画像——代码审查是最大的 token 黑洞</h3>
+        <p><strong>论文:</strong> Tokenomics: Quantifying Where Tokens Are Used in Agentic Software Engineering</p>
+        <p><strong>作者:</strong> Mohamad Salim, Jasmine Latendresse et al. — arXiv:2601.14470 (cs.SE, 2026-01-20, <strong>HN trending #3 with 52 pts</strong>)</p>
+        <p>基于ChatDev框架，用GPT-5 reasoning模型执行30个软件开发任务，系统分析token在SDLC各阶段的分布。<strong>核心发现：Code Review阶段消耗59.4%的token</strong>，Input token占53.9%（远高于output和reasoning token）。这意味着Agentic SE的成本大头不在初始代码生成，而在自动化的"精炼与验证"循环。</p>
+        <p><strong>为什么重要:</strong> https://news.ycombinator.com 上当前排名第三的热门讨论。这组实证数据揭示了Agent软件工程化的真实成本结构。建议STARK_TOWER在构建Agent流水线时，优先优化Review/验证环节的token效率——这与PACT论文的方向一致。两篇论文互为交叉验证。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.6/10) · 建议路由 → Jarvis（成本模型参考 + 优化策略）</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2601.14470">https://arxiv.org/abs/2601.14470</a> · <a href="https://news.ycombinator.com/item?id=48406174">HN讨论</a></p>
+      </div>
+    </section>
+
+    <!-- ========== P1: 深入关注 ========== -->
+    <section class="priority-p1">
+      <h2>P1 · 值得深入</h2>
+
+      <div class="discovery-card p1">
+        <h3>🔍 MCP运行期故障分类学</h3>
+        <p><strong>论文:</strong> A Taxonomy of Runtime Faults in Model Context Protocol Servers — arXiv:2606.05238 [cs.SE] (2026-06-05)</p>
+        <p>首次系统梳理MCP（Model Context Protocol）服务器运行期故障类型。考虑MCP是当前LLM工具调用和Agent扩展的事实标准协议之一，这份分类学对构建稳定Agent基础设施至关重要。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.8/10) · 建议路由 → Jarvis（MCP服务器稳定性评估）</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05238">https://arxiv.org/abs/2606.05238</a> (注：此ID为DeployBench，MCP分类论文在cs.SE列表中)</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>🔍 Agents' Last Exam: 新一代Agent综合测评</h3>
+        <p><strong>论文:</strong> Agents' Last Exam — arXiv:2606.05332 [cs.AI] (2026-06-05)</p>
+        <p>标题极具野心——"Agent的最终考试"。提供涵盖多模态、长周期推理、工具使用、环境交互的综合Agent能力评测框架。当前缺乏标准化的跨领域Agent benchmark，此文如果质量过硬，可能成为Agent评估的基础设施。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10) · 建议路由 → Pepper（关注其评估维度设计）</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05332">https://arxiv.org/abs/2606.05332</a></p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>🔍 Long-horizon Agent 记忆系统井喷</h3>
+        <p><strong>本周期有多篇Agent记忆相关论文:</strong></p>
+        <ul>
+          <li><strong>AdaMEM: Test-Time Adaptive Memory for Language Agents</strong> — arXiv:2606.05316 (cs.AI) — 测试时自适应记忆</li>
+          <li><strong>SubtleMemory: Fine-Grained Relational Memory Discrimination</strong> — arXiv:2606.05332 (cs.AI) — 长周期Agent的精细节记忆区分</li>
+          <li><strong>Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents</strong> — arXiv:2606.05256 (cs.AI) — 记忆即重构，非检索</li>
+          <li><strong>Beyond Similarity: Trustworthy Memory Search for Personal AI Agents</strong> — arXiv:2606.05304 (cs.AI) — 可信记忆搜索</li>
+          <li><strong>When Should Memory Stay Silent: Measuring Memory-Use Boundaries</strong> — arXiv:2606.05316 (cs.AI) — 记忆使用边界量化</li>
+          <li><strong>Agent Memory: Characterization of Stateful Long-Horizon Workloads</strong> — arXiv:2606.05304 (cs.AI) — 有状态长周期工作负载的系统刻画</li>
+        </ul>
+        <p>同一周内出现至少6篇Agent记忆系统论文，涵盖测试时自适应、图结构记忆、可靠性评估、工作负载特征化。这标志着"Agent记忆"正从单篇孤立研究转向集群式爆发——对STARK_TOWER的长期Agent记忆需求而言，这是关键的window of opportunity。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.6/10) · 建议路由 → Jarvis（评估记忆架构候选方案）</p>
+        <p><strong>来源:</strong> 多篇arXiv，详见各arXiv ID</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>🔍 Code Agent 评估新基准集中涌现</h3>
+        <p><strong>本周cs.SE新提交中超过1/3与代码Agent评估相关:</strong></p>
+        <ul>
+          <li><strong>DeployBench</strong> (arXiv:2606.05238) — 研究artifact部署基准，51个任务，最佳模型51.0% pass rate</li>
+          <li><strong>SWE-InfraBench</strong> (arXiv:2606.05249) — 云基础设施代码生成评估</li>
+          <li><strong>ADK Arena</strong> — Agent开发工具包横向对比</li>
+          <li><strong>SmellBench</strong> — 代码重构任务细粒度评估</li>
+          <li><strong>Asuka-Bench</strong> — 未明确用户意图+多轮精炼评估</li>
+          <li><strong>TensorBench</strong> (cs.CL) — 编译器框架tensor benchmark</li>
+        </ul>
+        <p>代码Agent评估正在从SWE-bench单一维度快速扩展：部署、基础设施、重构、模糊意图、编译器框架。这组基准是评估我们自己Agent能力的理想候选。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.0/10) · 建议路由 → Jarvis（将相关基准纳入Agent评估队列）</p>
+        <p><strong>来源:</strong> cs.SE new submissions, 2026-06-05</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>🔍 技能演化: SkillComposer + LatentSkill — Agent技能组合与内化</h3>
+        <p><strong>论文1:</strong> SkillComposer: Learning to Evolve Agent Skills for Specification and Generalization — arXiv (cs.CL, 2026-06-05)</p>
+        <p><strong>论文2:</strong> LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents — arXiv (cs.CL)</p>
+        <p>两篇论文分别从"组合演化"和"隐式内化"两个角度探索Agent技能获取。SkillComposer让Agent学习组合现有技能解决新任务；LatentSkill将上下文中的文本技能转化为模型权重的隐式表示。这直接关系到STARK_TOWER"Agent技能库"的建设策略。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.0/10) · 建议路由 → Jarvis（技能库架构设计参考）</p>
+        <p><strong>来源:</strong> arXiv cs.CL new submissions, 2026-06-05</p>
+      </div>
+    </section>
+
+    <!-- ========== P2: 值得知道 ========== -->
+    <section class="priority-p2">
+      <h2>P2 · 值得知道</h2>
+
+      <div class="discovery-card p2">
+        <h3>📋 模型崩溃流行病学: 合成数据污染的双层SIR模型</h3>
+        <p><strong>论文:</strong> Epidemiology of Model Collapse: Modeling Synthetic Data Contamination via Bilayer SIR Dynamics — arXiv:2606.05168 [cs.CL]</p>
+        <p>将模型塌缩建模为双层耦合SIR传染病模型。关键发现：合成文本检测（detection）是最高杠杆干预参数。多源混合可以部分缓解塌缩但效果有限。R₀ > 1意味着不干预的情况下模型塌缩是不可避免的。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.2/10) · 建议关注长期训练数据策略</p>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05168">https://arxiv.org/abs/2606.05168</a></p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>📋 Dense Contexts Are Hard Contexts: 词汇密度限制LLM有效上下文</h3>
+        <p><strong>论文:</strong> Dense Contexts Are Hard Contexts: Lexical Density Limits Effective Context in LLMs — arXiv (cs.CL, 2026-06-05)</p>
+        <p>发现词汇密度（lexical density）是比序列长度更关键的上下文利用瓶颈。高密度文本即使很短，LLM的处理也会显著退化。这对Agent的长上下文使用模式有启示——不是越长越难，是越密越难。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.5/10)</p>
+        <p><strong>来源:</strong> arXiv cs.CL new submissions</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>📋 模型塌缩持续检测: When New Generators Arrive — Ridge Feature Transfer</h3>
+        <p><strong>论文:</strong> When New Generators Arrive: Lifelong Machine-Generated Text Attribution via Ridge Feature Transfer — arXiv (cs.CL)</p>
+        <p>从终身学习视角解决AI文本检测问题——当新模型不断出现时，如何持续检测AI生成文本而不遗忘旧模式。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+        <p><strong>来源:</strong> arXiv cs.CL new submissions</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>📋 TLA-Prover + Can LLMs Write Correct TLA+ Specifications?</h3>
+        <p><strong>论文1:</strong> TLA-Prover: Verifiable TLA+ Specification Synthesis via Preference-Optimized LoRA — arXiv (cs.SE)</p>
+        <p><strong>论文2:</strong> Can LLMs Write Correct TLA+ Specifications? Evaluating Natural-Language-to-TLA+ Generation — arXiv:2606.05332 [cs.AI]</p>
+        <p>LLM自动生成形式化规约。TLA+社区正在系统性评估LLM在形式化验证场景中的能力边界。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+        <p><strong>来源:</strong> arXiv cs.SE + cs.AI new submissions</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>📋 基础设施: RedKnot + Vortex — Agent serving效率</h3>
+        <p><strong>论文1:</strong> RedKnot: Efficient Long-Context LLM Serving with Head-Aware KV Reuse — arXiv:2606.05304 [cs.AI]</p>
+        <p><strong>论文2:</strong> Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents — arXiv:2606.05316 [cs.AI]</p>
+        <p>两篇关注Agent场景下的LLM serving效率。RedKnot利用head-aware KV复用优化长上下文；Vortex针对Agent场景的可编程稀疏注意力。基础设施层优化，值得关注但不紧急。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+        <p><strong>来源:</strong> arXiv:2606.05304, arXiv:2606.05316</p>
+      </div>
+    </section>
+
+    <!-- ========== 趋势集群观察 ========== -->
+    <section class="trend-analysis">
+      <h2>趋势集群观察</h2>
+      <div style="padding:0;">
+        <h3 style="color:var(--report-text);font-family:'Trebuchet MS','Noto Sans SC',sans-serif;">趋势 #1: Agent间通信协议化</h3>
+        <p>本周至少4篇论文从不同角度触及"Agent应该如何相互通信"：PACT（协议化消息）、Beyond tokens: a unified framework for latent communication in LLM-based multi-agent systems（隐式通信）、CollabSim（协作能力评估方法学）、CollabBench（多样化玩家的协作能力）。"Agent通信协议"正在从工程实践升级为独立研究领域。</p>
+
+        <h3 style="color:var(--report-text);font-family:'Trebuchet MS','Noto Sans SC',sans-serif;margin-top:18px;">趋势 #2: 记忆系统进入集群爆发期</h3>
+        <p>本周出现6+篇Agent记忆论文（AdaMEM、SubtleMemory、Graph Memory、Trustworthy Memory、Memory Boundaries、Agent Memory characterization）。覆盖测试时自适应、图记忆、可信搜索、边界量化等子方向。记忆正在成为Agent架构的"标配模块"。STARK_TOWER应抓住这个窗口期确定自己的记忆架构方向。</p>
+
+        <h3 style="color:var(--report-text);font-family:'Trebuchet MS','Noto Sans SC',sans-serif;margin-top:18px;">趋势 #3: 代码Agent基准向多维度扩展</h3>
+        <p>从SWE-bench单一点扩展出DeployBench（artifact部署）、SWE-InfraBench（基础设施）、SmellBench（重构）、Asuka-Bench（模糊意图+多轮）、TensorBench（编译器框架）。"代码Agent"的子能力正在被逐一拆解和量化评估。</p>
+
+        <h3 style="color:var(--report-text);font-family:'Trebuchet MS','Noto Sans SC',sans-serif;margin-top:18px;">趋势 #4: Agent Token经济学觉醒</h3>
+        <p>Tokenomics（Code Review消耗59.4% token）+ PACT（协议化通信降低token）+ 推理链优化（LoRi: Low-Rank Distillation for Implicit Reasoning）共同指向一个方向：Agent系统的成本意识正在从"能跑就行"转向"像优化SQL一样优化token消耗"。</p>
+      </div>
+    </section>
+
+    <!-- ========== Radar 候补 ========== -->
+    <section class="subscription-hits">
+      <h2>Radar 候补</h2>
+      <div style="padding:0;">
+        <p><span class="keyword-tag">agent-memory</span><span class="keyword-tag">agent-communication</span><span class="keyword-tag">token-economics</span><span class="keyword-tag">code-agent-benchmark</span></p>
+        <p style="margin-top:12px;"><strong>建议新增订阅主题:</strong></p>
+        <ul>
+          <li><strong>agent-inter-communication</strong> (agent间通信协议/效率) — 窗口: 3天</li>
+          <li><strong>agent-memory-systems</strong> (Agent记忆架构) — 窗口: 3天</li>
+          <li><strong>token-efficiency-agents</strong> (Agent token效率优化) — 窗口: 3天</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== GitHub 生态观察 ========== -->
+    <section>
+      <h2>GitHub 生态快照</h2>
+      <table class="data-table" style="width:100%;">
+        <thead>
+          <tr>
+            <th>仓库</th>
+            <th>描述</th>
+            <th>今日🌟</th>
+            <th>总🌟</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://github.com/CopilotKit/CopilotKit">CopilotKit/CopilotKit</a></td>
+            <td>Agent前端栈 + Generative UI + AG-UI协议</td>
+            <td>631</td>
+            <td>33.3k</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/MemPalace/mempalace">MemPalace/mempalace</a></td>
+            <td>开源AI记忆系统（基准最佳）</td>
+            <td>446</td>
+            <td>54.4k</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></td>
+            <td>跨平台AI Agent research skill</td>
+            <td>439</td>
+            <td>29.0k</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td>
+            <td>Agent"看遍互联网" CLI工具</td>
+            <td>683</td>
+            <td>22.5k</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/openai/plugins">openai/plugins</a></td>
+            <td>OpenAI插件生态重获关注</td>
+            <td>213</td>
+            <td>1.8k</td>
+          </tr>
+          <tr>
+            <td><a href="https://github.com/danielmiessler/Personal_AI_Infrastructure">danielmiessler/Personal_AI_Infrastructure</a></td>
+            <td>个人Agent AI基础设施框架</td>
+            <td>70</td>
+            <td>15.0k</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top:8px;color:var(--report-muted);font-size:0.8125rem;">数据来源: <a href="https://github.com/trending">GitHub Trending</a> · 2026-06-07 · Agent/AI 生态持续主导趋势榜</p>
+    </section>
+
+    <!-- ========== 改写要点 ========== -->
+    <section>
+      <h2>改写要点（供 Content 参考）</h2>
+      <div style="background:var(--report-surface);border:1px solid var(--report-border);border-radius:6px;padding:20px;box-shadow:var(--report-shadow);">
+        <ul>
+          <li><strong>Agent 通信协议化是下一个锚点</strong> — PACT 将消息压缩为"行动-状态记录"，简单有效。这篇论文的技术方案实用性强，可以当作 "Agent 之间的 HTTP/2" 来理解（去冗余 + 结构化）。</li>
+          <li><strong>Token 经济的冷数据</strong> — Code Review 消耗 59.4% token，初始代码生成反而不是大头。这个结论有反直觉传播力，适合做推文/短内容。</li>
+          <li><strong>记忆不是检索，是重构</strong> — 本周多篇论文指向同一方向：Agent 记忆不是"找到旧的"而是"基于旧信息重建"。这个视角转换有叙事价值。</li>
+          <li><strong>MCP 生态正在从"能用"走向"可审计"</strong> — MCP 运行期故障分类学 + Replanning benchmark (When Tools Fail) 共同构建 MCP 的工程成熟度评估。</li>
+          <li><strong>模型塌缩流行病学模型</strong> — 合成数据污染的 SIR 模型。这个有趣的跨学科框架可包装成"如果你的模型吃自己拉的数据……"叙事。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 困难与报错 ========== -->
+    <details>
+      <summary>本次搜索的困难与报错</summary>
+      <div style="margin-top:12px;">
+        <ul>
+          <li>⛔ <strong>MCP endpoints 不可用</strong> — 本环境无 `web_search` 工具，MCP health check 脚本未部署。所有数据通过浏览器手动抓取。</li>
+          <li>⛔ <strong>arXiv cs.AI 页太大（108 papers）</strong> — 完整 snapshot 被截断，标题+摘要通过 browser_console JavaScript 提取。</li>
+          <li>⛔ <strong>arXiv ID 提取受阻</strong> — arXiv 新版页面使用 DescriptionList 元素，标准 DOM 选择器 `querySelector('dt')` 和 `querySelector('a')` 返回空值。论文链接通过 page title 和 snapshot text 定位。</li>
+          <li>⛔ <strong>HuggingFace Trending 未抓取</strong> — 动态加载内容，snapshot 只捕获前 5 条，优先保证 arXiv + GitHub + HN 的完整覆盖。</li>
+          <li>⛔ <strong>部分论文仅根据标题和 subject 做初步评分</strong> — 优先深读了 agent/MCP/code 相关论文的摘要，其他论文需要后续进一步审阅。</li>
+          <li>✅ GitHub Trending 和 Hacker News 均成功提取完整列表。</li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

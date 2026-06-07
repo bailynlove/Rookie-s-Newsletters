@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T20:34:40.167936",
+  "generated_at": "2026-06-07T12:52:29.019818",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -70,6 +70,13 @@
       "p1": 11,
       "p2": 9,
       "total": 27
+    },
+    {
+      "date": "2026-06-07",
+      "p0": 2,
+      "p1": 5,
+      "p2": 5,
+      "total": 12
     }
   ],
   "calendar_data": [
@@ -122,6 +129,11 @@
       "date": "2026-06-06",
       "intensity": 27,
       "level": 2
+    },
+    {
+      "date": "2026-06-07",
+      "intensity": 12,
+      "level": 0
     }
   ],
   "sparkline_data": [
@@ -166,6 +178,10 @@
         },
         {
           "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
           "value": 0
         }
       ]
@@ -212,6 +228,10 @@
         {
           "date": "2026-06-06",
           "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
         }
       ]
     },
@@ -256,6 +276,10 @@
         },
         {
           "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
           "value": 0
         }
       ]
@@ -302,6 +326,10 @@
         {
           "date": "2026-06-06",
           "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
         }
       ]
     },
@@ -346,6 +374,10 @@
         },
         {
           "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
           "value": 0
         }
       ]
@@ -392,6 +424,10 @@
         {
           "date": "2026-06-06",
           "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
         }
       ]
     },
@@ -437,6 +473,10 @@
         {
           "date": "2026-06-06",
           "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
         }
       ]
     },
@@ -481,6 +521,10 @@
         },
         {
           "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
           "value": 0
         }
       ]
@@ -528,6 +572,10 @@
       "count": 8
     },
     {
+      "topic": "Agent inter-communication protocols",
+      "count": 5
+    },
+    {
       "topic": "多智能体通信协议",
       "count": 5
     },
@@ -542,20 +590,16 @@
     {
       "topic": "合成数据污染与模型塌缩",
       "count": 5
-    },
-    {
-      "topic": "Claude Plugin Ecosystem",
-      "count": 5
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 14
+      "count": 15
     },
     {
       "category": "cs.CL",
-      "count": 13
+      "count": 14
     },
     {
       "category": "cs.LG",
@@ -563,7 +607,7 @@
     },
     {
       "category": "cs.SE",
-      "count": 6
+      "count": 7
     },
     {
       "category": "cs.MA",
@@ -592,6 +636,14 @@
       "count": 5
     },
     {
+      "subscription": "agent-communication",
+      "count": 2
+    },
+    {
+      "subscription": "mcp",
+      "count": 2
+    },
+    {
       "subscription": "multi-agent",
       "count": 2
     },
@@ -604,15 +656,7 @@
       "count": 2
     },
     {
-      "subscription": "multi-agent-communication",
-      "count": 1
-    },
-    {
-      "subscription": "llm-token-compression",
-      "count": 1
-    },
-    {
-      "subscription": "code-adapter-lora",
+      "subscription": "multi-agent-systems",
       "count": 1
     }
   ],
@@ -622,12 +666,12 @@
       "count": 8
     },
     {
-      "topic": "codegraph",
+      "topic": "agent-framework",
       "count": 6
     },
     {
-      "topic": "agent-framework",
-      "count": 5
+      "topic": "codegraph",
+      "count": 6
     },
     {
       "topic": "claude-plugins",
@@ -654,7 +698,7 @@
       "count": 2
     },
     {
-      "topic": "agent-harness",
+      "topic": "ai-memory",
       "count": 1
     }
   ],
@@ -795,32 +839,32 @@
     },
     {
       "combination": [
-        "code-adapter-lora",
-        "compound-engineering"
+        "agent-communication",
+        "code-generation"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "code-adapter-lora",
-        "llm-token-compression"
+        "agent-communication",
+        "mcp"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "code-adapter-lora",
-        "multi-agent-communication"
+        "agent-communication",
+        "multi-agent-systems"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "compound-engineering",
-        "llm-token-compression"
+        "agent-communication",
+        "token-efficiency"
       ],
       "count": 1,
       "size": 2

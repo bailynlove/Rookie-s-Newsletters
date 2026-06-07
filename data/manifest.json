@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-06T20:34:40.166272",
+  "generated_at": "2026-06-07T12:52:29.017994",
   "academic": [
+    {
+      "path": "academic/2026-06-07/noon.html",
+      "date": "2026-06-07",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "Agent inter-communication protocols",
+        "Agentic software engineering token economics",
+        "MCP ecosystem & fault taxonomy"
+      ]
+    },
     {
       "path": "academic/2026-06-06/evening.html",
       "date": "2026-06-06",
