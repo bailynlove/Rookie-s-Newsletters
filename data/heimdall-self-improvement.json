@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "purpose": "Persistent feedback loop for Heimdall cron reports.",
+  "read_at_start": [
+    "Read this file before each cron report.",
+    "Apply active_learning_rules during source selection, report writing, and final verification.",
+    "Do not rewrite Hermes skills or cron prompts automatically; add proposals to prompt_improvement_queue."
+  ],
+  "active_learning_rules": [],
+  "quality_summary": {
+    "runs_recorded": 1,
+    "average_score_last_7": 100.0,
+    "failure_rate_last_7": 0.0,
+    "recurring_weaknesses": []
+  },
+  "radar_watchlist": [
+    {
+      "topic": "Agent inter-communication protocols",
+      "recent_strength": 5
+    },
+    {
+      "topic": "Agentic software engineering token economics",
+      "recent_strength": 4
+    },
+    {
+      "topic": "MCP ecosystem & fault taxonomy",
+      "recent_strength": 4
+    },
+    {
+      "topic": "Long-horizon agent memory systems",
+      "recent_strength": 4
+    },
+    {
+      "topic": "Self-evolution & skill acquisition",
+      "recent_strength": 3
+    }
+  ],
+  "prompt_improvement_queue": [],
+  "run_history": [
+    {
+      "id": "20260607-130811-noon",
+      "generated_at": "2026-06-07T13:08:11",
+      "period": "noon",
+      "report_path": "academic/2026-06-07/noon.html",
+      "reported_status": "ok",
+      "quality_score": 100,
+      "checks": {
+        "report_exists": true,
+        "non_empty": true,
+        "jsonld_present": true,
+        "agent_is_heimdall": true,
+        "section_is_academic": true,
+        "period_matches": true,
+        "source_link_count": 13,
+        "source_link_target": 7,
+        "source_links_meet_target": true,
+        "signal_total": 12,
+        "missing_required_sections": [],
+        "reported_status": "ok",
+        "notes": "initial-self-improvement-bootstrap"
+      },
+      "weaknesses": [],
+      "metadata_summary": {
+        "headline": "Heimdall 午间论文",
+        "period": "noon",
+        "p0_count": 2,
+        "p1_count": 5,
+        "p2_count": 5,
+        "subscription_hits": [
+          "agent-communication",
+          "multi-agent-systems",
+          "code-generation",
+          "mcp",
+          "token-efficiency"
+        ],
+        "trend_signals": [
+          {
+            "topic": "Agent inter-communication protocols",
+            "strength": 5,
+            "direction": "rising"
+          },
+          {
+            "topic": "Agentic software engineering token economics",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "MCP ecosystem & fault taxonomy",
+            "strength": 4,
+            "direction": "stable"
+          },
+          {
+            "topic": "Long-horizon agent memory systems",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "Self-evolution & skill acquisition",
+            "strength": 3,
+            "direction": "emerging"
+          }
+        ],
+        "github_trending_topics": [
+          "agent-framework",
+          "ai-memory",
+          "plugin-ecosystem"
+        ],
+        "arxiv_categories": [
+          "cs.AI",
+          "cs.CL",
+          "cs.SE"
+        ]
+      },
+      "recommended_next_run_adjustments": []
+    }
+  ],
+  "last_updated_at": "2026-06-07T13:08:11"
+}

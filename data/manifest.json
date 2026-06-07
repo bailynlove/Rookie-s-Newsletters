@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T12:52:29.017994",
+  "generated_at": "2026-06-08T07:38:50.301505",
   "academic": [
     {
       "path": "academic/2026-06-07/noon.html",
@@ -204,16 +204,23 @@
   ],
   "macro_finance": [
     {
+      "path": "macro-finance/2026-06-08/morning.html",
+      "date": "2026-06-08",
+      "period": "morning",
+      "section": "macro-finance",
+      "keywords": [
+        "中东局势升级",
+        "美股科技股暴跌",
+        "美债收益率上行"
+      ]
+    },
+    {
       "path": "macro-finance/2026-06-07/18-30-weekly-review.html",
       "date": "2026-06-07",
       "period": "18-30-weekly-review",
       "section": "macro-finance",
       "keywords": [
-        "周度宏观复盘W23",
-        "市场全面回调",
-        "科创50领跌",
-        "黄金白银暴跌",
-        "美伊对峙持续"
+        "周度宏观复盘"
       ]
     },
     {

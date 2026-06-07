@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融晨报 — 2026-06-08 morning</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday A股晨报",
+    "datePublished": "2026-06-08T07:30:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "morning",
+    "market_sentiment": 18,
+    "confidence": 0.68,
+    "key_indices": {
+      "上证综指": {"value": 4027.74, "change": -0.74},
+      "深证成指": {"value": 15314.70, "change": -2.21},
+      "创业板指": {"value": 3957.94, "change": -3.20},
+      "科创50": {"value": 1668.33, "change": -4.01},
+      "恒生指数": {"value": 24961.95, "change": -1.15},
+      "纳斯达克": {"value": 25709.43, "change": -4.18}
+    },
+    "risk_level": "high",
+    "risk_categories": {
+      "A股整体": "high",
+      "科技股": "extreme",
+      "港股": "high",
+      "美股": "extreme",
+      "地缘政治": "extreme",
+      "商品": "mid"
+    },
+    "trend_signals": [
+      {"topic": "中东局势升级", "strength": 5, "direction": "rising"},
+      {"topic": "美股科技股暴跌", "strength": 5, "direction": "falling"},
+      {"topic": "美债收益率上行", "strength": 4, "direction": "rising"},
+      {"topic": "原油价格冲高", "strength": 4, "direction": "rising"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .breaking-alert,
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .breaking-alert h3 {
+      color: var(--report-danger);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .data-table td {
+      padding: 8px 12px;
+      border-top: 1px solid var(--report-border);
+    }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+      margin: 0 0 48px;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+      padding: 40px 0;
+    }
+
+    .extreme-risk {
+      border-left: 4px solid var(--report-danger);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header { padding: 36px 0 28px; }
+      .discovery-card, .risk-assessment, .market-outlook, .sentiment, details { padding: 16px; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-finance">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-finance">宏观金融</span>
+      <h1>Friday — A股晨报</h1>
+      <time datetime="2026-06-08T07:30:00+08:00">2026年06月08日 07:30 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ======= 警报横幅 ======= -->
+    <section class="risk-assessment">
+      <div class="discovery-card breaking-alert">
+        <h3>⚠️ 极端风险警报</h3>
+        <p>本报告期覆盖6月5日（周五）收盘至今的多重利空叠加：中东局势剧烈升级（伊朗导弹打击以色列，以军关闭口岸）、纳指单日暴跌4.18%引发全球科技股抛售、美债收益率预期大幅上修。今日A股开盘面临极大压力，建议高度警惕。</p>
+      </div>
+    </section>
+
+    <!-- ======= L1-L4 宏观因子 ======= -->
+    <section class="macro-factors">
+      <h2>L1-L4 宏观因子总结</h2>
+
+      <div class="discovery-card">
+        <h3>L1 全球宏观层</h3>
+        <table class="data-table">
+          <thead><tr><th>因子</th><th>数值/事件</th><th>信号</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr><td>中东局势</td><td>伊朗7日晚导弹打击以色列，以军关闭加沙口岸，总参谋长称"随时待命"</td><td style="color:var(--report-danger)">⬆ 极度升级</td><td>高</td></tr>
+            <tr><td>约旦领空</td><td>数枚火箭弹侵入约旦领空，全国拉响空袭警报</td><td style="color:var(--report-danger)">⬆ 冲突外溢</td><td>高</td></tr>
+            <tr><td>泽连斯基提议</td><td>提议乌俄先行停火维持当前阵地，后续谈判解决争端，俄方暂无回应</td><td>⚖ 观望</td><td>中</td></tr>
+            <tr><td>摩根大通上调美债收益率</td><td>10年期美债收益率预期上调至4.70%（+20bp），2年期上调至4.20%（+30bp）</td><td style="color:var(--report-danger)">⬆ 紧缩预期升温</td><td>高</td></tr>
+          </tbody>
+        </table>
+        <p><strong>数据来源</strong>: 新浪财经7x24直播 | <strong>时效性</strong>: 2026-06-08 07:30</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>L2 传导层</h3>
+        <table class="data-table">
+          <thead><tr><th>因子</th><th>数值</th><th>信号</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr><td>纳斯达克(隔夜)</td><td>25709.43 <strong style="color:var(--report-danger)">-4.18%</strong></td><td style="color:var(--report-danger)">⬇ 科技股暴跌</td><td>高</td></tr>
+            <tr><td>道琼斯(隔夜)</td><td>50866.78 <strong style="color:var(--report-danger)">-1.35%</strong></td><td style="color:var(--report-danger)">⬇ 全面下跌</td><td>高</td></tr>
+            <tr><td>日经期货(盘前)</td><td>63850（开盘跌2820点，约-4.2%）</td><td style="color:var(--report-danger)">⬇ 亚太急跌</td><td>高</td></tr>
+            <tr><td>三星/SK海力士盘前</td><td>Nextrade跌超10%（三星-12%，SK海力士-10.5%）</td><td style="color:var(--report-danger)">⬇ 半导体崩溃</td><td>高</td></tr>
+            <tr><td>恒生指数(上周五)</td><td>24961.95 <strong style="color:var(--report-danger)">-1.15%</strong></td><td style="color:var(--report-danger)">⬇ 港股承压</td><td>高</td></tr>
+            <tr><td>斯托克50(上周五)</td><td>6062.08 -0.68%</td><td style="color:var(--report-danger)">⬇ 欧股跟跌</td><td>高</td></tr>
+          </tbody>
+        </table>
+        <p><strong>数据来源</strong>: 新浪财经环球市场 | <strong>时效性</strong>: 2026-06-08 07:25</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>L3 国内层（上周五收盘）</h3>
+        <table class="data-table">
+          <thead><tr><th>因子</th><th>数值</th><th>信号</th><th>置信度</th></tr></thead>
+          <tbody>
+            <tr><td>上证综指(上周五)</td><td>4027.74 <strong style="color:var(--report-danger)">-0.74%</strong></td><td style="color:var(--report-danger)">⬇ 延续回调</td><td>高</td></tr>
+            <tr><td>科创50(上周五)</td><td>1668.33 <strong style="color:var(--report-danger)">-4.01%</strong></td><td style="color:var(--report-danger)">⬇ 科技重挫</td><td>高</td></tr>
+            <tr><td>创业板指(上周五)</td><td>3957.94 <strong style="color:var(--report-danger)">-3.20%</strong></td><td style="color:var(--report-danger)">⬇ 成长股暴跌</td><td>高</td></tr>
+            <tr><td>深证成指(上周五)</td><td>15314.70 <strong style="color:var(--report-danger)">-2.21%</strong></td><td style="color:var(--report-danger)">⬇ 深市承压</td><td>高</td></tr>
+            <tr><td>沪深300(上周五)</td><td>4816.92 <strong style="color:var(--report-danger)">-1.79%</strong></td><td style="color:var(--report-danger)">⬇ 蓝筹跟跌</td><td>高</td></tr>
+            <tr><td>成交量(上周五)</td><td>沪市13638.88亿 / 深市17053.04亿</td><td>放量下跌</td><td>高</td></tr>
+          </tbody>
+        </table>
+        <p><strong>数据来源</strong>: 新浪财经股票首页 | <strong>时效性</strong>: 2026-06-05 15:00（上周五收盘）</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>L4 市场层 — 综合方向判断</h3>
+        <div class="extreme-risk" style="padding: 12px; margin-bottom: 12px;">
+          <p><strong style="color:var(--report-danger)">整体方向: 极大概率大幅低开，市场面临系统性压力</strong></p>
+          <p><strong>置信度</strong>: 68%（中等偏高高，因周末突发事件密度极高）</p>
+        </div>
+        <p><strong>核心逻辑</strong>:</p>
+        <ul>
+          <li>纳指-4.18%叠加日经期货-4.2%，为年内最大单周跨市场联动下跌</li>
+          <li>伊朗导弹打击以色列使中东局势从"僵持"升级为"热冲突"，以军关闭加沙口岸，约旦领空遭侵入</li>
+          <li>摩根大通上调美债收益率预期，加息预期打压成长股估值</li>
+          <li>三星/SK海力士盘前跌超10%，半导体链条面临全球性抛售</li>
+          <li>A股上周五已现弱势（科创50跌-4.01%），周末利空叠加将加剧抛压</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======= 上周五市场回顾 ======= -->
+    <section>
+      <h2>上周五 A股市场回顾</h2>
+      <table class="data-table">
+        <thead><tr><th>指数</th><th>收盘点位</th><th>涨跌幅</th><th>成交额</th></tr></thead>
+        <tbody>
+          <tr><td>上证综指</td><td>4027.74</td><td style="color:var(--report-danger)">-0.74%</td><td>13638.88亿</td></tr>
+          <tr><td>深证成指</td><td>15314.70</td><td style="color:var(--report-danger)">-2.21%</td><td>17053.04亿</td></tr>
+          <tr><td>创业板指</td><td>3957.94</td><td style="color:var(--report-danger)">-3.20%</td><td>—</td></tr>
+          <tr><td>科创50</td><td>1668.33</td><td style="color:var(--report-danger)">-4.01%</td><td>—</td></tr>
+          <tr><td>沪深300</td><td>4816.92</td><td style="color:var(--report-danger)">-1.79%</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <p><strong>市场特征</strong>: 上周五A股整体下跌，科技板块（科创50 -4.01%、创业板 -3.20%）领跌，两市成交约3.07万亿，放量下跌态势明显。权重蓝筹相对抗跌（上证 -0.74%），但深市跌幅大于沪市，资金流出成长板块明显。</p>
+      <p><strong>数据来源</strong>: 新浪财经股票首页 | <strong>时效性</strong>: 2026-06-05 15:00</p>
+    </section>
+
+    <!-- ======= 周末关键事件 ======= -->
+    <section>
+      <h2>周末关键事件梳理</h2>
+      <div class="discovery-card breaking-alert">
+        <h3>【极端事件】伊朗导弹打击以色列</h3>
+        <p><strong>事件</strong>: 伊朗于6月7日晚对以色列实施导弹打击。以色列随即关闭加沙地带凯雷姆沙洛姆和拉法两处口岸。以军总参谋长扎米尔称"一旦接到命令将果断打击敌人"。</p>
+        <p><strong>外溢效应</strong>: 约旦领空遭数枚火箭弹侵入，全国拉响空袭警报。</p>
+        <p><strong>市场影响</strong>: 避险情绪急剧升温，WTI原油已站上92.6美元（+2.3%），黄金维持4360美元高位，美元走强预期上升。</p>
+        <p><strong>来源</strong>: 新浪7x24, Axios</p>
+      </div>
+
+      <div class="discovery-card breaking-alert">
+        <h3>【极端事件】美股科技股暴跌 — 纳指单日-4.18%</h3>
+        <p><strong>背景</strong>: 加息预期升温（摩根大通大幅上修美债收益率预测）触发AI/半导体板块大举抛售。纳指上周五暴跌4.18%，道指跟跌1.35%。</p>
+        <p><strong>连锁反应</strong>: 三星电子（盘前-12%）、SK海力士（盘前-10.5%）在韩国盘前交易中暴跌。日经期货开盘跌2820点至63850（约-4.2%）。</p>
+        <p><strong>英伟达动态</strong>: 黄仁勋周末访韩会见SK海力士、NAVER、LG高管，签署多年合作协议联合研发HBM4。Vera Rubin芯片已进入全面量产，Q3交付。但短期仍无法阻挡市场情绪抛售。</p>
+        <p><strong>来源</strong>: 新浪7x24, 新浪美股</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>【宏观】摩根大通上调美债收益率预期</h3>
+        <p><strong>摘要</strong>: 摩根大通策略师建议做空美债、做多德债。将2年期美债收益率预期上调至4.20%（+30bp），10年期上调至4.70%（+20bp）。理由：美国经济增长稳健、劳动力市场稳定、期限溢价回归常态。收益率曲线将维持陡峭。</p>
+        <p><strong>来源</strong>: 摩根大通报告 | <strong>时效性</strong>: 2026-06-06</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>【地缘】泽连斯基提出停火方案</h3>
+        <p><strong>摘要</strong>: 乌克兰总统泽连斯基提出双方先行停火、维持当前阵地态势，后续谈判化解争端。要求停火具备全面性与可监督性，需美国、欧洲等参与搭建国际监督机制。俄方暂无回应。</p>
+        <p><strong>来源</strong>: 新浪7x24 | <strong>时效性</strong>: 2026-06-07</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>【行业】英伟达与SK海力士签署多年合作协议</h3>
+        <p><strong>摘要</strong>: 英伟达与SK海力士签订多年合作协议，联合研发下一代AI存储芯片。黄仁勋首次证实已批准三星、SK海力士、美光供应HBM4内存。Vera Rubin芯片全面量产，预计Q3交付。每台服务器搭载数太字节HBM4。</p>
+        <p><strong>来源</strong>: 新浪7x24 | <strong>时效性</strong>: 2026-06-08</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>【A股】并购重组持续活跃</h3>
+        <p><strong>摘要</strong>: A股上市公司并购重组持续活跃，联合光电、万隆光电、TCL科技、山高环能、东方雨虹等多家公司披露并购重组进展。业内认为并购重组将沿着硬科技产业重构、传统周期行业整合出清方向发展。</p>
+        <p><strong>来源</strong>: 中国证券报 | <strong>时效性</strong>: 2026-06-08</p>
+      </div>
+    </section>
+
+    <!-- ======= 中信建投研报摘要 ======= -->
+    <section>
+      <h2>中信建投研报摘要</h2>
+      <div class="discovery-card">
+        <p><strong>主题1</strong>: 算力板块波动加剧，尚未达到中期大级别切换标准</p>
+        <p><strong>核心观点</strong>: 算力板块波动加剧的核心源于"基本面绝对优势 vs 交易结构绝对拥挤"。当前尚未达到中期大级别切换标准，主要是短期再平衡需求。短期市场可能大幅低开后快速企稳，呈现"科技跌、防御涨"轮动特征。中期看海外科技股企稳后可继续布局算力环节内部轮动。其他景气线索关注煤炭和工业金属。</p>
+      </div>
+      <div class="discovery-card">
+        <p><strong>主题2</strong>: 以油价中枢上行为基础设定，预防潜在流动性风险</p>
+        <p><strong>核心观点</strong>: 市场尚未充分定价油价的中枢抬升高度。建议先布局确定性资产。中国化工在全球的相对竞争优势加强，通胀抬升对HALO资产更为有利。油价冲击过后再寻找化工核心资产。</p>
+        <p><strong>数据来源</strong>: 中信建投研报 | <strong>时效性</strong>: 2026-06-08 07:34</p>
+      </div>
+    </section>
+
+    <!-- ======= 隐私过滤 ======= -->
+    <div class="privacy-notice">
+      <p>⚠️ 个人持仓分析已根据隐私策略过滤。完整分析请查看私有数据源。</p>
+    </div>
+
+    <!-- ======= 风险提示 ======= -->
+    <section class="risk-assessment">
+      <h2>风险矩阵</h2>
+      <div class="discovery-card">
+        <table class="data-table">
+          <thead><tr><th>正面判断</th><th>反面论据</th><th>触发条件</th></tr></thead>
+          <tbody>
+            <tr><td>低开后可能企稳（"科技跌、防御涨"轮动）</td><td>本次全球性抛售深度为2026年之最，A股难以独善其身；科创50已连跌多日可能触发止损连锁</td><td>纳指期货继续下跌；北向资金大幅流出</td></tr>
+            <tr><td>能源/避险资产受益（原油、黄金、军工）</td><td>中东局势若迅速降温，原油可能快速回落至85美元以下</td><td>美以克制回应，伊朗未进一步行动</td></tr>
+            <tr><td>A股并购重组主题活跃，硬科技结构性机会</td><td>全球科技股Beta风险压倒Alpha，短期估值承压</td><td>纳指继续下跌，日经期货跌幅扩大</td></tr>
+            <tr><td>国内流动性宽松，信用债资产荒支撑</td><td>美债收益率上行压缩中美利差，人民币汇率压力增大</td><td>美元指数走强突破108</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="discovery-card">
+        <h3>风险分级</h3>
+        <table class="data-table">
+          <thead><tr><th>风险类型</th><th>等级</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td>中东地缘冲突</td><td style="color:var(--report-danger)"><strong>极端</strong></td><td>伊朗导弹打击以色列，以军关闭口岸，冲突外溢至约旦</td></tr>
+            <tr><td>美股科技抛售</td><td style="color:var(--report-danger)"><strong>极端</strong></td><td>纳指单日-4.18%，三星盘前-12%，全球半导体连锁反应</td></tr>
+            <tr><td>美债收益率上行</td><td style="color:var(--report-danger)"><strong>高</strong></td><td>摩根大通大幅上修预测，2年期4.20%，10年期4.70%</td></tr>
+            <tr><td>原油价格冲击</td><td style="color:var(--report-danger)"><strong>高</strong></td><td>WTI 92.6+2.3%，若持续上行将推升通胀预期</td></tr>
+            <tr><td>A股科技板块</td><td style="color:var(--report-danger)"><strong>极高</strong></td><td>科创50上周已跌-4%，本周恐进一步下探</td></tr>
+            <tr><td>港股联动</td><td style="color:var(--report-danger)"><strong>高</strong></td><td>恒指上周五已-1.15%，科技股承压更甚</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ======= 综合判断 ======= -->
+    <section>
+      <h2>综合判断</h2>
+      <div class="discovery-card">
+        <h3>方向判断</h3>
+        <p><strong style="color:var(--report-danger)">整体方向: 极大概率大幅低开，观察能否低开企稳</strong></p>
+        <p><strong>置信度</strong>: 68%（周末突发事件密度极高，预判不确定性大）</p>
+        <p><strong>市场情绪评分</strong>: 18/100（极度悲观）</p>
+        <p><strong>主线方向</strong>:</p>
+        <ul>
+          <li>防御板块（煤炭、公用事业、电力）— 中信建投推荐</li>
+          <li>避险资产（黄金维持高位）</li>
+          <li>军工板块（中东局势催化）</li>
+          <li>能源/化工（原油涨价传导，关注HALO资产）</li>
+        </ul>
+        <p><strong>规避方向</strong>:</p>
+        <ul>
+          <li>半导体/AI算力（全球科技Beta风险暴露，短期回避）</li>
+          <li>创业板/成长股（估值受美债收益率上升和纳指暴跌双重压制）</li>
+          <li>出口导向型（美元走强预期、中东物流风险）</li>
+        </ul>
+      </div>
+
+      <div class="discovery-card">
+        <h3>操作建议</h3>
+        <table class="data-table">
+          <thead><tr><th>置信度区间</th><th>建议</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--report-accent-2)">&gt;70%</td><td>配置避险资产（黄金）、防御板块（公用事业、煤炭）</td></tr>
+            <tr><td style="color:#b8860b">50-70%</td><td>耐心等待开盘信号，不急于抄底科技板块</td></tr>
+            <tr><td style="color:var(--report-danger)">&lt;50%</td><td>保持低仓位，不追高，等待市场稳定</td></tr>
+          </tbody>
+        </table>
+        <p><strong>当前判断置信度</strong>: 68%，建议<strong>高度警惕，以防御为主</strong>。</p>
+      </div>
+    </section>
+
+    <!-- ======= 今日关注点 ======= -->
+    <section>
+      <h2>今日关键观察点</h2>
+      <table class="data-table">
+        <thead><tr><th>优先级</th><th>关注事项</th><th>影响板块</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--report-danger)">★★★</td><td>A股开盘跌幅幅度 — 能否守住3950（上证综指）是关键心理位</td><td>全市场</td></tr>
+          <tr><td style="color:var(--report-danger)">★★★</td><td>中东局势进展 — 以色列是否报复打击、伊朗是否进一步行动</td><td>能源、军工、全球市场</td></tr>
+          <tr><td style="color:var(--report-danger)">★★★</td><td>日韩股市开盘表现 — 日经-4.2%开盘，三星-12%传导至亚太</td><td>亚太市场、半导体</td></tr>
+          <tr><td style="color:var(--report-danger)">★★★</td><td>北向资金流向 — 外资流出规模判断市场情绪</td><td>权重蓝筹</td></tr>
+          <tr><td style="color:var(--report-warning)">★★</td><td>美股期货走势 — 纳指期货是否继续下跌</td><td>科技、全球市场</td></tr>
+          <tr><td style="color:var(--report-warning)">★★</td><td>原油价格 — WTI能否守住90美元</td><td>能源、化工</td></tr>
+          <tr><td style="color:var(--report-muted)">★</td><td>A股并购重组概念活跃度 — 硬科技整合主题</td><td>科技、中小盘</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Friday 首席经济学家 · 宏观金融情报流</p>
+      <p><strong>重要提示</strong>: 本报告基于公开市场数据生成，不构成投资建议。投资有风险，决策需谨慎。</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
