@@ -8,7 +8,7 @@
   ],
   "active_learning_rules": [],
   "quality_summary": {
-    "runs_recorded": 1,
+    "runs_recorded": 2,
     "average_score_last_7": 100.0,
     "failure_rate_last_7": 0.0,
     "recurring_weaknesses": []
@@ -16,14 +16,26 @@
   "radar_watchlist": [
     {
       "topic": "Agent inter-communication protocols",
-      "recent_strength": 5
-    },
-    {
-      "topic": "Agentic software engineering token economics",
-      "recent_strength": 4
+      "recent_strength": 10
     },
     {
       "topic": "MCP ecosystem & fault taxonomy",
+      "recent_strength": 9
+    },
+    {
+      "topic": "Code agent benchmarks",
+      "recent_strength": 5
+    },
+    {
+      "topic": "Agent memory systems",
+      "recent_strength": 4
+    },
+    {
+      "topic": "AI-native developer tooling",
+      "recent_strength": 4
+    },
+    {
+      "topic": "Agentic software engineering token economics",
       "recent_strength": 4
     },
     {
@@ -37,6 +49,81 @@
   ],
   "prompt_improvement_queue": [],
   "run_history": [
+    {
+      "id": "20260608-083211-morning",
+      "generated_at": "2026-06-08T08:32:11",
+      "period": "morning",
+      "report_path": "academic/2026-06-08/morning.html",
+      "reported_status": "ok",
+      "quality_score": 100,
+      "checks": {
+        "report_exists": true,
+        "non_empty": true,
+        "jsonld_present": true,
+        "agent_is_heimdall": true,
+        "section_is_academic": true,
+        "period_matches": true,
+        "source_link_count": 29,
+        "source_link_target": 9,
+        "source_links_meet_target": true,
+        "signal_total": 14,
+        "missing_required_sections": [],
+        "reported_status": "ok",
+        "notes": ""
+      },
+      "weaknesses": [],
+      "metadata_summary": {
+        "headline": "Heimdall 晨间简报",
+        "period": "morning",
+        "p0_count": 3,
+        "p1_count": 6,
+        "p2_count": 5,
+        "subscription_hits": [
+          "agent-communication",
+          "mcp-ecosystem",
+          "agent-benchmark",
+          "code-agent"
+        ],
+        "trend_signals": [
+          {
+            "topic": "Agent inter-communication protocols",
+            "strength": 5,
+            "direction": "rising"
+          },
+          {
+            "topic": "MCP ecosystem & fault taxonomy",
+            "strength": 5,
+            "direction": "rising"
+          },
+          {
+            "topic": "Code agent benchmarks",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Agent memory systems",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "AI-native developer tooling",
+            "strength": 4,
+            "direction": "rising"
+          }
+        ],
+        "github_trending_topics": [
+          "agent-skill",
+          "llm-inference",
+          "open-notebook"
+        ],
+        "arxiv_categories": [
+          "cs.AI",
+          "cs.SE",
+          "cs.CL"
+        ]
+      },
+      "recommended_next_run_adjustments": []
+    },
     {
       "id": "20260607-130811-noon",
       "generated_at": "2026-06-07T13:08:11",
@@ -114,5 +201,5 @@
       "recommended_next_run_adjustments": []
     }
   ],
-  "last_updated_at": "2026-06-07T13:08:11"
+  "last_updated_at": "2026-06-08T08:32:11"
 }

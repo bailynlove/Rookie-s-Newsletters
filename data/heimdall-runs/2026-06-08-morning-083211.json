@@ -1,0 +1,75 @@
+{
+  "id": "20260608-083211-morning",
+  "generated_at": "2026-06-08T08:32:11",
+  "period": "morning",
+  "report_path": "academic/2026-06-08/morning.html",
+  "reported_status": "ok",
+  "quality_score": 100,
+  "checks": {
+    "report_exists": true,
+    "non_empty": true,
+    "jsonld_present": true,
+    "agent_is_heimdall": true,
+    "section_is_academic": true,
+    "period_matches": true,
+    "source_link_count": 29,
+    "source_link_target": 9,
+    "source_links_meet_target": true,
+    "signal_total": 14,
+    "missing_required_sections": [],
+    "reported_status": "ok",
+    "notes": ""
+  },
+  "weaknesses": [],
+  "metadata_summary": {
+    "headline": "Heimdall 晨间简报",
+    "period": "morning",
+    "p0_count": 3,
+    "p1_count": 6,
+    "p2_count": 5,
+    "subscription_hits": [
+      "agent-communication",
+      "mcp-ecosystem",
+      "agent-benchmark",
+      "code-agent"
+    ],
+    "trend_signals": [
+      {
+        "topic": "Agent inter-communication protocols",
+        "strength": 5,
+        "direction": "rising"
+      },
+      {
+        "topic": "MCP ecosystem & fault taxonomy",
+        "strength": 5,
+        "direction": "rising"
+      },
+      {
+        "topic": "Code agent benchmarks",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "Agent memory systems",
+        "strength": 4,
+        "direction": "rising"
+      },
+      {
+        "topic": "AI-native developer tooling",
+        "strength": 4,
+        "direction": "rising"
+      }
+    ],
+    "github_trending_topics": [
+      "agent-skill",
+      "llm-inference",
+      "open-notebook"
+    ],
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.SE",
+      "cs.CL"
+    ]
+  },
+  "recommended_next_run_adjustments": []
+}

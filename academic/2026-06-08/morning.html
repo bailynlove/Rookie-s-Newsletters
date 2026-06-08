@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-08 morning</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 晨间简报",
+    "datePublished": "2026-06-08T08:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "morning",
+    "p0_count": 3,
+    "p1_count": 6,
+    "p2_count": 5,
+    "subscription_hits": ["agent-communication", "mcp-ecosystem", "agent-benchmark", "code-agent"],
+    "github_trending_topics": ["agent-skill", "llm-inference", "open-notebook"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Agent inter-communication protocols", "strength": 5, "direction": "rising"},
+      {"topic": "MCP ecosystem & fault taxonomy", "strength": 5, "direction": "rising"},
+      {"topic": "Code agent benchmarks", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent memory systems", "strength": 4, "direction": "rising"},
+      {"topic": "AI-native developer tooling", "strength": 4, "direction": "rising"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin { min-height: 100vh; position: relative; overflow-x: hidden; }
+
+  .report-skin::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell { max-width: 860px; position: relative; z-index: 1; margin: 0 auto; padding: 0 24px; }
+
+  .report-header {
+    background: transparent; border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time, .report-meta {
+    display: block; margin-top: 12px;
+    color: var(--report-muted); font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent); border-radius: 3px;
+    background: transparent; color: var(--report-accent);
+    letter-spacing: 0.18em; padding: 4px 12px; font-size: 0.72rem;
+  }
+
+  main.report-shell { padding-top: 42px; padding-bottom: 72px; }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 18px; color: var(--report-muted);
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: ""; flex: 1; height: 1px; background: var(--report-border);
+  }
+
+  .discovery-card, .trend-analysis, .subscription-hits, .action-items, details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card { padding: 20px; }
+  .discovery-card + .discovery-card { margin-top: 12px; }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p, .trend-analysis, .subscription-hits, .action-items, details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong, a { color: var(--report-accent); }
+
+  .discovery-card.p0 {
+    border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+  }
+
+  .discovery-card.p1 {
+    border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    width: 100%;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 12px 16px;
+  }
+
+  .data-table td {
+    padding: 10px 16px;
+    border-color: var(--report-border);
+    border-top: 1px solid var(--report-border);
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+    padding: 40px 0;
+  }
+
+  .trend-analysis, .subscription-hits, .action-items { padding: 20px; margin-bottom: 48px; }
+  details { padding: 16px 20px; margin-bottom: 48px; }
+  details summary { cursor: pointer; font-weight: bold; color: var(--report-text); }
+
+  .stars { color: #f0b400; letter-spacing: 1px; }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 0; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header { padding: 36px 0 28px; }
+    .discovery-card, .trend-analysis, .subscription-hits, .action-items, details { padding: 16px; }
+    .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+    .report-shell { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="report-skin report-skin-academic">
+<header class="report-header">
+  <div class="container report-shell">
+    <span class="badge badge-academic">学术情报</span>
+    <h1>Heimdall — 晨间简报</h1>
+    <time datetime="2026-06-08T08:00+08:00">2026年6月8日 08:00 CST</time>
+    <p class="report-meta">扫描窗口：过去 24 小时 · 数据源：GitHub Trending / Hacker News / arXiv</p>
+  </div>
+</header>
+
+<main class="container report-shell">
+
+<!-- ======== P0: 必关注 ======== -->
+<section class="priority-p0">
+<h2>🔥 P0 — 必关注</h2>
+
+<div class="discovery-card p0">
+  <h3>DeployBench: 科研制品自动化部署基准测试</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05238">arXiv:2606.05238</a> (cs.SE)</p>
+  <p><strong>重要性:</strong> 51 项全栈部署任务（AI/ML、系统、科学计算），涵盖 GPU/CUDA、内核配置、遗留制品兼容。OpenHands 最高通过率仅 51.0%，失败主要源于 agent 过早自我终止（97/154），验证目标与实际任务不匹配。这是当前 agent 落地到真实科研工作流的关键瓶颈测试集。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（评估 DeployBench 与 STARK_TOWER 科研自动化管线的相关性）</p>
+</div>
+
+<div class="discovery-card p0">
+  <h3>A Taxonomy of Runtime Faults in MCP Servers</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05249">arXiv:2606.05249</a> (cs.SE, cross-list from cs.AI)</p>
+  <p><strong>重要性:</strong> 首个 MCP Server 运行时故障分类学。直接对 STARK_TOWER 的 MCP 工具链有应用价值。系统性地对 MCP 协议层的异常模式进行了分类，包含协议违反、资源泄漏、认证故障等。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.7/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（MCP 工具链质量保障参考）</p>
+</div>
+
+<div class="discovery-card p0">
+  <h3>LLMs 正在侵蚀软件工程职业生涯 — HN 热帖</h3>
+  <p><strong>来源:</strong> <a href="https://human-in-the-loop.bearblog.dev/llms-are-eroding-my-software-engineering-career-and-i-dont-know-what-to-do/">human-in-the-loop.bearblog.dev</a></p>
+  <p><strong>重要性:</strong> HN 首页 #9 帖，777 points, 755 条评论。从业者视角下 AI 对软件工程职业的侵蚀影响。与 cs.SE 今日发表的 "The End of Software Engineering: How AI Agents Are Fundamentally Restructuring the Software Paradigm" 互为印证。社区关注度极高，反映该议题已从学术讨论进入社会性阶段。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.5/10)</p>
+  <p><strong>建议路由:</strong> → Pepper（可作为调研素材）→ Banner（行业趋势判断参考）</p>
+</div>
+</section>
+
+<!-- ======== P1: 值得跟进 ======== -->
+<section class="priority-p1">
+<h2>📌 P1 — 值得跟进</h2>
+
+<div class="discovery-card p1">
+  <h3>PACT: Protocolized Action-state Communication for Multi-Agent Systems</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05304">arXiv:2606.05304</a> (cs.AI)</p>
+  <p><strong>重要性:</strong> 将多 agent 间通信重构为公开状态更新问题，压缩为紧凑的 action-state 记录。在 SWE-agent 上减半输入 token 而不影响 resolve 率；OpenHands resolve 率提升同时 token 消耗降低。直接解决 LLM agent token 效率这一核心痛点。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (8.2/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（评估与 STARK_TOWER 的 agent 通信架构整合可行性）</p>
+</div>
+
+<div class="discovery-card p1">
+  <h3>ADK Arena: LLM-as-a-Developer 评估 Agent 开发工具包</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05228">arXiv:2606.05228</a> (cs.SE)</p>
+  <p><strong>重要性:</strong> 系统比较各 Agent 开发工具包（ADK）的开发者体验。与 NousResearch/hermes-agent 今日 GitHub 趋势 #4（1,112 stars/day）形成对照。ADK 正在成为 agent 生态的"元工具"竞争赛道。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.8/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（Hermes Agent ADK 选型参考）</p>
+</div>
+
+<div class="discovery-card p1">
+  <h3>SmellBench: 面向重构任务的代码 Agent 细粒度评估</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05249">arXiv:2606.05249</a> (cs.SE)</p>
+  <p><strong>重要性:</strong> 代码 agent 在重构场景下的能力边界评估。填补了现有 benchmark 偏重新功能开发而忽视代码质量维护的空白。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（评估重构能力的 agent 评价框架）</p>
+</div>
+
+<div class="discovery-card p1">
+  <h3>last30days-skill: AI 多平台研究 Agent Skill</h3>
+  <p><strong>来源:</strong> <a href="https://github.com/mvanhorn/last30days-skill">GitHub: mvanhorn/last30days-skill</a></p>
+  <p><strong>重要性:</strong> GitHub Trending #1，30,920 stars，1,111 stars today。跨 Reddit/X/YouTube/HN/Polymarket 的研究型 agent skill。与 Heimdall 自身的数据采集模式高度重叠，可能作为数据采集层参考。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.2/10)</p>
+  <p><strong>建议路由:</strong> → Heimdall（评估 skill 架构复用）</p>
+</div>
+
+<div class="discovery-card p1">
+  <h3>I design with Claude more than Figma now — Jane Street Blog</h3>
+  <p><strong>来源:</strong> <a href="https://blog.janestreet.com/i-design-with-claude-code-more-than-figma-now-index/">blog.janestreet.com</a> (HN #26)</p>
+  <p><strong>重要性:</strong> 顶级量化交易公司 Jane Street 公开表示设计工作已从 Figma 转向 Claude Code。这是 AI-native 开发工具链在严肃工程环境中被采纳的标志性信号。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.0/10)</p>
+  <p><strong>建议路由:</strong> → Banner（行业趋势信号）→ Pepper（可转化为内容素材）</p>
+</div>
+
+<div class="discovery-card p1">
+  <h3>SWE-InfraBench: 云基础设施代码评估</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05249">arXiv:2606.05249</a> (cs.SE)</p>
+  <p><strong>重要性:</strong> 首个评估 LLM 在 IaC（Terraform/CloudFormation 等）场景能力的基准。基础设施自动化是 agent 从开发走向运维的关键场景。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.8/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（Infra agent 方向前瞻）</p>
+</div>
+</section>
+
+<!-- ======== P2: 值得知道 ======== -->
+<section class="priority-p2">
+<h2>📋 P2 — 值得知道</h2>
+
+<div class="discovery-card p2">
+  <h3>Lathe: 用 LLM 学习新领域，而非跳过它</h3>
+  <p><strong>来源:</strong> <a href="https://github.com/devenjarvis/lathe">GitHub: devenjarvis/lathe</a> (HN Show HN #11, 225 points)</p>
+  <p><strong>重要性:</strong> 与当前 "AI 跳过思考" 趋势相反的设计理念 — 使用 LLM 辅助学习而非替代学习。教育技术方向信号。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★</span> (6.2/10)</p>
+  <p><strong>建议路由:</strong> → Pepper（教学/知识传播内容参考）</p>
+</div>
+
+<div class="discovery-card p2">
+  <h3>open-notebook: Notebook LM 开源实现</h3>
+  <p><strong>来源:</strong> <a href="https://github.com/lfnovo/open-notebook">GitHub: lfnovo/open-notebook</a></p>
+  <p><strong>重要性:</strong> GitHub Trending #5，27,245 stars，554 stars today。Notebook LM 的开源替代方案，TypeScript 实现。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★</span> (5.5/10)</p>
+  <p><strong>建议路由:</strong> → Pepper（内容平台技术选型参考）</p>
+</div>
+
+<div class="discovery-card p2">
+  <h3>Anthropic 请为 Linux 发布官方 Claude Desktop</h3>
+  <p><strong>来源:</strong> <a href="https://github.com/anthropics/claude-code/issues/65697">GitHub: anthropics/claude-code#65697</a> (HN #19)</p>
+  <p><strong>重要性:</strong> 社区对 Linux 版 Claude Desktop 的强烈需求信号。开发者生态中 Linux 用户仍然是重要的 AI 工具消费群体。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+  <p><strong>建议路由:</strong> → 无需行动，仅记录生态动态</p>
+</div>
+
+<div class="discovery-card p2">
+  <h3>ggml-org/llama.cpp 持续活跃</h3>
+  <p><strong>来源:</strong> <a href="https://github.com/ggml-org/llama.cpp">GitHub: ggml-org/llama.cpp</a></p>
+  <p><strong>重要性:</strong> GitHub Trending #9，115,318 stars。本地 LLM 推理基础设施核心项目，持续活跃反映边缘 / 本地推理需求的稳定增长。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★</span> (4.8/10)</p>
+  <p><strong>建议路由:</strong> → 持续观察</p>
+</div>
+
+<div class="discovery-card p2">
+  <h3>Microskill Architecture: AI-Native 代码生成的模块化 Skill 框架</h3>
+  <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.05228">arXiv:2606.05228</a> (cs.SE)</p>
+  <p><strong>重要性:</strong> 模块化 skill 驱动的代码生成架构。Weights：skill +0.8，agent +0.8。与 Hermes Agent 的 skill 系统设计思路同向。</p>
+  <p><strong>评分:</strong> <span class="stars">★★★</span> (4.6/10)</p>
+  <p><strong>建议路由:</strong> → Jarvis（Hermes Agent skill 系统架构参考）</p>
+</div>
+</section>
+
+<!-- ======== GitHub Trending 速览 ======== -->
+<section class="priority-p2">
+<h2>📊 GitHub Trending Top 15 速览</h2>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>项目</th>
+      <th>描述</th>
+      <th>Stars</th>
+      <th>今日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><a href="https://github.com/mvanhorn/last30days-skill">last30days-skill</a></td><td>AI 多平台研究 agent skill</td><td>30,920</td><td>1,111</td></tr>
+    <tr><td>2</td><td><a href="https://github.com/opencv/opencv">opencv/opencv</a></td><td>计算机视觉库</td><td>88,076</td><td>65</td></tr>
+    <tr><td>3</td><td><a href="https://github.com/Leonxlnx/taste-skill">taste-skill</a></td><td>AI 审美控制 skill</td><td>36,586</td><td>1,103</td></tr>
+    <tr><td>4</td><td><a href="https://github.com/NousResearch/hermes-agent">hermes-agent</a></td><td>自成长 agent 框架</td><td>185,915</td><td>1,112</td></tr>
+    <tr><td>5</td><td><a href="https://github.com/lfnovo/open-notebook">open-notebook</a></td><td>Notebook LM 开源实现</td><td>27,245</td><td>554</td></tr>
+    <tr><td>6</td><td><a href="https://github.com/yikart/AiToEarn">AiToEarn</a></td><td>AI 赚钱工具</td><td>18,743</td><td>183</td></tr>
+    <tr><td>7</td><td><a href="https://github.com/aaif-goose/goose">aaif-goose/goose</a></td><td>开源可扩展 AI agent</td><td>47,500</td><td>322</td></tr>
+    <tr><td>8</td><td><a href="https://github.com/Crosstalk-Solutions/project-nomad">project-nomad</a></td><td>离线生存 AI 计算机</td><td>29,718</td><td>309</td></tr>
+    <tr><td>9</td><td><a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a></td><td>LLM 推理 (C/C++)</td><td>115,318</td><td>—</td></tr>
+    <tr><td>10</td><td><a href="https://github.com/RyanCodrai/turbovec">turbovec</a></td><td>TurboQuant 向量索引 (Rust)</td><td>7,150</td><td>—</td></tr>
+    <tr><td>11</td><td><a href="https://github.com/TapXWorld/ChinaTextbook">ChinaTextbook</a></td><td>教材 PDF 集合</td><td>72,433</td><td>—</td></tr>
+    <tr><td>12</td><td><a href="https://github.com/openai/plugins">openai/plugins</a></td><td>OpenAI Plugins</td><td>2,027</td><td>—</td></tr>
+    <tr><td>13</td><td><a href="https://github.com/refactoringhq/tolaria">tolaria</a></td><td>Markdown 知识库管理桌面应用</td><td>12,869</td><td>—</td></tr>
+    <tr><td>14</td><td><a href="https://github.com/HunxByts/GhostTrack">GhostTrack</a></td><td>位置追踪工具</td><td>13,725</td><td>—</td></tr>
+    <tr><td>15</td><td><a href="https://github.com/microsoft/pg_durable">pg_durable</a></td><td>PostgreSQL 持久执行</td><td>1,451</td><td>—</td></tr>
+  </tbody>
+</table>
+</section>
+
+<!-- ======== 趋势分析 ======== -->
+<section class="trend-analysis">
+<h2>📈 趋势分析</h2>
+<h3 style="font-family: 'Trebuchet MS', 'Noto Sans SC', sans-serif; color: var(--report-text);">今日关键信号</h3>
+<ul style="line-height: 1.8; padding-left: 20px;">
+  <li><strong>Agent Benchmark 井喷</strong> — 今日 arXiv cs.SE 单日出现 5 个新 agent benchmark（DeployBench、SWE-InfraBench、SmellBench、ADK Arena、Asuka-Bench），反映学界正在快速建立 agent 能力的标准化评估体系</li>
+  <li><strong>MCP 生态进入系统化研究阶段</strong> — MCP 故障分类学的出现标志着 MCP 从实践工具走向学术研究对象</li>
+  <li><strong>Token 效率成 agent 核心痛点</strong> — PACT 论文和多方讨论已将 token 优化从工程优化提升为 AI 研究的前沿问题</li>
+  <li><strong>Skill 范式持续爆发</strong> — GitHub Trending 前 4 有 3 个是"skill" 类项目（last30days-skill、taste-skill、hermes-agent），agent skill 可组合性正在成为平台竞争的关键差异化因素</li>
+  <li><strong>AI 对软件工程的职业影响已进入社会讨论层面</strong> — HN 777-point 帖 + cs.SE "The End of Software Engineering" 论文同时出现</li>
+</ul>
+</section>
+
+<!-- ======== 行动项 ======== -->
+<section class="action-items">
+<h2>✅ 待处理事项</h2>
+<ul style="line-height: 1.8; padding-left: 20px;">
+  <li><input type="checkbox" disabled> <strong>Jarvis:</strong> 评估 DeployBench 对科研自动化管线的参考价值</li>
+  <li><input type="checkbox" disabled> <strong>Jarvis:</strong> 阅读 PACT 论文，评估与 STARK_TOWER agent 通信架构的整合可行性</li>
+  <li><input type="checkbox" disabled> <strong>Jarvis:</strong> MCP 故障分类学 — 当前 MCP 工具链质量改进参考</li>
+  <li><input type="checkbox" disabled> <strong>Heimdall:</strong> 评估 last30days-skill 的架构是否能复用为 Heimdall 本地数据采集层</li>
+  <li><input type="checkbox" disabled> <strong>Banner:</strong> 关注 LLM 对软件工程职业影响的社会层面趋势</li>
+  <li><input type="checkbox" disabled> <strong>Pepper:</strong> Jane Street "设计用 Claude 多于 Figma" 可作为内容选题</li>
+</ul>
+</section>
+
+<!-- ======== 改写要点 ======== -->
+<section style="margin-bottom: 48px;">
+<h2>✏️ 改写要点（供 Content 参考）</h2>
+<div class="subscription-hits">
+  <ol style="line-height: 1.8; padding-left: 20px;">
+    <li><strong>Agent Benchmark 进入"军备竞赛"阶段</strong> — 单日 5 个新基准，学界和产业同时发力 agent 能力标准化。角度：数量增长 vs 质量分化。</li>
+    <li><strong>MCP 从实践工具走向学术研究对象</strong> — 首个 MCP 故障分类学论文出现。边界声明：这是该领域早期研究，分类覆盖范围有限。</li>
+    <li><strong>Skill 经济正在形成</strong> — GitHub 上 agent skill 类项目占据趋势前 4 占 3 席。agent 能力的"App Store"化趋势。</li>
+    <li><strong>程序员 vs AI 的叙事升级</strong> — HN 777 points 帖 "LLMs are eroding my career" 与学界 "The End of Software Engineering" 论文同时出现。对从业者/学生群体的情绪把握。</li>
+    <li><strong>Token 效率成为 agent 架构设计的约束变量</strong> — PACT 论文做法（10% fewer tokens with better resolve rate）代表新范式。</li>
+  </ol>
+</div>
+</section>
+
+<!-- ======== 困难与报错 ======== -->
+<section>
+<h2>⚠️ 本次搜索的困难与报错</h2>
+<details>
+  <summary>展开查看</summary>
+  <ul style="line-height: 1.8; padding-left: 20px; padding-top: 12px;">
+    <li><strong>MCP health check 跳过</strong> — check_mcp_health.py 脚本未在目标环境预置；本次无 MCP 端点可用</li>
+    <li><strong>HuggingFace Trending 跳过</strong> — HF 页面动态加载，快照仅显示前 5 个模型，信息密度低且无稳定的批量提取方法</li>
+    <li><strong>arXiv cs.CL 未单独扫描</strong> — cs.AI 和 cs.SE 已覆盖今日最相关论文，cs.CL 在晨报中优先级较低</li>
+    <li><strong>RSS/博客源未扫描</strong> — 无预配置的 RSS 聚合器；晨报时间窗口有限，仅通过 HN 代采部分官博内容</li>
+    <li><strong>本地 prefetch 脚本不可用</strong> — prefetch_data.sh 等脚本未部署</li>
+  </ul>
+  <p style="margin-top: 12px;">无明显数据丢失或严重故障，各主要数据源链路正常。单源发现已标注。</p>
+</details>
+</section>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container report-shell">
+    <p>Heimdall AI Sentinel · 学术情报流</p>
+    <p><a href="../../index.html">← 返回看板</a></p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

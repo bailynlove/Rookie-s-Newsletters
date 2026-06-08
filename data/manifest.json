@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-08T07:38:50.301505",
+  "generated_at": "2026-06-08T08:32:14.251229",
   "academic": [
+    {
+      "path": "academic/2026-06-08/morning.html",
+      "date": "2026-06-08",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Agent inter-communication protocols",
+        "MCP ecosystem & fault taxonomy",
+        "Code agent benchmarks"
+      ]
+    },
     {
       "path": "academic/2026-06-07/noon.html",
       "date": "2026-06-07",
