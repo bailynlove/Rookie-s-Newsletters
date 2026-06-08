@@ -1,0 +1,76 @@
+{
+  "id": "20260608-133647-morning",
+  "generated_at": "2026-06-08T13:36:47",
+  "period": "morning",
+  "report_path": "academic/2026-06-08/morning.html",
+  "reported_status": "ok",
+  "quality_score": 100,
+  "checks": {
+    "report_exists": true,
+    "non_empty": true,
+    "jsonld_present": true,
+    "agent_is_heimdall": true,
+    "section_is_academic": true,
+    "period_matches": true,
+    "source_link_count": 25,
+    "source_link_target": 8,
+    "source_links_meet_target": true,
+    "signal_total": 13,
+    "missing_required_sections": [],
+    "reported_status": "ok",
+    "notes": ""
+  },
+  "weaknesses": [],
+  "metadata_summary": {
+    "headline": "Heimdall 晨间简报",
+    "period": "morning",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 5,
+    "subscription_hits": [
+      "agent-formal-verification",
+      "mcp-enterprise-governance",
+      "code-agent-benchmark",
+      "agent-self-evolution"
+    ],
+    "trend_signals": [
+      {
+        "topic": "Code agent benchmarks",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "MCP enterprise governance",
+        "strength": 5,
+        "direction": "rising"
+      },
+      {
+        "topic": "Agent formal verification",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "Agent self-evolution & skill acquisition",
+        "strength": 4,
+        "direction": "rising"
+      },
+      {
+        "topic": "Agent memory systems",
+        "strength": 4,
+        "direction": "rising"
+      }
+    ],
+    "github_trending_topics": [
+      "agent-skill",
+      "ai-agent",
+      "llm-inference",
+      "cuda-lm"
+    ],
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.SE",
+      "cs.CL"
+    ]
+  },
+  "recommended_next_run_adjustments": []
+}

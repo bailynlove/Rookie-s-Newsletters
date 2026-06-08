@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T12:42:12.861048",
+  "generated_at": "2026-06-08T13:36:49.300131",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -81,9 +81,9 @@
     {
       "date": "2026-06-08",
       "p0": 6,
-      "p1": 11,
+      "p1": 10,
       "p2": 10,
-      "total": 27
+      "total": 26
     }
   ],
   "calendar_data": [
@@ -144,7 +144,7 @@
     },
     {
       "date": "2026-06-08",
-      "intensity": 27,
+      "intensity": 26,
       "level": 2
     }
   ],
@@ -309,6 +309,59 @@
       ]
     },
     {
+      "topic": "MCP enterprise governance",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 0
+        },
+        {
+          "date": "2026-05-23",
+          "value": 0
+        },
+        {
+          "date": "2026-05-24",
+          "value": 0
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
+        },
+        {
+          "date": "2026-05-27",
+          "value": 0
+        },
+        {
+          "date": "2026-05-28",
+          "value": 0
+        },
+        {
+          "date": "2026-06-05",
+          "value": 0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 10
+        }
+      ]
+    },
+    {
       "topic": "Code agent benchmarks",
       "series": [
         {
@@ -362,59 +415,6 @@
       ]
     },
     {
-      "topic": "Agent inter-communication protocols",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 0
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-22",
-          "value": 0
-        },
-        {
-          "date": "2026-05-23",
-          "value": 0
-        },
-        {
-          "date": "2026-05-24",
-          "value": 0
-        },
-        {
-          "date": "2026-05-25",
-          "value": 0
-        },
-        {
-          "date": "2026-05-27",
-          "value": 0
-        },
-        {
-          "date": "2026-05-28",
-          "value": 0
-        },
-        {
-          "date": "2026-06-05",
-          "value": 0
-        },
-        {
-          "date": "2026-06-06",
-          "value": 0
-        },
-        {
-          "date": "2026-06-07",
-          "value": 5
-        },
-        {
-          "date": "2026-06-08",
-          "value": 5
-        }
-      ]
-    },
-    {
       "topic": "Agent Self-Evolution",
       "series": [
         {
@@ -521,11 +521,11 @@
       ]
     },
     {
-      "topic": "MCP ecosystem & fault taxonomy",
+      "topic": "Agent-Native 软件栈",
       "series": [
         {
           "date": "2026-05-17",
-          "value": 0
+          "value": 5
         },
         {
           "date": "2026-05-21",
@@ -533,7 +533,7 @@
         },
         {
           "date": "2026-05-22",
-          "value": 0
+          "value": 4
         },
         {
           "date": "2026-05-23",
@@ -565,11 +565,11 @@
         },
         {
           "date": "2026-06-07",
-          "value": 4
+          "value": 0
         },
         {
           "date": "2026-06-08",
-          "value": 5
+          "value": 0
         }
       ]
     }
@@ -588,11 +588,11 @@
       "count": 15
     },
     {
-      "topic": "Code agent benchmarks",
+      "topic": "MCP enterprise governance",
       "count": 10
     },
     {
-      "topic": "Agent inter-communication protocols",
+      "topic": "Code agent benchmarks",
       "count": 10
     },
     {
@@ -604,12 +604,12 @@
       "count": 10
     },
     {
-      "topic": "MCP ecosystem & fault taxonomy",
+      "topic": "Agent-Native 软件栈",
       "count": 9
     },
     {
-      "topic": "Agent-Native 软件栈",
-      "count": 9
+      "topic": "Agent self-evolution & skill acquisition",
+      "count": 8
     },
     {
       "topic": "Agent memory systems",
@@ -684,24 +684,24 @@
       "count": 3
     },
     {
-      "subscription": "agent-communication",
-      "count": 3
-    },
-    {
-      "subscription": "mcp",
-      "count": 2
-    },
-    {
-      "subscription": "multi-agent",
-      "count": 2
-    },
-    {
-      "subscription": "llm-fault-localization",
-      "count": 2
-    },
-    {
       "subscription": "agent-formal-verification",
-      "count": 1
+      "count": 2
+    },
+    {
+      "subscription": "mcp-enterprise-governance",
+      "count": 2
+    },
+    {
+      "subscription": "code-agent-benchmark",
+      "count": 2
+    },
+    {
+      "subscription": "agent-self-evolution",
+      "count": 2
+    },
+    {
+      "subscription": "agent-communication",
+      "count": 2
     }
   ],
   "top_github_topics": [
@@ -738,11 +738,11 @@
       "count": 2
     },
     {
-      "topic": "open-notebook",
+      "topic": "skills-system",
       "count": 2
     },
     {
-      "topic": "skills-system",
+      "topic": "karpathy-skills",
       "count": 2
     }
   ],
@@ -815,86 +815,10 @@
     },
     {
       "combination": [
-        "agent-framework",
-        "codegraph",
-        "mcp-tools"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "mcp-tools"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "mcp-tools",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "mcp-tools"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "llm-fault-localization",
-        "mcp-tools",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "agent-memory"
-      ],
-      "count": 1,
-      "size": 2
-    },
-    {
-      "combination": [
         "agent-formal-verification",
         "agent-self-evolution"
       ],
-      "count": 1,
+      "count": 2,
       "size": 2
     },
     {
@@ -902,7 +826,7 @@
         "agent-formal-verification",
         "code-agent-benchmark"
       ],
-      "count": 1,
+      "count": 2,
       "size": 2
     },
     {
@@ -910,8 +834,86 @@
         "agent-formal-verification",
         "mcp-enterprise-governance"
       ],
-      "count": 1,
+      "count": 2,
       "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "codegraph",
+        "mcp-tools"
+      ],
+      "count": 2,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-framework",
+        "codegraph",
+        "self-improving-agent"
+      ],
+      "count": 2,
+      "size": 3
     }
   ]
 }
