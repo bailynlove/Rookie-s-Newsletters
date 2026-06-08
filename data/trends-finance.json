@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T13:36:49.301932",
+  "generated_at": "2026-06-08T15:49:58.272198",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -157,24 +157,28 @@
       "confidence": 0.68,
       "indices": {
         "上证综指": {
-          "value": 4027.74,
-          "change": -0.74
+          "value": 3959.34,
+          "change": -1.7
         },
         "深证成指": {
-          "value": 15314.7,
-          "change": -2.21
+          "value": 14821.19,
+          "change": -3.22
+        },
+        "沪深300": {
+          "value": 4713.64,
+          "change": -2.14
+        },
+        "科创50": {
+          "value": 1596.57,
+          "change": -4.3
+        },
+        "恒生指数": {
+          "value": 24632,
+          "change": -1.32
         },
         "创业板指": {
           "value": 3957.94,
           "change": -3.2
-        },
-        "科创50": {
-          "value": 1668.33,
-          "change": -4.01
-        },
-        "恒生指数": {
-          "value": 24961.95,
-          "change": -1.15
         },
         "纳斯达克": {
           "value": 25709.43,
@@ -216,7 +220,7 @@
     },
     {
       "date": "2026-06-08",
-      "intensity": 18,
+      "intensity": 32,
       "level": 1
     }
   ],
@@ -719,6 +723,10 @@
   ],
   "risk_distribution": [
     {
+      "level": "high",
+      "count": 12
+    },
+    {
       "level": "unknown",
       "count": 12
     },
@@ -727,20 +735,16 @@
       "count": 12
     },
     {
-      "level": "high",
-      "count": 8
-    },
-    {
       "level": "low",
       "count": 5
     },
     {
-      "level": "extreme",
-      "count": 3
+      "level": "mid",
+      "count": 4
     },
     {
-      "level": "mid",
-      "count": 2
+      "level": "extreme",
+      "count": 3
     },
     {
       "level": "medium-high",
@@ -765,6 +769,22 @@
       "count": 9
     },
     {
+      "topic": "中东地缘冲突",
+      "count": 8
+    },
+    {
+      "topic": "全球科技估值回调",
+      "count": 7
+    },
+    {
+      "topic": "美联储鹰派预期",
+      "count": 6
+    },
+    {
+      "topic": "商品通胀预期",
+      "count": 5
+    },
+    {
       "topic": "中东局势升级",
       "count": 5
     },
@@ -782,22 +802,6 @@
     },
     {
       "topic": "原油价格波动",
-      "count": 5
-    },
-    {
-      "topic": "中东地缘",
-      "count": 5
-    },
-    {
-      "topic": "美伊局势",
-      "count": 5
-    },
-    {
-      "topic": "原油价格",
-      "count": 5
-    },
-    {
-      "topic": "美联储政策",
       "count": 5
     }
   ]

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-08 a-close</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .breaking-alert,
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+      padding: 8px 12px;
+      text-align: right;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .up { color: var(--report-accent-2); }
+    .down { color: var(--report-danger); }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+
+      .discovery-card,
+      .risk-assessment,
+      .market-outlook,
+      .sentiment,
+      details {
+        padding: 16px;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-finance">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-finance">宏观金融</span>
+      <h1>Friday — A股收盘分析</h1>
+      <time datetime="2026-06-08T15:05+08:00">2026年6月8日 15:05 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- 核心指数 -->
+    <section>
+      <h2>四大指数收盘</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th>收盘</th>
+            <th>涨跌幅</th>
+            <th>成交额(亿)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上证综指</td>
+            <td>3959.34</td>
+            <td class="down">-1.70%</td>
+            <td>12672.77</td>
+          </tr>
+          <tr>
+            <td>深证成指</td>
+            <td>14821.19</td>
+            <td class="down">-3.22%</td>
+            <td>15254.61</td>
+          </tr>
+          <tr>
+            <td>沪深300</td>
+            <td>4713.64</td>
+            <td class="down">-2.14%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>科创50</td>
+            <td>1596.57</td>
+            <td class="down">-4.30%</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color: var(--report-muted); font-size: 0.75rem; margin-top: 8px;">两市合计成交约 2.79 万亿，较前一交易日放量</p>
+    </section>
+
+    <!-- 全球主要市场 -->
+    <section>
+      <h2>全球市场参考</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>市场</th>
+            <th>最新</th>
+            <th>涨跌幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>恒生指数</td>
+            <td>24632</td>
+            <td class="down">-1.32%</td>
+          </tr>
+          <tr>
+            <td>道琼斯(前)</td>
+            <td>50866.78</td>
+            <td class="down">-1.35%</td>
+          </tr>
+          <tr>
+            <td>纳斯达克(前)</td>
+            <td>25709.43</td>
+            <td class="down">-4.18%</td>
+          </tr>
+          <tr>
+            <td>日经指数</td>
+            <td>64024.38</td>
+            <td class="down">-3.85%</td>
+          </tr>
+          <tr>
+            <td>斯托克50</td>
+            <td>6005.73</td>
+            <td class="down">-0.93%</td>
+          </tr>
+          <tr>
+            <td>NYMEX原油</td>
+            <td>94.36</td>
+            <td class="up">+4.22%</td>
+          </tr>
+          <tr>
+            <td>COMEX黄金</td>
+            <td>4328.79</td>
+            <td class="down">-0.84%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- L1-L4 宏观因子 -->
+    <section class="macro-factors">
+      <h2>L1-L4 宏观因子</h2>
+
+      <div class="discovery-card">
+        <h3>🏛 L1 · 地缘风险骤升 — 伊朗导弹报复升级</h3>
+        <p><strong>事件:</strong> 伊朗革命卫队今日向以色列海法一座石化设施发射导弹，作为对以色列袭击伊朗石化厂的回应。以色列称自7日晚间以来遭约30枚伊朗导弹和1枚也门导弹袭击。伊朗外交部指美国对停火破裂负直接责任。</p>
+        <p><strong>强度:</strong> ⬆️ 上升 &nbsp;|&nbsp; <strong>置信度:</strong> 高</p>
+        <p><strong>市场影响:</strong> 中东冲突急剧升级，原油价格跳涨逾4%至94美元上方，黄金小幅回吐但维持高位。风险情绪全面承压，亚太市场普跌。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>💰 L2 · 美联储鹰派预期发酵</h3>
+        <p><strong>事件:</strong> 上周五美国非农数据超预期叠加JPMorgan上调10Y国债收益率预测至4.70%，市场对年内降息预期进一步压缩。纳斯达克上周五暴跌4.18%反映科技股估值压力。</p>
+        <p><strong>强度:</strong> ⬆️ 上升 &nbsp;|&nbsp; <strong>置信度:</strong> 高</p>
+        <p><strong>市场影响:</strong> 全球科技成长股承压，传导至A股科创/创业板，成为今日调整的重要外部因素。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🏭 L3 · 科技产业链冲击 — 全球芯片股抛售</h3>
+        <p><strong>事件:</strong> 韩国三星电子和SK海力士上周五美盘前暴跌约10%，全球半导体板块承压。今日A股电子器件(-4.24%)、电子信息(-4.02%)、有色金属(-5.45%)领跌。科创50跌4.30%为四大指数最弱。</p>
+        <p><strong>强度:</strong> ⬆️ 上升 &nbsp;|&nbsp; <strong>置信度:</strong> 中高</p>
+        <p><strong>市场影响:</strong> 半导体产业链周期性见顶担忧叠加地缘风险，科技股成为重灾区。TCL科技(-4.91%)、立讯精密(-3.82%)、东方财富(-4.32%)、上海贝岭(-4.40%)等拖累显著。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🛢 L4 · 大宗商品分化 — 原油暴涨 vs 工业金属承压</h3>
+        <p><strong>信号:</strong> NYMEX原油涨4.22%至94.36美元，COMEX白银跌2.12%，LME铜微涨0.29%。市场在避险驱动的能源上涨与需求放缓预期之间拉锯。</p>
+        <p><strong>观察:</strong> 中东局势若持续升温，油价可能突破100美元整数关口，进一步推升全球通胀预期，压制权益市场估值。</p>
+      </div>
+    </section>
+
+    <!-- 板块涨跌排名 -->
+    <section>
+      <h2>板块涨跌排名</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>板块</th>
+            <th>涨跌幅</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>陶瓷行业</td>
+            <td class="up">+2.34%</td>
+            <td>领涨</td>
+          </tr>
+          <tr>
+            <td>家具行业</td>
+            <td class="up">+0.74%</td>
+            <td>逆势</td>
+          </tr>
+          <tr>
+            <td>摩托车</td>
+            <td class="up">+0.31%</td>
+            <td>逆势</td>
+          </tr>
+          <tr>
+            <td>有色金属</td>
+            <td class="down">-5.45%</td>
+            <td>领跌</td>
+          </tr>
+          <tr>
+            <td>电子器件</td>
+            <td class="down">-4.24%</td>
+            <td>重挫</td>
+          </tr>
+          <tr>
+            <td>电子信息</td>
+            <td class="down">-4.02%</td>
+            <td>重挫</td>
+          </tr>
+          <tr>
+            <td>钢铁行业</td>
+            <td class="down">-3.91%</td>
+            <td>弱势</td>
+          </tr>
+          <tr>
+            <td>发电设备</td>
+            <td class="down">-3.90%</td>
+            <td>弱势</td>
+          </tr>
+          <tr>
+            <td>化工行业</td>
+            <td class="down">-3.77%</td>
+            <td>弱势</td>
+          </tr>
+          <tr>
+            <td>医疗器械</td>
+            <td class="down">-3.73%</td>
+            <td>弱势</td>
+          </tr>
+          <tr>
+            <td>电力行业</td>
+            <td class="down">-3.49%</td>
+            <td>弱势</td>
+          </tr>
+          <tr>
+            <td>房地产</td>
+            <td class="down">-2.95%</td>
+            <td>偏弱</td>
+          </tr>
+          <tr>
+            <td>金融行业</td>
+            <td class="down">-0.57%</td>
+            <td>抗跌</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 风险评估 -->
+    <section class="risk-assessment">
+      <h2>风险提示</h2>
+
+      <div class="discovery-card risk-high">
+        <h3>🔴 高 · 中东冲突失控风险</h3>
+        <p><strong>情形：</strong> 伊朗今向以色列海法石化设施发射导弹，以方称遭约30枚导弹袭击。若冲突蔓延至霍尔木兹海峡或沙特等产油区，布伦特原油可能突破100美元，触发全球滞胀交易。</p>
+        <p><strong>概率评估：</strong> 中低概率但影响极大。当前双方攻击均针对石化/工业设施，尚未涉及平民或核设施。需关注今晚美国方面的回应。</p>
+      </div>
+
+      <div class="discovery-card risk-high">
+        <h3>🔴 高 · 全球科技股估值回调</h3>
+        <p><strong>情形：</strong> 纳斯达克上周暴跌4.18%后，亚太科技板块今日跟随重挫。A股科创50跌4.30%、电子元器件板块跌幅逾4%。美联储鹰派预期+韩国存储芯片双巨头暴跌形成共振。</p>
+        <p><strong>传导路径：</strong> 美债收益率上行 → 科技股DCF折现率上升 → 外资减配新兴科技市场 → A股科创/创业板承压。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🟡 中 · 政策支撑与市场情绪背离</h3>
+        <p><strong>观察：</strong> 两市成交2.79万亿属近期高位，说明有恐慌性抛盘也有承接盘。金融板块仅微跌0.57%显示权重维稳力量存在。但若地缘事件持续发酵，短期信心修复难度较大。</p>
+      </div>
+    </section>
+
+    <!-- 市场展望 -->
+    <section class="market-outlook">
+      <h2>明日关注</h2>
+
+      <div class="discovery-card">
+        <h3>📡 今晚关键变量</h3>
+        <p>1. <strong>美国对伊朗导弹袭击的官方回应</strong> — 若口头谴责则市场可能小幅修复；若宣布制裁或军事回应则风险继续放大。</p>
+        <p>2. <strong>美股今晚走势</strong> — 纳指期货能否反弹是A股科技板块明日情绪的先行指标。</p>
+        <p>3. <strong>国际油价夜盘</strong> — 关注布伦特原油是否突破95美元，以及拜登政府是否宣布战略石油储备释放。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>📅 本周重点事件日历</h3>
+        <p>• 6月9日(周二) — 中国5月CPI/PPI数据公布，市场关注通缩压力是否缓解</p>
+        <p>• 6月10日(周三) — 美国5月CPI数据，直接影响美联储6月议息预期</p>
+        <p>• 6月11-12日 — "2026·全球人权治理高端论坛"在京举行</p>
+        <p>• 6月11日 — 欧央行利率决议</p>
+      </div>
+    </section>
+
+    <!-- 情绪评分 -->
+    <section class="sentiment">
+      <h2>市场情绪</h2>
+      <div class="discovery-card">
+        <h3>情绪评分: 32 / 100</h3>
+        <p><strong>定性:</strong> 偏向恐慌 &nbsp;|&nbsp; <strong>方向:</strong> 加速下行</p>
+        <p><strong>信号:</strong> 涨跌比严重失衡，两市仅3个行业板块收红，有色金属(-5.45%)、电子器件(-4.24%)、电子信息(-4.02%)领跌。上证指数跌破4000点整数关口，市场短期承压明显。</p>
+        <p><strong>置信度:</strong> 中高 (70%) — 地缘突发事件使短期方向不确定性上升，关注今晚美股及美国官方回应。</p>
+      </div>
+    </section>
+
+    <!-- 隐私过滤提示 -->
+    <div class="privacy-notice">
+      <p>⚠️ 个人持仓分析已根据隐私策略过滤。完整分析请查看私有数据源。</p>
+    </div>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Friday 首席经济学家 · 宏观金融情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday A股收盘分析",
+    "datePublished": "2026-06-08T15:05:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "a-close",
+    "market_sentiment": 32,
+    "confidence": 0.70,
+    "key_indices": {
+      "上证综指": {"value": 3959.34, "change": -1.70},
+      "深证成指": {"value": 14821.19, "change": -3.22},
+      "沪深300": {"value": 4713.64, "change": -2.14},
+      "科创50": {"value": 1596.57, "change": -4.30},
+      "恒生指数": {"value": 24632, "change": -1.32}
+    },
+    "risk_level": "high",
+    "risk_categories": {
+      "A股整体": "high",
+      "科技股": "high",
+      "港股": "mid",
+      "美股": "high",
+      "商品": "mid",
+      "地缘政治": "high"
+    },
+    "trend_signals": [
+      {"topic": "中东地缘冲突", "strength": 8, "direction": "rising"},
+      {"topic": "美联储鹰派预期", "strength": 6, "direction": "rising"},
+      {"topic": "全球科技估值回调", "strength": 7, "direction": "rising"},
+      {"topic": "商品通胀预期", "strength": 5, "direction": "rising"}
+    ]
+  }
+  </script>
+</body>
+</html>
