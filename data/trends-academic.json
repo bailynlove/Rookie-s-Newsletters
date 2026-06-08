@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T08:32:14.253593",
+  "generated_at": "2026-06-08T12:42:12.861048",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -80,10 +80,10 @@
     },
     {
       "date": "2026-06-08",
-      "p0": 3,
-      "p1": 6,
-      "p2": 5,
-      "total": 14
+      "p0": 6,
+      "p1": 11,
+      "p2": 10,
+      "total": 27
     }
   ],
   "calendar_data": [
@@ -144,8 +144,8 @@
     },
     {
       "date": "2026-06-08",
-      "intensity": 14,
-      "level": 1
+      "intensity": 27,
+      "level": 2
     }
   ],
   "sparkline_data": [
@@ -309,6 +309,59 @@
       ]
     },
     {
+      "topic": "Code agent benchmarks",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 0
+        },
+        {
+          "date": "2026-05-23",
+          "value": 0
+        },
+        {
+          "date": "2026-05-24",
+          "value": 0
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
+        },
+        {
+          "date": "2026-05-27",
+          "value": 0
+        },
+        {
+          "date": "2026-05-28",
+          "value": 0
+        },
+        {
+          "date": "2026-06-05",
+          "value": 0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 10
+        }
+      ]
+    },
+    {
       "topic": "Agent inter-communication protocols",
       "series": [
         {
@@ -517,59 +570,6 @@
         {
           "date": "2026-06-08",
           "value": 5
-        }
-      ]
-    },
-    {
-      "topic": "Agent-Native 软件栈",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 5
-        },
-        {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-22",
-          "value": 4
-        },
-        {
-          "date": "2026-05-23",
-          "value": 0
-        },
-        {
-          "date": "2026-05-24",
-          "value": 0
-        },
-        {
-          "date": "2026-05-25",
-          "value": 0
-        },
-        {
-          "date": "2026-05-27",
-          "value": 0
-        },
-        {
-          "date": "2026-05-28",
-          "value": 0
-        },
-        {
-          "date": "2026-06-05",
-          "value": 0
-        },
-        {
-          "date": "2026-06-06",
-          "value": 0
-        },
-        {
-          "date": "2026-06-07",
-          "value": 0
-        },
-        {
-          "date": "2026-06-08",
-          "value": 0
         }
       ]
     }
@@ -588,6 +588,10 @@
       "count": 15
     },
     {
+      "topic": "Code agent benchmarks",
+      "count": 10
+    },
+    {
       "topic": "Agent inter-communication protocols",
       "count": 10
     },
@@ -608,6 +612,10 @@
       "count": 9
     },
     {
+      "topic": "Agent memory systems",
+      "count": 8
+    },
+    {
       "topic": "Linear Attention Architecture",
       "count": 8
     },
@@ -624,26 +632,18 @@
       "count": 8
     },
     {
-      "topic": "Code agent benchmarks",
-      "count": 5
-    },
-    {
-      "topic": "多智能体通信协议",
-      "count": 5
-    },
-    {
-      "topic": "模型量化与端侧部署 (Gemma QAT)",
+      "topic": "Agent formal verification & safety",
       "count": 5
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 16
+      "count": 17
     },
     {
       "category": "cs.CL",
-      "count": 15
+      "count": 16
     },
     {
       "category": "cs.LG",
@@ -651,7 +651,7 @@
     },
     {
       "category": "cs.SE",
-      "count": 8
+      "count": 9
     },
     {
       "category": "cs.MA",
@@ -680,6 +680,10 @@
       "count": 5
     },
     {
+      "subscription": "agent-memory",
+      "count": 3
+    },
+    {
       "subscription": "agent-communication",
       "count": 3
     },
@@ -692,15 +696,11 @@
       "count": 2
     },
     {
-      "subscription": "agent-memory",
-      "count": 2
-    },
-    {
       "subscription": "llm-fault-localization",
       "count": 2
     },
     {
-      "subscription": "mcp-ecosystem",
+      "subscription": "agent-formal-verification",
       "count": 1
     }
   ],
@@ -730,19 +730,19 @@
       "count": 3
     },
     {
+      "topic": "agent-skill",
+      "count": 2
+    },
+    {
+      "topic": "llm-inference",
+      "count": 2
+    },
+    {
       "topic": "open-notebook",
       "count": 2
     },
     {
       "topic": "skills-system",
-      "count": 2
-    },
-    {
-      "topic": "karpathy-skills",
-      "count": 2
-    },
-    {
-      "topic": "cli-anything",
       "count": 2
     }
   ],
@@ -883,32 +883,32 @@
     },
     {
       "combination": [
-        "agent-benchmark",
-        "agent-communication"
+        "agent-formal-verification",
+        "agent-memory"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "agent-benchmark",
-        "code-agent"
+        "agent-formal-verification",
+        "agent-self-evolution"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "agent-benchmark",
-        "mcp-ecosystem"
+        "agent-formal-verification",
+        "code-agent-benchmark"
       ],
       "count": 1,
       "size": 2
     },
     {
       "combination": [
-        "agent-communication",
-        "code-agent"
+        "agent-formal-verification",
+        "mcp-enterprise-governance"
       ],
       "count": 1,
       "size": 2

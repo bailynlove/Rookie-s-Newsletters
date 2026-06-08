@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-08T08:32:14.251229",
+  "generated_at": "2026-06-08T12:42:12.859127",
   "academic": [
+    {
+      "path": "academic/2026-06-08/noon.html",
+      "date": "2026-06-08",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "Agent formal verification & safety",
+        "MCP enterprise governance",
+        "Code agent benchmarks"
+      ]
+    },
     {
       "path": "academic/2026-06-08/morning.html",
       "date": "2026-06-08",

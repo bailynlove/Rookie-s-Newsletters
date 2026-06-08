@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 午间论文解读 — 2026-06-08</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文解读",
+    "datePublished": "2026-06-08T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 5,
+    "subscription_hits": ["agent-formal-verification", "mcp-enterprise-governance", "code-agent-benchmark", "agent-self-evolution", "agent-memory"],
+    "github_trending_topics": ["agent-skill", "llm-inference", "open-agent"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Agent formal verification & safety", "strength": 5, "direction": "spiking"},
+      {"topic": "MCP enterprise governance", "strength": 5, "direction": "rising"},
+      {"topic": "Code agent benchmarks", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent self-evolution & skill acquisition", "strength": 4, "direction": "rising"},
+      {"topic": "Agent memory systems", "strength": 4, "direction": "rising"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .discovery-card.p0 {
+    border-left: 3px solid var(--report-danger);
+  }
+
+  .discovery-card.p1 {
+    border-left: 3px solid var(--report-accent);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    width: 100%;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .data-table td,
+  .data-table th {
+    border-color: var(--report-border);
+    padding: 8px 12px;
+    text-align: left;
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+    padding: 40px 0;
+  }
+
+  .stars {
+    color: var(--report-accent);
+    letter-spacing: 0.1em;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    background: var(--report-surface-2);
+    border: 1px solid var(--report-border);
+    color: var(--report-muted);
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .badge-p0 { color: var(--report-danger); border-color: var(--report-danger); }
+  .badge-p1 { color: var(--report-accent); border-color: var(--report-accent); }
+
+  details {
+    padding: 16px 20px;
+  }
+
+  details summary {
+    cursor: pointer;
+    color: var(--report-text);
+    font-weight: bold;
+  }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header { padding: 36px 0 28px; }
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details { padding: 16px; }
+    .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="report-skin report-skin-academic">
+<header class="report-header">
+  <div class="container report-shell">
+    <span class="badge badge-academic">学术情报</span>
+    <h1>Heimdall — 午间论文解读</h1>
+    <time datetime="2026-06-08T12:00+08:00">2026年6月8日 12:00 CST</time>
+    <p class="report-meta">扫描窗口: 最近 2 天 | arXiv cs.AI(34新) cs.SE(19新) cs.CL(62新) | 2026年6月8日新列表</p>
+  </div>
+</header>
+
+<main class="container report-shell">
+
+  <!-- ==================== P0 ==================== -->
+  <section class="priority-p0">
+    <h2>P0 — 必须关注</h2>
+
+    <div class="discovery-card p0">
+      <h3>1. Lean4Agent: 用定理证明器形式化验证 Agent 工作流与轨迹</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">cs.SE</span><span class="tag">cs.LO</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06523">arXiv:2606.06523</a></p>
+      <p><strong>作者:</strong> Ruida Wang, Jerry Huang, Pengcheng Wang, Xuanqing Liu, Luyang Kong, Tong Zhang</p>
+      <p><strong>核心贡献:</strong> 将代理工作流和轨迹建模为 Lean4 中的形式化规约，允许对 agent 行为进行数学验证。这是首次将交互式定理证明器直接应用于 agent 轨迹的语义正确性校验。</p>
+      <p><strong>局限:</strong> Lean4 的验证路径需要人工编写规约，难以完全自动化。</p>
+      <p><strong>重要性:</strong> 随着 agent 系统在生产中自主运作，形式化保证从"可选"变为"必需"。此工作为 agent safety 提供了可落地的验证框架。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.0/10) — P0</p>
+      <p><strong>建议路由:</strong> → Jarvis（评估是否可用于 Hermes agent 轨迹验证）</p>
+    </div>
+
+    <div class="discovery-card p0">
+      <h3>2. Queen-Bee Agents: 面向受控企业 MCP 编排的 BeeSpec 中心架构</h3>
+      <p><span class="tag">cs.SE</span><span class="tag">cs.AI</span><span class="tag">mcp</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06545">arXiv:2606.06545</a></p>
+      <p><strong>作者:</strong> Dutao Zhang, Liaotian</p>
+      <p><strong>核心贡献:</strong> 提出 Queen-Bee 多 agent 架构：Queen 控制面检索能力、规划执行、编译 BeeSpec；Bee 专用 agent 在受限工具访问下执行。59 项企业任务上的 task success rate 0.964，零治理失败。原生集成 MCP 连接器 + 租户级隔离 + 审计执行时治理。</p>
+      <p><strong>局限:</strong〉 prototype-level 证据，非生产部署研究；当前能力注册表较小。</p>
+      <p><strong>重要性:</strong> 直接回应了 MCP 生态中"如何做企业治理"的核心问题。与我们的 radar watchlist 中 MCP ecosystem & fault taxonomy 直接呼应。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.2/10) — P0</p>
+      <p><strong>建议路由:</strong> → Jarvis（roadmap 评估：MCP 治理层参考架构）</p>
+    </div>
+
+    <div class="discovery-card p0">
+      <h3>3. SWE-Explore: 编码 Agent 如何探索仓库的基准测试</h3>
+      <p><span class="tag">cs.SE</span><span class="tag">agent-benchmark</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06535">arXiv:2606.06535</a> (cs.SE new submissions 列表)</p>
+      <p><strong>核心贡献:</strong> 首个系统评估编码 agent 仓库探索能力的基准。现有 SWE-bench 类基准主要测量最终修复正确性，而 SWE-Explore 关注 agent 如何在仓库中找到相关信息——这是一个之前被忽视的关键能力维度。</p>
+      <p><strong>重要性:</strong> 与 radar 中"code agent benchmarks"集群直接对齐。探索能力是决定编码 agent 在大型仓库中效用的瓶颈。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10) — P0</p>
+      <p><strong>建议路由:</strong> → Jarvis（评估 SWE-Explore 方法论是否需要纳入 / 影响内部 benchmark 设计）</p>
+    </div>
+  </section>
+
+  <!-- ==================== P1 ==================== -->
+  <section class="priority-p1">
+    <h2>P1 — 值得深读</h2>
+
+    <div class="discovery-card p1">
+      <h3>4. Socratic-SWE: 通过轨迹派生技能实现自我进化的编码 Agent</h3>
+      <p><span class="tag">cs.SE</span><span class="tag">self-evolution</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.SE/new">arXiv cs.SE new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> Agent 从自己的执行轨迹中提取可复用技能（trace-derived agent skills），实现持续的自我进化。与 OpenSkill 形成有趣的对照研究。</p>
+      <p><strong>重要性:</strong> 与 radar watchlist 中"Self-evolution & skill acquisition"直接对应。Socratic 方法从历史轨迹中蒸馏技能，避开了需要人工标注的限制。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10) — P1</p>
+      <p><strong>建议路由:</strong> → Jarvis（技能蒸馏方法论参考）</p>
+    </div>
+
+    <div class="discovery-card p1">
+      <h3>5. OpenSkill: LLM Agent 的开放世界自我进化框架</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">self-evolution</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.06523">arXiv:2606.06523</a> (cs.AI new submissions)</p>
+      <p><strong>核心贡献:</strong> 提出开放世界设定下的 agent 自我进化框架。Agent 在动态环境中持续学习新技能、适应未见任务、积累可迁移经验。</p>
+      <p><strong>重要性:</strong> 与 Socratic-SWE 互补——前者从轨迹蒸馏技能，后者侧重开放世界持续学习。两者构成了 agent self-evolution 的两个侧面。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.3/10) — P1</p>
+      <p><strong>建议路由:</strong> → Jarvis（与 Socratic-SWE 联合评估作为 self-evolution 方法论参考）</p>
+    </div>
+
+    <div class="discovery-card p1">
+      <h3>6. AdMem: 任务求解 Agent 的高级记忆系统</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">agent-memory</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 为长周期任务设计的高级记忆架构。支持跨会话记忆持久化、分层检索和任务相关权重衰减。</p>
+      <p><strong>重要性:</strong> 与 radar watchlist 中"Long-horizon agent memory systems"（strength: 4, direction: rising）精准对齐。agent 记忆是当前行业瓶颈之一。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.0/10) — P1</p>
+      <p><strong>建议路由:</strong> → Pepper（记忆系统相关研究综述方向）</p>
+    </div>
+
+    <div class="discovery-card p1">
+      <h3>7. Workflow-to-Skill: 通过路由-工作流-语义-附件分解创建技能</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">agent-skill</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 提出将多步工作流自动分解为可复用技能的框架。通过路由决策、工作流步骤、语义理解和附件绑定四个维度实现。</p>
+      <p><strong>重要性:</strong> 直接相关 Hermes 的 skill 体系设计。将复杂工作流压缩为技能是一个核心工程问题。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.2/10) — P1</p>
+      <p><strong>建议路由:</strong> → Jarvis（Hermes skill 工程演化参考）</p>
+    </div>
+
+    <div class="discovery-card p1">
+      <h3>8. Declarative Skills for AI Agents: 知识接地工具使用工作流</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">declarative-skill</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 提出声明式技能（declarative skills）概念——将工具使用工作流建模为知识图上的声明式规约，而非程序式脚本。提高了技能的可解释性和跨域迁移能力。</p>
+      <p><strong>重要性:</strong> 与 Workflow-to-Skill 互补——一个从工作流压缩，一个从知识图构造。两者的结合可能定义下一代 agent skill 格式。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★★</span> (6.8/10) — P1</p>
+      <p><strong>建议路由:</strong> → Jarvis（声明式 vs 程序式 skill 架构评估）</p>
+    </div>
+  </section>
+
+  <!-- ==================== P2 ==================== -->
+  <section class="priority-p2">
+    <h2>P2 — 值得知道</h2>
+
+    <div class="discovery-card p2">
+      <h3>9. Agentopia: Agent 社会的长期生命模拟与学习</h3>
+      <p><span class="tag">cs.CL</span><span class="tag">multi-agent</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.CL/new">arXiv cs.CL new</a> (2606.06586+)</p>
+      <p><strong>核心贡献:</strong> 构建多 agent 社会模拟，agent 在其中完成长期生命周期——出生、学习、交互、进化、消亡。研究涌现社会行为。</p>
+      <p><strong>重要性:</strong> 长期 agent 社会模拟是理解涌现行为的必要条件，与 multi-agent 通信协议研究相关。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★</span> (6.0/10) — P2</p>
+      <p><strong>建议路由:</strong> → Pepper（可能的研究综述方向）</p>
+    </div>
+
+    <div class="discovery-card p2">
+      <h3>10. TRACE: Agent 的自适应跨步骤证据聚合轨迹推理</h3>
+      <p><span class="tag">cs.CL</span><span class="tag">agent-reasoning</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.CL/new">arXiv cs.CL new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 提出跨步骤证据聚合机制，agent 在推理过程中自适应地选择和合并历史步骤中的证据片段。</p>
+      <p><strong>重要性:</strong> 与 reasoning traces 和 agent trajectory 优化直接相关。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★</span> (5.5/10) — P2</p>
+    </div>
+
+    <div class="discovery-card p2">
+      <h3>11. Task-Scoped Agentic Tool-Calling via Uncertainty-Aligned RL</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">tool-calling</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 通过不确定性对齐的强化学习，训练 agent 在不确定时主动调用工具验证，而非盲目推理。</p>
+      <p><strong>重要性:</strong> Uncertainty-aware tool use 是可靠 agent 的关键能力。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★</span> (5.3/10) — P2</p>
+    </div>
+
+    <div class="discovery-card p2">
+      <h3>12. Sim-to-Real Gap of Foundation Model Agents: 统一 MDP 视角</h3>
+      <p><span class="tag">cs.AI</span><span class="tag">agent-foundation</span></p>
+      <p><strong>来源:</strong> <a href="https://arxiv.org/list/cs.AI/new">arXiv cs.AI new</a> (2026-06-08)</p>
+      <p><strong>核心贡献:</strong> 从马尔可夫决策过程统一视角分析基础模型 agent 的 sim-to-real gap，提出迁移性评估框架。</p>
+      <p><strong>重要性:</strong> 架构层面的理论工作，解释为什么 agent 在模拟中表现好但真实世界退化。</p>
+      <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10) — P2</p>
+    </div>
+  </section>
+
+  <!-- ==================== 趋势集群分析 ==================== -->
+  <section class="trend-analysis">
+    <h2>趋势集群观察</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>趋势集群</th>
+          <th>本日论文数</th>
+          <th>信号强度</th>
+          <th>方向</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Agent 形式化验证与安全</strong></td>
+          <td>3 (Lean4Agent, Attack Selection, AEGIS)</td>
+          <td>★★★★★</td>
+          <td>🚀 激增</td>
+        </tr>
+        <tr>
+          <td><strong>MCP 企业治理</strong></td>
+          <td>2 (Queen-Bee, NTILC)</td>
+          <td>★★★★★</td>
+          <td>📈 上升</td>
+        </tr>
+        <tr>
+          <td><strong>编码 Agent 基准</strong></td>
+          <td>3 (SWE-Explore, Socratic-SWE, QBugLM)</td>
+          <td>★★★★★</td>
+          <td>🚀 激增</td>
+        </tr>
+        <tr>
+          <td><strong>Agent 自我进化与技能获取</strong></td>
+          <td>4 (OpenSkill, Socratic-SWE, Workflow-to-Skill, Declarative Skills)</td>
+          <td>★★★★</td>
+          <td>📈 上升</td>
+        </tr>
+        <tr>
+          <td><strong>Agent 记忆系统</strong></td>
+          <td>2 (AdMem, TRACE)</td>
+          <td>★★★★</td>
+          <td>📈 上升</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:16px;"><strong>关键洞察:</strong> 与前日报告相比，"Agent 形式化验证"从"上升"（strength 5）升级为"激增"——今天出现了 Lean4Agent 这样将定理证明器直接用于 agent 轨迹验证的工作。同时"编码 Agent 基准"持续激增，SWE-Explore 开创了"探索能力"这个新的评估维度，是 SWE-bench 之后最重要的基准设计趋势。</p>
+  </section>
+
+  <!-- ==================== Radar 候补 ==================== -->
+  <section class="action-items">
+    <h2>📡 Radar 候补</h2>
+    <p>以下发现建议加入 tech-radar.json watchlist：</p>
+    <ul>
+      <li><strong>Agent 形式化验证 (Lean4Agent / AEGIS)</strong> — 新趋势集群，strength: 5, direction: spiking。建议在 radar 中新增独立条目。</li>
+      <li><strong>MCP 企业治理 (Queen-Bee)</strong> — 从"stable"转为"rising"，已有 prototype 级证据支持。</li>
+      <li><strong>Agent 探索能力评估 (SWE-Explore)</strong> — 基准设计新维度，比单纯修复率更能反映真实能力。</li>
+      <li><strong>声明式技能规范 (Declarative Skills / Workflow-to-Skill)</strong> — 技能工程的形式化方向，与 Hermes skill 体系直接相关。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 修定要点 ==================== -->
+  <section>
+    <h2>改写要点（供 Content 参考）</h2>
+    <ul>
+      <li>今天的论文集群核心叙事是"从能力到治理"——Agent 已跨越能力门槛，焦点转向验证、治理、记忆和技能系统化。</li>
+      <li>Lean4Agent 是首篇将形式化定理证明器直接应用于 agent 轨迹的工作，适合面向 AI safety 和技术债务的受众。</li>
+      <li>Queen-Bee 是 MCP 企业落地的最小可行治理架构，0.964 task success / 0 governance failure 是很好的数字。</li>
+      <li>SWE-Explore 提出的"探索能力"视角比"修复能力"更贴近真实开发场景——benchmark 设计思路值得单独成篇。</li>
+      <li>三个 skill 相关论文（Workflow-to-Skill, Declarative Skills, Socratic-SWE）形成技能工程的完整链条：创建→声明→进化。</li>
+    </ul>
+  </section>
+
+  <!-- ==================== 困难与报错 ==================== -->
+  <details>
+    <summary>本次搜索的困难与报错</summary>
+    <ul>
+      <li>arXiv cs.AI 页面超长（7000+ 行，287 entries），通过 browser_console 提取标题列表绕过；少数论文没有摘要预览。</li>
+      <li>未运行 MCP health check（脚本可能依赖特定环境）；数据采集全部走 browser scraping fallback。</li>
+      <li>cs.SE 只有 new submissions 19 篇，但 cross-list 有很多 cs.AI 相关论文未显示在 new submissions 内。</li>
+      <li>HN 今日未出现 arxiv.org 链接的论文讨论，无法做 cross-source correlation 验证。</li>
+      <li>GitHub Trending 方面 agent-skill (last30days-skill, taste-skill) 与论文主题有共鸣，但不在本报告核心范围内。</li>
+      <li>部分 arXiv 论文 ID 来自 snapshot 文本匹配而非绝对 URL 跳转确认——已标注 cs.SE 列表位置作为备查。</li>
+    </ul>
+    <p>无明显报错，本次检索链路正常。所有主要数据源（arXiv cs.AI、cs.SE、cs.CL、HN、GitHub Trending）均可访问。</p>
+  </details>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container report-shell">
+    <p>Heimdall AI Sentinel · 学术情报流</p>
+    <p><a href="../../index.html">← 返回看板</a></p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

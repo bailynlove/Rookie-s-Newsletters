@@ -8,12 +8,16 @@
   ],
   "active_learning_rules": [],
   "quality_summary": {
-    "runs_recorded": 2,
+    "runs_recorded": 3,
     "average_score_last_7": 100.0,
     "failure_rate_last_7": 0.0,
     "recurring_weaknesses": []
   },
   "radar_watchlist": [
+    {
+      "topic": "Code agent benchmarks",
+      "recent_strength": 10
+    },
     {
       "topic": "Agent inter-communication protocols",
       "recent_strength": 10
@@ -23,11 +27,19 @@
       "recent_strength": 9
     },
     {
-      "topic": "Code agent benchmarks",
+      "topic": "Agent memory systems",
+      "recent_strength": 8
+    },
+    {
+      "topic": "Agent formal verification & safety",
       "recent_strength": 5
     },
     {
-      "topic": "Agent memory systems",
+      "topic": "MCP enterprise governance",
+      "recent_strength": 5
+    },
+    {
+      "topic": "Agent self-evolution & skill acquisition",
       "recent_strength": 4
     },
     {
@@ -49,6 +61,82 @@
   ],
   "prompt_improvement_queue": [],
   "run_history": [
+    {
+      "id": "20260608-124211-noon",
+      "generated_at": "2026-06-08T12:42:11",
+      "period": "noon",
+      "report_path": "academic/2026-06-08/noon.html",
+      "reported_status": "ok",
+      "quality_score": 100,
+      "checks": {
+        "report_exists": true,
+        "non_empty": true,
+        "jsonld_present": true,
+        "agent_is_heimdall": true,
+        "section_is_academic": true,
+        "period_matches": true,
+        "source_link_count": 12,
+        "source_link_target": 8,
+        "source_links_meet_target": true,
+        "signal_total": 13,
+        "missing_required_sections": [],
+        "reported_status": "ok",
+        "notes": ""
+      },
+      "weaknesses": [],
+      "metadata_summary": {
+        "headline": "Heimdall 午间论文解读",
+        "period": "noon",
+        "p0_count": 3,
+        "p1_count": 5,
+        "p2_count": 5,
+        "subscription_hits": [
+          "agent-formal-verification",
+          "mcp-enterprise-governance",
+          "code-agent-benchmark",
+          "agent-self-evolution",
+          "agent-memory"
+        ],
+        "trend_signals": [
+          {
+            "topic": "Agent formal verification & safety",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "MCP enterprise governance",
+            "strength": 5,
+            "direction": "rising"
+          },
+          {
+            "topic": "Code agent benchmarks",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Agent self-evolution & skill acquisition",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "Agent memory systems",
+            "strength": 4,
+            "direction": "rising"
+          }
+        ],
+        "github_trending_topics": [
+          "agent-skill",
+          "llm-inference",
+          "open-agent"
+        ],
+        "arxiv_categories": [
+          "cs.AI",
+          "cs.SE",
+          "cs.CL"
+        ]
+      },
+      "recommended_next_run_adjustments": []
+    },
     {
       "id": "20260608-083211-morning",
       "generated_at": "2026-06-08T08:32:11",
@@ -201,5 +289,5 @@
       "recommended_next_run_adjustments": []
     }
   ],
-  "last_updated_at": "2026-06-08T08:32:11"
+  "last_updated_at": "2026-06-08T12:42:11"
 }
