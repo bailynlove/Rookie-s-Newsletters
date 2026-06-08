@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-08 evening</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .breaking-alert,
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: right;
+    }
+
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      text-align: right;
+      border-top: 1px solid var(--report-border);
+    }
+
+    .data-table td:first-child {
+      text-align: left;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+    }
+
+    .up { color: #d0312d; }
+    .down { color: #0f8b5c; }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .risk-assessment,
+      .market-outlook,
+      .sentiment,
+      details {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-finance">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-finance">宏观金融</span>
+      <h1>Friday — 财经晚报</h1>
+      <time datetime="2026-06-08T18:00+08:00">2026年6月8日 18:00 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ===== 全球指数一览 ===== -->
+    <section>
+      <h2>全球主要指数</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th>收盘价</th>
+            <th>涨跌幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上证指数</td>
+            <td>3959.34</td>
+            <td class="down">-1.70%</td>
+          </tr>
+          <tr>
+            <td>深证成指</td>
+            <td>14821.19</td>
+            <td class="down">-3.22%</td>
+          </tr>
+          <tr>
+            <td>创业板指</td>
+            <td>3811.79</td>
+            <td class="down">-3.69%</td>
+          </tr>
+          <tr>
+            <td>科创50</td>
+            <td>1596.57</td>
+            <td class="down">-4.30%</td>
+          </tr>
+          <tr>
+            <td>沪深300</td>
+            <td>4713.64</td>
+            <td class="down">-2.14%</td>
+          </tr>
+          <tr>
+            <td>上证50</td>
+            <td>2825.01</td>
+            <td class="down">-1.43%</td>
+          </tr>
+          <tr>
+            <td>中证500</td>
+            <td>7963.45</td>
+            <td class="down">-3.49%</td>
+          </tr>
+          <tr>
+            <td>恒生指数</td>
+            <td>24657.06</td>
+            <td class="down">-1.22%</td>
+          </tr>
+          <tr>
+            <td>道琼斯 (前收)</td>
+            <td>50866.78</td>
+            <td class="down">-1.35%</td>
+          </tr>
+          <tr>
+            <td>纳斯达克 (前收)</td>
+            <td>25709.43</td>
+            <td class="down">-4.18%</td>
+          </tr>
+          <tr>
+            <td>斯托克50 (前收)</td>
+            <td>6040.08</td>
+            <td class="down">-0.36%</td>
+          </tr>
+          <tr>
+            <td>日经指数 (前收)</td>
+            <td>64024.38</td>
+            <td class="down">-3.85%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== 大宗商品 ===== -->
+    <section>
+      <h2>大宗商品</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>品种</th>
+            <th>价格</th>
+            <th>涨跌幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NYMEX原油</td>
+            <td>$94.61</td>
+            <td class="up">+4.49%</td>
+          </tr>
+          <tr>
+            <td>COMEX黄金</td>
+            <td>$4318.48</td>
+            <td class="down">-1.07%</td>
+          </tr>
+          <tr>
+            <td>COMEX白银</td>
+            <td>$67.22</td>
+            <td class="down">-2.72%</td>
+          </tr>
+          <tr>
+            <td>LME铜</td>
+            <td>$13620.26</td>
+            <td class="up">+0.75%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== L1 宏观因子 ===== -->
+    <section class="macro-factors">
+      <h2>L1 宏观因子 · 全球流动性</h2>
+
+      <div class="discovery-card">
+        <h3>美国非农超预期引发紧缩恐慌</h3>
+        <p><strong>数据:</strong> 上周五美国5月非农就业数据意外大幅强于预期，市场对美联储维持高利率的预期骤然升温。</p>
+        <p><strong>信号:</strong> 紧缩预期推动全球风险资产抛售，纳斯达克周跌4.18%，日经跌3.85%，科技股估值承压显著。本周关注美国CPI数据公布。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>金融监管总局：严密防范外部冲击风险</h3>
+        <p><strong>数据:</strong> 金融监管总局党委召开扩大会议，强调防范化解金融风险、守住不"爆雷"底线，部署保交房白名单和应急预案。</p>
+        <p><strong>信号:</strong> 决策层对全球金融风险传导保持高度警惕，政策基调偏稳。短期有助于稳定市场信心，但并未释放强刺激信号。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>欧盟推进供应链"去风险"——对华依赖议题升温</h3>
+        <p><strong>数据:</strong> 欧盟推进提案要求企业避免供应链出现对华过度依赖，外交部就此回应。</p>
+        <p><strong>信号:</strong> 中欧贸易摩擦预期升温，出口导向型板块承压。关注后续欧盟具体法规落地节奏。</p>
+      </div>
+    </section>
+
+    <!-- ===== L2 市场因子 ===== -->
+    <section class="macro-factors">
+      <h2>L2 市场因子 · A股收盘解析</h2>
+
+      <div class="discovery-card breaking-alert">
+        <h3>⚠️ A股全线重挫——"黑色星期一"</h3>
+        <p><strong>数据:</strong> 上证跌1.70%，深成指跌3.22%，创业板指跌3.69%，科创50暴跌4.30%。两市成交额约2.79万亿元，放量下跌。</p>
+        <p><strong>信号:</strong> 市场呈现恐慌性抛售特征，中小盘股（中证500 -3.49%、创业板 -3.69%）跌幅远超大盘蓝筹（上证50仅-1.43%）。科技成长板块领跌，避险情绪占主导。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>从"黑色星期五"到"黑色星期一"</h3>
+        <p><strong>数据:</strong> 此轮暴跌始自上周博通财报不及预期，叠加非农超预期加剧紧缩担忧，全球市场连锁反应。</p>
+        <p><strong>信号:</strong> 美股科技巨头业绩不及预期→国内半导体/人工智能板块跟跌→科创板、创业板首当其冲。市场正在重新定价AI算力投资回报周期。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>半导体板块承压——年内93家公司披露减持</h3>
+        <p><strong>数据:</strong> 据21世纪经济报道统计，2026年以来已有93家半导体公司披露股东减持计划。江波龙副总经理拟减持约60万股。</p>
+        <p><strong>信号:</strong> 产业资本在高位套现，叠加外部紧缩预期，半导体板块短期面临"戴维斯双杀"压力。燧原科技科创板IPO定于6月15日上会，需关注定价与市场反应。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>煤炭板块逆势走强——中国神华创18年新高</h3>
+        <p><strong>数据:</strong> 中国神华涨4.62%报50.76元，总市值1.1万亿元，创2007年11月以来新高。</p>
+        <p><strong>信号:</strong> 市场避险情绪驱动资金向高股息、低波动的红利资产聚集。煤炭板块受益于高分红预期和地缘能源溢价。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>工程机械逆势活跃——销量超预期+龙头涨价</h3>
+        <p><strong>数据:</strong> 工程机械板块销量超预期，叠加龙头企业涨价共振，逆势活跃。</p>
+        <p><strong>信号:</strong> 基建景气度回升信号，与"十五五"首个国家重大工程（三峡水运新通道）开工形成正向催化。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>机器人概念逆市爆发——黄仁勋"点爆"行情</h3>
+        <p><strong>数据:</strong> 巨能股份30%涨停，港股量化派一度大涨超21%。NVIDIA CEO黄仁勋最新表态利好机器人产业。</p>
+        <p><strong>信号:</strong> 产业催化带动细分概念脉冲，但板块整体跟随大盘下跌，资金在科技领域存在明显分化。</p>
+      </div>
+    </section>
+
+    <!-- ===== L3 行业与资金 ===== -->
+    <section class="macro-factors">
+      <h2>L3 行业因子 · 资金流向</h2>
+
+      <div class="discovery-card">
+        <h3>南向资金净买入100亿港元</h3>
+        <p><strong>数据:</strong> 今日南向资金净买入约100亿港元，港股通资金持续南下。</p>
+        <p><strong>信号:</strong> 内地资金逢跌加仓港股，中芯国际港股跌4.49%、腾讯跌1.50%、阿里跌2.94%。港股科技ETF获资金净流入。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>油气板块大涨——伊以冲突升级</h3>
+        <p><strong>数据:</strong> 以军打击伊朗石化工厂，伊朗发射多轮导弹回应。南方原油LOF、嘉实原油LOF等触及涨停。山东墨龙港股大涨超26%。</p>
+        <p><strong>信号:</strong> 中东地缘风险溢价骤升，NYMEX原油涨4.49%至$94.61。全球70% PPE树脂供应中断，PCB、电子元器件供应链遭受冲击。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>PCB产业链——供应冲击传导</h3>
+        <p><strong>数据:</strong> 高盛报告显示中东冲突导致印刷电路板价格大涨，全球70% PPE树脂供应中断。</p>
+        <p><strong>信号:</strong> 电子产业链成本上升压力加剧，可能传导至终端电子产品价格。关注A股PCB/CCL相关上市公司的毛利率影响。</p>
+      </div>
+    </section>
+
+    <!-- ===== L4 事件驱动 ===== -->
+    <section class="macro-factors">
+      <h2>L4 事件因子 · 当日要闻</h2>
+
+      <div class="discovery-card">
+        <h3>"十五五"首个国家重大工程开工</h3>
+        <p><strong>数据:</strong> 三峡水运新通道今日破土动工，有利于提升长江黄金水道运输能力。</p>
+        <p><strong>信号:</strong> 基建固定资产投资信号明确，利好水利、工程机械和建材板块。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>国家数据局发布AI数据集建设方案</h3>
+        <p><strong>数据:</strong> 国家层面对数据赋能人工智能发展作出首次系统部署。</p>
+        <p><strong>信号:</strong> 政策利好数据要素和AI基础设施企业，但市场整体情绪偏弱削弱了短期催化效应。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>智谱、Minimax被纳入恒生科技指数</h3>
+        <p><strong>数据:</strong> 恒生指数公司宣布智谱、Minimax双双纳入恒生科技指数成分股。智谱今日港股涨1.31%报1314港元。</p>
+        <p><strong>信号:</strong> 中国AI大模型公司获指数层面认可，但恒生科技指数整体跌2.71%，反映了大环境压力。</p>
+      </div>
+    </section>
+
+    <!-- ===== 风险提示 ===== -->
+    <section class="risk-assessment">
+      <h2>风险提示</h2>
+
+      <div class="risk-assessment risk-high">
+        <h3>⚠️ 高风险：科技板块回调加速</h3>
+        <p>科创50单日暴跌4.30%，半导体板块减持潮叠加全球科技股重挫，短期可能继续探底。博通财报不及预期引发的AI算力投资回报质疑尚未消化完毕。</p>
+      </div>
+
+      <div class="risk-assessment">
+        <h3>⚠️ 中等风险：中东地缘冲突升级</h3>
+        <p>以色列与伊朗直接交火，原油价格跳升4.49%。若冲突持续扩大，可能引发新一轮通胀压力，制约全球央行货币政策宽松空间。PPE树脂供应中断对电子供应链的二次冲击值得警惕。</p>
+      </div>
+
+      <div class="risk-assessment">
+        <h3>⚠️ 中等风险：中欧贸易摩擦前景不明</h3>
+        <p>欧盟供应链"去风险"提案指向对华过度依赖，出口型企业和跨境供应链存在政策不确定性。</p>
+      </div>
+    </section>
+
+    <!-- ===== 市场展望 ===== -->
+    <section class="market-outlook">
+      <h2>明日关注</h2>
+      <div class="market-outlook">
+        <ul>
+          <li><strong>20:30 · 美国5月CPI数据公布</strong> — 紧缩恐慌是否持续的核心变量。若非农后CPI仍超预期，6月FOMC预期或进一步转鹰。</li>
+          <li><strong>A股开盘情绪修复</strong> — 今日急跌后是否存在技术性反弹窗口，关注北向资金动向。</li>
+          <li><strong>恒生科技指数成分股调整生效</strong> — 智谱、Minimax纳入后资金调仓影响。</li>
+          <li><strong>燧原科技科创板IPO上会预告</strong> — 6月15日上会，半导体板块情绪参考。</li>
+          <li><strong>中东局势演变</strong> — 伊以互袭后续是否扩大化，直接影响油价和全球风险偏好。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 情绪评分 ===== -->
+    <section class="sentiment">
+      <h2>情绪评分</h2>
+      <div class="sentiment">
+        <p><strong>A股整体情绪：</strong> 偏恐慌（40/100）— 放量下跌，中小盘跌幅远超大盘，资金向高股息避险资产集中。</p>
+        <p><strong>港股情绪：</strong> 偏弱（45/100）— 恒指跌1.22%，科指跌2.71%，但南向资金净买入100亿提供底部支撑。</p>
+        <p><strong>全球市场情绪：</strong> 偏恐慌（35/100）— 纳斯达克周跌4.18%，日经跌3.85%，美银首席策略师提示6月"雷区"。</p>
+        <p><strong>置信度说明：</strong> 本文基于2026年6月8日公开交易数据和新闻报道编制，市场判断受信息时效性和分析框架局限性的影响，不构成投资建议。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Friday 首席经济学家 · 宏观金融情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday 财经晚报",
+    "datePublished": "2026-06-08T18:00:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "evening",
+    "market_sentiment": 40,
+    "confidence": 0.70,
+    "key_indices": {
+      "上证综指": {"value": 3959.34, "change": -1.70},
+      "深证成指": {"value": 14821.19, "change": -3.22},
+      "创业板指": {"value": 3811.79, "change": -3.69},
+      "科创50": {"value": 1596.57, "change": -4.30},
+      "恒生指数": {"value": 24657.06, "change": -1.22}
+    },
+    "risk_level": "high",
+    "risk_categories": {
+      "A股整体": "high",
+      "科技股": "high",
+      "港股": "mid",
+      "美股": "high",
+      "债市": "low",
+      "商品": "mid"
+    },
+    "trend_signals": [
+      {"topic": "美联储政策", "strength": 5, "direction": "rising"},
+      {"topic": "中东地缘冲突", "strength": 5, "direction": "rising"},
+      {"topic": "中欧贸易", "strength": 3, "direction": "rising"},
+      {"topic": "AI算力投资", "strength": 4, "direction": "falling"}
+    ]
+  }
+  </script>
+</body>
+</html>

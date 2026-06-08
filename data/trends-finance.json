@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T15:49:58.272198",
+  "generated_at": "2026-06-08T18:09:50.982248",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -177,8 +177,8 @@
           "change": -1.32
         },
         "创业板指": {
-          "value": 3957.94,
-          "change": -3.2
+          "value": 3811.79,
+          "change": -3.69
         },
         "纳斯达克": {
           "value": 25709.43,
@@ -220,8 +220,8 @@
     },
     {
       "date": "2026-06-08",
-      "intensity": 32,
-      "level": 1
+      "intensity": 40,
+      "level": 2
     }
   ],
   "risk_grid": [
@@ -320,7 +320,7 @@
         },
         {
           "date": "2026-06-08",
-          "level": "unknown"
+          "level": "low"
         }
       ]
     },
@@ -724,7 +724,7 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 12
+      "count": 15
     },
     {
       "level": "unknown",
@@ -735,12 +735,12 @@
       "count": 12
     },
     {
-      "level": "low",
-      "count": 5
+      "level": "mid",
+      "count": 6
     },
     {
-      "level": "mid",
-      "count": 4
+      "level": "low",
+      "count": 6
     },
     {
       "level": "extreme",
@@ -765,12 +765,16 @@
   ],
   "top_trend_signals": [
     {
-      "topic": "美伊谈判",
-      "count": 9
+      "topic": "中东地缘冲突",
+      "count": 13
     },
     {
-      "topic": "中东地缘冲突",
-      "count": 8
+      "topic": "美联储政策",
+      "count": 10
+    },
+    {
+      "topic": "美伊谈判",
+      "count": 9
     },
     {
       "topic": "全球科技估值回调",
@@ -798,10 +802,6 @@
     },
     {
       "topic": "美伊核谈判",
-      "count": 5
-    },
-    {
-      "topic": "原油价格波动",
       "count": 5
     }
   ]

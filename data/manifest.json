@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T15:49:58.240918",
+  "generated_at": "2026-06-08T18:09:50.978746",
   "academic": [
     {
       "path": "academic/2026-06-08/noon.html",
@@ -234,6 +234,17 @@
         "中东地缘冲突",
         "美联储鹰派预期",
         "全球科技估值回调"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-06-08/evening.html",
+      "date": "2026-06-08",
+      "period": "evening",
+      "section": "macro-finance",
+      "keywords": [
+        "美联储政策",
+        "中东地缘冲突",
+        "中欧贸易"
       ]
     },
     {
