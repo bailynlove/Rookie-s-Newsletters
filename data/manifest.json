@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T15:11:59.934599",
+  "generated_at": "2026-06-09T18:07:24.716850",
   "academic": [
     {
       "path": "academic/2026-06-09/noon.html",
@@ -256,6 +256,17 @@
         "科技板块全面爆发",
         "沪指重返4000点",
         "超跌反弹修复"
+      ]
+    },
+    {
+      "path": "macro-finance/2026-06-09/evening.html",
+      "date": "2026-06-09",
+      "period": "evening",
+      "section": "macro-finance",
+      "keywords": [
+        "半导体产业链",
+        "中美博弈",
+        "美伊谈判/原油"
       ]
     },
     {

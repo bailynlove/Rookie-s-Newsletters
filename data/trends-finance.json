@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T15:11:59.938991",
+  "generated_at": "2026-06-09T18:07:24.721022",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -820,7 +820,11 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 17
+      "count": 18
+    },
+    {
+      "level": "mid",
+      "count": 13
     },
     {
       "level": "unknown",
@@ -829,10 +833,6 @@
     {
       "level": "medium",
       "count": 12
-    },
-    {
-      "level": "mid",
-      "count": 9
     },
     {
       "level": "low",
@@ -873,8 +873,20 @@
       "count": 9
     },
     {
+      "topic": "半导体产业链",
+      "count": 8
+    },
+    {
+      "topic": "DeepSeek/AI基建",
+      "count": 7
+    },
+    {
       "topic": "全球科技估值回调",
       "count": 7
+    },
+    {
+      "topic": "美伊谈判/原油",
+      "count": 6
     },
     {
       "topic": "美联储鹰派预期",
@@ -885,19 +897,7 @@
       "count": 5
     },
     {
-      "topic": "亚太市场避险",
-      "count": 5
-    },
-    {
-      "topic": "沪指4000点破位",
-      "count": 5
-    },
-    {
-      "topic": "商品通胀预期",
-      "count": 5
-    },
-    {
-      "topic": "中东局势升级",
+      "topic": "中美博弈",
       "count": 5
     }
   ]
