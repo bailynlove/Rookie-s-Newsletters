@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-09T08:48:15.082728",
+  "generated_at": "2026-06-09T12:38:17.075017",
   "academic": [
+    {
+      "path": "academic/2026-06-09/noon.html",
+      "date": "2026-06-09",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "Code agent benchmarks",
+        "Agent self-evolution & skill acquisition",
+        "MCP enterprise governance"
+      ]
+    },
     {
       "path": "academic/2026-06-09/morning.html",
       "date": "2026-06-09",

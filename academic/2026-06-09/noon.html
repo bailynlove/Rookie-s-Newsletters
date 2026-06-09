@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-09 noon</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文解读",
+    "datePublished": "2026-06-09T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 6,
+    "subscription_hits": ["code-agent-benchmark", "agent-self-evolution", "mcp-enterprise-governance", "agent-safety", "agent-memory"],
+    "github_trending_topics": ["agent-benchmark", "mcp", "code-generation", "sw-agent"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Code agent benchmarks", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent self-evolution & skill acquisition", "strength": 5, "direction": "rising"},
+      {"topic": "MCP enterprise governance", "strength": 4, "direction": "stable"},
+      {"topic": "Agent safety & verification", "strength": 5, "direction": "spiking"},
+      {"topic": "LLM code translation & legacy migration", "strength": 4, "direction": "rising"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --report-bg: #f7f9f7;
+      --report-surface: #ffffff;
+      --report-surface-2: #eef4f1;
+      --report-border: #d8e2dc;
+      --report-text: #18201c;
+      --report-muted: #607268;
+      --report-accent: #0f8f78;
+      --report-accent-2: #1870a8;
+      --report-danger: #cf222e;
+      --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0a0f0d;
+      --report-surface: #111814;
+      --report-surface-2: #17211c;
+      --report-border: #2a3a32;
+      --report-text: #e7f0ea;
+      --report-muted: #8aa095;
+      --report-accent: #7fffca;
+      --report-accent-2: #6af7ff;
+      --report-danger: #ff6b7a;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-academic {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card.p0 {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+    }
+
+    .discovery-card.p1 {
+      border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .trend-analysis,
+      .subscription-hits,
+      .action-items,
+      details {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 午间论文解读</h1>
+      <time datetime="2026-06-09T12:00+08:00">2026年06月09日 12:00 CST</time>
+      <div class="report-meta">扫描窗口：2026-06-08 ~ 2026-06-09 · arXiv cs.AI/cs.CL/cs.SE · Hacker News · GitHub Trending</div>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- === P0: Top 5 Deep Reads === -->
+    <section class="priority-p0">
+      <h2>🔴 P0 · Top 5 论文深读</h2>
+
+      <div class="discovery-card p0">
+        <h3>1. SWE-Marathon: Can Agents Autonomously Complete Ultra-Long-Horizon Software Work?</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07682">arXiv:2606.07682 (cs.SE/cs.AI)</a></p>
+        <p><strong>贡献:</strong> 由 Cognition 团队提出的下一代 SWE Agent 基准，专门测试 agent 在超长周期（数小时至数天）软件工程任务中的自主完成能力。与 SWE-bench 的单行补丁不同，SWE-Marathon 聚焦需要多文件修改、跨仓库重构、长时间规划的任务。</p>
+        <p><strong>局限:</strong> 论文尚未披露完整评估结果，基准本身的设计合理性需要等首批社区反馈。</p>
+        <p><strong>为何重要:</strong> 这是继 SWE-bench Verified 之后，代码 agent 领域最重要的新基准。它直接回应了"agent 能做多复杂的事"这一核心问题。与 radar_watchlist 中的 "Code agent benchmarks" 主题直接对齐。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.0/10) · P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（加入评估队列）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>2. Syll: Open-Source Personal Automation with Cross-Surface Execution</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07594">arXiv:2606.07594 (cs.AI/cs.HC/cs.LG/cs.SE)</a></p>
+        <p><strong>贡献:</strong> 一个开源自托管多模态 agent 框架，统一了 MCP/API 工具、CLI 执行和视觉 GUI 控制。核心创新在于"双向用户-agent 交互层"——用户可通过直接演示来教授流程，Syll 将其编译为可复用技能；agent 执行过程被翻译为日志、关键帧和审批检查点供用户审计。已在 Adobe Photoshop、Audition、Stardew Valley、macOS Finder 等生产环境中验证。外化记忆、技能、流程和治理为可编辑的本地文件。</p>
+        <p><strong>局限:</strong> 机制性研究（multimodal routing、teachable GUI replay）的规模化验证有待补充。</p>
+        <p><strong>为何重要:</strong> 同时触及三个核心主题：(1) MCP/API 统一调度 — MCP 生态；(2) 可教导 GUI replay — Agent 技能习得；(3) 外化治理 — Agent 安全与可审计性。这是目前最完整的开源个人自动化方案之一。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10) · P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（技术评估，看是否集成）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>3. Contract2Tool: Learning Preconditions and Effects for Reliable Tool-Augmented LLM Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07771">arXiv:2606.07771 (cs.AI/cs.SE)</a></p>
+        <p><strong>贡献:</strong> 提出通过学习工具的前置条件（preconditions）和效果（effects）来构建可靠的 tool-augmented agent。核心思路是形式化工具的"契约"，让 agent 在调用前判断是否满足条件、调用后推理预期效果。这在 MCP 生态快速扩张的背景下尤为关键——随着工具数量激增，agent 需要自动推断何时用、怎么用。</p>
+        <p><strong>局限:</strong> 尚需在更大规模的工具集上验证，跨领域泛化能力有待测试。</p>
+        <p><strong>为何重要:</strong> 直接对齐 radar_watchlist 的 "MCP enterprise governance" 和 "Agent inter-communication protocols"。当工具数量从数十增长到数千，契约式工具学习是 agent 不"误用"工具的必经之路。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.7/10) · P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 工具治理方向参考）</p>
+      </div>
+    </section>
+
+    <!-- === P1: Worth Deep Investigation === -->
+    <section class="priority-p1">
+      <h2>🟠 P1 · 值得深挖</h2>
+
+      <div class="discovery-card p1">
+        <h3>4. PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07791">arXiv:2606.07791 (cs.AI)</a></p>
+        <p><strong>贡献:</strong> 提出了一种面向"自我进化 agent"的任意时间有效验收测试框架。核心挑战在于：自我进化的 agent 会不断修改自身行为策略，传统静态测试无法覆盖动态变化。PACE 提供了持续验证的方法论，确保 agent 在进化过程中不偏离预期行为边界。</p>
+        <p><strong>重要性:</strong> 与 radar_watchlist "Agent self-evolution & skill acquisition" 和 "Agent formal verification & safety" 双主题交叉。这是 agent 安全治理的技术基础。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.8/10) · P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（安全验证方向参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>5. SKILL.nb: Selective Formalization and Gated Execution for Durable Agent Workflows</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07779">arXiv:2606.07779 (cs.AI/cs.MA)</a></p>
+        <p><strong>贡献:</strong> 提出了一种选择性形式化和门控执行机制，让 agent 工作流既保持灵活性又具备可验证性。"选择性形式化"指的是工作流关键路径用形式化方法约束，次要路径保持灵活；"门控执行"在运行时检查约束是否满足。</p>
+        <p><strong>重要性:</strong> 与 Syll 互补——Syll 侧重交互层，SKILL.nb 侧重工作流的可靠执行。两者合并可构成 agent 工作流的完整基础设施层。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10) · P1</p>
+        <p><strong>建议路由:</strong> → Pepper（可作为相关工作的引文）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>6. TICoder: A Repository-Level Code Generation Framework with Test-Driven Planning and Implementation-Aware Reuse</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07695">arXiv:2606.07695 (cs.SE)</a></p>
+        <p><strong>贡献:</strong> 仓库级别的代码生成框架，结合了测试驱动规划（TDD planning）和实现感知复用。先分析仓库中已有的代码结构和测试用例，再生成新代码，确保风格一致性和可测试性。</p>
+        <p><strong>重要性:</strong> 这是仓库级代码生成从"一次性生成"向"持续集成"迈出的重要一步。与 SWE-Marathon 的"超长周期代码任务"方向互补。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.3/10) · P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（代码生成管道方向参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>7. RAILS: Verification-Native Clearing For Agentic Commerce</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07786">arXiv:2606.07786 (cs.AI/cs.CR/cs.MA)</a></p>
+        <p><strong>贡献:</strong> 面向 Agent 商业交易的验证原生清算框架。当 agent 自主参与交易（如购买工具许可、支付 API 费用），需要清算机制确保交易正确性。RAILS 将验证嵌入清算过程。</p>
+        <p><strong>重要性:</strong> Agent 经济正在成为现实（xiIA REIT 讨论、OpenAI S-1 等信号）。RAILS 是 agent 经济基础设施的关键拼图。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.0/10) · P1</p>
+        <p><strong>建议路由:</strong> → Banner（宏观判断 agent 经济趋势）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>8. Understanding How Enterprises Adopt the Model Context Protocol for LLM-Driven Software Engineering</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07713">arXiv:2606.07713 (cs.SE)</a></p>
+        <p><strong>贡献:</strong> 对企业采纳 MCP 的实证研究，调查了企业在 LLM 驱动开发中如何引入 MCP：哪些集成模式常见、哪些安全控制被采用、治理障碍是什么。这是 MCP 从实验室走向企业的实证快照。</p>
+        <p><strong>重要性:</strong> 直接对齐 radar_watchlist "MCP enterprise governance" 主题。实证数据对确定下一步 MCP 治理工具的建设方向至关重要。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.2/10) · P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 治理策略参考）</p>
+      </div>
+    </section>
+
+    <!-- === P2: Worth Knowing === -->
+    <section class="priority-p2">
+      <h2>🟡 P2 · 值得关注</h2>
+
+      <div class="discovery-card p2">
+        <h3>9. Strained Coherence: A Pre-Failure Signal in Coding Agent Execution Trajectories</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07866">arXiv:2606.07866 (cs.AI/cs.SE)</a></p>
+        <p><strong>重要性:</strong> 发现 coding agent 在执行轨迹中会出现"应变连贯性"信号——在失败前的几个步骤，agent 的行为会表现出可检测的可信度下降。这为 agent 的早期故障检测提供了新方法。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.8/10) · P2</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>10. AgentCompile: An LLM-Guided Compiler for Direct CUDA Inference</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07805">arXiv:2606.07805 (cs.AI/cs.AR)</a></p>
+        <p><strong>重要性:</strong> LLM 引导的 CUDA 编译器，让 agent 直接生成优化 GPU 代码。对需要高性能推理的 agent 系统有直接价值。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10) · P2</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>11. Beyond Agent Architecture: Execution Assumptions and Reproducibility in LLM-Based Trading Systems</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07736">arXiv:2606.07736 (cs.AI/cs.CE/q-fin.CP)</a></p>
+        <p><strong>重要性:</strong> 直接关切交易 agent 的可复现性问题——执行假设的微小差异会导致截然不同的交易结果。对爱迪丝（Edith）的交易 agent 工作流有参考价值。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10) · P2</p>
+        <p><strong>建议路由:</strong> → Edith（交易可复现性参考）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>12. Emergence World: A Platform for Evaluating Long-Horizon Multi-Agent Autonomy</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07888">arXiv:2606.07888 (cs.AI/cs.MA)</a></p>
+        <p><strong>重要性:</strong> 长期多 agent 自主性评估平台。与 SWE-Marathon 形成"单 agent 长周期 vs 多 agent 协调"的对照。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.3/10) · P2</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>13. SciTrace: Trajectory-Aware Safety Reasoning for Scientific Discovery Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.07771">arXiv:2606.07771 (cs.AI)</a></p>
+        <p><strong>重要性:</strong> 针对科学发现 agent 的轨迹感知安全推理。科学场景中 agent 的自主操作（如实验设计、数据分析）需要更强的安全护栏。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.0/10) · P2</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>14. FrontierCode by Cognition AI</h3>
+        <p><strong>来源:</strong> <a href="https://cognition.ai/blog/frontier-code">Cognition Blog</a> (HN #18, 128pts)</p>
+        <p><strong>重要性:</strong> Cognition 发布 FrontierCode——可能是 SWE-Marathon 和 Devin 生态的新平台。HN 热度表明社区对其高度关注。单源信息，建议核实。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10) · P2 · 单源，建议核实</p>
+      </div>
+    </section>
+
+    <!-- === Trend Clusters === -->
+    <section class="trend-analysis">
+      <h2>📊 趋势集群观察</h2>
+      <div style="padding:20px;">
+        <p><strong>集群1: 代码 Agent 基准测试爆发</strong><br>
+        今日 arXiv cs.SE 中同时出现了 SWE-Marathon (超长周期)、ResearchClawBench (端到端科学研究)、Benchmarking Open-Ended Multi-Agent Coordination、WeaveBench (GUI 混合界面)、SpatialWorld (空间推理) 等多个新基准。<br>
+        → <strong>判断:</strong> 代码 agent 评估正在从"单行补丁→仓库级→多 agent 协调"快速进化。这一方向依旧处于高峰期，但评价标准正在分裂。</p>
+
+        <p><strong>集群2: Agent 技能习得与记忆系统</strong><br>
+        Syll (GUI 教学→技能编译)、Anything2Skill (外部知识编入技能)、SKILL.nb (选择性形式化)、Experience Makes Skillful (医疗 agent 自我进化技能记忆)、MemToolAgent (带反射的记忆更新)、Rosetta Memory (跨 LLM 智能体记忆)——密集出现。<br>
+        → <strong>判断:</strong> agent 技能系统正在从手写技能向"演示学习+自动编成+持续进化"演进。radar 应升级"Agent skill ecosystem explosion"到强度 5。</p>
+
+        <p><strong>集群3: Agent 安全与验证</strong><br>
+        PACE (进化随时验证)、RAILS (交易清算验证)、SciTrace (科学安全推理)、REFLECT (静默错误归因)、POISE (无法检测的技能注入)、Deterministic Integrity Gates (临床文稿验证)——验证安全问题已经渗透到每个 agent 类型。<br>
+        → <strong>判断:</strong> Agent 安全验证已从可选附加变为刚性需求。</p>
+
+        <p><strong>集群4: Apple AI 生态</strong><br>
+        HN 头条: Apple Core AI Framework + Siri AI + Google Gemini 集成。MiMo 1T 模型(1000 tok/s)。OpenAI 提交 S-1。<br>
+        → <strong>判断:</strong> 平台级 AI 军备竞赛正在加速，Apple 的 on-device AI + Gemini 集成策略可能改变开发者工具格局。</p>
+      </div>
+    </section>
+
+    <!-- === Action Items === -->
+    <section class="action-items">
+      <h2>📋 待处理事项</h2>
+      <div style="padding:20px;">
+        <ul style="list-style: none; padding:0;">
+          <li><input type="checkbox"> <strong>P0</strong> · Jarvis 评估 SWE-Marathon 基准方案，决定是否加入目标跟踪</li>
+          <li><input type="checkbox"> <strong>P0</strong> · Jarvis 技术评估 Syll 框架，确认是否与当前 MCP 工具链兼容</li>
+          <li><input type="checkbox"> <strong>P1</strong> · Jarvis 了解 Contract2Tool 的 MCP 治理应用潜力</li>
+          <li><input type="checkbox"> <strong>P1</strong> · Jarvis 阅读 Enterprise MCP Adoption 实证研究</li>
+          <li><input type="checkbox"> <strong>P2</strong> · Edith 阅读交易 agent 可复现性论文</li>
+          <li><input type="checkbox"> <strong>Radar</strong> · 将 "Agent skill ecosystem explosion" 强度更新为 5</li>
+          <li><input type="checkbox"> <strong>Radar</strong> · 将 "Agent safety & verification" 强度更新为 5</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- === Source Quality Notes === -->
+    <details>
+      <summary style="cursor:pointer; padding:16px 20px; font-weight:bold;">⚠️ 改写要点（供 Content 参考）</summary>
+      <div style="padding:0 20px 20px;">
+        <ul>
+          <li>SWE-Marathon 是代码 agent 领域标志性新基准——从"修一个 bug"到"写一个功能"，是 agent 能力量变的质变节点。Content 可以从"agent 能独立完成几天的工作? Cognition 给出新答案"角度切入。</li>
+          <li>Syll 是 MCP + GUI + CLI 三合一的实用框架——"教一下就会"的 Agent 其实是把演示流程编译成了可复用技能。适合做成"手把手建自己的 AI 管家"教程类内容。</li>
+          <li>Apple 抛弃了 OpenAI 转投 Gemini——"苹果的 AI 战略最大转向"是绝佳选题，但需确认 Cocre AI Framework 的具体能力边界。</li>
+          <li>Agent 安全验证类论文密集出现，说明行业共识正在形成。可做"Agent 安全已成刚需"的行业分析。</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary style="cursor:pointer; padding:16px 20px; font-weight:bold;">🔍 本次搜索的困难与报错</summary>
+      <div style="padding:0 20px 20px;">
+        <ul>
+          <li>cs.AI 页面 (~768 entries) 首加载 timeout，重试后成功。内容截断严重，使用 browser_console CSS selector 批量化提取标题。</li>
+          <li>cs.CL 页面成功加载，但同样巨大 (368 entries)，精确提取所有标题但部分 paper 的 abstract 细节未逐篇核查。</li>
+          <li>cs.SE 页面内容完整，66 entries 全部可查。信息质量最高——大部分论文都与 agent/code 直接相关。</li>
+          <li>GitHub Trending 未纳入此轮 noon scan（侧重论文），已在 morning scan 中覆盖。</li>
+          <li>MCP 健康检查脚本未运行（本环境不依赖 MCP 端点）。</li>
+          <li>HF trending models 未捕获（动态加载限制，已在 morning 覆盖）。</li>
+          <li>无明显报错，本次检索链路正常。</li>
+        </ul>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

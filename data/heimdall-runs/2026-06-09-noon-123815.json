@@ -1,0 +1,77 @@
+{
+  "id": "20260609-123815-noon",
+  "generated_at": "2026-06-09T12:38:15",
+  "period": "noon",
+  "report_path": "academic/2026-06-09/noon.html",
+  "reported_status": "ok",
+  "quality_score": 100,
+  "checks": {
+    "report_exists": true,
+    "non_empty": true,
+    "jsonld_present": true,
+    "agent_is_heimdall": true,
+    "section_is_academic": true,
+    "period_matches": true,
+    "source_link_count": 14,
+    "source_link_target": 8,
+    "source_links_meet_target": true,
+    "signal_total": 14,
+    "missing_required_sections": [],
+    "reported_status": "ok",
+    "notes": ""
+  },
+  "weaknesses": [],
+  "metadata_summary": {
+    "headline": "Heimdall 午间论文解读",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 6,
+    "subscription_hits": [
+      "code-agent-benchmark",
+      "agent-self-evolution",
+      "mcp-enterprise-governance",
+      "agent-safety",
+      "agent-memory"
+    ],
+    "trend_signals": [
+      {
+        "topic": "Code agent benchmarks",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "Agent self-evolution & skill acquisition",
+        "strength": 5,
+        "direction": "rising"
+      },
+      {
+        "topic": "MCP enterprise governance",
+        "strength": 4,
+        "direction": "stable"
+      },
+      {
+        "topic": "Agent safety & verification",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "LLM code translation & legacy migration",
+        "strength": 4,
+        "direction": "rising"
+      }
+    ],
+    "github_trending_topics": [
+      "agent-benchmark",
+      "mcp",
+      "code-generation",
+      "sw-agent"
+    ],
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.SE",
+      "cs.CL"
+    ]
+  },
+  "recommended_next_run_adjustments": []
+}
