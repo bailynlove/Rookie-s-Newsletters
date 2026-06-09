@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T07:32:05.231247",
+  "generated_at": "2026-06-09T08:48:15.084673",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -84,6 +84,13 @@
       "p1": 10,
       "p2": 10,
       "total": 26
+    },
+    {
+      "date": "2026-06-09",
+      "p0": 4,
+      "p1": 5,
+      "p2": 6,
+      "total": 15
     }
   ],
   "calendar_data": [
@@ -146,6 +153,11 @@
       "date": "2026-06-08",
       "intensity": 26,
       "level": 2
+    },
+    {
+      "date": "2026-06-09",
+      "intensity": 15,
+      "level": 1
     }
   ],
   "sparkline_data": [
@@ -199,6 +211,10 @@
         {
           "date": "2026-06-08",
           "value": 0
+        },
+        {
+          "date": "2026-06-09",
+          "value": 0
         }
       ]
     },
@@ -252,58 +268,9 @@
         {
           "date": "2026-06-08",
           "value": 0
-        }
-      ]
-    },
-    {
-      "topic": "Code Knowledge Graph",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 0
         },
         {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-22",
-          "value": 5
-        },
-        {
-          "date": "2026-05-23",
-          "value": 0
-        },
-        {
-          "date": "2026-05-24",
-          "value": 5
-        },
-        {
-          "date": "2026-05-25",
-          "value": 5
-        },
-        {
-          "date": "2026-05-27",
-          "value": 0
-        },
-        {
-          "date": "2026-05-28",
-          "value": 0
-        },
-        {
-          "date": "2026-06-05",
-          "value": 0
-        },
-        {
-          "date": "2026-06-06",
-          "value": 0
-        },
-        {
-          "date": "2026-06-07",
-          "value": 0
-        },
-        {
-          "date": "2026-06-08",
+          "date": "2026-06-09",
           "value": 0
         }
       ]
@@ -358,6 +325,10 @@
         {
           "date": "2026-06-08",
           "value": 10
+        },
+        {
+          "date": "2026-06-09",
+          "value": 5
         }
       ]
     },
@@ -411,6 +382,124 @@
         {
           "date": "2026-06-08",
           "value": 10
+        },
+        {
+          "date": "2026-06-09",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "topic": "Code Knowledge Graph",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 5
+        },
+        {
+          "date": "2026-05-23",
+          "value": 0
+        },
+        {
+          "date": "2026-05-24",
+          "value": 5
+        },
+        {
+          "date": "2026-05-25",
+          "value": 5
+        },
+        {
+          "date": "2026-05-27",
+          "value": 0
+        },
+        {
+          "date": "2026-05-28",
+          "value": 0
+        },
+        {
+          "date": "2026-06-05",
+          "value": 0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 0
+        },
+        {
+          "date": "2026-06-09",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "topic": "Agent formal verification & safety",
+      "series": [
+        {
+          "date": "2026-05-17",
+          "value": 0
+        },
+        {
+          "date": "2026-05-21",
+          "value": 0
+        },
+        {
+          "date": "2026-05-22",
+          "value": 0
+        },
+        {
+          "date": "2026-05-23",
+          "value": 0
+        },
+        {
+          "date": "2026-05-24",
+          "value": 0
+        },
+        {
+          "date": "2026-05-25",
+          "value": 0
+        },
+        {
+          "date": "2026-05-27",
+          "value": 0
+        },
+        {
+          "date": "2026-05-28",
+          "value": 0
+        },
+        {
+          "date": "2026-06-05",
+          "value": 0
+        },
+        {
+          "date": "2026-06-06",
+          "value": 0
+        },
+        {
+          "date": "2026-06-07",
+          "value": 0
+        },
+        {
+          "date": "2026-06-08",
+          "value": 5
+        },
+        {
+          "date": "2026-06-09",
+          "value": 5
         }
       ]
     },
@@ -463,6 +552,10 @@
         },
         {
           "date": "2026-06-08",
+          "value": 0
+        },
+        {
+          "date": "2026-06-09",
           "value": 0
         }
       ]
@@ -517,58 +610,9 @@
         {
           "date": "2026-06-08",
           "value": 0
-        }
-      ]
-    },
-    {
-      "topic": "Agent-Native 软件栈",
-      "series": [
-        {
-          "date": "2026-05-17",
-          "value": 5
         },
         {
-          "date": "2026-05-21",
-          "value": 0
-        },
-        {
-          "date": "2026-05-22",
-          "value": 4
-        },
-        {
-          "date": "2026-05-23",
-          "value": 0
-        },
-        {
-          "date": "2026-05-24",
-          "value": 0
-        },
-        {
-          "date": "2026-05-25",
-          "value": 0
-        },
-        {
-          "date": "2026-05-27",
-          "value": 0
-        },
-        {
-          "date": "2026-05-28",
-          "value": 0
-        },
-        {
-          "date": "2026-06-05",
-          "value": 0
-        },
-        {
-          "date": "2026-06-06",
-          "value": 0
-        },
-        {
-          "date": "2026-06-07",
-          "value": 0
-        },
-        {
-          "date": "2026-06-08",
+          "date": "2026-06-09",
           "value": 0
         }
       ]
@@ -584,15 +628,19 @@
       "count": 16
     },
     {
+      "topic": "MCP enterprise governance",
+      "count": 15
+    },
+    {
+      "topic": "Code agent benchmarks",
+      "count": 15
+    },
+    {
       "topic": "Code Knowledge Graph",
       "count": 15
     },
     {
-      "topic": "MCP enterprise governance",
-      "count": 10
-    },
-    {
-      "topic": "Code agent benchmarks",
+      "topic": "Agent formal verification & safety",
       "count": 10
     },
     {
@@ -630,20 +678,16 @@
     {
       "topic": "MCP 工具链扩展",
       "count": 8
-    },
-    {
-      "topic": "Agent formal verification & safety",
-      "count": 5
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 17
+      "count": 18
     },
     {
       "category": "cs.CL",
-      "count": 16
+      "count": 17
     },
     {
       "category": "cs.LG",
@@ -651,7 +695,7 @@
     },
     {
       "category": "cs.SE",
-      "count": 9
+      "count": 10
     },
     {
       "category": "cs.MA",
@@ -681,23 +725,23 @@
     },
     {
       "subscription": "agent-memory",
+      "count": 4
+    },
+    {
+      "subscription": "code-agent-benchmark",
+      "count": 3
+    },
+    {
+      "subscription": "mcp-enterprise-governance",
       "count": 3
     },
     {
       "subscription": "agent-formal-verification",
-      "count": 2
-    },
-    {
-      "subscription": "mcp-enterprise-governance",
-      "count": 2
-    },
-    {
-      "subscription": "code-agent-benchmark",
-      "count": 2
+      "count": 3
     },
     {
       "subscription": "agent-self-evolution",
-      "count": 2
+      "count": 3
     },
     {
       "subscription": "agent-communication",
@@ -722,16 +766,16 @@
       "count": 4
     },
     {
+      "topic": "agent-skill",
+      "count": 3
+    },
+    {
       "topic": "code-knowledge-graph",
       "count": 3
     },
     {
       "topic": "superpowers",
       "count": 3
-    },
-    {
-      "topic": "agent-skill",
-      "count": 2
     },
     {
       "topic": "llm-inference",
@@ -765,6 +809,90 @@
     },
     {
       "combination": [
+        "agent-formal-verification",
+        "agent-self-evolution"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "code-agent-benchmark"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 3,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-formal-verification",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 3,
+      "size": 3
+    },
+    {
+      "combination": [
         "agent-framework",
         "mcp-tools"
       ],
@@ -816,104 +944,18 @@
     {
       "combination": [
         "agent-formal-verification",
+        "agent-memory"
+      ],
+      "count": 2,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-memory",
         "agent-self-evolution"
       ],
       "count": 2,
       "size": 2
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "code-agent-benchmark"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-self-evolution",
-        "code-agent-benchmark"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-self-evolution",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "agent-self-evolution",
-        "code-agent-benchmark"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "agent-self-evolution",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-formal-verification",
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-self-evolution",
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph",
-        "mcp-tools"
-      ],
-      "count": 2,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph",
-        "self-improving-agent"
-      ],
-      "count": 2,
-      "size": 3
     }
   ]
 }

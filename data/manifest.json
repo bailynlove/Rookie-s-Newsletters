@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-09T07:32:05.229337",
+  "generated_at": "2026-06-09T08:48:15.082728",
   "academic": [
+    {
+      "path": "academic/2026-06-09/morning.html",
+      "date": "2026-06-09",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Agent skill ecosystem explosion",
+        "Agent formal verification & safety",
+        "MCP enterprise governance"
+      ]
+    },
     {
       "path": "academic/2026-06-08/noon.html",
       "date": "2026-06-08",
