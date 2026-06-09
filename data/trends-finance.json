@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T12:38:17.079542",
+  "generated_at": "2026-06-09T15:11:59.938991",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -192,24 +192,28 @@
       "confidence": 0.7,
       "indices": {
         "上证综指": {
-          "value": 3959.34,
-          "change": -1.7
+          "value": 4010.03,
+          "change": 1.28
         },
         "深证成指": {
-          "value": 14821.19,
-          "change": -3.22
+          "value": 15268.71,
+          "change": 3.02
+        },
+        "期指IF0": {
+          "value": 4743.6,
+          "change": 1.38
         },
         "恒生指数": {
-          "value": 24657.06,
-          "change": -1.22
-        },
-        "纳斯达克": {
-          "value": 25929.66,
-          "change": 0.86
+          "value": 24700.52,
+          "change": 0.18
         },
         "道琼斯": {
           "value": 50786.01,
           "change": -0.16
+        },
+        "纳斯达克": {
+          "value": 25929.66,
+          "change": 0.86
         }
       }
     }
@@ -252,8 +256,8 @@
     },
     {
       "date": "2026-06-09",
-      "intensity": 32,
-      "level": 1
+      "intensity": 72,
+      "level": 4
     }
   ],
   "risk_grid": [
@@ -828,7 +832,7 @@
     },
     {
       "level": "mid",
-      "count": 7
+      "count": 9
     },
     {
       "level": "low",
@@ -836,15 +840,15 @@
     },
     {
       "level": "low-mid",
+      "count": 5
+    },
+    {
+      "level": "mid-high",
       "count": 3
     },
     {
       "level": "extreme",
       "count": 3
-    },
-    {
-      "level": "mid-high",
-      "count": 2
     },
     {
       "level": "medium-high",
@@ -877,6 +881,10 @@
       "count": 6
     },
     {
+      "topic": "科技板块全面爆发",
+      "count": 5
+    },
+    {
       "topic": "亚太市场避险",
       "count": 5
     },
@@ -890,10 +898,6 @@
     },
     {
       "topic": "中东局势升级",
-      "count": 5
-    },
-    {
-      "topic": "美股科技股暴跌",
       "count": 5
     }
   ]
