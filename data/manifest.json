@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T23:12:00.516951",
+  "generated_at": "2026-06-11T07:36:56.692473",
   "academic": [
     {
       "path": "academic/2026-06-09/noon.html",
@@ -247,6 +247,17 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-06-11/morning.html",
+      "date": "2026-06-11",
+      "period": "morning",
+      "section": "macro-finance",
+      "keywords": [
+        "美联储政策",
+        "中美关系",
+        "AI产业政策"
+      ]
+    },
     {
       "path": "macro-finance/2026-06-10/us-premarket.html",
       "date": "2026-06-10",
