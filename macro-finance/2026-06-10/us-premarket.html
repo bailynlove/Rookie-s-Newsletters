@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-10 us-premarket</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+<style>
+  :root {
+    --report-bg: #faf8f0;
+    --report-surface: #ffffff;
+    --report-surface-2: #f2eddd;
+    --report-border: #ded4b8;
+    --report-text: #231f16;
+    --report-muted: #766b55;
+    --report-accent: #8a6f12;
+    --report-accent-2: #1b7f55;
+    --report-danger: #b42318;
+    --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0f0d08;
+    --report-surface: #18150e;
+    --report-surface-2: #221e13;
+    --report-border: #3d3421;
+    --report-text: #f0eadc;
+    --report-muted: #a99d80;
+    --report-accent: #ffd166;
+    --report-accent-2: #7fffca;
+    --report-danger: #ff786b;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.32;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-finance {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .risk-assessment,
+  .market-outlook,
+  .sentiment,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p,
+  .risk-assessment,
+  .market-outlook,
+  .sentiment,
+  details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .breaking-alert,
+  .risk-high {
+    border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    width: 100%;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .data-table td {
+    border-color: var(--report-border);
+    padding: 10px 14px;
+    color: var(--report-text);
+  }
+
+  .data-table tr + tr td {
+    border-top: 1px solid var(--report-border);
+  }
+
+  .privacy-notice {
+    background: var(--report-surface-2);
+    border: 1px dashed var(--report-border);
+    border-radius: 6px;
+    color: var(--report-muted);
+    padding: 14px 16px;
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+  }
+
+  .up { color: var(--report-accent-2); }
+  .down { color: var(--report-danger); }
+  .neutral { color: var(--report-muted); }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header { padding: 36px 0 28px; }
+    .discovery-card, .risk-assessment, .market-outlook, .sentiment, details { padding: 16px; }
+    .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="report-skin report-skin-finance">
+
+<header class="report-header">
+  <div class="container report-shell">
+    <span class="badge badge-finance">宏观金融</span>
+    <h1>Friday — 美股盘前宏观凝视</h1>
+    <time datetime="2026-06-10T22:00+08:00">2026年06月10日 22:00 CST</time>
+  </div>
+</header>
+
+<main class="container report-shell">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Friday 美股盘前宏观凝视",
+  "datePublished": "2026-06-10T22:00:00+08:00",
+  "agent": "friday",
+  "section": "macro-finance",
+  "period": "us-premarket",
+  "market_sentiment": 38,
+  "confidence": 0.70,
+  "key_indices": {
+    "标普500": {"value": 7329.87, "change": -0.77},
+    "道琼斯": {"value": 50375.55, "change": -0.98},
+    "纳斯达克": {"value": 25411.46, "change": -1.04},
+    "VIX": {"value": 20.99, "change": 5.66},
+    "上证综指": {"value": 3993.23, "change": -0.42},
+    "恒生指数": {"value": 24407.96, "change": -0.64}
+  },
+  "risk_level": "medium-high",
+  "risk_categories": {
+    "美股整体": "medium-high",
+    "科技股": "high",
+    "A股": "medium",
+    "港股": "medium",
+    "商品": "mid",
+    "债市": "low-mid"
+  },
+  "trend_signals": [
+    {"topic": "美国CPI通胀", "strength": 5, "direction": "rising"},
+    {"topic": "科技股估值", "strength": 4, "direction": "falling"},
+    {"topic": "美元指数", "strength": 3, "direction": "stable"},
+    {"topic": "地缘风险", "strength": 3, "direction": "stable"}
+  ]
+}
+</script>
+
+<!-- ==================== L1-L4 宏观因子 ==================== -->
+<section class="macro-factors">
+  <h2>L1-L4 宏观因子</h2>
+
+  <div class="discovery-card">
+    <h3>L1: 美国5月CPI同比增长4.2% — 创23个月新高</h3>
+    <p><strong>数据:</strong> 美国5月CPI同比 +4.2%（预期 +4.2%，前值 +3.4%），创2023年4月以来新高。核心CPI预计维持高位。数据于北京时间20:30发布。</p>
+    <p><strong>信号:</strong> ⚠️ 通胀读数虽符合预期，但绝对水平创近两年新高，彻底打消市场对美联储近期降息的幻想。CPI落地后美股三大指数期货迅速下跌，显示市场对"higher for longer"利率环境的重新定价。6月FOMC点阵图预期面临上修风险。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>L1: 美股盘初全面承压 — 科技股领跌</h3>
+    <p><strong>数据:</strong> 标普500 7,329.87（-0.77%），道指 50,375.55（-0.98%），纳指 25,411.46（-1.04%）。VIX恐慌指数跳升至20.99（+5.66%），重回20上方。</p>
+    <p><strong>信号:</strong> CPI数据发布后美股低开低走，三大指数全线下跌。恐慌指数重回20关口暗示市场避险情绪明显升温。纳指跌幅最大，反映利率敏感型科技成长股承压最为严重。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>L2: 美债收益率小幅回落 — 利率曲线平坦化</h3>
+    <p><strong>数据:</strong> 10年期美债收益率 4.522%（-0.13%），5年期 4.248%（-0.12%）。美元指数 99.90，几近持平。</p>
+    <p><strong>信号:</strong> 10Y收益率在CPI数据后不升反降，表面看与通胀高企矛盾。可能的解释：市场将符合预期的CPI解读为"利空出尽"，且认为经济动能放缓可能在中长期压低收益率。但美元指数走平说明资金并未逃离美元资产，更多是存量博弈中的板块轮动。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>L3: 亚太市场普跌 — A股4000点得而复失</h3>
+    <p><strong>数据:</strong> 上证指数 3,993.23（-0.42%），深证成指 14,954.10（-2.06%），恒生指数 24,407.96（-0.64%），日经225 64,179.05（-1.89%）。</p>
+    <p><strong>信号:</strong> 亚太市场今日全面走弱。A股上攻4000点未果后回落，深成指跌幅显著，显示成长方向（半导体、光通信、互联网）遭资金抛售。港股跟随A股调整，大金融板块逆市上涨形成对冲。日经重挫近2%，受日元升值及全球科技股回调双重拖累。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>L4: 商品分化 — 原油强势 vs 贵金属暴跌</h3>
+    <p><strong>数据:</strong> WTI原油 90.13（+2.18%），布伦特 93.07（+1.77%）。COMEX黄金 4,147.30（-3.25%），白银 64.84（-0.62%），LME铜 13,543.16（-0.53%）。</p>
+    <p><strong>信号:</strong> 原油在CPI数据后逆势走强，布伦特逼近93美元，可能与伊朗核谈判"重大进展"（浓缩铀从"外运"改为"稀释"方案）的地缘博弈相关，叠加夏季出行旺季需求预期。黄金暴跌超3%至4150下方，通胀韧性降低黄金避险买需，实际利率预期维持高位压制金价。铜小幅走弱，工业金属情绪偏谨慎。</p>
+  </div>
+</section>
+
+<!-- ==================== 指数行情总览 ==================== -->
+<section>
+  <h2>全球指数行情总览</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>指数</th>
+        <th>最新价</th>
+        <th>涨跌幅</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>标普500</td>
+        <td>7,329.87</td>
+        <td class="down">-0.77%</td>
+      </tr>
+      <tr>
+        <td>道琼斯工业</td>
+        <td>50,375.55</td>
+        <td class="down">-0.98%</td>
+      </tr>
+      <tr>
+        <td>纳斯达克综合</td>
+        <td>25,411.46</td>
+        <td class="down">-1.04%</td>
+      </tr>
+      <tr>
+        <td>罗素2000</td>
+        <td>2,881.20</td>
+        <td class="up">+0.49%</td>
+      </tr>
+      <tr>
+        <td>VIX恐慌指数</td>
+        <td>20.99</td>
+        <td class="down">+5.66%</td>
+      </tr>
+      <tr>
+        <td>上证综指</td>
+        <td>3,993.23</td>
+        <td class="down">-0.42%</td>
+      </tr>
+      <tr>
+        <td>深证成指</td>
+        <td>14,954.10</td>
+        <td class="down">-2.06%</td>
+      </tr>
+      <tr>
+        <td>恒生指数</td>
+        <td>24,407.96</td>
+        <td class="down">-0.64%</td>
+      </tr>
+      <tr>
+        <td>日经225</td>
+        <td>64,179.05</td>
+        <td class="down">-1.89%</td>
+      </tr>
+      <tr>
+        <td>STOXX 50</td>
+        <td>6,031.16</td>
+        <td class="down">-0.29%</td>
+      </tr>
+      <tr>
+        <td>英国富时100</td>
+        <td>10,253.33</td>
+        <td class="up">+0.25%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ==================== 大宗商品 ==================== -->
+<section>
+  <h2>大宗商品行情</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>品种</th>
+        <th>最新价</th>
+        <th>涨跌幅</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>WTI原油</td>
+        <td>90.13</td>
+        <td class="up">+2.18%</td>
+      </tr>
+      <tr>
+        <td>布伦特原油</td>
+        <td>93.07</td>
+        <td class="up">+1.77%</td>
+      </tr>
+      <tr>
+        <td>COMEX黄金</td>
+        <td>4,147.30</td>
+        <td class="down">-3.25%</td>
+      </tr>
+      <tr>
+        <td>COMEX白银</td>
+        <td>64.84</td>
+        <td class="down">-0.62%</td>
+      </tr>
+      <tr>
+        <td>LME铜</td>
+        <td>13,543.16</td>
+        <td class="down">-0.53%</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ==================== 当日关键事件 ==================== -->
+<section>
+  <h2>当日关键事件</h2>
+
+  <div class="discovery-card">
+    <h3>📊 美国5月CPI +4.2%：符合预期但创23月新高</h3>
+    <p><strong>事件:</strong> 美国5月CPI同比上涨4.2%，完全符合市场预期，但较前值3.4%显著上升，为2023年4月以来最高。数据发布后10年期美债收益率短线冲高后回落，美元指数波动有限。</p>
+    <p><strong>解读:</strong> "符合预期"在一定程度上缓解了"超预期恐慌"，但绝对水平仍处高位。叠加此前强劲的非农数据，美联储在6月会议上按兵不动几无悬念，市场焦点转向点阵图是否上调今年底利率中位数预期。若点阵图释放鹰派信号，美股短期调整可能加深。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>🤖 工信部发布"AI+信息通信"创新实施计划</h3>
+    <p><strong>事件:</strong> 工信部印发《"人工智能+信息通信"创新发展实施意见（2026—2028年）》，强调加强高端光电芯片和器件研发，开展光电混合组网技术试验。</p>
+    <p><strong>解读:</strong> 政策面持续推进AI基础设施自主化。但今日A股光通信/CPO板块大幅回调，导火索为SemiAnalysis研报称800V DC与CPO落地时间将延后。政策利好与实际产业节奏之间的预期差值得警惕。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>🏢 SK海力士拟8月赴美上市 — SEC最快6月22日当周批准</h3>
+    <p><strong>事件:</strong> 据报道韩国存储芯片巨头SK海力士计划最早于8月通过ADR在美国上市，SEC预计在6月22日当周批准申请。该公司将搭乘AI热潮进行IPO。</p>
+    <p><strong>解读:</strong> SK海力士作为HBM（高带宽内存）核心供应商，美股上市将给AI芯片赛道带来新的投资标的，短期内可能对现有AI存储概念股形成资金分流压力。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>🛢️ 美伊核谈出现"重大进展"</h3>
+    <p><strong>事件:</strong> 美国媒体援引官员消息，美伊通过巴基斯坦斡旋的谈判在伊朗浓缩铀处理方案上取得突破，方案从"外运"转向"稀释"。WTI原油日内涨超2%。</p>
+    <p><strong>解读:</strong> 核谈进展理论上利空油价（伊朗原油回归预期），但当前原油上涨更多反映夏季需求高峰和OPEC+限产的基本面支撑。需观察后续谈判对伊朗石油出口制裁的实际影响。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>🔦 CPO概念遭研报冲击 — A股光通信板块重挫</h3>
+    <p><strong>事件:</strong> SemiAnalysis发布研究报告，指出800V DC与CPO（共封装光学）落地时间均将延后。受此影响，A股CPO/光通信相关个股集体下跌，中船特气等前期AI黑马股虽未直接相关但情绪受波及。</p>
+    <p><strong>解读:</strong> 研报扰动本质反映市场对AI硬件落地节奏的分歧加大。美股盘前纳指跌幅最大（-1.04%），可能与同一逻辑—AI算力基建短期预期过热后的理性回归有关。</p>
+  </div>
+</section>
+
+<!-- ==================== A股行业板块排名 ==================== -->
+<section>
+  <h2>A股行业板块涨跌排名（今日）</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>板块</th>
+        <th>涨跌幅</th>
+        <th>领涨股</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>酒店旅游</td><td class="up">+2.47%</td><td>大连圣亚 +10.01%</td></tr>
+      <tr><td>金融行业</td><td class="up">+2.07%</td><td>渤海租赁 +6.76%</td></tr>
+      <tr><td>开发区</td><td class="up">+1.73%</td><td>高新发展 +5.22%</td></tr>
+      <tr><td>摩托车</td><td class="up">+1.72%</td><td>宗申动力 +8.55%</td></tr>
+      <tr><td>酿酒行业</td><td class="up">+1.49%</td><td>惠泉啤酒 +9.97%</td></tr>
+      <tr><td>家具行业</td><td class="up">+1.15%</td><td>友邦吊顶 +2.56%</td></tr>
+      <tr><td>化工行业</td><td class="up">+0.88%</td><td>兆新股份 +10.08%</td></tr>
+      <tr><td>食品行业</td><td class="up">+0.61%</td><td>花园生物 +9.39%</td></tr>
+    </tbody>
+  </table>
+  <p style="color:var(--report-muted);font-size:0.75rem;margin-top:8px;">注：仅列出涨幅前8的行业。金融、消费防御方向领涨，科技/成长板块承压。</p>
+</section>
+
+<!-- ==================== 风险提示 ==================== -->
+<section class="risk-assessment">
+  <h2>反面论据 · 风险提示</h2>
+
+  <div class="discovery-card breaking-alert">
+    <h3>⚠️ 利率风险 — 通胀高位叠加鹰派点阵图风险</h3>
+    <p><strong>情景:</strong> 5月CPI +4.2%确认通胀粘性，若6月FOMC点阵图将2026年利率中位数上调至5.0%以上，市场将面临新一轮"higher for longer"重定价。当前市场定价隐含的降息预期面临下修。</p>
+    <p><strong>影响面:</strong> 科技成长股（高估值/久期敏感）首当其冲，纳斯达克已先行下跌。银行股可能受益于利差扩大，但经济放缓预期可能抵消这一利好。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>⚠️ AI估值泡沫风险 — 硬件落地节奏存疑</h3>
+    <p><strong>情景:</strong> SemiAnalysis研报指出的CPO/800V DC延迟不是孤立事件。全球AI基建投资目前处于预期密集定价阶段，一旦出现多家权威机构对技术路线或时间表提出质疑，可能触发AI板块的获利回吐。</p>
+    <p><strong>关注:</strong> 英伟达财报指引、台积电资本开支计划、SK海力士HBM产能扩张进度。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>⚠️ 地缘风险 — 美伊核谈判变数</h3>
+    <p><strong>情景:</strong> 伊朗浓缩铀"稀释"方案若最终破裂，中东地缘风险将再度升级，原油可能突破95美元并传导至全球通胀预期。反之若协议达成，伊朗原油回归将压低油价但需6-12个月传导周期。</p>
+    <p><strong>影响面:</strong> 原油相关标的、航空运输成本、美国汽油价格（大选年敏感指标）。</p>
+  </div>
+
+  <div class="discovery-card">
+    <h3>⚠️ 亚太溢出风险 — 日经重挫与A股4000点阻力</h3>
+    <p><strong>情景:</strong> 日经225今日跌1.89%为亚太最弱，主因日元走强与科技股回调共振。若美股今夜继续走弱，明日A股/港股可能承压补跌。上证指数4000点关口的得而复失显示多头信心不足。</p>
+    <p><strong>关注:</strong> 北向资金流向、人民币汇率。</p>
+  </div>
+</section>
+
+<!-- ==================== 市场情绪 ==================== -->
+<section class="sentiment">
+  <h2>情绪评分 · 置信度</h2>
+  <div class="risk-assessment">
+    <p><strong>综合情绪评分：</strong> 38/100（偏悲观）</p>
+    <p><strong>置信度：</strong> 0.70 / 1.0</p>
+    <p><strong>VIX信号：</strong> 20.99 — 恐慌指数重回20之上，暗示期权市场定价的不确定性显著升高，与2025年底水平相当。</p>
+    <p><strong>结构性背离：</strong> 罗素2000小盘指数逆势微涨+0.49%，说明市场并非全面恐慌，而是在做跨市值风格切换。资金从高估值科技股流向低估值的价值/周期板块，这是一种典型的"CPI落地后仓位再平衡"行为。</p>
+    <p><strong>核心矛盾：</strong> 通胀读数"符合预期"但绝对水平偏高 — 市场在Price-in"坏消息就是好消息"（符合预期=没有更糟）和"利率长期高位"之间摇摆。6月FOMC（下周）将是下一个关键催化剂。</p>
+  </div>
+</section>
+
+<!-- ==================== 明日关注 ==================== -->
+<section class="market-outlook">
+  <h2>今日关注</h2>
+  <div class="risk-assessment">
+    <p><strong>🕐 22:00 CST</strong> — 美国5月CPI完整数据持续消化，关注核心CPI分项（住房、服务）走势</p>
+    <p><strong>📰 美股盘后</strong> — 关注CPI后FOMC票委讲话基调（是否有偏鹰/偏鸽信号）</p>
+    <p><strong>📊 明日（6/11）关注：</strong></p>
+    <ul style="color:var(--report-muted);padding-left:20px;">
+      <li>美国5月PPI（生产者价格指数） — 确认上游通胀是否传导</li>
+      <li>美国上周初请失业金人数 — 劳动力市场边际变化</li>
+      <li>欧洲央行利率决议 — ECB是否在美联储之前率先降息</li>
+      <li>A股开盘承接力度：上证指数能否守住3980支撑</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container report-shell">
+    <p>Friday 首席经济学家 · 宏观金融情报流</p>
+    <p><a href="../../index.html">← 返回看板</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T18:07:24.721022",
+  "generated_at": "2026-06-10T23:12:00.521590",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -216,6 +216,37 @@
           "change": 0.86
         }
       }
+    },
+    {
+      "date": "2026-06-10",
+      "sentiment": 38,
+      "confidence": 0.7,
+      "indices": {
+        "标普500": {
+          "value": 7329.87,
+          "change": -0.77
+        },
+        "道琼斯": {
+          "value": 50375.55,
+          "change": -0.98
+        },
+        "纳斯达克": {
+          "value": 25411.46,
+          "change": -1.04
+        },
+        "VIX": {
+          "value": 20.99,
+          "change": 5.66
+        },
+        "上证综指": {
+          "value": 3993.23,
+          "change": -0.42
+        },
+        "恒生指数": {
+          "value": 24407.96,
+          "change": -0.64
+        }
+      }
     }
   ],
   "calendar_data": [
@@ -258,9 +289,55 @@
       "date": "2026-06-09",
       "intensity": 72,
       "level": 4
+    },
+    {
+      "date": "2026-06-10",
+      "intensity": 38,
+      "level": 2
     }
   ],
   "risk_grid": [
+    {
+      "category": "A股",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "medium"
+        }
+      ]
+    },
     {
       "category": "A股整体",
       "values": [
@@ -295,6 +372,10 @@
         {
           "date": "2026-06-09",
           "level": "high"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         }
       ]
     },
@@ -331,6 +412,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
           "level": "unknown"
         }
       ]
@@ -369,6 +454,10 @@
         {
           "date": "2026-06-09",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "low-mid"
         }
       ]
     },
@@ -405,6 +494,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
           "level": "unknown"
         }
       ]
@@ -443,6 +536,10 @@
         {
           "date": "2026-06-09",
           "level": "mid-high"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "mid"
         }
       ]
     },
@@ -479,6 +576,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
           "level": "unknown"
         }
       ]
@@ -517,6 +618,10 @@
         {
           "date": "2026-06-09",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         }
       ]
     },
@@ -554,6 +659,10 @@
         {
           "date": "2026-06-09",
           "level": "mid"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "medium"
         }
       ]
     },
@@ -590,6 +699,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "high"
+        },
+        {
+          "date": "2026-06-10",
           "level": "high"
         }
       ]
@@ -628,6 +741,10 @@
         {
           "date": "2026-06-09",
           "level": "low-mid"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         }
       ]
     },
@@ -665,6 +782,10 @@
         {
           "date": "2026-06-09",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "medium-high"
         }
       ]
     },
@@ -701,6 +822,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
           "level": "unknown"
         }
       ]
@@ -739,6 +864,10 @@
         {
           "date": "2026-06-09",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         }
       ]
     },
@@ -775,6 +904,10 @@
         },
         {
           "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
           "level": "unknown"
         }
       ]
@@ -813,6 +946,10 @@
         {
           "date": "2026-06-09",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         }
       ]
     }
@@ -820,27 +957,31 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 18
+      "count": 19
+    },
+    {
+      "level": "medium",
+      "count": 14
     },
     {
       "level": "mid",
-      "count": 13
+      "count": 14
     },
     {
       "level": "unknown",
       "count": 12
     },
     {
-      "level": "medium",
-      "count": 12
+      "level": "low-mid",
+      "count": 6
     },
     {
       "level": "low",
       "count": 6
     },
     {
-      "level": "low-mid",
-      "count": 5
+      "level": "medium-high",
+      "count": 3
     },
     {
       "level": "mid-high",
@@ -849,10 +990,6 @@
     {
       "level": "extreme",
       "count": 3
-    },
-    {
-      "level": "medium-high",
-      "count": 2
     },
     {
       "level": "medium-low",
@@ -893,11 +1030,11 @@
       "count": 6
     },
     {
-      "topic": "科技板块全面爆发",
+      "topic": "美国CPI通胀",
       "count": 5
     },
     {
-      "topic": "中美博弈",
+      "topic": "科技板块全面爆发",
       "count": 5
     }
   ]
