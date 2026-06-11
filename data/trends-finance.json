@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T15:17:06.200820",
+  "generated_at": "2026-06-11T18:07:39.128956",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -324,7 +324,7 @@
     },
     {
       "date": "2026-06-11",
-      "intensity": 45,
+      "intensity": 48,
       "level": 2
     }
   ],
@@ -506,6 +506,51 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        }
+      ]
+    },
+    {
+      "category": "中欧摩擦",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "medium"
         }
       ]
     },
@@ -1188,7 +1233,7 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 21
+      "count": 23
     },
     {
       "level": "mid",
@@ -1196,19 +1241,19 @@
     },
     {
       "level": "medium",
-      "count": 15
+      "count": 18
     },
     {
       "level": "unknown",
       "count": 12
     },
     {
-      "level": "low",
+      "level": "low-mid",
       "count": 9
     },
     {
-      "level": "low-mid",
-      "count": 8
+      "level": "low",
+      "count": 9
     },
     {
       "level": "medium-high",
@@ -1233,12 +1278,16 @@
       "count": 20
     },
     {
+      "topic": "中东地缘",
+      "count": 13
+    },
+    {
       "topic": "中东地缘冲突",
       "count": 13
     },
     {
-      "topic": "中东地缘",
-      "count": 9
+      "topic": "美联储鹰派预期",
+      "count": 11
     },
     {
       "topic": "美伊谈判",
@@ -1246,6 +1295,10 @@
     },
     {
       "topic": "半导体材料国产替代",
+      "count": 8
+    },
+    {
+      "topic": "对日替代（半导体材料）",
       "count": 8
     },
     {
@@ -1258,14 +1311,6 @@
     },
     {
       "topic": "有色金属/钨钼",
-      "count": 7
-    },
-    {
-      "topic": "DeepSeek/AI基建",
-      "count": 7
-    },
-    {
-      "topic": "全球科技估值回调",
       "count": 7
     }
   ]
