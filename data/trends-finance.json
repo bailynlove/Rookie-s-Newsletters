@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T22:12:07.259947",
+  "generated_at": "2026-06-12T07:42:23.484220",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -286,6 +286,33 @@
           "change": -0.68
         }
       }
+    },
+    {
+      "date": "2026-06-12",
+      "sentiment": 62,
+      "confidence": 0.65,
+      "indices": {
+        "上证综指": {
+          "value": 3987.01,
+          "change": -0.16
+        },
+        "深证成指": {
+          "value": 14851.98,
+          "change": -0.68
+        },
+        "创业板指": {
+          "value": 3811.25,
+          "change": -1.13
+        },
+        "科创50": {
+          "value": 1662.44,
+          "change": 0.62
+        },
+        "恒生指数": {
+          "value": 24249.29,
+          "change": -0.65
+        }
+      }
     }
   ],
   "calendar_data": [
@@ -338,6 +365,11 @@
       "date": "2026-06-11",
       "intensity": 48,
       "level": 2
+    },
+    {
+      "date": "2026-06-12",
+      "intensity": 62,
+      "level": 3
     }
   ],
   "risk_grid": [
@@ -383,6 +415,10 @@
         {
           "date": "2026-06-11",
           "level": "high"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -427,6 +463,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -473,6 +513,10 @@
         {
           "date": "2026-06-11",
           "level": "medium"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "medium"
         }
       ]
     },
@@ -518,6 +562,10 @@
         {
           "date": "2026-06-11",
           "level": "high"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -562,6 +610,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -608,6 +660,10 @@
         {
           "date": "2026-06-11",
           "level": "medium"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -653,6 +709,10 @@
         {
           "date": "2026-06-11",
           "level": "low"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "medium"
         }
       ]
     },
@@ -698,6 +758,10 @@
         {
           "date": "2026-06-11",
           "level": "low"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -742,6 +806,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -788,6 +856,10 @@
         {
           "date": "2026-06-11",
           "level": "mid"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "mid"
         }
       ]
     },
@@ -832,6 +904,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -878,6 +954,10 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -923,6 +1003,10 @@
         {
           "date": "2026-06-11",
           "level": "low"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -968,6 +1052,10 @@
         {
           "date": "2026-06-11",
           "level": "mid"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -1012,6 +1100,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "low-mid"
+        },
+        {
+          "date": "2026-06-12",
           "level": "low-mid"
         }
       ]
@@ -1058,6 +1150,10 @@
         {
           "date": "2026-06-11",
           "level": "high"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "low-mid"
         }
       ]
     },
@@ -1103,6 +1199,10 @@
         {
           "date": "2026-06-11",
           "level": "mid"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "low"
         }
       ]
     },
@@ -1147,6 +1247,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -1193,6 +1297,10 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -1237,6 +1345,10 @@
         },
         {
           "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
           "level": "unknown"
         }
       ]
@@ -1283,6 +1395,10 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     },
@@ -1328,6 +1444,10 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "unknown"
         }
       ]
     }
@@ -1339,23 +1459,23 @@
     },
     {
       "level": "mid",
-      "count": 21
+      "count": 22
     },
     {
       "level": "medium",
-      "count": 18
+      "count": 20
     },
     {
       "level": "unknown",
       "count": 12
     },
     {
-      "level": "low",
-      "count": 10
+      "level": "low-mid",
+      "count": 11
     },
     {
-      "level": "low-mid",
-      "count": 9
+      "level": "low",
+      "count": 11
     },
     {
       "level": "medium-high",
@@ -1380,6 +1500,10 @@
       "count": 20
     },
     {
+      "topic": "美伊谈判",
+      "count": 17
+    },
+    {
       "topic": "中东地缘",
       "count": 13
     },
@@ -1390,10 +1514,6 @@
     {
       "topic": "美联储鹰派预期",
       "count": 11
-    },
-    {
-      "topic": "美伊谈判",
-      "count": 9
     },
     {
       "topic": "中东冲突升级",
@@ -1412,7 +1532,7 @@
       "count": 8
     },
     {
-      "topic": "能源价格",
+      "topic": "A股硬科技重估",
       "count": 7
     }
   ]
