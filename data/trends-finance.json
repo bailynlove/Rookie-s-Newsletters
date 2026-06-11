@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T12:38:01.215228",
+  "generated_at": "2026-06-11T15:17:06.200820",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -254,16 +254,16 @@
       "confidence": 0.7,
       "indices": {
         "上证综指": {
-          "value": 3993.23,
-          "change": -0.42
+          "value": 3987.01,
+          "change": -0.16
         },
         "深证成指": {
-          "value": 14954.1,
-          "change": -2.06
+          "value": 14851.98,
+          "change": -0.68
         },
         "恒生指数": {
-          "value": 24407.96,
-          "change": -0.64
+          "value": 24183.59,
+          "change": -0.92
         },
         "道琼斯": {
           "value": 49918.78,
@@ -324,11 +324,56 @@
     },
     {
       "date": "2026-06-11",
-      "intensity": 42,
+      "intensity": 45,
       "level": 2
     }
   ],
   "risk_grid": [
+    {
+      "category": "AI科技",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "high"
+        }
+      ]
+    },
     {
       "category": "A股",
       "values": [
@@ -502,6 +547,51 @@
         {
           "date": "2026-06-10",
           "level": "low-mid"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "low"
+        }
+      ]
+    },
+    {
+      "category": "半导体材料",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
         },
         {
           "date": "2026-06-11",
@@ -686,6 +776,51 @@
         {
           "date": "2026-06-11",
           "level": "unknown"
+        }
+      ]
+    },
+    {
+      "category": "有色金属",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "low"
         }
       ]
     },
@@ -1053,11 +1188,11 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 20
+      "count": 21
     },
     {
       "level": "mid",
-      "count": 16
+      "count": 18
     },
     {
       "level": "medium",
@@ -1068,12 +1203,12 @@
       "count": 12
     },
     {
-      "level": "low-mid",
-      "count": 7
+      "level": "low",
+      "count": 9
     },
     {
-      "level": "low",
-      "count": 7
+      "level": "low-mid",
+      "count": 8
     },
     {
       "level": "medium-high",
@@ -1095,7 +1230,7 @@
   "top_trend_signals": [
     {
       "topic": "美联储政策",
-      "count": 15
+      "count": 20
     },
     {
       "topic": "中东地缘冲突",
@@ -1110,8 +1245,20 @@
       "count": 9
     },
     {
+      "topic": "半导体材料国产替代",
+      "count": 8
+    },
+    {
       "topic": "半导体产业链",
       "count": 8
+    },
+    {
+      "topic": "AI板块回调",
+      "count": 7
+    },
+    {
+      "topic": "有色金属/钨钼",
+      "count": 7
     },
     {
       "topic": "DeepSeek/AI基建",
@@ -1120,18 +1267,6 @@
     {
       "topic": "全球科技估值回调",
       "count": 7
-    },
-    {
-      "topic": "中美关系",
-      "count": 6
-    },
-    {
-      "topic": "美伊谈判/原油",
-      "count": 6
-    },
-    {
-      "topic": "美联储鹰派预期",
-      "count": 6
     }
   ]
 }

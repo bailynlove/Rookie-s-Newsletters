@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-11 a-close</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .discovery-card p {
+      color: var(--report-muted);
+      margin: 4px 0;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .discovery-card .tag {
+      display: inline-block;
+      border: 1px solid var(--report-border);
+      border-radius: 3px;
+      padding: 1px 6px;
+      font-size: 0.65rem;
+      color: var(--report-muted);
+      margin-right: 4px;
+    }
+
+    .breaking-alert {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .risk-mid {
+      border-left: 3px solid var(--report-accent);
+    }
+
+    .risk-low {
+      border-left: 3px solid var(--report-accent-2);
+    }
+
+    .data-table {
+      width: 100%;
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .data-table td {
+      padding: 8px 12px;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-text);
+    }
+
+    .data-table .up { color: var(--report-danger); }
+    .data-table .down { color: var(--report-accent-2); }
+    .data-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+      font-size: 0.8rem;
+      margin: 12px 0;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.75rem;
+    }
+
+    .report-footer a {
+      color: var(--report-accent);
+    }
+
+    /* Factor columns */
+    .factor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .factor-grid {
+        grid-template-columns: 1fr;
+      }
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .risk-assessment,
+      .market-outlook,
+      .sentiment {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .report-shell {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-finance">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-finance">宏观金融</span>
+      <h1>Friday — A股收盘分析</h1>
+      <time datetime="2026-06-11T15:05+08:00">2026年06月11日 15:05 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- 市场综述 -->
+    <section>
+      <h2>市场综述</h2>
+      <div class="discovery-card breaking-alert">
+        <h3>三大指数全线收跌 · 个股分化显著</h3>
+        <p>受隔夜美股大幅回调（道琼斯-1.87%、纳斯达克-1.98%）及"世界杯魔咒"情绪扰动，A股三大指数今日集体低开震荡收跌。沪指微跌0.16%报3987.01，深成指跌0.68%报14851.98，创业板指跌约1.13%。两市成交额合计约2.55万亿元，量能维持高位，显示多空分歧加剧。</p>
+        <p><strong>结构特征：</strong> 周期资源股（有色金属+3.49%）与半导体材料（电子特气方向）逆势大涨，而AI概念股集体回调，前期大牛股达实智能一字跌停（封单超270万手），传媒娱乐（-3.95%）、陶瓷（-3.69%）等板块跌幅居前。</p>
+      </div>
+    </section>
+
+    <!-- 核心指数 -->
+    <section>
+      <h2>核心指数</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th class="num">最新价</th>
+            <th class="num">涨跌幅</th>
+            <th class="num">备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上证综指</td>
+            <td class="num">3987.01</td>
+            <td class="num down">-0.16%</td>
+            <td>沪市成交1.19万亿</td>
+          </tr>
+          <tr>
+            <td>深证成指</td>
+            <td class="num">14851.98</td>
+            <td class="num down">-0.68%</td>
+            <td>深市成交1.37万亿</td>
+          </tr>
+          <tr>
+            <td>创业板指</td>
+            <td class="num">—</td>
+            <td class="num down">≈ -1.13%</td>
+            <td>跌幅大于主板，科技权重拖累</td>
+          </tr>
+          <tr>
+            <td>恒生指数</td>
+            <td class="num">24183.59</td>
+            <td class="num down">-0.92%</td>
+            <td>港股同步承压</td>
+          </tr>
+          <tr>
+            <td>道琼斯</td>
+            <td class="num">49918.78</td>
+            <td class="num down">-1.87%</td>
+            <td>隔夜收盘 · 今日亚洲盘参考</td>
+          </tr>
+          <tr>
+            <td>纳斯达克</td>
+            <td class="num">25169.50</td>
+            <td class="num down">-1.98%</td>
+            <td>隔夜收盘 · 科技板块承压传导</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 板块涨跌排名 -->
+    <section>
+      <h2>申万行业涨跌排名</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>涨幅 Top 5</th>
+                <th class="num">涨跌幅</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>有色金属</td>
+                <td class="num up">+3.49%</td>
+              </tr>
+              <tr>
+                <td>家具行业</td>
+                <td class="num up">+3.09%</td>
+              </tr>
+              <tr>
+                <td>开发区</td>
+                <td class="num up">+2.36%</td>
+              </tr>
+              <tr>
+                <td>化工行业</td>
+                <td class="num up">+1.71%</td>
+              </tr>
+              <tr>
+                <td>玻璃行业</td>
+                <td class="num up">+1.20%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>跌幅 Top 5</th>
+                <th class="num">涨跌幅</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>传媒娱乐</td>
+                <td class="num down">-3.95%</td>
+              </tr>
+              <tr>
+                <td>陶瓷行业</td>
+                <td class="num down">-3.69%</td>
+              </tr>
+              <tr>
+                <td>印刷包装</td>
+                <td class="num down">-3.41%</td>
+              </tr>
+              <tr>
+                <td>酒店旅游</td>
+                <td class="num down">-2.44%</td>
+              </tr>
+              <tr>
+                <td>公路桥梁</td>
+                <td class="num down">-2.49%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="discovery-card" style="margin-top: 12px;">
+        <h3>板块轮动解读</h3>
+        <p><strong>强势方向：</strong> 有色金属领涨（+3.49%），钨价大幅反弹驱动板块多股涨停，SK海力士"以钼代钨"消息催化金钼股份、厦门钨业大涨。化工（+1.71%）、电子器件（+0.40%）受益于半导体材料扩散效应，六氟化钨概念带动电子特气方向井喷。<span class="tag">资源</span><span class="tag">半导体</span></p>
+        <p><strong>弱势方向：</strong> 传媒娱乐（-3.95%）受AI概念集体回调拖累，达实智能一字跌停。前期涨幅较大的科技题材进入高位回调阶段。房地产（-0.90%）、汽车制造（-1.17%）同步走弱，消费复苏预期降温。<span class="tag">AI回调</span><span class="tag">高位风险</span></p>
+      </div>
+    </section>
+
+    <!-- L1-L4 宏观因子 -->
+    <section class="macro-factors">
+      <h2>L1-L4 宏观因子</h2>
+      <div class="factor-grid">
+
+        <div class="discovery-card">
+          <h3>L1 · 海外流动性</h3>
+          <p><strong>信号：</strong> 美联储6月议息会议前市场情绪偏谨慎。隔夜美股三大指数全线收跌（纳指-1.98%），反映市场对通胀黏性和利率维持高位的担忧。美元指数维持高位，非美货币承压。</p>
+          <p><strong>影响：</strong> 北向资金今日可能延续净流出趋势，压制A股权重股表现。</p>
+        </div>
+
+        <div class="discovery-card">
+          <h3>L1 · 地缘与贸易</h3>
+          <p><strong>信号：</strong> "对日替代"题材持续发酵。六氟化钨、光刻胶、大尺寸硅片等半导体材料国产替代逻辑获资金追捧。中美科技竞争趋势不变，自主可控主题中期逻辑清晰。</p>
+          <p><strong>影响：</strong> 半导体材料产业链持续受益，成为科技板块结构性主线。</p>
+        </div>
+
+        <div class="discovery-card">
+          <h3>L2 · 国内政策与监管</h3>
+          <p><strong>信号：</strong> 国家邮政局依法对极兔速递立案调查（安全生产事故频发），对快递物流板块有一定冲击。SpaceX IPO预期升温，境内商业航天概念获融资客逆势加仓（19股超亿元抢筹）。</p>
+          <p><strong>影响：</strong> 结构性政策信号分化，监管收紧压制部分板块风险偏好。</p>
+        </div>
+
+        <div class="discovery-card">
+          <h3>L2 · 产业趋势</h3>
+          <p><strong>信号：</strong> AI服务器升级驱动高端电子铜箔需求爆发（2026年全球需求预计达2.4万吨，同比+260%），有色金属供需偏紧叠加AI驱动逻辑。SK海力士"以钼代钨"尝试引发钼金属需求预期重塑。</p>
+          <p><strong>影响：</strong> 有色金属板块获多重催化剂共振，短期持续性较强。</p>
+        </div>
+
+        <div class="discovery-card">
+          <h3>L3 · 市场结构与资金</h3>
+          <p><strong>信号：</strong> 两市成交额约2.55万亿元，量能维持活跃。电子器件行业成交额高达2439亿元，位居全市场首位，显示资金高度聚焦半导体赛道。电力（496亿元）、有色金属（1049亿元）成交额居前。</p>
+          <p><strong>影响：</strong> 资金向资源+科技两条主线高度集中，非主线板块流动性承压。</p>
+        </div>
+
+        <div class="discovery-card">
+          <h3>L4 · 情绪与行为</h3>
+          <p><strong>信号：</strong> "世界杯魔咒"进入讨论窗口，多家券商认为短期情绪扰动大于实质。林园称"持有茅台以来心情最好"（分红创历史新高）。惠城环保从十倍股回调近74%，警示追高风险。</p>
+          <p><strong>影响：</strong> 市场情绪谨慎偏多，高位品种波动加剧，追高风险较大。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 今日焦点事件 -->
+    <section>
+      <h2>焦点事件</h2>
+
+      <div class="discovery-card">
+        <h3>⚡ 半导体材料爆发：电子特气、光刻胶方向领涨</h3>
+        <p>以六氟化钨概念为首的电子特气板块逆势大涨，光刻胶、靶材、抛光液、大尺寸硅片等半导体材料全产业链表现强势。半导体设备ETF万家涨4.31%，冲击4连阳。炬光科技开盘1分钟封死20%涨停，华特气体等多股涨停。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>⚡ 钨价大幅反弹，小金属板块多股涨停</h3>
+        <p>钨价大幅反弹驱动有色金属板块领涨。云南锗业、宝武镁业机构预测2026年业绩同比增超10倍。SK海力士尝试"以钼代钨"进一步催化钼金属需求预期。</p>
+      </div>
+
+      <div class="discovery-card breaking-alert">
+        <h3>⚠️ AI概念集体回调 · 达实智能一字跌停</h3>
+        <p>物理AI、AI营销、多模态AI等方向出现高位跳水。达实智能一字跌停，封单超270万手。惠城环保从十倍股高位回调近74%，警示高位品种波动风险。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>SpaceX IPO预期升温，商业航天获逆势加仓</h3>
+        <p>SpaceX IPO热度空前，19只商业航天概念股获得融资客超亿元抢筹（国瓷材料等）。海内外共振预期带动板块逆势活跃。</p>
+      </div>
+    </section>
+
+    <!-- 全球大类资产 -->
+    <section>
+      <h2>全球大类资产</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>资产</th>
+            <th class="num">最新价</th>
+            <th class="num">涨跌幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NYMEX 原油</td>
+            <td class="num">90.19</td>
+            <td class="num up">+0.18%</td>
+          </tr>
+          <tr>
+            <td>COMEX 黄金</td>
+            <td class="num">4119.42</td>
+            <td class="num down">-0.34%</td>
+          </tr>
+          <tr>
+            <td>COMEX 白银</td>
+            <td class="num">64.28</td>
+            <td class="num down">-0.72%</td>
+          </tr>
+          <tr>
+            <td>LME 铜</td>
+            <td class="num">13422.20</td>
+            <td class="num down">-0.69%</td>
+          </tr>
+          <tr>
+            <td>斯托克 50</td>
+            <td class="num">6028.55</td>
+            <td class="num up">+0.31%</td>
+          </tr>
+          <tr>
+            <td>日经 225</td>
+            <td class="num">64217.05</td>
+            <td class="num up">+0.06%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="discovery-card" style="margin-top:12px;">
+        <p><strong>商品解读：</strong> 原油微涨（+0.18%）交投于90美元附近，黄金（-0.34%）在4100美元上方震荡整理，贵金属整体承压于强美元环境。铜价（-0.69%）小幅回调，但AI驱动的电子铜箔需求预期为价格提供中期支撑。</p>
+      </div>
+    </section>
+
+    <!-- 风险评估 -->
+    <section class="risk-assessment">
+      <h2>风险评估</h2>
+
+      <div class="discovery-card risk-high">
+        <h3>🔴 AI概念高位回调风险</h3>
+        <p>AI概念股今日出现显著分化，达实智能一字跌停（封单270万手）为标志性事件。前期涨幅过大的品种面临获利盘集中兑现风险，短期需警惕AI板块进一步回调扩散。</p>
+        <p><strong>置信度：</strong> 高 · 已有明确信号</p>
+      </div>
+
+      <div class="discovery-card risk-mid">
+        <h3>🟡 世界杯魔咒 + 海外流动性扰动</h3>
+        <p>2026年美加墨世界杯即将开赛，历史数据显示世界杯期间A股成交趋于清淡。叠加美联储6月议息会议临近，海外流动性收紧预期可能持续压制北向资金流入。</p>
+        <p><strong>置信度：</strong> 中 · 短期情绪因素为主</p>
+      </div>
+
+      <div class="discovery-card risk-low">
+        <h3>🟢 半导体材料结构性机会</h3>
+        <p>国产替代逻辑持续强化，半导体材料（电子特气、光刻胶、靶材等）全产业链爆发。在AI算力需求 + 自主可控政策驱动下，中期结构性行情可期。</p>
+        <p><strong>置信度：</strong> 高 · 有量价验证</p>
+      </div>
+    </section>
+
+    <!-- 明日关注 -->
+    <section class="market-outlook">
+      <h2>明日关注</h2>
+      <div class="discovery-card">
+        <h3>📌 关注方向</h3>
+        <p><strong>1. 美股夜盘走势：</strong> 今日A股已反映隔夜美股大跌，若今晚美股企稳反弹，明日A股有望止跌企稳。</p>
+        <p><strong>2. 北向资金动向：</strong> 关注北向资金是否延续净流出，这将决定权重股的压力程度。</p>
+        <p><strong>3. 半导体材料持续性：</strong> 电子特气/光刻胶方向今日放量涨停潮，明日关注分歧后的板块强度。</p>
+        <p><strong>4. AI板块企稳信号：</strong> 达实智能的跌停封单变化和AI概念能否止跌是关键观察指标。</p>
+        <p><strong>5. 有色金属延续性：</strong> 钨、钼、铜等小金属受多重利好驱动，短期趋势偏强，关注是否有进一步催化。</p>
+      </div>
+    </section>
+
+    <!-- 情绪评分 -->
+    <section class="sentiment">
+      <h2>情绪与置信度</h2>
+      <div class="discovery-card">
+        <h3>市场情绪</h3>
+        <p><strong>综合评分：</strong> 45 / 100（偏谨慎）</p>
+        <p>指数普跌但成交维持高位，结构性行情活跃（资源+半导体），市场并非全面悲观，但高位AI板块回撤带来显著亏钱效应。世界杯魔咒和海外扰动加剧短期不确定性。</p>
+        <p><strong>趋势信号：</strong> AI方向 ⬇️ 回调 · 有色金属 ⬆️ 转强 · 半导体材料 ⬆️ 持续 · 消费 ⬇️ 走弱</p>
+        <p><strong>整体置信度：</strong> 75% · 数据来源充分，但外部风险变量（美联储、世界杯）存在不确定性</p>
+        <p><strong>风险水平：</strong> 中性偏高 · AI板块局部风险突出</p>
+      </div>
+    </section>
+
+    <!-- 隐私过滤占位 -->
+    <div class="privacy-notice">
+      <p>⚠️ 个人持仓分析已根据隐私策略过滤。完整分析请查看私有数据源。</p>
+    </div>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Friday 首席经济学家 · 宏观金融情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday A股收盘分析",
+    "datePublished": "2026-06-11T15:05:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "a-close",
+    "market_sentiment": 45,
+    "confidence": 0.75,
+    "key_indices": {
+      "上证综指": {"value": 3987.01, "change": -0.16},
+      "深证成指": {"value": 14851.98, "change": -0.68},
+      "恒生指数": {"value": 24183.59, "change": -0.92}
+    },
+    "risk_level": "medium-high",
+    "risk_categories": {
+      "A股整体": "low-mid",
+      "AI科技": "high",
+      "半导体材料": "low",
+      "有色金属": "low",
+      "港股": "mid",
+      "美股": "mid"
+    },
+    "trend_signals": [
+      {"topic": "半导体材料国产替代", "strength": 8, "direction": "rising"},
+      {"topic": "AI板块回调", "strength": 7, "direction": "falling"},
+      {"topic": "有色金属/钨钼", "strength": 7, "direction": "rising"},
+      {"topic": "世界杯魔咒", "strength": 3, "direction": "stable"},
+      {"topic": "美联储政策", "strength": 5, "direction": "rising"}
+    ]
+  }
+  </script>
+
+</body>
+</html>
