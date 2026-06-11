@@ -8,7 +8,7 @@
   ],
   "active_learning_rules": [],
   "quality_summary": {
-    "runs_recorded": 6,
+    "runs_recorded": 7,
     "average_score_last_7": 100.0,
     "failure_rate_last_7": 0.0,
     "recurring_weaknesses": []
@@ -16,7 +16,7 @@
   "radar_watchlist": [
     {
       "topic": "Code agent benchmarks",
-      "recent_strength": 25
+      "recent_strength": 30
     },
     {
       "topic": "MCP enterprise governance",
@@ -24,11 +24,11 @@
     },
     {
       "topic": "Agent self-evolution & skill acquisition",
-      "recent_strength": 13
+      "recent_strength": 18
     },
     {
       "topic": "Agent memory systems",
-      "recent_strength": 12
+      "recent_strength": 16
     },
     {
       "topic": "Agent formal verification & safety",
@@ -43,6 +43,14 @@
       "recent_strength": 9
     },
     {
+      "topic": "Agent scientific reasoning benchmarking",
+      "recent_strength": 5
+    },
+    {
+      "topic": "AI agent safety & governance",
+      "recent_strength": 5
+    },
+    {
       "topic": "Agent safety & verification",
       "recent_strength": 5
     },
@@ -53,18 +61,87 @@
     {
       "topic": "Agent formal verification",
       "recent_strength": 5
-    },
-    {
-      "topic": "LLM code translation & legacy migration",
-      "recent_strength": 4
-    },
-    {
-      "topic": "AI model releases (MiMo, Apple, OpenAI)",
-      "recent_strength": 4
     }
   ],
   "prompt_improvement_queue": [],
   "run_history": [
+    {
+      "id": "20260611-123759-noon",
+      "generated_at": "2026-06-11T12:37:59",
+      "period": "noon",
+      "report_path": "academic/2026-06-11/noon.html",
+      "reported_status": "ok",
+      "quality_score": 100,
+      "checks": {
+        "report_exists": true,
+        "non_empty": true,
+        "jsonld_present": true,
+        "agent_is_heimdall": true,
+        "section_is_academic": true,
+        "period_matches": true,
+        "source_link_count": 20,
+        "source_link_target": 7,
+        "source_links_meet_target": true,
+        "signal_total": 13,
+        "missing_required_sections": [],
+        "reported_status": "ok",
+        "notes": ""
+      },
+      "weaknesses": [],
+      "metadata_summary": {
+        "headline": "Heimdall 午间论文解读",
+        "period": "noon",
+        "p0_count": 3,
+        "p1_count": 4,
+        "p2_count": 6,
+        "subscription_hits": [
+          "code-agent-benchmark",
+          "agent-self-evolution",
+          "mcp-enterprise-governance",
+          "agent-memory",
+          "agent-safety"
+        ],
+        "trend_signals": [
+          {
+            "topic": "Code agent benchmarks",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Agent self-evolution & skill acquisition",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Agent scientific reasoning benchmarking",
+            "strength": 5,
+            "direction": "rising"
+          },
+          {
+            "topic": "Agent memory systems",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "AI agent safety & governance",
+            "strength": 5,
+            "direction": "spiking"
+          }
+        ],
+        "github_trending_topics": [
+          "agent-skills",
+          "mcp",
+          "code-generation",
+          "ai-agent"
+        ],
+        "arxiv_categories": [
+          "cs.AI",
+          "cs.SE",
+          "cs.CL"
+        ]
+      },
+      "recommended_next_run_adjustments": []
+    },
     {
       "id": "20260609-123815-noon",
       "generated_at": "2026-06-09T12:38:15",
@@ -523,5 +600,5 @@
       "recommended_next_run_adjustments": []
     }
   ],
-  "last_updated_at": "2026-06-09T12:38:15"
+  "last_updated_at": "2026-06-11T12:37:59"
 }

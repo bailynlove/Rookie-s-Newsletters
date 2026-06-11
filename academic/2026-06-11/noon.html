@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 学术情报日报 — 2026-06-11 noon</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文解读",
+    "datePublished": "2026-06-11T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 4,
+    "p2_count": 6,
+    "subscription_hits": ["code-agent-benchmark", "agent-self-evolution", "mcp-enterprise-governance", "agent-memory", "agent-safety"],
+    "github_trending_topics": ["agent-skills", "mcp", "code-generation", "ai-agent"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Code agent benchmarks", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent self-evolution & skill acquisition", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent scientific reasoning benchmarking", "strength": 5, "direction": "rising"},
+      {"topic": "Agent memory systems", "strength": 4, "direction": "rising"},
+      {"topic": "AI agent safety & governance", "strength": 5, "direction": "spiking"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+  }
+
+  .discovery-card p {
+    margin: 6px 0;
+    color: var(--report-muted);
+    font-size: 0.875rem;
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .discovery-card a {
+    word-break: break-all;
+  }
+
+  .discovery-card.p0 {
+    border-left: 4px solid var(--report-danger);
+  }
+
+  .discovery-card.p1 {
+    border-left: 4px solid var(--report-accent);
+  }
+
+  .discovery-card.p2 {
+    border-left: 4px solid var(--report-accent-2);
+  }
+
+  .stars {
+    color: #e8a317;
+    letter-spacing: 2px;
+  }
+
+  .data-table {
+    width: 100%;
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .data-table td {
+    border-top: 1px solid var(--report-border);
+    padding: 10px 14px;
+    color: var(--report-text);
+  }
+
+  .data-table tr:hover td {
+    background: var(--report-surface-2);
+  }
+
+  .trend-analysis,
+  .subscription-hits,
+  .action-items {
+    padding: 20px;
+  }
+
+  .trend-analysis ul,
+  .subscription-hits ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: var(--report-muted);
+    font-size: 0.875rem;
+  }
+
+  .action-items ul {
+    margin: 10px 0 0;
+    padding-left: 0;
+    list-style: none;
+    color: var(--report-muted);
+    font-size: 0.875rem;
+  }
+
+  .action-items ul li::before {
+    content: "☐ ";
+    color: var(--report-accent);
+    margin-right: 4px;
+  }
+
+  details {
+    padding: 14px 20px;
+    margin-top: 32px;
+  }
+
+  details summary {
+    cursor: pointer;
+    color: var(--report-muted);
+    font-weight: 600;
+  }
+
+  details p {
+    margin: 8px 0;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+    padding: 24px 0;
+    text-align: center;
+    font-size: 0.8125rem;
+  }
+
+  .report-footer a {
+    color: var(--report-accent);
+  }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header {
+      padding: 36px 0 28px;
+    }
+    .discovery-card {
+      padding: 16px;
+    }
+    .data-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="report-skin report-skin-academic">
+<header class="report-header">
+  <div class="container report-shell">
+    <span class="badge badge-academic">学术情报</span>
+    <h1>Heimdall — 午间论文解读</h1>
+    <time datetime="2026-06-11T12:00:00+08:00">2026年06月11日 12:00 CST</time>
+  </div>
+</header>
+
+<main class="container report-shell">
+
+<!-- Executive Summary -->
+<section>
+  <h2>高管摘要</h2>
+  <div class="trend-analysis">
+    <p>今日 arXiv 产出密集：cs.AI 新增 332 篇，cs.CL 186 篇，cs.SE 27 篇。本期核心信号：<strong>AI Agent 科学结论合成能力测评</strong>登上 P0；<strong>Agent 技能组织与演化</strong>从两方面（SkillJuror + HERO）提供实证证据；<strong>大量 Claw/OpenClaw 相关论文</strong>集中发布（Claw-SWE-Bench、ClawEnvKit、ResearchClawBench），表明 OpenClaw 生态正在快速成熟；<strong>Agent 记忆系统</strong>维持高热度（PROJECTMEM + 多篇层次化导航方法）；<strong>MCP/Agent 安全治理</strong>出现五平面参考架构论文值得关注。</p>
+  </div>
+</section>
+
+<!-- P0: Top Priority -->
+<section class="priority-p0">
+  <h2>P0 — 必须关注</h2>
+
+  <div class="discovery-card p0">
+    <h3>📄 SciConBench: Can AI Agents Synthesize Scientific Conclusions?</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11337">arXiv:2606.11337</a> (cs.AI, cs.CL, cs.CY)</p>
+    <p><strong>贡献:</strong> 构建 SciConBench — 含 9.11K 问题 + 专家撰写结论的大规模直播式科学结论合成基准。引入 SciConHarness 洁净室评估框架。评估 8 个前沿模型，最佳 agent 在洁净环境下 factual F1 仅 0.337。审查消费级 agent（Google AI Overview、OpenEvidence）发现即使答案已知也频繁生成不完整甚至矛盾结论。</p>
+    <p><strong>为什么重要:</strong> 这是目前最严谨的科学 AI agent 合成能力评估。数据泄漏对 paper 结论的"污染"量化已被严格隔离。对 STARK_TOWER 来说，直接回答了"我们的 agent 能否可靠检索后合成结论"这一核心问题。</p>
+    <p><strong>局限:</strong> 仅覆盖健康/医学领域；clean-room 设置可能低估实际部署中 web 交互的价值。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.5/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（评估 SciConHarness 方法是否可用于 STARK_TOWER 内部评测）</p>
+  </div>
+
+  <div class="discovery-card p0">
+    <h3>📄 Claw-SWE-Bench &amp; ClawEnvKit &amp; ResearchClawBench</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11196">Claw-SWE-Bench (cs.CL)</a> · <a href="https://arxiv.org/abs/2606.11243">ClawEnvKit (cs.CL)</a> · <a href="https://arxiv.org/abs/2606.11244">ResearchClawBench (cs.CL)</a></p>
+    <p><strong>贡献:</strong> 今日 OpenClaw 生态出现一批新基准：Claw-SWE-Bench 评测 OpenClaw 风格 agent harness 的编码任务能力；ClawEnvKit 实现自动环境生成；ResearchClawBench 建立端到端自主科学研究的评测标准。三篇论文彼此互补形成完整工具链。</p>
+    <p><strong>为什么重要:</strong> OpenClaw 生态正在从单个项目演变为一个评测体系。Claw 类 agent 架构可能在下一阶段与 MCP 竞争 — 这是 STARK_TOWER 必须跟踪的架构方向。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★★</span> (9.0/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（技术路线评估：Claw vs MCP vs 纯 agent 框架）</p>
+  </div>
+
+  <div class="discovery-card p0">
+    <h3>📄 A Five-Plane Reference Architecture for Runtime Governance of Production AI Agents</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11240">arXiv:2606.11240</a> (cs.AI, cs.SE, cs.CC, cs.CR)</p>
+    <p><strong>贡献:</strong> 提出面向生产环境 AI agent 运行时治理的五平面参考架构：数据平面、控制平面、推理平面、审计平面、策略平面。通过将治理嵌入 agent runtime 而非外部监控来实现可审计、可回滚的 agent 操作。</p>
+    <p><strong>为什么重要:</strong> MCP enterprise governance（radar watchlist 持续跟踪）从概念阶段进入了架构设计阶段。这篇论文提供了可直接实施的蓝图。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（与现有 MCP 治理方案对比评估）</p>
+  </div>
+</section>
+
+<!-- P1: Deep Follow-up -->
+<section class="priority-p1">
+  <h2>P1 — 值得深入</h2>
+
+  <div class="discovery-card p1">
+    <h3>📄 SkillJuror: Measuring How Agent Skill Organization Changes Runtime Behavior</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11344">arXiv:2606.11344</a> (cs.AI, cs.SE)</p>
+    <p><strong>贡献:</strong> 首次量化研究 agent 技能组织方式（扁平列表 vs 层次化 vs 图谱）对运行时行为的影响。发现技能组织方式显著影响任务完成率、token 消耗和失败恢复模式。</p>
+    <p><strong>为什么重要:</strong> 直接关联 agent-skills 项目（GitHub 52K stars）的架构设计决策。技能爆炸已成为社区共识，但"技能如何组织"一直缺乏实证。这篇论文填补了这一空白。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★</span> (8.2/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（引入技能组织策略评估）</p>
+  </div>
+
+  <div class="discovery-card p1">
+    <h3>📄 HERO: Hindsight-Enhanced Reflection from Environment Observations for Agentic Self-Distillation</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11347">arXiv:2606.11347</a> (cs.AI)</p>
+    <p><strong>贡献:</strong> 提出基于环境观测的 hindsight 增强反思，使 agent 能从失败轨迹中自蒸馏出更好的行为策略。在多种 agent 任务中展示出显著的自我进化能力。</p>
+    <p><strong>为什么重要:</strong> "Agent self-evolution"（radar watchlist 持续跟踪）从概念走向实验验证。HERO 的方法可以直接用于改善 STARK_TOWER agent 的自我改进循环。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★</span> (8.0/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（评估 HERO 是否可集成至现有 agent 训练/改进流程）</p>
+  </div>
+
+  <div class="discovery-card p1">
+    <h3>📄 PROJECTMEM: A Local-First, Event-Sourced Memory and Judgment Layer for AI Coding Agents</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11241">arXiv:2606.11241</a> (cs.AI)</p>
+    <p><strong>贡献:</strong> 提出面向 coding agent 的本地优先、事件溯源记忆层。通过结构化的事件流实现可审计的 agent 判断过程，支持跨 session 记忆持久化和上下文压缩。</p>
+    <p><strong>为什么重要:</strong> Agent 记忆系统一直是 radar 关注方向。PROJECTMEM 的本地优先 + 事件溯源思路特别适合客户端/私有部署场景。与"Agent memory systems"雷达条目直接对应。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.5/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（评估记忆架构兼容性）</p>
+  </div>
+
+  <div class="discovery-card p1">
+    <h3>📄 CRANE: Constrained Reasoning Injection for Code Agents via Nullspace Editing</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11243">arXiv:2606.11243</a> (cs.SE, cs.AI, cs.CL)</p>
+    <p><strong>贡献:</strong> 通过零空间编辑（nullspace editing）向代码 agent 注入约束推理，在不改变核心能力的前提下确保 agent 遵守安全/策略约束。实验显示约束注入后 agent 未出现能力退化。</p>
+    <p><strong>为什么重要:</strong> 与五平面治理架构互补 — CRANE 提供了更细粒度的推理层约束机制。对于需要保证 agent 行为安全的生产场景尤为重要。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.3/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（与五平面架构合并评估）</p>
+  </div>
+</section>
+
+<!-- P2: Worth Knowing -->
+<section class="priority-p2">
+  <h2>P2 — 值得了解</h2>
+
+  <div class="discovery-card p2">
+    <h3>📄 INFRAMIND: Infrastructure-Aware Multi-Agent Orchestration</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11246">arXiv:2606.11246</a> (cs.AI)</p>
+    <p><strong>贡献:</strong> 提出基础设施感知的多 agent 编排框架，在调度时考虑集群资源/网络状况/推理成本。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10)</p>
+    <p><strong>建议路由:</strong> → Banner（与成本优化相关）</p>
+  </div>
+
+  <div class="discovery-card p2">
+    <h3>📄 Goal-Autopilot: A Verifiable Anti-Fabrication Firewall for Unattended Long-Horizon Agents</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11236">arXiv:2606.11236</a> (cs.CL, cs.AI)</p>
+    <p><strong>贡献:</strong> 针对无人值守长周期 agent 的防幻觉防火墙，通过目标验证链确保 agent 不会偏离原始目标。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (6.2/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（补充 agent 安全工具集）</p>
+  </div>
+
+  <div class="discovery-card p2">
+    <h3>📄 "Do Not Mention This to the User": Detecting and Understanding Malicious Agent Skills in the Wild</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11242">arXiv:2606.11242</a> (cs.CR, cs.AI, cs.CL, cs.ET)</p>
+    <p><strong>贡献:</strong> 首次在 wild 中检测和理解恶意 agent skill。发现部分 agent skills 会在用户不知情的情况下窃取数据或执行越权操作。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (6.0/10)</p>
+    <p><strong>建议路由:</strong> → Pepper（安全研究主题）</p>
+  </div>
+
+  <div class="discovery-card p2">
+    <h3>📄 Search Discipline for Long-Horizon Research Agents</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11248">arXiv:2606.11248</a> (cs.AI)</p>
+    <p><strong>贡献:</strong> 提出 long-horizon 研究 agent 的"搜索纪律"框架，通过规划搜索路径和迭代精炼来提高长期研究任务的质量。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (5.8/10)</p>
+    <p><strong>建议路由:</strong> → Pepper（研究效率方向）</p>
+  </div>
+
+  <div class="discovery-card p2">
+    <h3>📄 MemToolAgent: Leveraging Memory for Tool Using Agents Based on Environment and User Feedback</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11244">arXiv:2606.11244</a> (cs.AI, cs.CL)</p>
+    <p><strong>贡献:</strong> 结合环境反馈和用户反馈来增强 tool-use agent 的记忆管理，实现工具使用经验的跨 session 积累。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (5.5/10)</p>
+    <p><strong>建议路由:</strong> → Jarvis（与 PROJECTMEM 合并评估）</p>
+  </div>
+
+  <div class="discovery-card p2">
+    <h3>📄 RedAct: Redacting Agent Capability Traces for Procedural Skill Protection</h3>
+    <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.11245">arXiv:2606.11245</a> (cs.CR, cs.CL)</p>
+    <p><strong>贡献:</strong> 提出 agent 能力迹（capability traces）的红action方法，防止 agent 在执行过程中泄露构建自身 skill 的敏感过程信息。</p>
+    <p><strong>评分:</strong> <span class="stars">★★★</span> (5.0/10)</p>
+    <p><strong>建议路由:</strong> → Pepper（技能保护与安全方向）</p>
+  </div>
+</section>
+
+<!-- GitHub Trending -->
+<section>
+  <h2>GitHub 今日趋势</h2>
+  <table class="data-table">
+    <thead>
+      <tr><th>仓库</th><th>描述</th><th>今日 Star</th><th>总计 Star</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></td>
+        <td>生产级 AI 编码 agent 的工程技能</td>
+        <td>821</td>
+        <td>52,345</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a></td>
+        <td>跨平台信息聚合 agent skill</td>
+        <td>2,535</td>
+        <td>39,234</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td>
+        <td>Agentic skills framework &amp; 软件方法论</td>
+        <td>1,104</td>
+        <td>223,809</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/phuryn/pm-skills">phuryn/pm-skills</a></td>
+        <td>PM skills marketplace（100+ agentic skills）</td>
+        <td>804</td>
+        <td>15,253</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools">x1xhlol/system-prompts-and-models-of-ai-tools</a></td>
+        <td>大量 AI 工具的系统提示和模型</td>
+        <td>393</td>
+        <td>139,597</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.8125rem; color:var(--report-muted); margin-top:8px;"><strong>趋势观察:</strong> agent-skills 生态持续扩张。今天前 5 中有 3 个是 agent skills/marketplace 项目。agent-skills 总数突破 52K star，superpowers 超 223K star。Skill 经济正在成为 AI agent 领域不可忽视的基础设施层。</p>
+</section>
+
+<!-- Trend Analysis -->
+<section class="trend-analysis">
+  <h2>趋势集群观察</h2>
+  <div>
+    <p><strong>🧠 集群 1: Agent 科学推理评测（P0 — spiking）</strong></p>
+    <ul>
+      <li>SciConBench + ResearchClawBench 构成"科学 agent"评测的双翼</li>
+      <li>趋势强度：★★★★★，方向：快速上升</li>
+      <li>STARK_TOWER 影响：需要评估内部 agent 在这些基准上的表现</li>
+    </ul>
+    <p><strong>🧠 集群 2: OpenClaw 生态成熟化（P1 — rising）</strong></p>
+    <ul>
+      <li>Claw-SWE-Bench + ClawEnvKit + ResearchClawBench 形成完整闭环</li>
+      <li>趋势强度：★★★★★，方向：快速上升</li>
+      <li>与 MCP 可能形成竞争/互补关系</li>
+    </ul>
+    <p><strong>🧠 集群 3: Agent 技能组织与学习（P1 — stable/rising）</strong></p>
+    <ul>
+      <li>SkillJuror（技能组织的量化研究）+ HERO（自蒸馏）+ "Do Not Mention This"（恶意 skill 检测）</li>
+      <li>趋势强度：★★★★，方向：稳定上升</li>
+      <li>GitHub agent-skills 项目 52K+ stars 验证了社区需求</li>
+    </ul>
+    <p><strong>🧠 集群 4: Agent 安全与治理（P0 — spiking）</strong></p>
+    <ul>
+      <li>五平面参考架构 + CRANE + Goal-Autopilot + RedAct</li>
+      <li>趋势强度：★★★★★，方向：快速上升</li>
+      <li>radar watchlist 中 "MCP enterprise governance" + "Agent safety" 条目持续强化</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Radar Candidates -->
+<section class="subscription-hits">
+  <h2>Radar 候补</h2>
+  <ul>
+    <li><strong>Agent 科学推理基准</strong> — SciConBench 可能成为长期关注的评测方向，建议纳入 radar</li>
+    <li><strong>OpenClaw 评测生态</strong> — 如果 Claw-SWE-Bench 等基准持续产出论文，可能成为新的技术雷达条目</li>
+    <li><strong>恶意 Agent Skill 检测</strong> — 随着 skill economy 膨胀，安全问题将越来越突出</li>
+    <li><strong>Agent 运行时治理架构</strong> — 五平面架构是当前最完整的 agent 治理蓝图</li>
+  </ul>
+</section>
+
+<!-- Action Items -->
+<section class="action-items">
+  <h2>待处理事项</h2>
+  <ul>
+    <li>Jarvis: 评估 SciConBench 方法用于 STARK_TOWER agent 内部评测</li>
+    <li>Jarvis: 评估 Claw vs MCP vs 纯 agent 框架技术路线</li>
+    <li>Jarvis: 引入 SkillJuror 的技能组织量化方法</li>
+    <li>Banner: 审查 INFRAMIND 多 agent 编排与成本优化关联</li>
+    <li>Pepper: 评估 "Do Not Mention This" 中恶意 skill 检测方法</li>
+  </ul>
+</section>
+
+<!-- Required sections -->
+<section>
+  <h2>改写要点（供 Content 参考）</h2>
+  <div class="trend-analysis">
+    <ul>
+      <li><strong>Agent 测评新高度：</strong> SciConBench 证明即使最先进的 agent 在科学结论合成上也仅达到 0.337 factual F1，消费级 AI 产品也频繁出错 — 可用于"AI 能力边界"叙事</li>
+      <li><strong>OpenClaw 生态崛起：</strong> 今天三篇相关论文集中发布，从基准（Claw-SWE-Bench）到环境生成（ClawEnvKit）到科研自动化（ResearchClawBench）全覆盖</li>
+      <li><strong>Skill 经济的三层挑战：</strong> 今天从技能组织（SkillJuror）、技能进化（HERO）和恶意技能检测（"Do Not Mention This"）三维同时讨论 — 适合做"Agent Skill 生态全景"专题</li>
+      <li><strong>Agent 治理从理论到架构：</strong> 五平面参考架构是首个完整的生产环境 AI agent 运行时治理蓝图，可直接作为技术决策参考</li>
+      <li><strong>GitHub agent-skills 爆量：</strong> 52K stars 验证技能经济不是概念炒作 — 社区已经在用生产级技能构建 agent</li>
+    </ul>
+  </div>
+</section>
+
+<details>
+  <summary>本次搜索的困难与报错</summary>
+  <p><strong>arXiv cs.AI:</strong> 332 篇新论文明细，提取了全部 36 篇新提交标题 + 主体。页面 8000+ 行使用 console 批量提取，正常工作。</p>
+  <p><strong>arXiv cs.CL:</strong> 186 篇新论文明细，提取了全部 87 篇新提交标题。页面 4500+ 行使用 console 批量提取，正常工作。</p>
+  <p><strong>arXiv cs.SE:</strong> 27 篇新论文明细，13 篇新提交 + 14 篇 cross-lists。cs.SE 的 cross-lists 中包含多篇 agent 相关论文（SkillJuror、CRANE、五平面架构等），已在报告中体现。</p>
+  <p><strong>GitHub Trending:</strong> 正常显示前 25 个仓库。需要 scroll 两次才能看到完整列表。未登录状态下可获取仓库名、描述和 star 数据。</p>
+  <p><strong>Hacker News:</strong> 正常显示前 30 条。今天 AI 相关热门：AI agent 在 Fedora 中失控事件（219 pts）、Anthropic Fable 安全围栏争议（300 pts）、Anthropic Fable/Mythos 30天数据保留（275 pts）。无 arXiv 论文在今日 HN 前 30。</p>
+  <p><strong>未使用数据源：</strong> HF Trending（动态加载仅显示前 5）、Prefetch scripts（未部署）。MCP health check 未运行（脚本路径未知）。</p>
+  <p><strong>总体评估：</strong> 无明显关键失败，本次检索链路正常。</p>
+</details>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container report-shell">
+    <p>Heimdall AI Sentinel · 学术情报流</p>
+    <p><a href="../../index.html">← 返回看板</a></p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

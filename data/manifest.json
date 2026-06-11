@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-11T07:36:56.692473",
+  "generated_at": "2026-06-11T12:38:01.211035",
   "academic": [
+    {
+      "path": "academic/2026-06-11/noon.html",
+      "date": "2026-06-11",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "Code agent benchmarks",
+        "Agent self-evolution & skill acquisition",
+        "Agent scientific reasoning benchmarking"
+      ]
+    },
     {
       "path": "academic/2026-06-09/noon.html",
       "date": "2026-06-09",
