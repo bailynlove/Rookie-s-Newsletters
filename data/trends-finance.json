@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T18:07:39.128956",
+  "generated_at": "2026-06-11T22:12:07.259947",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -253,6 +253,30 @@
       "sentiment": 42,
       "confidence": 0.7,
       "indices": {
+        "道琼斯": {
+          "value": 50254.52,
+          "change": 0.67
+        },
+        "纳斯达克": {
+          "value": 25350.96,
+          "change": 0.72
+        },
+        "标普500": {
+          "value": 5991.13,
+          "change": 0.6
+        },
+        "恒生指数": {
+          "value": 24249.29,
+          "change": -0.65
+        },
+        "NYMEX原油": {
+          "value": 89.87,
+          "change": -0.18
+        },
+        "COMEX黄金": {
+          "value": 4075.63,
+          "change": -1.4
+        },
         "上证综指": {
           "value": 3987.01,
           "change": -0.16
@@ -260,18 +284,6 @@
         "深证成指": {
           "value": 14851.98,
           "change": -0.68
-        },
-        "恒生指数": {
-          "value": 24183.59,
-          "change": -0.92
-        },
-        "道琼斯": {
-          "value": 49918.78,
-          "change": -1.87
-        },
-        "纳斯达克": {
-          "value": 25169.5,
-          "change": -1.98
         }
       }
     }
@@ -461,6 +473,51 @@
         {
           "date": "2026-06-11",
           "level": "medium"
+        }
+      ]
+    },
+    {
+      "category": "中东地缘",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "high"
         }
       ]
     },
@@ -870,6 +927,51 @@
       ]
     },
     {
+      "category": "欧洲",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "mid"
+        }
+      ]
+    },
+    {
       "category": "港股",
       "values": [
         {
@@ -1233,11 +1335,11 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 23
+      "count": 24
     },
     {
       "level": "mid",
-      "count": 18
+      "count": 21
     },
     {
       "level": "medium",
@@ -1248,11 +1350,11 @@
       "count": 12
     },
     {
-      "level": "low-mid",
-      "count": 9
+      "level": "low",
+      "count": 10
     },
     {
-      "level": "low",
+      "level": "low-mid",
       "count": 9
     },
     {
@@ -1294,6 +1396,10 @@
       "count": 9
     },
     {
+      "topic": "中东冲突升级",
+      "count": 8
+    },
+    {
       "topic": "半导体材料国产替代",
       "count": 8
     },
@@ -1306,11 +1412,7 @@
       "count": 8
     },
     {
-      "topic": "AI板块回调",
-      "count": 7
-    },
-    {
-      "topic": "有色金属/钨钼",
+      "topic": "能源价格",
       "count": 7
     }
   ]

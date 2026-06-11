@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-11 us-premarket</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .breaking-alert,
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .data-table td {
+      border-color: var(--report-border);
+      padding: 10px 14px;
+    }
+
+    .data-table tr + tr td {
+      border-top: 1px solid var(--report-border);
+    }
+
+    .up { color: var(--report-accent-2); }
+    .down { color: var(--report-danger); }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+      padding: 32px 0;
+    }
+
+    .report-footer p {
+      margin: 4px 0;
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header {
+        padding: 36px 0 28px;
+      }
+      .discovery-card,
+      .risk-assessment,
+      .market-outlook,
+      .sentiment,
+      details {
+        padding: 16px;
+      }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    .signal-bullish { border-left: 3px solid var(--report-accent-2); }
+    .signal-bearish { border-left: 3px solid var(--report-danger); }
+    .signal-neutral { border-left: 3px solid var(--report-accent); }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      border: 1px solid var(--report-border);
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday 美股盘前宏观凝视",
+    "datePublished": "2026-06-11T22:00:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "us-premarket",
+    "market_sentiment": 45,
+    "confidence": 0.60,
+    "key_indices": {
+      "道琼斯": {"value": 50254.52, "change": 0.67},
+      "纳斯达克": {"value": 25350.96, "change": 0.72},
+      "标普500": {"value": 5991.13, "change": 0.60},
+      "恒生指数": {"value": 24249.29, "change": -0.65},
+      "NYMEX原油": {"value": 89.87, "change": -0.18},
+      "COMEX黄金": {"value": 4075.63, "change": -1.40}
+    },
+    "risk_level": "high",
+    "risk_categories": {
+      "中东地缘": "high",
+      "美股": "mid",
+      "商品": "mid",
+      "债市": "low",
+      "欧洲": "mid"
+    },
+    "trend_signals": [
+      {"topic": "中东冲突升级", "strength": 8, "direction": "rising"},
+      {"topic": "欧洲央行加息", "strength": 6, "direction": "rising"},
+      {"topic": "能源价格", "strength": 7, "direction": "rising"}
+    ]
+  }
+  </script>
+</head>
+<body>
+<div class="report-skin report-skin-finance">
+
+<header class="report-header">
+  <div class="container report-shell">
+    <span class="badge badge-finance">宏观金融</span>
+    <h1>Friday — 美股盘前宏观凝视</h1>
+    <time datetime="2026-06-11T22:00+08:00">2026年6月11日 22:00 CST</time>
+    <div class="report-meta">数据更新：2026-06-11 美东时间 10:10 / 北京时间 22:10</div>
+  </div>
+</header>
+
+<main class="container report-shell">
+
+  <!-- ===== L1-L4 宏观因子 ===== -->
+  <section class="macro-factors">
+
+    <h2>L1 地缘政治 · 中东冲突急剧升级</h2>
+
+    <div class="discovery-card signal-bearish">
+      <h3>🔴 特朗普称今晚对伊朗实施"猛烈打击"</h3>
+      <p><strong>事件:</strong> 美国总统特朗普于6月11日在社交平台发文称，美国将于当晚对伊朗实施"猛烈打击"，并威胁夺取哈尔克岛。伊朗议会国家安全委员会主席回应称将遭到"更猛烈、更惨痛的回击"。</p>
+      <p><strong>信号:</strong> 中东局势急速升级。美国已连续第二天打击伊朗境内目标，阿曼附近海域一艘油轮机舱起火。油价面临新一轮供给冲击风险，避险资产或获支撑。</p>
+      <p><span class="tag">地缘冲突</span> <span class="tag">油价</span> <span class="tag">避险</span></p>
+    </div>
+
+    <div class="discovery-card signal-bearish">
+      <h3>📡 国常会：锚定科技强国建设</h3>
+      <p><strong>事件:</strong> 李强主持召开国务院常务会议，听取贯彻落实全国科技大会精神情况汇报，要求锚定科技强国建设目标，高效组织实施国家重大科技任务。</p>
+      <p><strong>信号:</strong> 政策层面对科技自主可控的扶持信号强化，或对半导体、信创等板块形成中期催化。</p>
+      <p><span class="tag">政策</span> <span class="tag">科技</span></p>
+    </div>
+
+    <h2>L2 货币政策 · 欧洲央行"保险式"加息</h2>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🏦 欧央行加息25bp，近三年首次</h3>
+      <p><strong>事件:</strong> 欧洲央行如期将三大利率上调25个基点，为近三年来首次加息。拉加德表示加息为一致通过，未讨论维持利率不变或加息50bp的方案。通胀存在上行风险，中东战争正在产生通胀压力。预计2026年GDP增长0.8%，通胀率3.0%。</p>
+      <p><strong>信号:</strong> 欧央行成为本轮主要央行中加息抗通胀的"第一人"。加息后欧元小幅走高，收益率曲线回落。短期内美元承压，对全球风险资产构成有限压制，但加息幅度温和，市场反应可控。</p>
+      <p><span class="tag">欧央行</span> <span class="tag">加息</span> <span class="tag">美元</span></p>
+    </div>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🇺🇸 美国10年期国债拍卖结果稳健</h3>
+      <p><strong>数据:</strong> 10年期国债竞拍总金额390亿美元，投标倍数2.57，中标利率尚未公布。</p>
+      <p><strong>信号:</strong> 拍卖需求正常，美债价格延续涨势，10Y/30Y收益率触及本周低点。债市情绪偏稳，短期对美股压力有限。</p>
+      <p><span class="tag">国债</span> <span class="tag">收益率</span></p>
+    </div>
+
+    <h2>L3 商品与能源 · 避险与供给冲击</h2>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🛢️ 原油：中东冲突支撑供给溢价</h3>
+      <p><strong>数据:</strong> NYMEX原油报89.87美元/桶（-0.18%）。阿曼附近油轮起火，美伊对峙升级加剧供给端不确定性。</p>
+      <p><strong>信号:</strong> 油价在90美元关口附近震荡，短期地缘溢价支撑明显。若冲突进一步升级至霍尔木兹海峡航运受阻，油价可能快速突破95-100美元区间。</p>
+      <p><span class="tag">原油</span> <span class="tag">地缘溢价</span></p>
+    </div>
+
+    <div class="discovery-card signal-bearish">
+      <h3>🥇 黄金：高位回落，关注避险支撑</h3>
+      <p><strong>数据:</strong> COMEX黄金报4,075.63美元/盎司（-1.40%），白银报63.76美元/盎司（-1.51%），LME铜报13,467.45美元/吨（-0.36%）。</p>
+      <p><strong>信号:</strong> 金价短线回调但绝对水平仍处高位。中东局势若进一步恶化，避险资金有望重返黄金。铜价微跌反映全球经济放缓预期。</p>
+      <p><span class="tag">黄金</span> <span class="tag">铜</span></p>
+    </div>
+
+    <h2>L4 全球市场 · 隔夜市场回顾</h2>
+
+    <div class="discovery-card">
+      <h3>🌐 全球指数隔夜表现</h3>
+      <table class="data-table">
+        <tr><th>市场</th><th>收盘/最新</th><th>涨跌幅</th></tr>
+        <tr><td>道琼斯</td><td>50,254.52</td><td class="up">+0.67%</td></tr>
+        <tr><td>纳斯达克</td><td>25,350.96</td><td class="up">+0.72%</td></tr>
+        <tr><td>斯托克50</td><td>6,070.93</td><td class="up">+1.01%</td></tr>
+        <tr><td>英国富时100</td><td>10,369.46</td><td class="up">+1.12%</td></tr>
+        <tr><td>日经指数</td><td>64,217.05</td><td class="up">+0.06%</td></tr>
+        <tr><td>恒生指数</td><td>24,249.29</td><td class="down">-0.65%</td></tr>
+        <tr><td>上证综指</td><td>3,987.01</td><td class="down">-0.16%</td></tr>
+        <tr><td>深证成指</td><td>14,851.98</td><td class="down">-0.68%</td></tr>
+      </table>
+      <p><strong>信号:</strong> 隔夜欧美股市普遍收涨，欧洲主要指数涨幅约1%。美股道指和纳指分别上涨0.67%和0.72%。A股今日小幅走弱，上证收于3987点，恒生指数跌0.65%。全球风险偏好高低分化。</p>
+    </div>
+
+    <div class="discovery-card">
+      <h3>⚡ 半导体需求强劲：韩国6月上旬芯片出口增逾两倍</h3>
+      <p><strong>事件:</strong> 韩国6月前10天芯片出口额增长逾两倍，SK海力士计划到2034年将晶圆产能提高两倍，显示半导体行业需求持续旺盛。</p>
+      <p><strong>信号:</strong> 半导体板块景气度持续上行。今晚美股盘前关注费城半导体指数（SOX）走势及相关个股反应。</p>
+      <p><span class="tag">半导体</span> <span class="tag">AI</span></p>
+    </div>
+
+  </section>
+
+  <!-- ===== A股收盘与板块数据 ===== -->
+  <section>
+    <h2>A股收盘数据 · 行业板块</h2>
+
+    <div class="discovery-card">
+      <h3>📊 行业板块涨跌排名</h3>
+      <table class="data-table">
+        <tr><th>排名</th><th>板块</th><th>涨跌幅</th><th>成交额(万元)</th></tr>
+        <tr><td>1</td><td>有色金属</td><td class="up">+3.49%</td><td>10,489,762</td></tr>
+        <tr><td>2</td><td>家具行业</td><td class="up">+3.09%</td><td>651,070</td></tr>
+        <tr><td>3</td><td>开发区</td><td class="up">+2.36%</td><td>364,001</td></tr>
+        <tr><td>4</td><td>化工行业</td><td class="up">+1.71%</td><td>11,966,163</td></tr>
+        <tr><td>5</td><td>玻璃行业</td><td class="up">+1.20%</td><td>2,157,672</td></tr>
+        <tr><td>6</td><td>电子器件</td><td class="up">+0.40%</td><td>24,395,546</td></tr>
+        <tr><td colspan="2" style="text-align:center"><em>… 中位板块略 …</em></td><td></td><td></td></tr>
+        <tr><td>36</td><td>机械行业</td><td class="down">-1.43%</td><td>11,582,046</td></tr>
+        <tr><td>37</td><td>船舶制造</td><td class="down">-1.49%</td><td>391,868</td></tr>
+        <tr><td>38</td><td>电子信息</td><td class="down">-1.55%</td><td>22,453,402</td></tr>
+        <tr><td>39</td><td>供水供气</td><td class="down">-1.78%</td><td>296,781</td></tr>
+      </table>
+      <p><strong>信号:</strong> 有色金属(+3.49%)领涨，化工、玻璃居前，资源品方向受益于中东冲突推升大宗商品价格预期。电子信息、机械、船舶制造等科技制造板块跌幅领先，市场风格偏向资源避险。</p>
+    </div>
+  </section>
+
+  <!-- ===== 今日焦点事件 ===== -->
+  <section>
+    <h2>今日焦点 · 事件驱动</h2>
+
+    <div class="discovery-card signal-bearish">
+      <h3>⚠️ 中东：美伊对峙加速升级</h3>
+      <p><strong>进展:</strong> 特朗普声称当晚将"猛烈打击"伊朗并威胁夺取哈尔克岛（全球重要石油中转枢纽），伊朗方面强硬回击。美国已连续第二天打击伊朗境内目标。阿曼海域油轮起火。</p>
+      <p><strong>影响预判:</strong> 若美伊冲突延续至周末，下周开盘油价可能跳涨；黄金、美债等避险资产获得支撑；美股能源板块有望受益，但大盘风险偏好将承压。</p>
+    </div>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🇨🇳 中国：美国将多家企业列入"中国军事企业清单"</h3>
+      <p><strong>进展:</strong> 包括京东方在内的多家A股、港股公司被美国国防部列入"中国军事企业清单"，相关公司已发布回应公告。</p>
+      <p><strong>影响预判:</strong> 对相关个股形成短期利空压制，但影响范围有限。关注中概股今晚盘前反应。</p>
+    </div>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🎯 国常会推动科技强国 + 芯片需求强劲</h3>
+      <p><strong>进展:</strong> 韩国6月前10天芯片出口增逾两倍，SK海力士扩产计划公布，叠加国常会科技强国部署，半导体产业链关注度提升。</p>
+      <p><strong>影响预判:</strong> 费城半导体指数今日表现值得关注。若延续涨势，或对明日A股半导体板块形成正向传导。</p>
+    </div>
+
+    <div class="discovery-card signal-neutral">
+      <h3>🌍 陆挺：财政应向社保与消费补贴倾斜</h3>
+      <p><strong>进展:</strong> 野村证券中国首席经济学家陆挺建议，中央财政支出向社会保障、基础医疗、普惠养老及消费补贴倾斜，以修复家庭资产负债表。</p>
+      <p><strong>影响预判:</strong> 若后续政策层面采纳类似建议，消费和社保相关板块或获得中期政策催化。短期影响有限，属于预期引导。</p>
+    </div>
+  </section>
+
+  <!-- ===== 风险提示 ===== -->
+  <section class="risk-assessment">
+    <h2>反面论据 · 风险提示</h2>
+
+    <div class="discovery-card risk-high">
+      <h3>🔴 中东升级 — 最大尾部风险</h3>
+      <p><strong>风险:</strong> 若美伊冲突在周末期间显著升级（攻击哈尔克岛、霍尔木兹海峡封锁等），下周全球市场可能迎来剧烈动荡。能源价格飙升将冲击全球通胀预期，倒逼央行维持鹰派立场。</p>
+    </div>
+
+    <div class="discovery-card risk-high">
+      <h3>🟠 欧央行加息信号 — 全球紧缩共振风险</h3>
+      <p><strong>风险:</strong> 欧洲央行加息25bp并上修通胀预期，预示着全球利率"higher for longer"格局仍未改变。若美联储被迫跟进或维持鹰派，对高估值成长股构成持续压力。美股纳指虽仍处高位震荡，但流动性拐点风险需警惕。</p>
+    </div>
+
+    <div class="discovery-card">
+      <h3>🟡 大宗商品波动 — 黄金高位回调</h3>
+      <p><strong>风险:</strong> 黄金近两日回调逾1%，白银回调1.5%，若短期避险情绪降温（伊朗局势周末缓和），贵金属或面临止损盘涌出的进一步下行风险。铜价亦受经济放缓预期压制。</p>
+    </div>
+
+    <div class="discovery-card">
+      <h3>🟡 世界杯魔咒效应</h3>
+      <p><strong>风险:</strong> 2026美加墨世界杯即将开赛，多家券商指出世界杯窗口期间A股成交量趋于萎缩，短期市场情绪可能受到抑制。需关注量能变化。</p>
+    </div>
+  </section>
+
+  <!-- ===== 后市展望 ===== -->
+  <section class="market-outlook">
+    <h2>今夜关注 · 美国盘前焦点</h2>
+
+    <div class="discovery-card">
+      <h3>📅 今晚重点关注</h3>
+      <p><strong>1. 20:30 EDT — 美国5月CPI数据（核心CPI）</strong><br>
+      市场预期核心CPI环比+0.3%，同比+3.4%。若数据高于预期，将强化美联储鹰派预期；若低于预期，则利好风险资产反弹。</p>
+      <p><strong>2. 中东局势盘中动态</strong><br>
+      特朗普声称的"猛烈打击"具体行动情况、市场对冲突扩散的定价。</p>
+      <p><strong>3. 科技股盘前异动</strong><br>
+      半导体需求数据利好下纳指期货表现，以及中概股对"中国军事企业清单"的反应。</p>
+      <p><strong>4. 美国5月关税退还数据</strong><br>
+      美国5月退还近220亿美元关税，或对进口企业和消费者板块构成小幅利好。</p>
+    </div>
+
+    <div class="discovery-card">
+      <h3>📈 今夜情境推演</h3>
+      <table class="data-table">
+        <tr><th>情境</th><th>触发条件</th><th>预期方向</th></tr>
+        <tr><td>🟢 乐观</td><td>CPI低于预期 + 中东未升级</td><td>纳指反弹，黄金回落</td></tr>
+        <tr><td>🟡 基准</td><td>CPI符合预期 + 中东延续对峙</td><td>美股区间震荡，油气黄金偏强</td></tr>
+        <tr><td>🔴 风险</td><td>CPI高于预期 + 中东冲突升级</td><td>美股承压下跌，避险情绪飙升</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== 情绪评分 ===== -->
+  <section class="sentiment">
+    <h2>情绪评分 · 置信度说明</h2>
+
+    <div class="discovery-card">
+      <h3>📊 盘前综合情绪评分</h3>
+      <p><strong>市场情绪：</strong> 45/100（偏谨慎）</p>
+      <p><strong>置信度：</strong> 60% — 今晚美国CPI数据和中东局势为主要不确定性来源，决策需等待数据确认</p>
+      <p><strong>核心矛盾：</strong> 中东地缘风险 vs 美国通胀路径</p>
+      <table class="data-table">
+        <tr><th>因子</th><th>方向</th><th>信心</th></tr>
+        <tr><td>地缘政治（中东）</td><td style="color:var(--report-danger)">⬇ 偏空</td><td>高</td></tr>
+        <tr><td>货币政策（欧央行加息）</td><td style="color:var(--report-danger)">⬇ 偏空</td><td>中</td></tr>
+        <tr><td>能源价格（原油）</td><td style="color:var(--report-accent-2)">⬆ 偏多</td><td>中</td></tr>
+        <tr><td>避险资产（黄金）</td><td style="color:var(--report-accent-2)">⬆ 偏多</td><td>中</td></tr>
+        <tr><td>美股（科技/纳指）</td><td style="color:var(--report-accent)">➡ 中性</td><td>低（等待CPI）</td></tr>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer class="report-footer">
+  <div class="container report-shell">
+    <p>Friday 首席经济学家 · 宏观金融情报流</p>
+    <p>美股盘前宏观凝视 · 2026-06-11 22:00 CST</p>
+    <p><a href="../../index.html">← 返回看板</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
