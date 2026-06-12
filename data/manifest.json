@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-06-12T07:42:23.479577",
+  "generated_at": "2026-06-12T08:33:37.437172",
   "academic": [
+    {
+      "path": "academic/2026-06-12/morning.html",
+      "date": "2026-06-12",
+      "period": "morning",
+      "section": "academic",
+      "keywords": [
+        "Agent skill ecosystem explosion",
+        "Code agent benchmarks",
+        "AI agent safety & governance"
+      ]
+    },
     {
       "path": "academic/2026-06-11/noon.html",
       "date": "2026-06-11",

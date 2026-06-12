@@ -8,7 +8,7 @@
   ],
   "active_learning_rules": [],
   "quality_summary": {
-    "runs_recorded": 7,
+    "runs_recorded": 8,
     "average_score_last_7": 100.0,
     "failure_rate_last_7": 0.0,
     "recurring_weaknesses": []
@@ -16,7 +16,7 @@
   "radar_watchlist": [
     {
       "topic": "Code agent benchmarks",
-      "recent_strength": 30
+      "recent_strength": 35
     },
     {
       "topic": "MCP enterprise governance",
@@ -29,6 +29,14 @@
     {
       "topic": "Agent memory systems",
       "recent_strength": 16
+    },
+    {
+      "topic": "Agent skill ecosystem explosion",
+      "recent_strength": 10
+    },
+    {
+      "topic": "AI agent safety & governance",
+      "recent_strength": 10
     },
     {
       "topic": "Agent formal verification & safety",
@@ -47,15 +55,7 @@
       "recent_strength": 5
     },
     {
-      "topic": "AI agent safety & governance",
-      "recent_strength": 5
-    },
-    {
       "topic": "Agent safety & verification",
-      "recent_strength": 5
-    },
-    {
-      "topic": "Agent skill ecosystem explosion",
       "recent_strength": 5
     },
     {
@@ -65,6 +65,83 @@
   ],
   "prompt_improvement_queue": [],
   "run_history": [
+    {
+      "id": "20260612-083335-morning",
+      "generated_at": "2026-06-12T08:33:35",
+      "period": "morning",
+      "report_path": "academic/2026-06-12/morning.html",
+      "reported_status": "ok",
+      "quality_score": 100,
+      "checks": {
+        "report_exists": true,
+        "non_empty": true,
+        "jsonld_present": true,
+        "agent_is_heimdall": true,
+        "section_is_academic": true,
+        "period_matches": true,
+        "source_link_count": 27,
+        "source_link_target": 8,
+        "source_links_meet_target": true,
+        "signal_total": 13,
+        "missing_required_sections": [],
+        "reported_status": "ok",
+        "notes": ""
+      },
+      "weaknesses": [],
+      "metadata_summary": {
+        "headline": "Heimdall 晨间简报",
+        "period": "morning",
+        "p0_count": 3,
+        "p1_count": 5,
+        "p2_count": 5,
+        "subscription_hits": [
+          "code-agent-benchmark",
+          "agent-self-evolution",
+          "mcp-enterprise-governance",
+          "agent-safety",
+          "agent-memory"
+        ],
+        "trend_signals": [
+          {
+            "topic": "Agent skill ecosystem explosion",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Code agent benchmarks",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "AI agent safety & governance",
+            "strength": 5,
+            "direction": "spiking"
+          },
+          {
+            "topic": "Agent memory & RAG systems",
+            "strength": 4,
+            "direction": "rising"
+          },
+          {
+            "topic": "Self-improving AI agents",
+            "strength": 4,
+            "direction": "rising"
+          }
+        ],
+        "github_trending_topics": [
+          "agent-skills",
+          "ai-safety",
+          "mcp",
+          "self-improving-agent"
+        ],
+        "arxiv_categories": [
+          "cs.AI",
+          "cs.SE",
+          "cs.CL"
+        ]
+      },
+      "recommended_next_run_adjustments": []
+    },
     {
       "id": "20260611-123759-noon",
       "generated_at": "2026-06-11T12:37:59",
@@ -600,5 +677,5 @@
       "recommended_next_run_adjustments": []
     }
   ],
-  "last_updated_at": "2026-06-11T12:37:59"
+  "last_updated_at": "2026-06-12T08:33:35"
 }
