@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T13:19:40.898961",
+  "generated_at": "2026-06-12T15:08:01.604770",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -293,24 +293,24 @@
       "confidence": 0.65,
       "indices": {
         "上证综指": {
-          "value": 3987.01,
-          "change": -0.16
+          "value": 4031.51,
+          "change": 1.12
         },
         "深证成指": {
-          "value": 14851.98,
-          "change": -0.68
+          "value": 14963.41,
+          "change": 0.75
         },
         "创业板指": {
-          "value": 3811.25,
-          "change": -1.13
+          "value": 3830.35,
+          "change": 0.5
         },
         "科创50": {
-          "value": 1662.44,
-          "change": 0.62
+          "value": 1663.22,
+          "change": 0.05
         },
         "恒生指数": {
-          "value": 24249.29,
-          "change": -0.65
+          "value": 24598.66,
+          "change": 1.44
         }
       }
     }
@@ -368,7 +368,7 @@
     },
     {
       "date": "2026-06-12",
-      "intensity": 62,
+      "intensity": 65,
       "level": 3
     }
   ],
@@ -1455,27 +1455,27 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 24
+      "count": 25
     },
     {
       "level": "mid",
-      "count": 22
+      "count": 23
     },
     {
       "level": "medium",
-      "count": 20
+      "count": 21
+    },
+    {
+      "level": "low-mid",
+      "count": 13
+    },
+    {
+      "level": "low",
+      "count": 12
     },
     {
       "level": "unknown",
       "count": 12
-    },
-    {
-      "level": "low-mid",
-      "count": 11
-    },
-    {
-      "level": "low",
-      "count": 11
     },
     {
       "level": "medium-high",
@@ -1497,11 +1497,11 @@
   "top_trend_signals": [
     {
       "topic": "美联储政策",
-      "count": 20
+      "count": 25
     },
     {
       "topic": "美伊谈判",
-      "count": 17
+      "count": 22
     },
     {
       "topic": "中东地缘",
@@ -1514,6 +1514,10 @@
     {
       "topic": "美联储鹰派预期",
       "count": 11
+    },
+    {
+      "topic": "SpaceX IPO",
+      "count": 8
     },
     {
       "topic": "中东冲突升级",
@@ -1530,10 +1534,6 @@
     {
       "topic": "半导体产业链",
       "count": 8
-    },
-    {
-      "topic": "A股硬科技重估",
-      "count": 7
     }
   ]
 }

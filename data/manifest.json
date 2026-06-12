@@ -1,17 +1,6 @@
 {
-  "generated_at": "2026-06-12T13:19:40.894184",
+  "generated_at": "2026-06-12T15:08:01.599956",
   "academic": [
-    {
-      "path": "academic/2026-06-12/12-00-agent-benchmark-tool-safety-mcp.html",
-      "date": "2026-06-12",
-      "period": "12-00-agent-benchmark-tool-safety-mcp",
-      "section": "academic",
-      "keywords": [
-        "Agent-native code benchmarks",
-        "Agent tool knowledge & parametric retrieval",
-        "Agent memory & self-evolution"
-      ]
-    },
     {
       "path": "academic/2026-06-12/noon.html",
       "date": "2026-06-12",
@@ -291,6 +280,17 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-06-12/a-close.html",
+      "date": "2026-06-12",
+      "period": "a-close",
+      "section": "macro-finance",
+      "keywords": [
+        "美联储政策",
+        "SpaceX IPO",
+        "科创50成分调整"
+      ]
+    },
     {
       "path": "macro-finance/2026-06-12/morning.html",
       "date": "2026-06-12",
