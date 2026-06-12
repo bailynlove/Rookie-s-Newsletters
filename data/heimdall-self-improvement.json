@@ -6,7 +6,9 @@
     "Apply active_learning_rules during source selection, report writing, and final verification.",
     "Do not rewrite Hermes skills or cron prompts automatically; add proposals to prompt_improvement_queue."
   ],
-  "active_learning_rules": [],
+  "active_learning_rules": [
+    "ENSURE_SOURCE_LINKS: Every P0/P1/P2 discovery card must have a clickable arXiv URL (https://arxiv.org/abs/XXXX.XXXXX) as its source link. Use browser_console to extract arXiv IDs from list pages before writing the report."
+  ],
   "quality_summary": {
     "runs_recorded": 10,
     "average_score_last_7": 97.1,
