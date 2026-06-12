@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friday 宏观金融日报 — 2026-06-12 us-premarket</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <style>
+    :root {
+      --report-bg: #faf8f0;
+      --report-surface: #ffffff;
+      --report-surface-2: #f2eddd;
+      --report-border: #ded4b8;
+      --report-text: #231f16;
+      --report-muted: #766b55;
+      --report-accent: #8a6f12;
+      --report-accent-2: #1b7f55;
+      --report-danger: #b42318;
+      --report-shadow: 0 8px 26px rgba(50, 38, 16, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --report-bg: #0f0d08;
+      --report-surface: #18150e;
+      --report-surface-2: #221e13;
+      --report-border: #3d3421;
+      --report-text: #f0eadc;
+      --report-muted: #a99d80;
+      --report-accent: #ffd166;
+      --report-accent-2: #7fffca;
+      --report-danger: #ff786b;
+      --report-shadow: none;
+    }
+
+    body {
+      background: var(--report-bg);
+      color: var(--report-text);
+      font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+    }
+
+    .report-skin {
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .report-skin::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+      background-size: 18px 18px;
+    }
+
+    .report-shell {
+      max-width: 860px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .report-header {
+      background: transparent;
+      border-bottom: 1px solid var(--report-border);
+      padding: 56px 0 40px;
+    }
+
+    .report-header h1 {
+      margin-top: 18px;
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--report-text);
+    }
+
+    .report-header time,
+    .report-meta {
+      display: block;
+      margin-top: 12px;
+      color: var(--report-muted);
+      font-size: 0.8125rem;
+    }
+
+    .badge-finance {
+      border: 1px solid var(--report-accent);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--report-accent);
+      letter-spacing: 0.18em;
+    }
+
+    main.report-shell {
+      padding-top: 42px;
+      padding-bottom: 72px;
+    }
+
+    main.report-shell > section {
+      margin: 0 0 48px;
+      animation: reportFadeUp 0.5s ease both;
+    }
+
+    section > h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--report-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    section > h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--report-border);
+    }
+
+    .discovery-card,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-radius: 6px;
+      box-shadow: var(--report-shadow);
+    }
+
+    .discovery-card {
+      padding: 20px;
+    }
+
+    .discovery-card + .discovery-card {
+      margin-top: 12px;
+    }
+
+    .discovery-card h3 {
+      color: var(--report-text);
+      font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .discovery-card p,
+    .risk-assessment,
+    .market-outlook,
+    .sentiment,
+    details {
+      color: var(--report-muted);
+    }
+
+    .discovery-card strong,
+    a {
+      color: var(--report-accent);
+    }
+
+    .breaking-alert,
+    .risk-high {
+      border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 35%);
+    }
+
+    .data-table {
+      background: var(--report-surface);
+      border: 1px solid var(--report-border);
+      border-collapse: collapse;
+      border-radius: 6px;
+      overflow: hidden;
+      font-size: 0.8125rem;
+      width: 100%;
+    }
+
+    .data-table th {
+      background: var(--report-surface-2);
+      color: var(--report-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .data-table td,
+    .data-table th {
+      border-color: var(--report-border);
+      padding: 8px 12px;
+      text-align: right;
+    }
+
+    .data-table td:first-child,
+    .data-table th:first-child {
+      text-align: left;
+    }
+
+    .data-table .up { color: var(--report-accent-2); }
+    .data-table .down { color: var(--report-danger); }
+
+    .privacy-notice {
+      background: var(--report-surface-2);
+      border: 1px dashed var(--report-border);
+      border-radius: 6px;
+      color: var(--report-muted);
+      padding: 14px 16px;
+    }
+
+    .report-footer {
+      background: transparent;
+      border-top: 1px solid var(--report-border);
+      color: var(--report-muted);
+    }
+
+    @keyframes reportFadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .report-header { padding: 36px 0 28px; }
+      .discovery-card, .risk-assessment, .market-outlook, .sentiment, details { padding: 16px; }
+      .data-table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="report-skin report-skin-finance">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-finance">宏观金融</span>
+      <h1>Friday — 美股盘前宏观凝视</h1>
+      <time datetime="2026-06-12T22:00+08:00">2026年6月12日 22:00 CST</time>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ==================== L1-L4 宏观因子 ==================== -->
+    <section class="macro-factors">
+      <h2>L1-L4 宏观因子</h2>
+
+      <!-- L1: 全球宏观 -->
+      <div class="discovery-card">
+        <h3>🌍 L1—全球宏观：美伊协议存疑 · SpaceX上市创纪录</h3>
+        <p><strong>事件:</strong> 特朗普否认伊朗媒体发布的美伊协议草案，称其与"双方书面达成的协议毫无关系"。此前伊媒公布14点谅解备忘录草案，市场曾视为中东风险缓释信号。美伊据报可能在七国集团峰会期间签署协议。</p>
+        <p><strong>解读:</strong> 协议不确定性上升，地缘溢价可能重新计入原油。若后续峰会未能落地，布伦特/ WTI 短期存在上行风险。</p>
+        <p><strong>事件:</strong> SpaceX 今日在纳斯达克挂牌交易，开盘大涨29%，IPO 募资约750亿美元，刷新全球最大IPO纪录。马斯克个人财富突破万亿美元门槛，成为人类历史上首位万亿富豪。</p>
+        <p><strong>解读:</strong> 科技 IPO 热情高涨，市场风险偏好处于高位。SpaceX 上市对其他太空/商业航天板块有提振效应，但巨量资金虹吸亦需关注。</p>
+      </div>
+
+      <!-- L2: 境内宏观 -->
+      <div class="discovery-card">
+        <h3>📊 L2—境内宏观：社融数据公布 · A股放量突破4000点</h3>
+        <p><strong>数据:</strong> 央行公布前五个月社融增量累计17.48万亿元，人民币贷款增加9.11万亿元。社融数据与此前市场预期基本吻合，反映信贷投放平稳、实体融资需求温和修复。</p>
+        <p><strong>信号:</strong> 中性偏积极。企业中长期贷款占比提升是结构亮点，但居民端信贷恢复仍需观察。市场更关注后续货币政策取向（降准预期）。</p>
+      </div>
+
+      <!-- L3: 行业与资金 -->
+      <div class="discovery-card">
+        <h3>🏭 L3—行业与资金：金融引领 · 有色金属强势 · CPO撤退</h3>
+        <p><strong>A股收盘:</strong> 上证指数收涨1.12%报4031.51点，全市场成交额3.24万亿元，较前日放量6600亿元。超3900只个股飘红，"牛市旗手"券商股全面爆发。</p>
+        <p><strong>板块涨幅前三:</strong> 摩托车 +4.85%、飞机制造 +3.45%、物资外贸 +2.95%。有色金属板块 +2.84%，铜陵有色涨停，受益于 LME 铜价新高。金融行业 +2.75%，中银证券、财达证券涨停。</p>
+        <p><strong>资金分歧:</strong> CPO 龙头股两日净流出81亿元，资金加速高低切换。有色金属、电力设备板块获得主力资金大幅净买入，通信、电子板块主力资金大幅撤离。中基协发布公募基金主题投资风格管理指引，严控风格漂移。</p>
+        <p><strong>信号:</strong> 放量上攻支撑短期乐观情绪，但CPO/通信方向资金撤离提示科技板块内部分化加剧。有色+金融的轮动组合暗示市场偏向复苏+周期逻辑。</p>
+      </div>
+
+      <!-- L4: 全球资产定价 -->
+      <div class="discovery-card">
+        <h3>💰 L4—全球资产：黄金继续飙升 · 原油承压 · 美指小幅分化</h3>
+        <p><strong>COMEX黄金:</strong> 4207.66美元/盎司，日内+2.28%。白银66.46美元，+3.84%。贵金属延续强势，地缘不确定性与降息预期双重推动。</p>
+        <p><strong>NYMEX原油:</strong> 86.90美元/桶，-0.93%。美伊协议前景不明压制供给端预期，但短期下行空间有限。</p>
+        <p><strong>LME铜:</strong> 13684.35美元/吨，+1.50%。铜价继续创新高，AI算力+新能源需求驱动铜供需缺口扩大。</p>
+        <p><strong>道琼斯:</strong> 51018.98（前收盘），+0.33%。<strong>纳斯达克:</strong> 25761.06（前收盘），-0.19%。美股周四收盘涨跌互现，科技股承压而蓝筹走强。今晚焦点：SpaceX 上市后首日表现 + 美伊协议进展。</p>
+        <p><strong>欧股:</strong> 斯托克50 +1.56%，英国富时 +1.09%。<strong>日经:</strong> 66019.82 +2.81%。全球股市整体偏强。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 美股盘前聚焦 ==================== -->
+    <section>
+      <h2>🇺🇸 美股盘前聚焦</h2>
+
+      <div class="discovery-card">
+        <h3>SpaceX IPO 首日——史上最大规模上市</h3>
+        <p><strong>数据:</strong> 发行价135美元/股，开盘价174美元（+29%），发行约5.556亿股，募资约750亿美元。市值超9000亿美元。</p>
+        <p><strong>影响:</strong> SpaceX 市值约为波音的3倍，成为全球最具价值的航空航天公司。此次IPO将为马斯克旗下其他公司（xAI、Neuralink、X）的上市路径提供估值锚点。短期对纳指期货的带动效应值得关注。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>美伊协议动态——特朗普否认草案真实性</h3>
+        <p><strong>事件:</strong> 特朗普在社交媒体发文称伊朗媒体发布的美伊协议草案"与事实不符"，但此前伊媒公布的14点备忘录包含核设施透明度、石油出口限制等条款。七国集团峰会（6月15-17日）被视为签署窗口。</p>
+        <p><strong>市场影响:</strong> 若协议落空，油价可能重新上探90美元+。若达成协议，伊朗石油回归全球市场将使供给增加约100-150万桶/日，压低油价。目前市场倾向定价"不会轻易达成"。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>本周美股回顾与今夜展望</h3>
+        <p><strong>回顾:</strong> 道指周四微涨0.33%，纳指微跌0.19%。本周科技股遭遇获利了结压力，CPO龙头连续两日净流出也反映了全球科技仓位调整趋势。</p>
+        <p><strong>今夜关键:</strong> (1) SpaceX 上市后首日走势——是否触发散户FOMO追涨；(2) 美伊协议相关言论；(3) 盘前期货数据变化。目前纳指期货微幅偏弱，标普500期货基本持平。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 跨市场对比 ==================== -->
+    <section>
+      <h2>📋 跨市场指数对比</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>指数</th>
+            <th>最新价</th>
+            <th>涨跌幅</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>上证指数</td>
+            <td>4031.51</td>
+            <td class="up">+1.12%</td>
+            <td>今日收盘，重回4000点</td>
+          </tr>
+          <tr>
+            <td>深证成指</td>
+            <td>14963.41</td>
+            <td class="up">+0.75%</td>
+            <td>今日收盘</td>
+          </tr>
+          <tr>
+            <td>创业板指</td>
+            <td>3830.35</td>
+            <td class="up">+0.50%</td>
+            <td>今日收盘</td>
+          </tr>
+          <tr>
+            <td>科创50</td>
+            <td>1663.22</td>
+            <td class="up">+0.05%</td>
+            <td>今日收盘</td>
+          </tr>
+          <tr>
+            <td>恒生指数</td>
+            <td>24718.10</td>
+            <td class="up">+1.93%</td>
+            <td>今日收盘，低估值修复延续</td>
+          </tr>
+          <tr>
+            <td>道琼斯</td>
+            <td>51018.98</td>
+            <td class="up">+0.33%</td>
+            <td>前收盘（6/11）</td>
+          </tr>
+          <tr>
+            <td>纳斯达克</td>
+            <td>25761.06</td>
+            <td class="down">-0.19%</td>
+            <td>前收盘（6/11）</td>
+          </tr>
+          <tr>
+            <td>日经指数</td>
+            <td>66019.82</td>
+            <td class="up">+2.81%</td>
+            <td>今日收盘</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>商品</th>
+            <th>最新价</th>
+            <th>涨跌幅</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NYMEX 原油</td>
+            <td>86.90</td>
+            <td class="down">-0.93%</td>
+            <td>美伊协议不确定性</td>
+          </tr>
+          <tr>
+            <td>COMEX 黄金</td>
+            <td>4207.66</td>
+            <td class="up">+2.28%</td>
+            <td>避险+降息预期持续推动</td>
+          </tr>
+          <tr>
+            <td>COMEX 白银</td>
+            <td>66.46</td>
+            <td class="up">+3.84%</td>
+            <td>贵金属整体强势</td>
+          </tr>
+          <tr>
+            <td>LME 铜</td>
+            <td>13684.35</td>
+            <td class="up">+1.50%</td>
+            <td>新高，AI+新能源驱动</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ==================== A股板块排名 ==================== -->
+    <section>
+      <h2>📊 A股行业板块涨幅前10（今日）</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>板块</th>
+            <th>涨跌幅</th>
+            <th>成交额(万元)</th>
+            <th>领涨股</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>摩托车</td><td class="up">+4.85%</td><td>327,456</td><td>宗申动力 +10.02%</td></tr>
+          <tr><td>2</td><td>飞机制造</td><td class="up">+3.45%</td><td>1,672,701</td><td>中航西飞 +10.01%</td></tr>
+          <tr><td>3</td><td>物资外贸</td><td class="up">+2.95%</td><td>703,644</td><td>中成股份 +10.02%</td></tr>
+          <tr><td>4</td><td>有色金属</td><td class="up">+2.84%</td><td>16,198,722</td><td>铜陵有色 +10.08%</td></tr>
+          <tr><td>5</td><td>陶瓷行业</td><td class="up">+2.77%</td><td>227,484</td><td>开尔新材 +9.76%</td></tr>
+          <tr><td>6</td><td>金融行业</td><td class="up">+2.75%</td><td>6,832,332</td><td>国金证券 +6.66%</td></tr>
+          <tr><td>7</td><td>交通运输</td><td class="up">+2.59%</td><td>2,711,563</td><td>中信海直 +9.98%</td></tr>
+          <tr><td>8</td><td>酒店旅游</td><td class="up">+2.55%</td><td>912,614</td><td>张家界 +5.54%</td></tr>
+          <tr><td>9</td><td>农药化肥</td><td class="up">+2.43%</td><td>1,979,151</td><td>诺普信 +9.99%</td></tr>
+          <tr><td>10</td><td>船舶制造</td><td class="up">+2.36%</td><td>581,485</td><td>天海防务 +5.08%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ==================== 风险提示 ==================== -->
+    <section class="risk-assessment">
+      <h2>⚠️ 风险提示 & 反面论据</h2>
+
+      <div class="discovery-card breaking-alert">
+        <h3>🔴 美伊协议反复——地缘风险不可忽视</h3>
+        <p><strong>风险等级:</strong> 中高</p>
+        <p>特朗普否认协议草案真实性，G7峰会前的外交博弈可能加剧。若协议彻底破裂，中东紧张局势将推升原油和黄金，对全球风险资产形成压制。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🟡 CPO/科技板块资金大幅撤离</h3>
+        <p><strong>风险等级:</strong> 中</p>
+        <p>CPO龙头连续两日净流出合计81亿元，通信/电子板块主力资金大幅流出。科技股高位分歧加大，若今晚纳指继续承压，下周A股科技方向可能面临回调压力。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🟡 社融结构——居民端信贷仍偏弱</h3>
+        <p><strong>风险等级:</strong> 低-中</p>
+        <p>前五个月社融总量符合预期，但结构上看企业和居民端分化延续。居民中长期贷款增量仍偏弱，房地产复苏斜率放缓，若后续数据低于预期，可能拖累市场情绪。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>🟢 SpaceX IPO 对美股的"虹吸效应"</h3>
+        <p><strong>风险等级:</strong> 低</p>
+        <p>作为全球最大IPO，SpaceX上市首日即吸筹约750亿美元。短期内可能分流其他科技板块资金，但从中长期看，这轮科技IPO热潮提振市场整体风险偏好。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 今夜 & 下周关注 ==================== -->
+    <section class="market-outlook">
+      <h2>🔭 今夜 & 下周关注</h2>
+
+      <div class="discovery-card">
+        <h3>今夜焦点</h3>
+        <p><strong>1. SpaceX 上市次日表现</strong> — 首日大涨29%后能否稳住？将影响美股科技板块情绪和后续IPO定价锚。</p>
+        <p><strong>2. 美伊协议进展</strong> — 特朗普周末期间是否会有进一步言论，G7峰会的签署预期能否兑现。</p>
+        <p><strong>3. 美股期货收盘</strong> — 道指/纳指期货最终收盘方向将给下周一亚洲市场提供指引。</p>
+      </div>
+
+      <div class="discovery-card">
+        <h3>下周（6/15-6/19）关注</h3>
+        <p><strong>1. G7峰会（6/15-17）</strong> — 美伊协议、贸易政策、AI监管等都是核心议题。峰会成果将对全球风险偏好产生关键影响。</p>
+        <p><strong>2. 长鑫科技IPO注册获批</strong> — 证监会已批复科创板注册，下周一A股半导体/存储方向可能受消息刺激。</p>
+        <p><strong>3. A股4000点能否站稳</strong> — 今日放量突破后，市场将观察4000点的有效性。金融+周期组合能否延续是判断趋势持续性的关键。</p>
+        <p><strong>4. MLCC涨价链条</strong> — AI算力驱动MLCC量价齐升，机构扎堆调研头部企业。电子元器件板块值得持续跟踪。</p>
+      </div>
+    </section>
+
+    <!-- ==================== 情绪评分 ==================== -->
+    <section class="sentiment">
+      <h2>📈 情绪评分 & 置信度</h2>
+
+      <div class="discovery-card">
+        <h3>市场情绪框架</h3>
+        <p><strong>A股:</strong> 积极偏乐观（65/100）。放量突破4000点 + 券商爆发 + 超3900只个股上涨，短期动能强劲。但板块轮动加快（科技→周期+金融），内部分化需警惕。</p>
+        <p><strong>港股:</strong> 偏积极（60/100）。恒指今日+1.93%跟随A股上涨，低估值修复逻辑持续，但成交量配合度一般。</p>
+        <p><strong>美股:</strong> 中性偏谨慎（50/100）。纳指微跌、科技股获利回吐。SpaceX IPO是结构性亮点，但整体方向待今夜确认。</p>
+        <p><strong>商品:</strong> 黄金积极（70/100），原油中性偏弱（45/100），铜积极（75/100）。</p>
+        <p><strong>综合置信度:</strong> 65%（数据源均为今日实时或前收盘，信息充分但G7峰会前事件驱动型波动可能加大）</p>
+      </div>
+
+      <div class="privacy-notice">
+        <p>⚠️ 个人持仓/组合评估已根据隐私策略过滤。完整分析请查看私有数据源。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Friday 首席经济学家 · 宏观金融情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Friday 美股盘前宏观凝视",
+    "datePublished": "2026-06-12T22:00:00+08:00",
+    "agent": "friday",
+    "section": "macro-finance",
+    "period": "us-premarket",
+    "market_sentiment": 58,
+    "confidence": 0.65,
+    "key_indices": {
+      "上证综指": {"value": 4031.51, "change": 1.12},
+      "创业板指": {"value": 3830.35, "change": 0.50},
+      "科创50": {"value": 1663.22, "change": 0.05},
+      "恒生指数": {"value": 24718.10, "change": 1.93},
+      "道琼斯": {"value": 51018.98, "change": 0.33},
+      "纳斯达克": {"value": 25761.06, "change": -0.19}
+    },
+    "risk_level": "medium",
+    "risk_categories": {
+      "A股整体": "low-mid",
+      "科技股": "mid",
+      "港股": "low",
+      "美股": "mid",
+      "债市": "low",
+      "商品": "mid",
+      "地缘": "mid-high"
+    },
+    "trend_signals": [
+      {"topic": "美伊协议", "strength": 7, "direction": "uncertain"},
+      {"topic": "SpaceX IPO", "strength": 8, "direction": "rising"},
+      {"topic": "A股4000点突破", "strength": 6, "direction": "rising"},
+      {"topic": "黄金避险", "strength": 7, "direction": "rising"}
+    ]
+  }
+  </script>
+</body>
+</html>

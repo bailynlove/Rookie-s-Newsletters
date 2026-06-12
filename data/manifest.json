@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T18:07:44.854607",
+  "generated_at": "2026-06-12T22:13:54.773957",
   "academic": [
     {
       "path": "academic/2026-06-12/noon.html",
@@ -280,6 +280,17 @@
     }
   ],
   "macro_finance": [
+    {
+      "path": "macro-finance/2026-06-12/us-premarket.html",
+      "date": "2026-06-12",
+      "period": "us-premarket",
+      "section": "macro-finance",
+      "keywords": [
+        "美伊协议",
+        "SpaceX IPO",
+        "A股4000点突破"
+      ]
+    },
     {
       "path": "macro-finance/2026-06-12/a-close.html",
       "date": "2026-06-12",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T18:07:44.859695",
+  "generated_at": "2026-06-12T22:13:54.781034",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -296,10 +296,6 @@
           "value": 4031.51,
           "change": 1.12
         },
-        "深证成指": {
-          "value": 14963.41,
-          "change": 0.75
-        },
         "创业板指": {
           "value": 3830.35,
           "change": 0.5
@@ -309,8 +305,20 @@
           "change": 0.05
         },
         "恒生指数": {
-          "value": 24598.66,
-          "change": 1.44
+          "value": 24718.1,
+          "change": 1.93
+        },
+        "道琼斯": {
+          "value": 51018.98,
+          "change": 0.33
+        },
+        "纳斯达克": {
+          "value": 25761.06,
+          "change": -0.19
+        },
+        "深证成指": {
+          "value": 14963.41,
+          "change": 0.75
         }
       }
     }
@@ -913,6 +921,55 @@
       ]
     },
     {
+      "category": "地缘",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "mid-high"
+        }
+      ]
+    },
+    {
       "category": "地缘政治",
       "values": [
         {
@@ -1503,12 +1560,12 @@
   ],
   "risk_distribution": [
     {
-      "level": "high",
-      "count": 27
+      "level": "mid",
+      "count": 28
     },
     {
-      "level": "mid",
-      "count": 25
+      "level": "high",
+      "count": 27
     },
     {
       "level": "medium",
@@ -1516,22 +1573,22 @@
     },
     {
       "level": "low-mid",
-      "count": 14
+      "count": 15
     },
     {
       "level": "low",
-      "count": 12
+      "count": 14
     },
     {
       "level": "unknown",
       "count": 12
     },
     {
-      "level": "medium-high",
-      "count": 3
+      "level": "mid-high",
+      "count": 4
     },
     {
-      "level": "mid-high",
+      "level": "medium-high",
       "count": 3
     },
     {
@@ -1553,6 +1610,10 @@
       "count": 22
     },
     {
+      "topic": "SpaceX IPO",
+      "count": 16
+    },
+    {
       "topic": "中东地缘",
       "count": 13
     },
@@ -1563,10 +1624,6 @@
     {
       "topic": "美联储鹰派预期",
       "count": 11
-    },
-    {
-      "topic": "SpaceX IPO",
-      "count": 8
     },
     {
       "topic": "中东冲突升级",
