@@ -1,0 +1,81 @@
+{
+  "id": "20260612-131233-noon",
+  "generated_at": "2026-06-12T13:12:33",
+  "period": "noon",
+  "report_path": "academic/2026-06-12/noon.html",
+  "reported_status": "ok",
+  "quality_score": 80,
+  "checks": {
+    "report_exists": true,
+    "non_empty": true,
+    "jsonld_present": true,
+    "agent_is_heimdall": true,
+    "section_is_academic": true,
+    "period_matches": true,
+    "source_link_count": 3,
+    "source_link_target": 8,
+    "source_links_meet_target": false,
+    "signal_total": 12,
+    "missing_required_sections": [],
+    "reported_status": "ok",
+    "notes": ""
+  },
+  "weaknesses": [
+    "low_source_links"
+  ],
+  "metadata_summary": {
+    "headline": "Heimdall 午间论文解读",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 4,
+    "subscription_hits": [
+      "code-agent-benchmark",
+      "agent-self-evolution",
+      "agent-memory",
+      "mcp-enterprise-governance",
+      "agent-safety"
+    ],
+    "trend_signals": [
+      {
+        "topic": "Agent-native code benchmarks",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "Agent tool knowledge & parametric retrieval",
+        "strength": 5,
+        "direction": "rising"
+      },
+      {
+        "topic": "Agent memory & self-evolution",
+        "strength": 4,
+        "direction": "rising"
+      },
+      {
+        "topic": "Agent safety & containment",
+        "strength": 5,
+        "direction": "spiking"
+      },
+      {
+        "topic": "Code agent evaluation (beyond pass@k)",
+        "strength": 5,
+        "direction": "rising"
+      }
+    ],
+    "github_trending_topics": [
+      "agent-benchmark",
+      "mcp",
+      "code-generation",
+      "llm-tool-use"
+    ],
+    "arxiv_categories": [
+      "cs.AI",
+      "cs.SE",
+      "cs.CL"
+    ]
+  },
+  "recommended_next_run_adjustments": [
+    "For every P0/P1 claim, attach an original source URL; avoid source-less summaries."
+  ]
+}

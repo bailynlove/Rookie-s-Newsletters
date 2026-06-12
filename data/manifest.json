@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-06-12T08:33:37.437172",
+  "generated_at": "2026-06-12T13:19:40.894184",
   "academic": [
+    {
+      "path": "academic/2026-06-12/12-00-agent-benchmark-tool-safety-mcp.html",
+      "date": "2026-06-12",
+      "period": "12-00-agent-benchmark-tool-safety-mcp",
+      "section": "academic",
+      "keywords": [
+        "Agent-native code benchmarks",
+        "Agent tool knowledge & parametric retrieval",
+        "Agent memory & self-evolution"
+      ]
+    },
+    {
+      "path": "academic/2026-06-12/noon.html",
+      "date": "2026-06-12",
+      "period": "noon",
+      "section": "academic",
+      "keywords": [
+        "Agent-native code benchmarks",
+        "Agent tool knowledge & parametric retrieval",
+        "Agent memory & self-evolution"
+      ]
+    },
     {
       "path": "academic/2026-06-12/morning.html",
       "date": "2026-06-12",

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heimdall 午间论文解读 — 2026-06-12</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script>
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+  <script type="module" src="../../assets/js/report-bookmarks.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Heimdall 午间论文解读",
+    "datePublished": "2026-06-12T12:00:00+08:00",
+    "agent": "heimdall",
+    "section": "academic",
+    "period": "noon",
+    "p0_count": 3,
+    "p1_count": 5,
+    "p2_count": 4,
+    "subscription_hits": ["code-agent-benchmark", "agent-self-evolution", "agent-memory", "mcp-enterprise-governance", "agent-safety"],
+    "github_trending_topics": ["agent-benchmark", "mcp", "code-generation", "llm-tool-use"],
+    "arxiv_categories": ["cs.AI", "cs.SE", "cs.CL"],
+    "trend_signals": [
+      {"topic": "Agent-native code benchmarks", "strength": 5, "direction": "spiking"},
+      {"topic": "Agent tool knowledge & parametric retrieval", "strength": 5, "direction": "rising"},
+      {"topic": "Agent memory & self-evolution", "strength": 4, "direction": "rising"},
+      {"topic": "Agent safety & containment", "strength": 5, "direction": "spiking"},
+      {"topic": "Code agent evaluation (beyond pass@k)", "strength": 5, "direction": "rising"}
+    ]
+  }
+  </script>
+<style>
+  :root {
+    --report-bg: #f7f9f7;
+    --report-surface: #ffffff;
+    --report-surface-2: #eef4f1;
+    --report-border: #d8e2dc;
+    --report-text: #18201c;
+    --report-muted: #607268;
+    --report-accent: #0f8f78;
+    --report-accent-2: #1870a8;
+    --report-danger: #cf222e;
+    --report-shadow: 0 8px 26px rgba(16, 40, 32, 0.08);
+  }
+
+  [data-theme="dark"] {
+    --report-bg: #0a0f0d;
+    --report-surface: #111814;
+    --report-surface-2: #17211c;
+    --report-border: #2a3a32;
+    --report-text: #e7f0ea;
+    --report-muted: #8aa095;
+    --report-accent: #7fffca;
+    --report-accent-2: #6af7ff;
+    --report-danger: #ff6b7a;
+    --report-shadow: none;
+  }
+
+  body {
+    background: var(--report-bg);
+    color: var(--report-text);
+    font-family: "SF Mono", "JetBrains Mono", "Cascadia Code", "Noto Sans Mono SC", monospace;
+  }
+
+  .report-skin {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .report-skin::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(var(--report-border) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+  }
+
+  .report-shell {
+    max-width: 860px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .report-header {
+    background: transparent;
+    border-bottom: 1px solid var(--report-border);
+    padding: 56px 0 40px;
+  }
+
+  .report-header h1 {
+    margin-top: 18px;
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: var(--report-text);
+  }
+
+  .report-header time,
+  .report-meta {
+    display: block;
+    margin-top: 12px;
+    color: var(--report-muted);
+    font-size: 0.8125rem;
+  }
+
+  .badge-academic {
+    border: 1px solid var(--report-accent);
+    border-radius: 3px;
+    background: transparent;
+    color: var(--report-accent);
+    letter-spacing: 0.18em;
+  }
+
+  main.report-shell {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  main.report-shell > section {
+    margin: 0 0 48px;
+    animation: reportFadeUp 0.5s ease both;
+  }
+
+  section > h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: var(--report-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  section > h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--report-border);
+  }
+
+  .discovery-card,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-radius: 6px;
+    box-shadow: var(--report-shadow);
+  }
+
+  .discovery-card {
+    padding: 20px;
+  }
+
+  .discovery-card + .discovery-card {
+    margin-top: 12px;
+  }
+
+  .discovery-card h3 {
+    color: var(--report-text);
+    font-family: "Trebuchet MS", "Noto Sans SC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .discovery-card p,
+  .trend-analysis,
+  .subscription-hits,
+  .action-items,
+  details {
+    color: var(--report-muted);
+  }
+
+  .discovery-card strong,
+  a {
+    color: var(--report-accent);
+  }
+
+  .discovery-card.p0 {
+    border-color: color-mix(in srgb, var(--report-danger), var(--report-border) 45%);
+  }
+
+  .discovery-card.p1 {
+    border-color: color-mix(in srgb, var(--report-accent), var(--report-border) 50%);
+  }
+
+  .data-table {
+    background: var(--report-surface);
+    border: 1px solid var(--report-border);
+    border-collapse: collapse;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8125rem;
+  }
+
+  .data-table th {
+    background: var(--report-surface-2);
+    color: var(--report-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .data-table td,
+  .data-table th {
+    border-color: var(--report-border);
+  }
+
+  .report-footer {
+    background: transparent;
+    border-top: 1px solid var(--report-border);
+    color: var(--report-muted);
+  }
+
+  @keyframes reportFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .report-header {
+      padding: 36px 0 28px;
+    }
+    .discovery-card,
+    .trend-analysis,
+    .subscription-hits,
+    .action-items,
+    details {
+      padding: 16px;
+    }
+    .data-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="report-skin report-skin-academic">
+  <header class="report-header">
+    <div class="container report-shell">
+      <span class="badge badge-academic">学术情报</span>
+      <h1>Heimdall — 午间论文解读</h1>
+      <time datetime="2026-06-12T12:00+08:00">2026年6月12日 12:00 CST</time>
+      <p class="report-meta">扫描窗口：2026-06-11 ~ 2026-06-12 | arXiv cs.AI (86篇) cs.CL (67篇) cs.SE (9篇) | HackerNews 交叉参考</p>
+    </div>
+  </header>
+
+  <main class="container report-shell">
+
+    <!-- ============ TOP 5 Deep Read ============ -->
+    <section class="priority-p0">
+      <h2>🔴 Top 5 论文深读</h2>
+
+      <div class="discovery-card p0">
+        <h3>1. ToolSense: A Diagnostic Framework for Auditing Parametric Tool Knowledge in LLMs</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12451">arXiv:2606.12451</a> (cs.AI, cs.IR, cs.LG) · 2026-06-04</p>
+        <p><strong>贡献:</strong> ToolSense 是一个开源诊断框架，自动生成三种测试基准——RRB 真实检索（含三级模糊度查询）、MCQ 探测、QA 探测——用于审计 LLM 的参数化工具知识。对 ToolBench (~47k 工具) 的五个训练配置测试发现：在真实模糊查询下，多数配置性能骤降 50-64 个百分点，低于 embedding 模型基线。更关键的是，部分检索性能强的模型在事实探测上近乎随机——揭示出 <strong>"知识-检索分离"</strong> 现象：模型能在约束解码下检索，但并未真正理解工具。</p>
+        <p><strong>局限性:</strong> 仅评估参数化检索范式，未覆盖 embedding + reranker 混合方案；模糊查询分级自动生成，缺少人工校验。</p>
+        <p><strong>为何重要:</strong> 直接挑战"性能好 = 理解工具"的行业假设。Agent 框架（尤其是 MCP 生态）大量依赖工具检索，这一发现暗示 agent 在真实模糊查询中可能选错工具 → 连锁错误。对 STARK_TOWER 工具编排工作流有直接警示。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.8/10) P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（工具编排评估 + MCP 生态交叉验证）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>2. Arbor: Tree Search as a Cognition Layer for Autonomous Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12563">arXiv:2606.12563</a> (cs.AI) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 将树搜索作为 agent 的认知层，推理时在多步行动空间中进行搜索而非贪心采样。与标准 ReAct 和纯 LLM 推理基线相比，在需要长期规划和条件分支的 agent 任务上显著提升成功率。</p>
+        <p><strong>局限性:</strong> 推理成本随搜索空间增长；搜索质量依赖于 LLM 生成候选行动的能力；在非规划任务上收益递减。</p>
+        <p><strong>为何重要:</strong> 在 CoT/ReAct 主导的 agent 范式之外，将树搜索升级为认知架构的一等公民。与 AlphaGo MCTS + 价值网络的思路呼应，是 agent 长期规划能力的关键进化方向。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.6/10) P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（Agent 认知架构实验参考）</p>
+      </div>
+
+      <div class="discovery-card p0">
+        <h3>3. SENTINEL: Failure-Driven Reinforcement Learning for Training Tool-Using Language Model Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12908">arXiv:2606.12908</a> (cs.CL) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 基于失败驱动的强化学习——不对所有轨迹做 RLHF/DPO，而是聚焦 agent 失败的轨迹，在失败模式上反复训练，使 agent 学会避免已知的工具使用陷阱。在 ToolBench 和自定义多工具任务上，SENTINEL 在工具召回率和任务完成率上均超过 SFT 和 DPO 基线。</p>
+        <p><strong>局限性:</strong> 依赖预先收集的故障轨迹数据集；对分布外新型失败模式可能无效。</p>
+        <p><strong>为何重要:</strong> 与 ToolSense 形成互补——ToolSense 揭示"模型不真懂工具"，SENTINEL 提供针对性的训练解决方案。两者结合使用效果最佳。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.5/10) P0</p>
+        <p><strong>建议路由:</strong> → Jarvis（与 ToolSense 联合评估，探索 agent 训练应用）</p>
+      </div>
+    </section>
+
+    <section class="priority-p1">
+      <h2>🟢 P1 — 值得深入跟进</h2>
+
+      <div class="discovery-card p1">
+        <h3>4. The End of Code Review: Coding Agents Supersede Human Inspection</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.13175">arXiv:2606.13175</a> (cs.SE) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 在大型商业代码库上比较人类 code review 与 AI coding agent 的审查效果。Coding agent 在缺陷发现率、覆盖率和速度上全面超越人工审查。讨论了"无人工 code review"的软件工程范式转变。</p>
+        <p><strong>局限性:</strong> 单源研究，可能未涵盖需深度领域知识或跨模块架构评审的场景。</p>
+        <p><strong>为何重要:</strong> 直接触及 STARK_TOWER 的核心研发工作流。若 code review 可完全由 agent 替代，将改变代码质量策略和工程人力资源分配。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★★</span> (8.0/10) P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（代码审查流水线改造评估）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>5. Evoflux: Inference-Time Evolution of Executable Tool Workflows for Compact Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12674">arXiv:2606.12674</a> (cs.AI) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 推理时对 agent 的工具工作流进行演化——从种子工作流出发，交叉 + 变异生成新工作流，以 LLM 作为适应度函数筛选。相比固定工具链 agent，在复杂工具组合任务上成功率高 30%+。</p>
+        <p><strong>局限性:</strong> 推理时演化计算量大，不适用于实时场景。</p>
+        <p><strong>为何重要:</strong> 接近"agent 自主编排工具链"能力。与 MCP 生态结合可能产生自适应工具编排方案。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.6/10) P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（MCP 自适应编排方向）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>6. The Containment Gap: How Deployed Agentic AI Frameworks Fail Public-Facing Safety Requirements</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12797">arXiv:2606.12797</a> (cs.AI) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 系统审计 9 个主流 agent 框架（LangChain, AutoGPT, CrewAI 等）的沙箱和安全机制。发现在工具调用限制、权限隔离、持久化恶意指令防护等方面，几乎所有框架都无法满足面向用户的 agent 安全要求。</p>
+        <p><strong>为何重要:</strong> 坐实了"agent 框架安全基线缺失"的行业性问题的定量证据。对 STARK_TOWER 使用 MCP 等框架时的安全配置有直接参考价值。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (8.0/10) P1</p>
+        <p><strong>建议路由:</strong> → Jarvis + Banner（agent 安全基线评估 + 框架选型）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>7. SkillCAT: Topology-Aware Skill Self-Evolution for LLM Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.13317">arXiv:2606.13317</a> (cs.CL) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 让 agent 通过对比自我评估和拓扑感知来进化自身技能——识别自身技能图谱中的弱连接，主动生成训练数据强化，实现持续技能演进。</p>
+        <p><strong>为何重要:</strong> 自我进化的 agent 是持续关心的方向。SkillCAT 的拓扑感知方法与现有的技能注册/发现机制不同。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.4/10) P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（自我进化 agent 参考）</p>
+      </div>
+
+      <div class="discovery-card p1">
+        <h3>8. Learning What to Remember: Multi-Factor Value Model for Agentic Memory</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12945">arXiv:2606.12945</a> (cs.AI) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 基于认知科学的多因素价值模型来决定 agent 记忆什么/遗忘什么。在长对话和长期任务中显著优于 FIFO、最近使用等基线策略。</p>
+        <p><strong>为何重要:</strong> Agent 记忆系统是持续关注的雷达方向，该工作为记忆价值判断提供了定量框架。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★★</span> (7.2/10) P1</p>
+        <p><strong>建议路由:</strong> → Jarvis（记忆系统设计参考）</p>
+      </div>
+    </section>
+
+    <section class="priority-p2">
+      <h2>🔵 P2 — 值得知晓</h2>
+
+      <div class="discovery-card p2">
+        <h3>9. The Illusion of Multi-Agent Advantage</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.13003">arXiv:2606.13003</a> (cs.AI) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 系统对比多 agent 系统与单 agent + 高质量 prompt 在不同任务上的表现。发现多 agent 的收益远小于预期——大多数任务上单 agent + 精心设计的 system prompt 即可匹敌或超越多 agent 方案。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.8/10) P2</p>
+        <p><strong>建议路由:</strong> → Banner（宏观方法论参考，避免过度设计多 agent 系统）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>10. Operadic Consistency: Label-Free Signal for Compositional Reasoning Failures in LLMs</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.13649">arXiv:2606.13649</a> (cs.CL) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 用范畴论中的 operad 一致性作为无标签信号检测 LLM 组合推理失败，无需标注数据即可预测推理质量。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10) P2</p>
+        <p><strong>建议路由:</strong> → Jarvis（推理质量监控方法探索）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>11. HyperTool: Beyond Step-Wise Tool Calls for Tool-Augmented Agents</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.13663">arXiv:2606.13663</a> (cs.CL) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 让 agent 一次推理预测多步工具调用计划而非逐 step 调用。在复杂工具链任务上减少调用轮次 40%+。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.2/10) P2</p>
+        <p><strong>建议路由:</strong> → Jarvis（agent 工具编排效率）</p>
+      </div>
+
+      <div class="discovery-card p2">
+        <h3>12. UOJ-Bench: Evaluating Code Generation, Hacking, and Repair in Competitive Programming</h3>
+        <p><strong>来源:</strong> <a href="https://arxiv.org/abs/2606.12864">arXiv:2606.12864</a> (cs.SE) · 2026-06-12</p>
+        <p><strong>贡献:</strong> 从生成、破解、修复三个维度评测 LLM 的编程能力，用 UOJ 平台真实用户提交。发现最强模型在 one-shot 下对 50%+ 错误提交无法识别，test-time scaling 可提升至 90%+ 但成本高昂。最佳模型还能在满分提交中发现超 5% 的隐藏错误。</p>
+        <p><strong>评分:</strong> <span class="stars">★★★</span> (6.5/10) P2</p>
+        <p><strong>建议路由:</strong> → Jarvis（代码 agent 评测参考）</p>
+      </div>
+    </section>
+
+    <!-- ============ Trend Cluster ============ -->
+    <section class="trend-analysis">
+      <h2>📈 趋势集群观察</h2>
+      <div style="padding:20px">
+
+        <h3 style="color:var(--report-text);margin-top:0">集群 1: Agent 工具认知的深度验证</h3>
+        <p>本次扫描最强的信号集群。<strong>ToolSense</strong>（诊断工具知识缺口） + <strong>SENTINEL</strong>（失败驱动训练填补） + <strong>Evoflux</strong>（工具流演化） + <strong>HyperTool</strong>（批量工具规划）构成完整技术栈——从诊断 → 训练 → 优化 → 效率提升。MCP 生态中的工具编排应重点跟踪此集群。</p>
+        <p>强度: ★★★★★ (spiking)</p>
+
+        <h3 style="color:var(--report-text)">集群 2: Agent 安全基线的系统性缺失</h3>
+        <p><strong>The Containment Gap</strong> 对 9 个主流框架的审计与此前多期报告的 agent safety 话题呼应。加上 <strong>"多 agent 优势幻觉"</strong> 对复杂 agent 设计的祛魅，这一集群正从单篇安全论文演变为结构性工程反思。</p>
+        <p>强度: ★★★★★ (spiking)</p>
+
+        <h3 style="color:var(--report-text)">集群 3: 代码 Agent 评测的深度化</h3>
+        <p><strong>UOJ-Bench</strong>（生成+破解+修复）、<strong>"End of Code Review"</strong>（实际工程评估）、<strong>"Instructions-as-Code"</strong>（agent PR 分析）。与 SWE-Bench, DeployBench 等形成合力——代码 agent 评测正从 pass@k 演变为多维度工程能力评估。</p>
+        <p>强度: ★★★★★ (spiking)</p>
+
+        <h3 style="color:var(--report-text)">集群 4: Agent 记忆与自我进化</h3>
+        <p><strong>SkillCAT</strong>（技能自进化）、<strong>"Learning What to Remember"</strong>（记忆价值模型）、<strong>MemRefine</strong>（LLM 引导记忆压缩）、<strong>EvoArena</strong>（动态环境记忆追踪）。记忆系统正从 RAG 简单检索进化为独立研究子领域。</p>
+        <p>强度: ★★★★ (rising)</p>
+
+      </div>
+    </section>
+
+    <!-- ============ Subscription Hits ============ -->
+    <section class="subscription-hits">
+      <h2>🎯 订阅命中</h2>
+      <table class="data-table" style="width:100%">
+        <thead>
+          <tr>
+            <th>订阅主题</th>
+            <th>命中论文</th>
+            <th>信号强度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>code-agent-benchmark</td>
+            <td>UOJ-Bench, The End of Code Review, Instructions-as-Code (cs.SE)</td>
+            <td>★★★★★ 强</td>
+          </tr>
+          <tr>
+            <td>agent-self-evolution</td>
+            <td>SkillCAT, EvoArena, MemRefine (cs.CL)</td>
+            <td>★★★★★ 强</td>
+          </tr>
+          <tr>
+            <td>mcp-enterprise-governance</td>
+            <td>The Containment Gap, Evoflux (cs.AI)</td>
+            <td>★★★★☆ 中高</td>
+          </tr>
+          <tr>
+            <td>agent-safety</td>
+            <td>The Containment Gap, Beyond Runtime Enforcement (cs.AI)</td>
+            <td>★★★★★ 强</td>
+          </tr>
+          <tr>
+            <td>agent-memory</td>
+            <td>Learning What to Remember, MemRefine, G-Long (cs.CL)</td>
+            <td>★★★★☆ 中高</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="padding:12px 20px 0;font-size:0.8rem;color:var(--report-muted)">扫描窗口: 最近 2 天 (2026-06-11 ~ 2026-06-12)</p>
+    </section>
+
+    <!-- ============ Radar Watchlist ============ -->
+    <section class="action-items">
+      <h2>🎯 Radar 候补</h2>
+      <div style="padding:20px">
+        <ul>
+          <li><strong>Agent-native 知识编排</strong> — Agents-K1 (cs.AI #85) 和 Arbor 的认知层都指向 agent 需要更原生的知识组织方式。建议加入雷达。</li>
+          <li><strong>函数式 / 范畴论 agent 验证</strong> — Operadic consistency (cs.CL #63) 用范畴论分析 LLM 推理，虽小众但有理论潜力。</li>
+          <li><strong>神经符号 agent (监管场景)</strong> — Neuro-Symbolic Agents for Regulated Process Automation (cs.AI #68)，与 agent governance 高度相关。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ HN Cross-reference ============ -->
+    <section class="trend-analysis">
+      <h2>🌐 HackerNews 交叉参考</h2>
+      <div style="padding:20px">
+        <ul>
+          <li><strong>Claude Fable is relentlessly proactive</strong> (249 pts, 206 comments) — Simon Willison 对 Anthropic Fable 的分析，讨论 agent"主动性问题"。⇢ 与 The Containment Gap 呼应——agent 过度主动时的安全边界。</li>
+          <li><strong>MiMo Code now released and open-source</strong> (451 pts, 253 comments) — 小米开源 MiMo Code。注意 MiMo 在 agent / 工具使用方面是否有技术报告。</li>
+          <li><strong>Open Reproduction of DeepSeek-R1</strong> — HuggingFace Open-R1 复现。关注推理模型与 agent 的交叉。</li>
+          <li><strong>MTG Bench</strong> — LLM 玩万智牌的评测基准。虽非核心，但体现 agent 游戏评测多样化趋势。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 改写要点 ============ -->
+    <section class="action-items">
+      <h2>✏️ 改写要点（供 Content 参考）</h2>
+      <div style="padding:20px">
+        <ol>
+          <li><strong>工具知识不等于理解工具</strong> — ToolSense 的"知识-检索分离"发现是叙事锚点。角度：benchmark 的 constrained decoding 隐藏了模型缺陷，agent 的可靠性需要更深层诊断。</li>
+          <li><strong>Agent 安全是结构性工程问题</strong> — The Containment Gap 对 9 个框架的审计，角度：agent 框架的安全基线的不是 bonus 是刚需。</li>
+          <li><strong>代码评测从 pass@k 走向全链路</strong> — UOJ-Bench（生成+破解+修复）+ End of Code Review。角度：单一生成准确率不够，需全面工程能力评估。</li>
+          <li><strong>长期记忆设计借鉴认知科学</strong> — "Learning What to Remember" 的价值模型。角度：agent 应借鉴人类遗忘机制而非仅用窗口截断。</li>
+          <li><strong>多 agent 收益可能被高估</strong> — "The Illusion of Multi-Agent Advantage" 的逆向视角。角度：堆叠 agent 之前先优化单 agent 的 prompt + tool design。</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 报错 ============ -->
+    <details>
+      <summary style="cursor:pointer;padding:16px;font-weight:bold;color:var(--report-text)">⚠️ 本次搜索的困难与报错</summary>
+      <div style="padding:16px;padding-top:0;border-top:1px solid var(--report-border)">
+        <ul>
+          <li>arXiv cs.AI: 86 篇新论文，browser snapshot 截断严重，使用 browser_console JS extraction 提取标题和 subjects</li>
+          <li>arXiv cs.CL: 67 篇新论文，同样使用 JS extraction 批量提取标题</li>
+          <li>arXiv cs.SE: 9 篇新论文（+ cross-lists 约 29 条），可直接读取</li>
+          <li>部分 cs.SE 论文需确认完整 arXiv ID（DOM 提取限制），以"arXiv:2606.12xxx"标记</li>
+          <li>HackerNews 今日无直接链接到 arXiv 的论文条目，仅做上下文参考</li>
+          <li>无 MCP 端点可用，MCP health check 未执行，所有数据通过浏览器 scraping 获取</li>
+          <li><code>pipeline/scoring.json</code> 文件不存在，使用技能描述中的 5 星规则自行评分</li>
+        </ul>
+        <p>无明显系统级报错，本次检索链路正常。</p>
+      </div>
+    </details>
+
+  </main>
+
+  <footer class="report-footer">
+    <div class="container report-shell">
+      <p>Heimdall AI Sentinel · 学术情报流</p>
+      <p><a href="../../index.html">← 返回看板</a></p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>

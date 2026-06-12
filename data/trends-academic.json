@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T08:33:37.439232",
+  "generated_at": "2026-06-12T13:19:40.896583",
   "daily_series": [
     {
       "date": "2026-05-17",
@@ -101,10 +101,10 @@
     },
     {
       "date": "2026-06-12",
-      "p0": 3,
-      "p1": 5,
-      "p2": 5,
-      "total": 13
+      "p0": 9,
+      "p1": 15,
+      "p2": 13,
+      "total": 37
     }
   ],
   "calendar_data": [
@@ -180,8 +180,8 @@
     },
     {
       "date": "2026-06-12",
-      "intensity": 13,
-      "level": 1
+      "intensity": 37,
+      "level": 2
     }
   ],
   "sparkline_data": [
@@ -641,7 +641,7 @@
       ]
     },
     {
-      "topic": "Agent skill ecosystem explosion",
+      "topic": "Agent-native code benchmarks",
       "series": [
         {
           "date": "2026-05-17",
@@ -693,7 +693,7 @@
         },
         {
           "date": "2026-06-09",
-          "value": 5
+          "value": 0
         },
         {
           "date": "2026-06-11",
@@ -701,7 +701,7 @@
         },
         {
           "date": "2026-06-12",
-          "value": 5
+          "value": 10
         }
       ]
     }
@@ -736,6 +736,22 @@
       "count": 12
     },
     {
+      "topic": "Agent-native code benchmarks",
+      "count": 10
+    },
+    {
+      "topic": "Agent tool knowledge & parametric retrieval",
+      "count": 10
+    },
+    {
+      "topic": "Agent safety & containment",
+      "count": 10
+    },
+    {
+      "topic": "Code agent evaluation (beyond pass@k)",
+      "count": 10
+    },
+    {
       "topic": "Agent skill ecosystem explosion",
       "count": 10
     },
@@ -750,36 +766,20 @@
     {
       "topic": "Agent Self-Evolution",
       "count": 10
-    },
-    {
-      "topic": "Agent Skills 生态爆发",
-      "count": 10
-    },
-    {
-      "topic": "Agent-Native 软件栈",
-      "count": 9
-    },
-    {
-      "topic": "Linear Attention Architecture",
-      "count": 8
-    },
-    {
-      "topic": "Multi-Agent Safety",
-      "count": 8
     }
   ],
   "top_categories": [
     {
       "category": "cs.AI",
-      "count": 21
+      "count": 23
     },
     {
       "category": "cs.CL",
-      "count": 20
+      "count": 22
     },
     {
       "category": "cs.SE",
-      "count": 13
+      "count": 15
     },
     {
       "category": "cs.LG",
@@ -797,7 +797,19 @@
   "top_subscriptions": [
     {
       "subscription": "agent-memory",
-      "count": 7
+      "count": 9
+    },
+    {
+      "subscription": "code-agent-benchmark",
+      "count": 8
+    },
+    {
+      "subscription": "agent-self-evolution",
+      "count": 8
+    },
+    {
+      "subscription": "mcp-enterprise-governance",
+      "count": 8
     },
     {
       "subscription": "self-improving-agent",
@@ -808,28 +820,16 @@
       "count": 7
     },
     {
-      "subscription": "code-agent-benchmark",
-      "count": 6
-    },
-    {
-      "subscription": "agent-self-evolution",
-      "count": 6
-    },
-    {
-      "subscription": "mcp-enterprise-governance",
-      "count": 6
-    },
-    {
       "subscription": "agent-framework",
       "count": 6
     },
     {
-      "subscription": "codegraph",
+      "subscription": "agent-safety",
       "count": 5
     },
     {
-      "subscription": "agent-safety",
-      "count": 3
+      "subscription": "codegraph",
+      "count": 5
     },
     {
       "subscription": "agent-formal-verification",
@@ -839,7 +839,7 @@
   "top_github_topics": [
     {
       "topic": "mcp",
-      "count": 11
+      "count": 13
     },
     {
       "topic": "agent-framework",
@@ -850,8 +850,16 @@
       "count": 6
     },
     {
+      "topic": "code-generation",
+      "count": 4
+    },
+    {
       "topic": "claude-plugins",
       "count": 4
+    },
+    {
+      "topic": "agent-benchmark",
+      "count": 3
     },
     {
       "topic": "agent-skills",
@@ -868,17 +876,93 @@
     {
       "topic": "superpowers",
       "count": 3
-    },
-    {
-      "topic": "code-generation",
-      "count": 2
-    },
-    {
-      "topic": "ai-agent",
-      "count": 2
     }
   ],
   "upset_data": [
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 8,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 8,
+      "size": 2
+    },
+    {
+      "combination": [
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 8,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-self-evolution",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 8,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "agent-self-evolution"
+      ],
+      "count": 7,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "code-agent-benchmark"
+      ],
+      "count": 7,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "mcp-enterprise-governance"
+      ],
+      "count": 7,
+      "size": 2
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "agent-self-evolution",
+        "code-agent-benchmark"
+      ],
+      "count": 7,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 7,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-memory",
+        "code-agent-benchmark",
+        "mcp-enterprise-governance"
+      ],
+      "count": 7,
+      "size": 3
+    },
     {
       "combination": [
         "mcp-tools",
@@ -889,102 +973,10 @@
     },
     {
       "combination": [
-        "agent-self-evolution",
-        "code-agent-benchmark"
-      ],
-      "count": 6,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-self-evolution",
-        "mcp-enterprise-governance"
-      ],
-      "count": 6,
-      "size": 2
-    },
-    {
-      "combination": [
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 6,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-self-evolution",
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 6,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "agent-self-evolution"
-      ],
-      "count": 5,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "code-agent-benchmark"
-      ],
-      "count": 5,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "mcp-enterprise-governance"
-      ],
-      "count": 5,
-      "size": 2
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "agent-self-evolution",
-        "code-agent-benchmark"
-      ],
-      "count": 5,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "agent-self-evolution",
-        "mcp-enterprise-governance"
-      ],
-      "count": 5,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-memory",
-        "code-agent-benchmark",
-        "mcp-enterprise-governance"
-      ],
-      "count": 5,
-      "size": 3
-    },
-    {
-      "combination": [
-        "agent-framework",
-        "codegraph"
-      ],
-      "count": 4,
-      "size": 2
-    },
-    {
-      "combination": [
         "agent-memory",
         "agent-safety"
       ],
-      "count": 3,
+      "count": 5,
       "size": 2
     },
     {
@@ -992,7 +984,7 @@
         "agent-safety",
         "agent-self-evolution"
       ],
-      "count": 3,
+      "count": 5,
       "size": 2
     },
     {
@@ -1000,7 +992,7 @@
         "agent-safety",
         "code-agent-benchmark"
       ],
-      "count": 3,
+      "count": 5,
       "size": 2
     },
     {
@@ -1008,7 +1000,7 @@
         "agent-safety",
         "mcp-enterprise-governance"
       ],
-      "count": 3,
+      "count": 5,
       "size": 2
     },
     {
@@ -1017,7 +1009,7 @@
         "agent-safety",
         "agent-self-evolution"
       ],
-      "count": 3,
+      "count": 5,
       "size": 3
     },
     {
@@ -1026,7 +1018,7 @@
         "agent-safety",
         "code-agent-benchmark"
       ],
-      "count": 3,
+      "count": 5,
       "size": 3
     },
     {
@@ -1035,7 +1027,7 @@
         "agent-safety",
         "mcp-enterprise-governance"
       ],
-      "count": 3,
+      "count": 5,
       "size": 3
     },
     {
@@ -1044,7 +1036,16 @@
         "agent-self-evolution",
         "code-agent-benchmark"
       ],
-      "count": 3,
+      "count": 5,
+      "size": 3
+    },
+    {
+      "combination": [
+        "agent-safety",
+        "agent-self-evolution",
+        "mcp-enterprise-governance"
+      ],
+      "count": 5,
       "size": 3
     }
   ]
