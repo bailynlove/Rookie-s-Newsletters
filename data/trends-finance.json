@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-12T15:08:01.604770",
+  "generated_at": "2026-06-12T18:07:44.859695",
   "daily_series": [
     {
       "date": "2026-05-14",
@@ -373,6 +373,55 @@
     }
   ],
   "risk_grid": [
+    {
+      "category": "AI去杠杆",
+      "values": [
+        {
+          "date": "2026-05-14",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-22",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-23",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-24",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-05-25",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-07",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-08",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-09",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-10",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-11",
+          "level": "unknown"
+        },
+        {
+          "date": "2026-06-12",
+          "level": "high"
+        }
+      ]
+    },
     {
       "category": "AI科技",
       "values": [
@@ -1455,19 +1504,19 @@
   "risk_distribution": [
     {
       "level": "high",
-      "count": 25
+      "count": 27
     },
     {
       "level": "mid",
-      "count": 23
+      "count": 25
     },
     {
       "level": "medium",
-      "count": 21
+      "count": 22
     },
     {
       "level": "low-mid",
-      "count": 13
+      "count": 14
     },
     {
       "level": "low",
@@ -1497,7 +1546,7 @@
   "top_trend_signals": [
     {
       "topic": "美联储政策",
-      "count": 25
+      "count": 29
     },
     {
       "topic": "美伊谈判",
